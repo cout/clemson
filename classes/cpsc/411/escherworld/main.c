@@ -131,7 +131,7 @@ void set_window_size(int width, int height) {
 }
 
 
-
+#ifdef USE_HELMET
 /* inserting helmet code */
 /* helmet control template */
 
@@ -319,7 +319,8 @@ birddata(float* pos, float* mat) {
 }
   
 /* end helmet code */
- 
+#endif
+
 void display(int d) {
 	int i;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -803,10 +804,13 @@ int main(int argc, char *argv[]) {
 		/* Initialize the scene */
 		init_scene(FILENAME);
 
+#ifdef USE_HELMET
 /*		main_helmet();
 		signal(SIGUSR1, cleanup);
 */		birdinit();
 /*		glutTimerFunc(10,child,1);*/
+#endif
+
 	} else {
 		glutInitWindowPosition(64,64);
 
