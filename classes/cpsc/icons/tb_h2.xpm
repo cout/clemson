@@ -1,0 +1,26 @@
+/* XPM */
+static char *tb_h2[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      2            1",
+/* colors */
+"  c None",
+"X c #000000",
+/* pixels */
+"                 ",
+"                 ",
+"XXX   XXX   XXXX ",
+" XX   XX   XXXXXX",
+" XX   XX  XX  XXX",
+" XX   XX  X    XX",
+" XX   XX       XX",
+" XX   XX       XX",
+" XXXXXXX      XX ",
+" XX   XX      XX ",
+" XX   XX     XX  ",
+" XX   XX    XX   ",
+" XX   XX   XX   X",
+" XX   XX  XXXXXXX",
+"XXX   XXX XXXXXXX",
+"                 ",
+"                 "
+};

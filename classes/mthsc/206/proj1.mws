@@ -1,0 +1,192 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 257 
+"" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "" 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple
+ Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 
+3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 0 13 1 {CSTYLE "" 
+-1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 -1 0 0 0 0 0 0 -1 
+0 }{PSTYLE "Title" 0 18 1 {CSTYLE "" -1 -1 "" 1 18 0 0 0 0 0 1 1 0 0 
+0 0 0 0 }3 0 0 -1 12 12 0 0 0 0 0 0 19 0 }{PSTYLE "Author" 0 19 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 8 8 0 0 0 
+0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 18 "" 0 "" {TEXT -1 25 "MTHSC 206 Maple Project 1
+" }}{PARA 19 "" 0 "" {TEXT -1 27 "\"In a Galaxy Far, Far Away\"" }}
+{PARA 19 "" 0 "" {TEXT -1 12 "Paul Brannan" }}{PARA 0 "" 0 "" {TEXT 
+-1 152 "The goal of this assignment is to estimate the amount of fuel \+
+required to maintain a constant temperature of 78 degrees F inside a s
+pace vehicle called " }{TEXT 256 7 "Far Out" }{TEXT -1 47 " traveling \+
+on the surface of the planet Cohuna." }}{PARA 0 "" 0 "" {TEXT -1 0 "" 
+}}{PARA 0 "" 0 "" {TEXT -1 44 "The predicted surface on Cohuna is give
+n by:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "Temp := t -> (2 + \+
+2) / (3*5 + 1) * log (5*t + 10) -" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+66 "             (2 + 0 + 6) * log (t + 2) * sin(Pi*(t + 2) + 5) + 55;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%TempG:6#%\"tG6\"6$%)operatorG%&
+arrowGF(,(-%$logG6#,&9$\"\"&\"#5\"\"\"#F4\"\"%*&-F.6#,&F1F4\"\"#F4F4-%
+$sinG6#,&*&%#PiGF4F:F4F4F2F4F4!\")\"#bF4F(F(" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 87 "(a) A plot of the tempe
+rature on the planet Cohuna (during the time interval 0 to 3.5):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "plot(Temp(t), t=0..3.5);" }}
+{PARA 13 "" 1 "" {INLPLOT "6%-%'CURVESG6$7fp7$\"\"!$\"1Zu?`^I*3'!#97$$
+\"1nm;z>]9Q!#<$\"1>0KPj.\"3'F+7$$\"1LLLeR+HwF/$\"1%e.c(GejgF+7$$\"1+vV
+t\")z%4\"!#;$\"1/&4w_m3/'F+7$$\"1n;/^fpE9F:$\"1()G(>w-7,'F+7$$\"1LL3xM
+?t@F:$\"1$\\WcI\"3?fF+7$$\"1MLeR$fY#HF:$\"1Y0$R:)\\(z&F+7$$\"1n;ajOasO
+F:$\"1+&>Fn^2l&F+7$$\"1L$3x;GfO%F:$\"1>>eP:f*\\&F+7$$\"1+]Pfw)Q3&F:$\"
+1yX)y::gL&F+7$$\"1M$3FR-k#eF:$\"1$>M6q-!p^F+7$$\"1+](=(e`mlF:$\"10J+x*
+y],&F+7$$\"1om;HT&yK(F:$\"1JsI%o10)[F+7$$\"1MLekOU)*zF:$\"1WQY.c!)*y%F
++7$$\"1o;/,\\(eP)F:$\"1U-_1r`_ZF+7$$\"1-+]PhK`()F:$\"1!RsDauis%F+7$$\"
+1,+D\"oEG%*)F:$\"1VaSnlX<ZF+7$$\"1,++DsKK\"*F:$\"1D2)RP`;r%F+7$$\"1,+v
+ox#=K*F:$\"1<S0RF#*3ZF+7$$\"1++]7$G8^*F:$\"1&*y!p#4J4ZF+7$$\"1++++s%Rp
+*F:$\"1(RsPLoEr%F+7$$\"1,+](3ml()*F:$\"1(po1`u*=ZF+7$$\"1++](\\=f+\"!#
+:$\"1()=B$GR#GZF+7$$\"1++D'Q!=C5Fdr$\"1Zr!\\rh/u%F+7$$\"1</EvuMd5Fdr$
+\"1ElV4!z,x%F+7$$\"1L3FkX^!4\"Fdr$\"1h%R,4Z%4[F+7$$\"1nm\"zJ#Rp6Fdr$\"
+1Pl4#fX$R\\F+7$$\"1nmm@@@O7Fdr$\"1L(3L&\\m&3&F+7$$\"1+vVQ%RRJ\"Fdr$\"1
+xxGChv*G&F+7$$\"1$3-8OS$[8Fdr$\"1*\\jZ!Q'*)Q&F+7$$\"1nm;%GTFQ\"Fdr$\"1
+2)**e!R/#\\&F+7$$\"1$3-)[X[?9Fdr$\"13ajDg;3cF+7$$\"1+vV8yAe9Fdr$\"1(e,
+-PYes&F+7$$\"1+](oKoT\\\"Fdr$\"1KJbKQzPeF+7$$\"1+DJS)3,`\"Fdr$\"1oKrGE
+6[fF+7$$\"1n;/^\"4^g\"Fdr$\"1\\+$yUZl;'F+7$$\"1nT&)[G)Rn\"Fdr$\"1CV$G!
+*4RM'F+7$$\"1L$ekVs#[<Fdr$\"1g<<Y4F*\\'F+7$$\"1L3FR%Qa#=Fdr$\"1r.t>H#3
+h'F+7$$\"1nmTb]-f=Fdr$\"1*3/DdI8k'F+7$$\"1+Dcr;h#*=Fdr$\"1\"*H(QXJ,m'F
++7$$\"1e*[V!*[2\">Fdr$\"1b!RU%QGlmF+7$$\"1<a8Ph))G>Fdr$\"1139DW(om'F+7
+$$\"1v=#*pL-Z>Fdr$\"1*Rb<nu[m'F+7$$\"1L$3Fgg^'>Fdr$\"1BL-q!o#fmF+7$$\"
+1nT5vcj-?Fdr$\"1VB_uNDOmF+7$$\"1++]Z26S?Fdr$\"1MU(3@jzf'F+7$$\"1+](=%[
+V8@Fdr$\"1^(zAd%R!['F+7$$\"1]ilds!*[@Fdr$\"1yw/fdX/kF+7$$\"1+vVt'zV=#F
+dr$\"1B+[n&\\rJ'F+7$$\"1]7GVdwBAFdr$\"1)y'\\/O43iF+7$$\"1+]78=:jAFdr$
+\"1fs'G='z(3'F+7$$\"1Lek[>a)H#Fdr$\"1nNz*Qc:(fF+7$$\"1mm;%3KRL#Fdr$\"1
+\"RW#G`/\\eF+7$$\"1L$3xg=<P#Fdr$\"1'\\\\Z_&*Hr&F+7$$\"1++DJ^]4CFdr$\"1
+4o+ZuRtbF+7$$\"1</wP`uVCFdr$\"1BL*pR!\\XaF+7$$\"1L3FWb)zZ#Fdr$\"1!3[3)
+yz<`F+7$$\"1</,M\">a^#Fdr$\"18Z\"ysI-=&F+7$$\"1++vBF&Gb#Fdr$\"1`szUVqY
+]F+7$$\"1%3FW\"[2)e#Fdr$\"11MC'*))[E\\F+7$$\"1nT50pHBEFdr$\"1A//eR78[F
++7$$\"1MekQT6gEFdr$\"1qf\\[8c.ZF+7$$\"1+v=s8$pp#Fdr$\"1or'fF,Zg%F+7$$
+\"1nm\"H_A*oFFdr$\"1HD:QAuZWF+7$$\"1$3FWb1m!GFdr$\"1XpzAQB(Q%F+7$$\"1+
+v$fe!HWGFdr$\"1>D%G%\\*HM%F+7$$\"1fk`'oPC'GFdr$\"1r(GG`QxK%F+7$$\"1<a8
+(y%e!)GFdr$\"1v3<u?^;VF+7$$\"1wVt()=t)*GFdr$\"1$GQtrr$4VF+7$$\"1MLL))*
+yo\"HFdr$\"1'Q:7DgjI%F+7$$\"1fk./!eh#HFdr$\"1!H6DwDkI%F+7$$\"1%eR(>qVN
+HFdr$\"1h#=4;\"e2VF+7$$\"14FWNgrWHFdr$\"1.r')G!G)4VF+7$$\"1Me9^]*R&HFd
+r$\"1EG;.q;8VF+7$$\"1%3_D3`D(HFdr$\"1+YGv!>JK%F+7$$\"1M$eR666*HFdr$\"1
+'RZA[BuL%F+7$$\"1]7.P)>z-$Fdr$\"1qVa:QayVF+7$$\"1nT5g&GZ1$Fdr$\"1Ku#p=
+aiV%F+7$$\"1++]Z`PKJFdr$\"1,=[,NI$e%F+7$$\"1Lekt29rJFdr$\"1x*e[%Qi*o%F
++7$$\"1n;z*>1*4KFdr$\"1CSOSDD5[F+7$$\"1+D1f%yXC$Fdr$\"1(*\\d1K*)G\\F+7
+$$\"1LLL=2DzKFdr$\"1(y%z'>)Gc]F+7$$\"1<aQy&=iJ$Fdr$\"1AX4A=6+_F+7$$\"1
++vVQk=`LFdr$\"1gF#e%fK]`F+7$$\"1++](Rp&)Q$Fdr$\"1y'\\t^R#)\\&F+7$$\"1+
+DccB&RU$Fdr$\"1\\'e:Zb$[cF+7$$\"1]7Gyh(>Y$Fdr$\"1D@qTN+5eF+7$$\"1+++++
+++NFdr$\"1/Ps0FrpfF+-%'COLOURG6&%$RGBG$\"#5!\"\"F(F(-%+AXESLABELSG6$%
+\"tG%!G-%%VIEWG6$;F($\"#NF\\hl%(DEFAULTG" 2 313 313 313 2 0 1 0 2 9 0 
+4 2 1.000000 45.000000 45.000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1 0 0 0 27664 12590 0 0 0 0 0 0 }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 0 "
+" }}{PARA 0 "" 0 "" {TEXT -1 75 "(b) Compute the values of the high an
+d low temperatures during this period:" }}{PARA 0 "" 0 "" {TEXT -1 35 
+"First, find the derivative of Temp:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "dTemp := diff(Temp(t), t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%&dTempG,(*$,&%\"tG\"\"&\"#5\"\"\"!\"\"#F)\"\"%*&,&F(F
++\"\"#F+F,-%$sinG6#,&*&%#PiGF+F0F+F+F)F+F+!\")*(-%#lnG6#F0F+-%$cosGF4F
++F7F+F8" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 64 "We can see from the pl
+ot above that there is a max close to t=2:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 57 "max1 := fsolve(dTemp = 0, t=1.8..2.1); evalf(Temp(m
+ax1));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%max1G$\"+?<(y#>!\"*" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+T+)om'!\")" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 26 "There is a min close to 3:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 57 "min1 := fsolve(dTemp = 0, t=2.5..3.5); evalf(Tem
+p(min1));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%min1G$\"+h5'4#H!\"*" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+U\\D1V!\")" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 40 "And there is a local minimum close to 1:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "min2 := fsolve(dTemp = 0, t=0.8..1.
+1); evalf(Temp(min2));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%min2G$\"+
+i0@$R*!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+22q3Z!\")" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 267 "We assum
+e that the amount of fuel required for maintaining a given temperature
+ T is directly proportional to the square of the difference between T \+
+and the outside temperature.  We are given that the constant of this p
+roportion is 7 gallons per degree F per hour, so:" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 31 "Fuel := k * (78 - Temp(t)) ^ 2;" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#>%%FuelG*&%\"kG\"\"\",(\"#BF'-%#lnG6#,&%\"tG\"
+\"&\"#5F'#!\"\"\"\"%*&-F+6#,&F.F'\"\"#F'F'-%$sinG6#,&*&%#PiGF'F7F'F'F/
+F'F'\"\")F8" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "k := 7;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"kG\"\"(" }}}{EXCHG {PARA 11 "" 1 "
+" {TEXT -1 0 "" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 63 "The plot of ins
+tantaneous fuel consumption vs. time looks like:" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 47 "plot(Fuel, t=0..3.5, filled=true, color=green
+);" }}{PARA 13 "" 1 "" {INLPLOT "6&-%)POLYGONSG6[q7&7$\"\"!F(7$F($\"1<
+)*=,Q`[?!#77$$\"1nm;z>]9Q!#<$\"1@(G:D&Qo?F,7$F.F(7&F3F-7$$\"1LLLeR+HwF
+0$\"1#)z#45,16#F,7$F6F(7&F:F57$$\"1+vVt\")z%4\"!#;$\"1^#z:S&=m@F,7$F=F
+(7&FBF<7$$\"1n;/^fpE9F?$\"1+99\"*o&)RAF,7$FEF(7&FIFD7$$\"1LL3xM?t@F?$
+\"1>6<3g'QZ#F,7$FLF(7&FPFK7$$\"1MLeR$fY#HF?$\"1+\"e/b4q!GF,7$FSF(7&FWF
+R7$$\"1n;ajOasOF?$\"1@Eigy[LKF,7$FZF(7&FhnFY7$$\"1L$3x;GfO%F?$\"1,`xl`
+J/PF,7$F[oF(7&F_oFjn7$$\"1+]Pfw)Q3&F?$\"1#>A:\"\\&)\\UF,7$FboF(7&FfoFa
+o7$$\"1M$3FR-k#eF?$\"1Buk]F]X[F,7$FioF(7&F]pFho7$$\"1+](=(e`mlF?$\"1\\
+5.t&\\!HaF,7$F`pF(7&FdpF_p7$$\"1om;HT&yK(F?$\"1HBEa)3k'fF,7$FgpF(7&F[q
+Ffp7$$\"1MLekOU)*zF?$\"1tjX8#*)GM'F,7$F^qF(7&FbqF]q7$$\"1o;/,\\(eP)F?$
+\"17_*41@4]'F,7$FeqF(7&FiqFdq7$$\"1-+]PhK`()F?$\"1+qMJ<X8mF,7$F\\rF(7&
+F`rF[r7$$\"1,+D\"oEG%*)F?$\"1\"G#o4=X^mF,7$FcrF(7&FgrFbr7$$\"1,++DsKK
+\"*F?$\"1[7r<%>ln'F,7$FjrF(7&F^sFir7$$\"1+](o\\xqA*F?$\"1KGT^!*4%o'F,7
+$FasF(7&FesF`s7$$\"1,+vox#=K*F?$\"1Ch>V5L)o'F,7$FhsF(7&F\\tFgs7$$\"1,]
+iS!ylT*F?$\"1'3H<v)=*o'F,7$F_tF(7&FctF^t7$$\"1++]7$G8^*F?$\"1a;di7l'o'
+F,7$FftF(7&FjtFet7$$\"1++++s%Rp*F?$\"1(>/@xJ@n'F,7$F]uF(7&FauF\\u7$$\"
+1,+](3ml()*F?$\"1Ax')fD!\\k'F,7$FduF(7&FhuFcu7$$\"1++](\\=f+\"!#:$\"1E
+evI(**\\g'F,7$F[vF(7&F`vFju7$$\"1++D'Q!=C5F]v$\"1TUci@a_lF,7$FcvF(7&Fg
+vFbv7$$\"1</EvuMd5F]v$\"1B8Sk1(eU'F,7$FjvF(7&F^wFiv7$$\"1L3FkX^!4\"F]v
+$\"1NFn%p%QgiF,7$FawF(7&FewF`w7$$\"1nm\"zJ#Rp6F]v$\"1e--\\0MGdF,7$FhwF
+(7&F\\xFgw7$$\"1n;z>A!G?\"F]v$\"1b&H'Q.'RX&F,7$F_xF(7&FcxF^x7$$\"1nmm@
+@@O7F]v$\"1Rv)>KIt:&F,7$FfxF(7&FjxFex7$$\"1%3_+yv]F\"F]v$\"1j*\\>N-8z%
+F,7$F]yF(7&FayF\\y7$$\"1+vVQ%RRJ\"F]v$\"11b)3-F4T%F,7$FdyF(7&FhyFcy7$$
+\"1$3-8OS$[8F]v$\"1a$=V(o;pSF,7$F[zF(7&F_zFjy7$$\"1nm;%GTFQ\"F]v$\"1`f
+gKHmGPF,7$FbzF(7&FfzFaz7$$\"1+vV8yAe9F]v$\"1_T+'Hz9,$F,7$FizF(7&F][lFh
+z7$$\"1+DJS)3,`\"F]v$\"1(*=:&yS1S#F,7$F`[lF(7&Fd[lF_[l7$$\"1n;/^\"4^g
+\"F]v$\"1S+(Q6<x'=F,7$Fg[lF(7&F[\\lFf[l7$$\"1nT&)[G)Rn\"F]v$\"1lZuf)QT
+[\"F,7$F^\\lF(7&Fb\\lF]\\l7$$\"1L$ekVs#[<F]v$\"1O5.]sK%=\"F,7$Fe\\lF(7
+&Fi\\lFd\\l7$$\"1$ekyVboy\"F]v$\"1mA*o?+H2\"F,7$F\\]lF(7&F`]lF[]l7$$\"
+1L3FR%Qa#=F]v$\"1#=qw*[**)*)*!#87$Fc]lF(7&Fh]lFb]l7$$\"1nmTb]-f=F]v$\"
+1Bf\\&*Qg(R*Fg]l7$F[^lF(7&F_^lFj]l7$$\"1+Dcr;h#*=F]v$\"19z9<@5&4*Fg]l7
+$Fb^lF(7&Ff^lFa^l7$$\"1<a8Ph))G>F]v$\"1l)*zy\\\"y)*)Fg]l7$Fi^lF(7&F]_l
+Fh^l7$$\"1L$3Fgg^'>F]v$\"1*=yCN&))3\"*Fg]l7$F`_lF(7&Fd_lF__l7$$\"1nT5v
+cj-?F]v$\"1jTo*>S,[*Fg]l7$Fg_lF(7&F[`lFf_l7$$\"1++]Z26S?F]v$\"1[#)o4ZU
+65F,7$F^`lF(7&Fb`lF]`l7$$\"1+vo%zsn2#F]v$\"1G(o6mi15\"F,7$Fe`lF(7&Fi`l
+Fd`l7$$\"1+](=%[V8@F]v$\"1?\"3%R4&*=7F,7$F\\alF(7&F`alF[al7$$\"1+vVt'z
+V=#F]v$\"1xsl$y\">R:F,7$FcalF(7&FgalFbal7$$\"1+]78=:jAF]v$\"1]F)zL\\@0
+#F,7$FjalF(7&F^blFial7$$\"1Lek[>a)H#F]v$\"17L*\\AW-M#F,7$FablF(7&FeblF
+`bl7$$\"1mm;%3KRL#F]v$\"1D:(=*oNkEF,7$FhblF(7&F\\clFgbl7$$\"1L$3xg=<P#
+F]v$\"1W4!eP6*[IF,7$F_clF(7&FcclF^cl7$$\"1++DJ^]4CF]v$\"1cqH]7VqMF,7$F
+fclF(7&FjclFecl7$$\"1</wP`uVCF]v$\"1haXH3g!)QF,7$F]dlF(7&FadlF\\dl7$$
+\"1L3FWb)zZ#F]v$\"1(fDA:HHJ%F,7$FddlF(7&FhdlFcdl7$$\"1</,M\">a^#F]v$\"
+1j.kFPB/[F,7$F[elF(7&F_elFjdl7$$\"1++vBF&Gb#F]v$\"1c+=$)eW1`F,7$FbelF(
+7&FfelFael7$$\"1%3FW\"[2)e#F]v$\"10()QWi%*zdF,7$FielF(7&F]flFhel7$$\"1
+nT50pHBEF]v$\"1zC-V***\\C'F,7$F`flF(7&FdflF_fl7$$\"1MekQT6gEF]v$\"1o'p
+di_:r'F,7$FgflF(7&F[glFffl7$$\"1+v=s8$pp#F]v$\"1\"4k]v`p9(F,7$F^glF(7&
+FbglF]gl7$$\"1$3_v%p#Ht#F]v$\"1$42Hd8=`(F,7$FeglF(7&FiglFdgl7$$\"1nm\"
+H_A*oFF]v$\"1ImIrCMmyF,7$F\\hlF(7&F`hlF[hl7$$\"1$3FWb1m!GF]v$\"12G='3
+\")G:)F,7$FchlF(7&FghlFbhl7$$\"1+v$fe!HWGF]v$\"1!o[cx=cO)F,7$FjhlF(7&F
+^ilFihl7$$\"1fk`'oPC'GF]v$\"1o9[(y>'R%)F,7$FailF(7&FeilF`il7$$\"1<a8(y
+%e!)GF]v$\"16\"y0p\"G%\\)F,7$FhilF(7&F\\jlFgil7$$\"1'*[VP$e'*)GF]v$\"1
+;9V?-@9&)F,7$F_jlF(7&FcjlF^jl7$$\"1wVt()=t)*GF]v$\"1=DSl+9H&)F,7$FfjlF
+(7&FjjlFejl7$$\"1bQ.Qa!y!HF]v$\"1^cELR.R&)F,7$F][mF(7&Fa[mF\\[m7$$\"1M
+LL))*yo\"HF]v$\"1w9+'3jQa)F,7$Fd[mF(7&Fh[mFc[m7$$\"1fk./!eh#HF]v$\"1y8
+*pmUNa)F,7$F[\\mF(7&F_\\mFj[m7$$\"1%eR(>qVNHF]v$\"1I6IVD*y`)F,7$Fb\\mF
+(7&Ff\\mFa\\m7$$\"14FWNgrWHF]v$\"1#=d;F5p_)F,7$Fi\\mF(7&F]]mFh\\m7$$\"
+1Me9^]*R&HF]v$\"1bF[VIg5&)F,7$F`]mF(7&Fd]mF_]m7$$\"1%3_D3`D(HF]v$\"1p[
+Dv14i%)F,7$Fg]mF(7&F[^mFf]m7$$\"1M$eR666*HF]v$\"1DU!*)H0ER)F,7$F^^mF(7
+&Fb^mF]^m7$$\"1]7.P)>z-$F]v$\"1tZ]&p`W>)F,7$Fe^mF(7&Fi^mFd^m7$$\"1nT5g
+&GZ1$F]v$\"1dUZE,N?zF,7$F\\_mF(7&F`_mF[_m7$$\"1%3-Q&>b)4$F]v$\"1EEh&*f
+V2wF,7$Fc_mF(7&Fg_mFb_m7$$\"1++]Z`PKJF]v$\"1qa]aa*HC(F,7$Fj_mF(7&F^`mF
+i_m7$$\"1Lekt29rJF]v$\"1'*)G&yy5snF,7$Fa`mF(7&Fe`mF``m7$$\"1n;z*>1*4KF
+]v$\"1R)z1\"H,diF,7$Fh`mF(7&F\\amFg`m7$$\"1+D1f%yXC$F]v$\"1VeZ`zFqdF,7
+$F_amF(7&FcamF^am7$$\"1LLL=2DzKF]v$\"1?LL@\"o&p_F,7$FfamF(7&FjamFeam7$
+$\"1<aQy&=iJ$F]v$\"1k)Gj(HfJZF,7$F]bmF(7&FabmF\\bm7$$\"1+vVQk=`LF]v$\"
+13k>!3K1?%F,7$FdbmF(7&FhbmFcbm7$$\"1++](Rp&)Q$F]v$\"1^MkB4n3PF,7$F[cmF
+(7&F_cmFjbm7$$\"1+DccB&RU$F]v$\"1C,uB>qSKF,7$FbcmF(7&FfcmFacm7$$\"1]7G
+yh(>Y$F]v$\"1im#G8g?x#F,7$FicmF(7&F]dmFhcm7$$\"1+++++++NF]v$\"1sCr0h'
+\\M#F,7$F`dmF(7\"-%&STYLEG6#%,PATCHNOGRIDG-%+AXESLABELSG6$%\"tG%!G-%'C
+OLOURG6&%$RGBGF($\"*++++\"!\")F(-%%VIEWG6$;F($\"#N!\"\"%(DEFAULTG" 2 
+406 406 406 2 0 1 0 2 6 0 4 2 1.000000 45.000000 45.000000 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 4544 61 0 0 0 0 0 0 }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 39 "(c) Determine t
+he fuel requirements of " }{TEXT 257 7 "Far Out" }{TEXT -1 17 " while \+
+on Cohuna." }}{PARA 0 "" 0 "" {TEXT -1 69 "We do this by integrating t
+he function we found for fuel consumption:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 27 "evalf(int(Fuel, t=0..3.5));" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+yQ1+:!\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 258 7 "Far Out" }{TEXT -1 64 " \+
+needs approximately 15 thousand galons of fuel while on Cohuna." }}}}
+{MARK "21 0 1" 24 }{VIEWOPTS 1 1 0 1 1 1803 }

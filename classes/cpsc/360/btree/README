@@ -1,0 +1,3 @@
+Note: test seems to give a "Bus Error" on the SPARCS.  I'm not exactly sure
+why.  To be safe, run it on the stormies or some x86 machine.
+

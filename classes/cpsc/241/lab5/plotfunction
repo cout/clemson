@@ -1,0 +1,7 @@
+set terminal postscript
+set output "func.ps"
+set title "Plot of Function points"
+set xlabel "Index"
+set ylabel "Function (Index)"
+plot 'functionpoints'
+

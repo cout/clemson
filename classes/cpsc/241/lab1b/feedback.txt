@@ -1,0 +1,13 @@
+I thought that the fact that there was no mechanism available to prevent buffer
+overflow was rather sloppy.  Perhaps a primitive stack system doesn't need this,
+but it is still poor programming like this that leads to security holes.
+
+I would have implemented bounds checking myself had I been able to modify the
+stack.h file.
+
+To prove that there is in fact a problem here, I have also written a program
+called "killstack.c" that overflows the stack using pipes.  I don't have the
+time right now to actually write an exploit for a non-suid root program, but
+if this program were suid-root, this could be a serious security hole on a
+machine where the stack is executable.
+

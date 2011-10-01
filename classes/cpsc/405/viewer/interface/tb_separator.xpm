@@ -1,0 +1,28 @@
+/* XPM */
+static char *tb_separator[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      4            1",
+/* colors */
+"  c None",
+"X c #000000",
+"x c #ffffff",
+"y c #c0c0c0",
+/* pixels */
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+" xxxxxxxxxxxxxxx ",
+"XXXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXXX",
+" yyyyyyyyyyyyyyy ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 "
+};

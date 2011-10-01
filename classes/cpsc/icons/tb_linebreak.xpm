@@ -1,0 +1,28 @@
+/* XPM */
+static char *tb_linebreak[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      4            1",
+/* colors */
+"  c None",
+"X c #000000",
+"y c #c0c0c0",
+"z c #ffffff",
+/* pixels */
+"                 ",
+"                 ",
+"                 ",
+"            zzz  ",
+"            zXXy ",
+"            zXXy ",
+"   z        zXXy ",
+"  zX        zXXy ",
+" zXXzzzzzzzzzXXy ",
+"zXXXXXXXXXXXXXXy ",
+" XXXXXXXXXXXXXXy ",
+"  XXyyyyyyyyyyyy ",
+"   Xy            ",
+"                 ",
+"                 ",
+"                 ",
+"                 "
+};

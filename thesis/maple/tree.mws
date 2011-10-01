@@ -1,0 +1,727 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {TEXT -1 60 "\"\"\"LLT\"\"\"  determine
+s if p is lexicographically less than q." }}{PARA 0 "" 0 "" {TEXT -1 
+76 "INPUT:   Two lists p and q of 0 and 1 representing parenthesized e
+xpressions" }}{PARA 0 "" 0 "" {TEXT -1 59 "\011Here 0 is a left parent
+hesis and 1 is a right parenthesis." }}{PARA 0 "" 0 "" {TEXT -1 87 "OU
+TPUT:  \"true\" if p is lexicographically less than q or if p is an in
+itial string of q" }}{PARA 0 "" 0 "" {TEXT -1 53 "\011\"false\" if p e
+quals q or exceeds q lexicographically" }}{PARA 0 "" 0 "" {TEXT -1 49 
+"LOCAL:  m is the length of the shorter of p and q" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 22 "LLT := proc(p,q::list)" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 10 "local i,m:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m :=
+ nops(p):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "if nops(q) < m then m \+
+:= nops(q) fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "for i to m do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "if p[i] < q[i] then" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 14 "\011RETURN(true):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "if p[i] > q[
+i] then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "\011RETURN(false):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "if nops(p) <= nops(q) t
+hen RETURN(true):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "else RETURN(fa
+lse):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 81 "\"\"\"sme
+rg\"\"\" merges a list s of parenthetized expressions into a single li
+st r in " }}{PARA 0 "" 0 "" {TEXT -1 75 "lexicographic order, surround
+ed by a pair of parentheses. Here 0 is a left " }}{PARA 0 "" 0 "" 
+{TEXT -1 41 "parenthesis and 1 is a right parenthesis." }}{PARA 0 "" 
+0 "" {TEXT -1 51 "LOCAL:\011d is the number of lists in s to be smerge
+d." }}{PARA 0 "" 0 "" {TEXT -1 33 "\011q is the list s in sorted order
+." }}{PARA 0 "" 0 "" {TEXT -1 71 "OUTPUT: \011r is the list of lists i
+n q merged into a single list with an " }}{PARA 0 "" 0 "" {TEXT -1 67 
+"extra initial 0 and terminal 1.  Thus input s := [] returns output " 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "r := [0,1]:" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 23 "smerg := proc(s:: list)" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "local d,j,k,q,r:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+13 "d := nops(s):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "q := [[9]]:" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "for k from 1 to d do" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 8 "\011j := 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+29 "\011while not LLT(s[k], q[j]) do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 11 "\011\011j := j+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "\011od:" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "\011q := [op(1..j-1,q),s[k],op(j.
+.nops(q),q)]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 9 "r := [0]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 
+"for k to d do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "\011r := [op(r), \+
+op(q[k])]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 15 "r := [op(r),1]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+2 "r:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 78 "\"\"\"LLLPERT\"\"\"  generates for each node in a ro
+oted tree, the lexicographically" }}{PARA 0 "" 0 "" {TEXT -1 48 "least
+ labelling by a parenthetisized expression." }}{PARA 0 "" 0 "" {TEXT 
+-1 78 "INPUT:\011The rooted tree is given via a child array c, a heap \+
+ordering h of its " }}{PARA 0 "" 0 "" {TEXT -1 70 "vertices, and the \+
+\011\011number n of nodes.  A heap ordering is an endnode " }}{PARA 0 
+"" 0 "" {TEXT -1 38 "elimination order, so h[1] is a leaf. " }}{PARA 
+0 "" 0 "" {TEXT -1 76 "OUTPUT:\011r is an array of 0,1-lists.  r[x] gi
+ves the lexicographically least " }}{PARA 0 "" 0 "" {TEXT -1 66 "paren
+thesized \011\011\011expression representing the branch of the rooted \+
+" }}{PARA 0 "" 0 "" {TEXT -1 21 "tree beyond node x.  " }}{PARA 0 "" 
+0 "" {TEXT -1 59 "\011Here 0 is a left parenthesis and 1 is a right pa
+renthesis." }}{PARA 0 "" 0 "" {TEXT -1 76 "LOCAL:  \011x is a node cho
+sen in heap order -- i.e., starting from a leaf.  y " }}{PARA 0 "" 0 "
+" {TEXT -1 31 "ranges thru the children of x. " }}{PARA 0 "" 0 "" 
+{TEXT -1 57 "NOTE:\011The root must receive the highest label, namely,
+ n." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "LLLPERT := proc(c::array, h:
+:list, n::integer)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "local i,r,s,x
+,y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "r := array(1..n):" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 13 "for i to n do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 10 "x := h[i]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "s := \+
+[]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "for y in c[x] do" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 19 "\011s := [op(s),r[y]]:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "r[x] := sm
+erg(s):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 2 "r:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 82 "\"\"\"LLPE\"\"\" generates the lex
+icographically least parenthesized expression for an  " }}{PARA 0 "" 
+0 "" {TEXT -1 83 "input unrooted tree.  The procedure starts with a \"
+local\" best labelling rooted at " }}{PARA 0 "" 0 "" {TEXT -1 75 "n.  \+
+Then the procedure moves from parent w to child v throughout the tree,
+ " }}{PARA 0 "" 0 "" {TEXT -1 82 "modifying the existing \"local\" lab
+elings to produce \"best local labellings\" t for " }}{PARA 0 "" 0 "" 
+{TEXT -1 83 "each node as root.  Along the way a \"local branch labell
+ing\" tt is required at the " }}{PARA 0 "" 0 "" {TEXT -1 80 "parent w \+
+of v by regarding v as the root and w as the root of one branch at v. \+
+ " }}{PARA 0 "" 0 "" {TEXT -1 27 "INPUT:\011c -- the child array" }}
+{PARA 0 "" 0 "" {TEXT -1 31 "\011h -- a heap ordering as a list" }}
+{PARA 0 "" 0 "" {TEXT -1 21 "\011p -- the parent list" }}{PARA 0 "" 0 
+"" {TEXT -1 51 "\011n -- the number of nodes and the label of the root
+" }}{PARA 0 "" 0 "" {TEXT -1 83 "OUTPUT:\011best -- the lexicographica
+lly least parenthesized expression for the input " }}{PARA 0 "" 0 "" 
+{TEXT -1 5 "tree." }}{PARA 0 "" 0 "" {TEXT -1 72 "LOCAL:   \011r -- an
+ array giving the lexicographically best labels on the " }}{PARA 0 "" 
+0 "" {TEXT -1 35 "nodes of the tree when\011rooted at n." }}{PARA 0 "
+" 0 "" {TEXT -1 69 "\011t -- an array with t[v] the best label for the
+ tree when rooted at v" }}{PARA 0 "" 0 "" {TEXT -1 67 "\011tt -- an ar
+ray with tt[v] the best label for the branch at w when " }}{PARA 0 "" 
+0 "" {TEXT -1 69 "the tree is rooted at \011\011v.  \011w is the paren
+t of v in a fixed initial " }}{PARA 0 "" 0 "" {TEXT -1 27 "rooting of \+
+the tree at n.  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "LLPE := proc(c:
+:array,h::list, p::list,n::integer)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+28 "local best,i,r,s,t,tt,v,w,y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 
+"r := LLLPERT(c,h,n):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "t := array
+(1..n):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "tt := array(1..n):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "tt[n] := []:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "t[n] := r[n]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "b
+est := r[n]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "for i from n-1 to 1
+ by -1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "v := h[i]:" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 10 "w := p[v]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 13 "s := [tt[w]]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "for y in c[w
+] do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "\011if y=v then next fi:" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "\011s := [op(s),r[y]]:" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "tt
+[v] := smerg(s):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "s :=  [tt[v]]:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "for y in c[v] do" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 19 "\011s := [op(s),r[y]]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "t[v] := smer
+g(s):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "if LLT(t[v],best) then\011
+best := t[v] fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 13 "RETURN(best):" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 4 "end:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 82 "\"\"\"nextree\"\"
+\" produces the next spanning tree in a graph with given input ordered
+ " }}{PARA 0 "" 0 "" {TEXT -1 9 "edge set." }}{PARA 0 "" 0 "" {TEXT 
+-1 82 "INPUT:\011e -- is the list of edges of the graph whose order de
+termines the ordering " }}{PARA 0 "" 0 "" {TEXT -1 92 "of the spanning
+ subtrees ctr -- is an array of lists of sets.  ctr[i] is a list of th
+e sets " }}{PARA 0 "" 0 "" {TEXT -1 60 "of edges which MUST be used be
+fore edge i can be used.  For " }}{PARA 0 "" 0 "" {TEXT -1 64 "example
+, if the edges incident with a vertex v are 1,3, and 7.  " }}{PARA 0 "
+" 0 "" {TEXT -1 62 "Then the list ctr[8] would contain the set \{1,3,7
+\} because at " }}{PARA 0 "" 0 "" {TEXT -1 83 "least one of these edge
+s must be used if the result is to connect with vertex v.  \011" }}
+{PARA 0 "" 0 "" {TEXT -1 59 "Since edges are added in order, one of 1,
+ 3 , or 7 must be " }}{PARA 0 "" 0 "" {TEXT -1 65 "used before 8 or th
+ere is no hope of getting a connected subtree." }}{PARA 0 "" 0 "" 
+{TEXT -1 26 "\011m -- number of edges in e" }}{PARA 0 "" 0 "" {TEXT 
+-1 34 "\011n -- number of nodes in the graph" }}{PARA 0 "" 0 "" {TEXT 
+-1 79 "OUTPUT:\011the output is j, the number of edges in the next tre
+e.  If j = 0, then " }}{PARA 0 "" 0 "" {TEXT -1 61 "there is no next \+
+\011\011\011tree and the search through all spanning " }}{PARA 0 "" 0 
+"" {TEXT -1 17 "subtrees is over." }}{PARA 0 "" 0 "" {TEXT -1 67 "GLOB
+AL:  \011The meaningful results of the procedure are achieved via " }}
+{PARA 0 "" 0 "" {TEXT -1 40 "modifications of two global \011\011varia
+bles:" }}{PARA 0 "" 0 "" {TEXT -1 65 "\011f -- lists the indices i of \+
+the edges e[i] used in the spanning " }}{PARA 0 "" 0 "" {TEXT -1 58 "t
+ree.  The program is \011\011\011\011designed so that f is always an \+
+" }}{PARA 0 "" 0 "" {TEXT -1 16 "increasing list." }}{PARA 0 "" 0 "" 
+{TEXT -1 66 "\011g -- is an nxn array with g(j,v) telling the componen
+t number of " }}{PARA 0 "" 0 "" {TEXT -1 64 "vertex v at the jth \011
+\011\011stage of building the subtree.  At stage " }}{PARA 0 "" 0 "" 
+{TEXT -1 63 "j=0, these numbers are all different.  At \011\011\011sta
+ge j = n-1 all " }}{PARA 0 "" 0 "" {TEXT -1 33 "these numbers should b
+e the same." }}{PARA 0 "" 0 "" {TEXT -1 64 "\011f and g are used to de
+termining the starting point in the next " }}{PARA 0 "" 0 "" {TEXT -1 
+19 "call of \"\"nextree\"\"" }}{PARA 0 "" 0 "" {TEXT -1 82 "IMPORTANT \+
+NOTE:  In Version 2, variables not explicitly declared local are globa
+l " }}{PARA 0 "" 0 "" {TEXT -1 11 "by default." }}{PARA 0 "" 0 "" 
+{TEXT -1 76 "\011In Version 3, variables not explicitly declared local
+ are local by default." }}{PARA 0 "" 0 "" {TEXT -1 62 "\011In Version \+
+3, global variables must be explicitly declared!!!" }}{PARA 0 "" 0 "" 
+{TEXT -1 36 "LOCAL:  \011i -- index of the edge e[i]" }}{PARA 0 "" 0 "
+" {TEXT -1 65 "\011j -- stage of building the subtree -- i.e., the jth
+ edge of the " }}{PARA 0 "" 0 "" {TEXT -1 23 "subtree is being sought
+" }}{PARA 0 "" 0 "" {TEXT -1 58 "\011k -- number of edges chosen when \+
+the procedure is invoked" }}{PARA 0 "" 0 "" {TEXT -1 63 "\011x and y -
+- component numbers of the two endpoints of edge e[i]" }}{PARA 0 "" 0 
+"" {TEXT -1 67 "\011baktrak -- a local variable that is set to true wh
+en the value of " }}{PARA 0 "" 0 "" {TEXT -1 17 "j must be reduced" }}
+{PARA 0 "" 0 "" {TEXT -1 37 "\011s -- a set of edge indices in ctr[i]
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 49 "nextree := proc(e::list,ctr::ar
+ray, m,n::integer)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "local baktrak
+,i,j,k,s,v,x,y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "global f,g:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "k := nops(f):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 17 "if k = (n-1) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+7 "j := k:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "i := f[k]+1:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "f := [op(1..k-1,f)]:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 15 "elif k > 0\011then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "j := k+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "i := f
+[k]+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "j := 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "i := 1:" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 17 "baktrak := false:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "while \+
+j < n do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "for s in ctr[i] do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "\011if nops(s intersect \{op(f)\}) \+
+= 0 then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "\011\011baktrak := true
+:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "\011\011break:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 4 "\011fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "if (m-i+1) < (n-j) then    bakt
+rak := true fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "if baktrak then \+
+   " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "\011j := j-1:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 29 "\011\011if j = 0 then RETURN(j) fi:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 13 "\011i := f[j]+1:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "\011f := [op(1..j-1,f)]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "\011baktrak := false:" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 4 "else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "\011x := g[j-1,op(1,
+e[i])]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "\011y := g[j-1,op(2,e[i]
+)]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "\011if x = y then" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 11 "\011\011i := i+1:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 5 "\011else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "\011
+\011f := [op(f),i]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "\011\011for \+
+v to n do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "\011\011\011if g[j-1,v
+] = y then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "\011\011\011\011g[j,v
+] := x:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "\011\011\011else " }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "\011\011\011\011g[j,v] := g[j-1,v]:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "\011\011\011fi:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 5 "\011\011od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 
+"\011\011j := j+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "\011\011i := \+
+i+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "\011fi:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "RETURN(j):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 83 "\"\"\"chi
+lde\"\"\" produces a child array c, heap oder h, and parent list p fro
+m a input " }}{PARA 0 "" 0 "" {TEXT -1 39 "list e of edges for a spann
+ing subtree." }}{PARA 0 "" 0 "" {TEXT -1 79 "INPUT:\011e -- list of ed
+ges, NOT to be confused with the e giving the edges of a " }}{PARA 0 "
+" 0 "" {TEXT -1 20 "general supergraph!!" }}{PARA 0 "" 0 "" {TEXT -1 
+25 "\011n -- the number of nodes" }}{PARA 0 "" 0 "" {TEXT -1 83 "OUTPU
+T:\011colordiff -- the difference in the numbers of black and white no
+des in the " }}{PARA 0 "" 0 "" {TEXT -1 45 "unique two-\011\011colorin
+g of the spanning subtree" }}{PARA 0 "" 0 "" {TEXT -1 67 "GLOBAL:  \+
+\011The meaningful results of the procedure are achieved via " }}
+{PARA 0 "" 0 "" {TEXT -1 40 "modifications of three global variables:
+" }}{PARA 0 "" 0 "" {TEXT -1 19 "\011c -- a child array" }}{PARA 0 "" 
+0 "" {TEXT -1 28 "\011h -- a heap order as a list" }}{PARA 0 "" 0 "" 
+{TEXT -1 19 "\011p -- a parent list" }}{PARA 0 "" 0 "" {TEXT -1 82 "IM
+PORTANT NOTE:  In Version 2, variables not explicitly declared local a
+re global " }}{PARA 0 "" 0 "" {TEXT -1 11 "by default." }}{PARA 0 "" 
+0 "" {TEXT -1 76 "\011In Version 3, variables not explicitly declared \+
+local are local by default." }}{PARA 0 "" 0 "" {TEXT -1 62 "\011In Ver
+sion 3, global variables must be explicitly declared!!!" }}{PARA 0 "" 
+0 "" {TEXT -1 72 "LOCAL:   \011pa -- is a parent array constructed by \+
+the procedure which is " }}{PARA 0 "" 0 "" {TEXT -1 44 "converted to t
+he \011\011\011parent list p at the end" }}{PARA 0 "" 0 "" {TEXT -1 
+62 "\011doitnow -- is the set of nodes whose children are to be found
+" }}{PARA 0 "" 0 "" {TEXT -1 68 "\011doitlater -- is the set of nodes \+
+which are the children of doitnow " }}{PARA 0 "" 0 "" {TEXT -1 60 "and
+ which become \011\011\011\011the next doitnow in the next iteration.
+" }}{PARA 0 "" 0 "" {TEXT -1 66 "\011undun -- set of indices of edges \+
+which have not yet been used in " }}{PARA 0 "" 0 "" {TEXT -1 42 "deter
+mining a parent-\011\011\011child relationship" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "childe := proc(e::list,n::integer)" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 55 "local doitnow, doitlater, undun, colordiff, i,k,pa
+,x,y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "global c,h,p:" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 12 "undun := \{\}:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "for i to n-1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 
+"c[i] := \{\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "undun := undun un
+ion \{i\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 11 "c[n] := \{\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+15 "doitnow := \{n\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "doitlater \+
+:= \{\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "h := [n]:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 20 "pa := array(1..n-1):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "k := 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "colordif
+f := 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "while nops(undun) > 0 do
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "k := -k:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "for x in doitnow do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 18 "\011for i in undun do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "\011
+\011if member(x,e[i]) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "\011
+\011\011y := e[i][1]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "\011\011
+\011if x = y then y := e[i][2] fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+26 "\011\011\011c[x] := c[x] union \{y\}:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "\011\011\011pa[y] := x:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "\011\011\011h := [y,op(h)]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "\011\011\011undun := undun minus \{i\}:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 36 "\011\011\011doitlater := doitlater union \{y
+\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "\011\011\011colordiff := col
+ordiff + k:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "\011\011fi:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 6 "\011od:\011\011" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "doitnow := d
+oitlater:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "doitlater := \{\}:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 8 "p := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "for x to n-1 do" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "p := [op(p),pa[x]]:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "RETUR
+N(colordiff):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 80 "\"\"\"gbuild\"\"\"  produces the nxn comp
+onent status array g for a given edge list e " }}{PARA 0 "" 0 "" 
+{TEXT -1 52 "and globally passed (partial) edge-index selector f." }}
+{PARA 0 "" 0 "" {TEXT -1 33 "INPUT:\011e -- edge list for a graph" }}
+{PARA 0 "" 0 "" {TEXT -1 25 "\011n -- the number of nodes" }}{PARA 0 "
+" 0 "" {TEXT -1 80 "GLOBAL:  f -- lists the indices i of the edges e[i
+] used in the spanning tree.  " }}{PARA 0 "" 0 "" {TEXT -1 63 "The pro
+gram is designed so that f is always an increasing list." }}{PARA 0 "
+" 0 "" {TEXT -1 53 "\011This important input is passed as a global var
+iable." }}{PARA 0 "" 0 "" {TEXT -1 82 "IMPORTANT NOTE:  In Version 2, \+
+variables not explicitly declared local are global " }}{PARA 0 "" 0 "
+" {TEXT -1 11 "by default." }}{PARA 0 "" 0 "" {TEXT -1 76 "\011In Vers
+ion 3, variables not explicitly declared local are local by default." 
+}}{PARA 0 "" 0 "" {TEXT -1 62 "\011In Version 3, global variables must
+ be explicitly declared!!!" }}{PARA 0 "" 0 "" {TEXT -1 81 "LOCAL:\011g
+ -- is an nxn array with g(j,v) telling the component number of vertex
+ v " }}{PARA 0 "" 0 "" {TEXT -1 94 "at the jth \011\011\011stage of bu
+ilding the subtree.  At stage j=0, these numbers are all different.  \+
+" }}{PARA 0 "" 0 "" {TEXT -1 54 "At stage j = n-1 all these numbers sh
+ould be the same." }}{PARA 0 "" 0 "" {TEXT -1 31 "\011g is returned as
+ the OUTPUT.  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "gbuild := proc(e:
+:list, n::integer)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "local g,v,j,x
+,y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "global f:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 24 "g := array(0..n-1,1..n):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "for v to n do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "g
+[0,v] := v:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 19 "for j to nops(f) do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "x := g[j-1,op(1,e[f[j]])]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "y := g[j-1,op(2,e[f[j]])]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "\011for v to n do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+23 "\011\011\011if g[j-1,v] = y then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 16 "\011\011\011\011g[j,v] := x:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+8 "\011\011\011else " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "\011\011
+\011\011g[j,v] := g[j-1,v]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "\011
+\011\011fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "\011\011od:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "
+RETURN(g):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 83 "\"\"\"shortname\"\"\" takes the lexicographical
+ly least parenthesized expression \" lpe \" " }}{PARA 0 "" 0 "" {TEXT 
+-1 79 "for a tree and converts it into a list y whose first term is th
+e integer z (in " }}{PARA 0 "" 0 "" {TEXT -1 79 "decimal form) represe
+nted by the lpe when the lpe is interpreted as the binary " }}{PARA 0 
+"" 0 "" {TEXT -1 26 "expansion of an integer.  " }}{PARA 0 "" 0 "" 
+{TEXT -1 74 "Next comes an expression of the form  8 o, 3, o, 2, o, 5.
+  Here 8 o means " }}{PARA 0 "" 0 "" {TEXT -1 78 "the lpe starts from \+
+the left 8 consecutive zeroes (or left parentheses).  The " }}{PARA 0 
+"" 0 "" {TEXT -1 83 "number L in the L o is the length of the longest \+
+path in the tree.  That is, it is " }}{PARA 0 "" 0 "" {TEXT -1 80 "the
+ diameter of the tree.   The following 3 means that the initial 8 zero
+es are " }}{PARA 0 "" 0 "" {TEXT -1 81 "followed by 3 ones.  Then come
+s a single zero, followed by 2 ones, followed by a " }}{PARA 0 "" 0 "
+" {TEXT -1 79 "single zero again, followed by 5 ones.  The sum of the \+
+coefficients on the o's " }}{PARA 0 "" 0 "" {TEXT -1 83 "should equal \+
+the number of nodes, and this in turn is the sum of the terms without \+
+" }}{PARA 0 "" 0 "" {TEXT -1 83 "the o's.    In the above example, we \+
+have 8 o + o  + o  =  10 nodes  = 3 + 2 + 5.  " }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "shortname := proc(lpe::list)" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "local i,k,n,z,par,sum,x,y:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "n := nops(lpe):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "
+z := 0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "for i to n do" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 30 "z := z + lpe[n-i+1] * 2^(i-1):" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "y
+ := [z]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "k := 1:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 9 "par := 0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "su
+m := 0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "for k to n do" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 12 "x := lpe[k]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "if x = 0 and par = 0 then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "\011sum := sum + o:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 27 "elif x = 1 and par = 1 then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+17 "\011sum  := sum + 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "elif x \+
+<> par then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "\011y := [op(y), sum
+]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "\011par := x:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 27 "\011if x = 0 then sum := o fi:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 27 "\011if x = 1 then sum := 1 fi:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "y := [op(y), sum]:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 10 "RETURN(y):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+4 "end:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 70 "\"\"\" cleanup \"\"\" \+
+is a procedure to shorten the names of a list of lpe's" }}{PARA 0 "" 
+0 "" {TEXT -1 81 "INPUT: \011s -- a list of the lpe's of the non-isomo
+rphic spanning subtrees, listed " }}{PARA 0 "" 0 "" {TEXT -1 27 "in th
+e order they are found" }}{PARA 0 "" 0 "" {TEXT -1 74 "OUTPUT:\011snli
+st -- a list of the shortnames of the non-isomorphic spanning " }}
+{PARA 0 "" 0 "" {TEXT -1 59 "subtrees, listed in the order given by th
+eir integer code z" }}{PARA 0 "" 0 "" {TEXT -1 19 "\011snlist is RETUR
+NED" }}{PARA 0 "" 0 "" {TEXT -1 65 "GLOBAL: \011t -- a table which sto
+res for each shortname of lpe the " }}{PARA 0 "" 0 "" {TEXT -1 17 "cor
+responding lpe" }}{PARA 0 "" 0 "" {TEXT -1 80 "LOCAL:\011z --   the in
+teger (in decimal form) represented by the lpe when the lpe " }}{PARA 
+0 "" 0 "" {TEXT -1 55 "is interpreted as the binary expansion of an in
+teger.  " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "cleanup := proc(s::list
+)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "local N, k, sn, place, j, z, s
+nlist:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "global  t:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 13 "N := nops(s):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "sn := shortname(s[1]):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "snl
+ist := [sn]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "t[sn] := s[1]:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "for k from 2 to N do" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 22 "sn := shortname(s[k]):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "t[sn] := s[k]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "
+place := -1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "z := sn[1]:" }}
+{PARA 0 "" 0 "" {TEXT -1 79 "Note that snlist contains k-1 terms up to
+ this point.  Hence nops(snlist) = k-1" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 15 "for j to k-1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "\011if s
+nlist[j][1] > z then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "\011\011pla
+ce := j-1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "\011\011break:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "\011fi:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "if place < 0
+ then " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "\011snlist := [op(snlist)
+,sn]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "elif place = 0 then" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "\011snlist := [sn, op(snlist)]:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "elif place > 0 then" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 61 "\011snlist := [op(1..place,snlist),sn, op(plac
+e+1..k-1,snlist)]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "
+RETURN(snlist):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 73 "\"\"\"spantree\"\"\" determines all spann
+ing trees of a graph with edge list e " }}{PARA 0 "" 0 "" {TEXT -1 43 
+"INPUT:\011e -- list of edges of the supergraph" }}{PARA 0 "" 0 "" 
+{TEXT -1 61 "\011ctr -- a control array which is an array of lists of \+
+sets.  " }}{PARA 0 "" 0 "" {TEXT -1 66 "\011ctr[i] is a list of SOME o
+f the sets of edges which MUST be used " }}{PARA 0 "" 0 "" {TEXT -1 
+70 "before edge i can be used.  These are BONDS in the matroid sense. \+
+For " }}{PARA 0 "" 0 "" {TEXT -1 81 "example,suppose the edges inciden
+t with a vertex v have the indices 1,3, and 7.  " }}{PARA 0 "" 0 "" 
+{TEXT -1 81 "Then the list ctr[8] would contain the set \{1,3,7\} beca
+use at least one of these " }}{PARA 0 "" 0 "" {TEXT -1 79 "edges must \+
+be used if the result is to connect with vertex v.  Since edges are " 
+}}{PARA 0 "" 0 "" {TEXT -1 80 "added in order, one of 1, 3 , or 7 must
+ be used before 8 or there is no hope of " }}{PARA 0 "" 0 "" {TEXT -1 
+28 "getting a connected subtree." }}{PARA 0 "" 0 "" {TEXT -1 59 "\011c
+tr is used to shorten the running time of the subroutine " }}{PARA 0 "
+" 0 "" {TEXT -1 75 "\"\"nextree\"\".  ctr can be set to an array of em
+pty lists [] if so desired.  " }}{PARA 0 "" 0 "" {TEXT -1 25 "\011n --
+ the number of nodes" }}{PARA 0 "" 0 "" {TEXT -1 76 "\011freq -- the f
+requency of intermitent reports on the progress of the program" }}
+{PARA 0 "" 0 "" {TEXT -1 80 "GLOBAL:  f -- lists the indices i of the \+
+edges e[i] used in the spanning tree.  " }}{PARA 0 "" 0 "" {TEXT -1 
+67 "The program is \011\011\011\011designed so that f is always an inc
+reasing list." }}{PARA 0 "" 0 "" {TEXT -1 53 "\011This important input
+ is passed as a global variable." }}{PARA 0 "" 0 "" {TEXT -1 66 "\011g
+ -- is an nxn array with g(j,v) telling the component number of " }}
+{PARA 0 "" 0 "" {TEXT -1 64 "vertex v at the jth \011\011\011stage of \+
+building the subtree.  At stage " }}{PARA 0 "" 0 "" {TEXT -1 63 "j=0, \+
+these numbers are all different.  At \011\011\011stage j = n-1 all " }
+}{PARA 0 "" 0 "" {TEXT -1 33 "these numbers should be the same." }}
+{PARA 0 "" 0 "" {TEXT -1 64 "\011f and g are used to determining the s
+tarting point in the next " }}{PARA 0 "" 0 "" {TEXT -1 19 "call of \"
+\"nextree\"\"" }}{PARA 0 "" 0 "" {TEXT -1 19 "\011c -- a child array" 
+}}{PARA 0 "" 0 "" {TEXT -1 28 "\011h -- a heap order as a list" }}
+{PARA 0 "" 0 "" {TEXT -1 19 "\011p -- a parent list" }}{PARA 0 "" 0 "
+" {TEXT -1 74 "\011t -- a table which stores for each shortname of lpe
+ the corresponding lpe" }}{PARA 0 "" 0 "" {TEXT -1 59 "\011The table t
+ is generated in the \"\"cleanup\"\" procedure and " }}{PARA 0 "" 0 "
+" {TEXT -1 37 "communicated as a global \011\011\011variable." }}
+{PARA 0 "" 0 "" {TEXT -1 30 "GLOBAL for USE in \"\"\"dumpum\"\"\"" }}
+{PARA 0 "" 0 "" {TEXT -1 64 "\011edges -- a table indexed by lpe which
+ stores the edges used to " }}{PARA 0 "" 0 "" {TEXT -1 63 "produce the
+ first instance of a subtree of isomorphism type lpe" }}{PARA 0 "" 0 "
+" {TEXT -1 67 "\011reqedge -- a table indexed by lpe which stores the \+
+set of INDICES " }}{PARA 0 "" 0 "" {TEXT -1 70 "of edges required so f
+ar in all  instances of lpe thus far encountered" }}{PARA 0 "" 0 "" 
+{TEXT -1 64 "\011subtrees -- a list of the lpe's of the non-isomorphic
+ spanning " }}{PARA 0 "" 0 "" {TEXT -1 44 "subtrees, listed in the ord
+er they are found" }}{PARA 0 "" 0 "" {TEXT -1 48 "\011tcount -- the to
+tal number of spanning subtrees" }}{PARA 0 "" 0 "" {TEXT -1 66 "\011nr
+ --   a table containing the number of copies of tree lpe have " }}
+{PARA 0 "" 0 "" {TEXT -1 19 "thus far been found" }}{PARA 0 "" 0 "" 
+{TEXT -1 59 "\011nrmd -- anarray containing the number of isomorphism \+
+types" }}{PARA 0 "" 0 "" {TEXT -1 22 "\011\011\011with max degree k  \+
+" }}{PARA 0 "" 0 "" {TEXT -1 71 "\011ds -- a table containing for each
+ lpe the degree sequence of that tree" }}{PARA 0 "" 0 "" {TEXT -1 82 "
+IMPORTANT NOTE:  In Version 2, variables not explicitly declared local
+ are global " }}{PARA 0 "" 0 "" {TEXT -1 11 "by default." }}{PARA 0 "
+" 0 "" {TEXT -1 76 "\011In Version 3, variables not explicitly declare
+d local are local by default." }}{PARA 0 "" 0 "" {TEXT -1 62 "\011In V
+ersion 3, global variables must be explicitly declared!!!" }}{PARA 0 "
+" 0 "" {TEXT -1 7 "LOCAL:\011" }}{PARA 0 "" 0 "" {TEXT -1 45 "\011tc -
+- tcount modulo the frequency of reports" }}{PARA 0 "" 0 "" {TEXT -1 
+42 "\011edgs -- edge list for the current subtree" }}{PARA 0 "" 0 "" 
+{TEXT -1 65 "\011lpe -- the lexicographically least parenthesized expr
+ession for " }}{PARA 0 "" 0 "" {TEXT -1 16 "the current tree" }}{PARA 
+0 "" 0 "" {TEXT -1 61 "\011treq -- a list in order of the integer code
+s of trees which " }}{PARA 0 "" 0 "" {TEXT -1 55 "require the current \+
+edge k \011\011\011\011in every occurence as a " }}{PARA 0 "" 0 "" 
+{TEXT -1 16 "spanning subtree" }}{PARA 0 "" 0 "" {TEXT -1 60 "\011subt
+reez -- a list of the shortnames of the non-isomorphic " }}{PARA 0 "" 
+0 "" {TEXT -1 48 "spanning subtrees, listed in the order given by " }}
+{PARA 0 "" 0 "" {TEXT -1 20 "their integer code z" }}{PARA 0 "" 0 "" 
+{TEXT -1 62 "\011sn -- a name given to a single shortname in the list \+
+subtreez" }}{PARA 0 "" 0 "" {TEXT -1 57 "\011sn[1] -- the integer code
+ for the tree with shortname sn" }}{PARA 0 "" 0 "" {TEXT -1 59 "\011Th
+e list subtreez is returned by the procedure \"\"cleanup\"\"" }}{PARA 
+0 "" 0 "" {TEXT -1 49 "\011jcount -- number of edges in the current su
+btree" }}{PARA 0 "" 0 "" {TEXT -1 34 "\011\011jcount = 0 is the signal
+ to quit" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "spantree := proc(e::lis
+t,ctr::array,n::integer,freq::integer)" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 104 "local  edgs, i, j, k, m, time1, time2, TIME1, TIME2, avertime
+, lpe, jcount,  tc, subtreez, nn, sn, treq:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 76 "global f,g,c,h,p,sh,t,edges, tcount, subtrees, nr, re
+qedge, maxdeg, nrmd,ds:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "TIME1 :=
+ time():" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "nrmd := array(sparse, 1
+..20):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m := nops(e):" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 17 "c := array(1..n):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "f := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "g := gb
+uild(e,n):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "h := []:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 8 "p := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 
+"subtrees := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "time1 := time()
+:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "tcount := 0:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 29 "jcount := nextree(e,ctr,m,n):" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 20 "while(jcount > 0) do" }}{PARA 0 "" 0 "" {TEXT -1 
+34 "Get the edges in the spanning tree" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 11 "edgs := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for k from 1
+ to n-1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "\011edgs := [op(edgs)
+, e[f[k]]]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "" 0 "
+" {TEXT -1 47 "Get the child array and lexcode for the subtree" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "childe(edgs,n):" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 22 "\011lpe := LLPE(c,h,p,n):" }}{PARA 0 "" 0 "" {TEXT 
+-1 65 "Determine if the subtree has been seen before (up to isomorphis
+m)" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "\011\011if member(lpe, subtre
+es) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "\011\011\011nr[lpe] := \+
+nr[lpe] + 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "\011\011\011reqedge
+[lpe] := \{op(f)\} intersect reqedge[lpe]:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 6 "\011\011else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "
+\011\011\011subtrees := [op(subtrees), lpe]:" }}{PARA 0 "" 0 "" {TEXT 
+-1 27 "Finding the degree sequence" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+30 "\011\011\011\011ds[lpe] := degseq(edgs,n):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "\011\011\011\011nrmd[maxdeg] := nrmd[maxdeg] + 1:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "\011\011\011nr[lpe] := 1:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 22 "\011\011\011edges[lpe] := edgs:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 27 "\011\011\011reqedge[lpe] := \{op(f)\}:" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "\011\011fi:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "tcount := tcount+1:" }}{PARA 0 "" 0 "" {TEXT -1 79 "T
+his section provides an intermediate report every \"freq\" number of t
+rees found" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "tc := tcount mod freq
+:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "if tc = 0 then" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 17 "\011time2 := time():" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 32 "\011avertime := (time2-time1)/freq:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 41 "\011print(`current subtree is given by`, f):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 70 "\011print(tcount, `subtrees found a
+t`, avertime,`average time per tree`):" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 77 "\011print(nops(subtrees),`currently found isomorphism types of
+ spanning trees`):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "\011time1 := \+
+time():" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "" 0 "" 
+{TEXT -1 70 "The intermediate report being over, we go on to the next \+
+spanning tree" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "jcount := nextree(
+e,ctr,m,n):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "" 0 "
+" {TEXT -1 92 "This completes the main loop.  Now it is time to organi
+ze the final report and its print out" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "subtreez := dumpum(e):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "TIM
+E2 := time():" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "print(`Total time \+
+elapsed`, TIME2-TIME1):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "RETURN(s
+ubtreez):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 23 "dumpum := proc(e::list)" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 37 "local k, subtreez, sn, treq, notreq: " }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 56 "global  edges, tcount, subtrees, nr, reqe
+dge,t, nrmd,ds:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "print(`The`, m, \+
+`edges are`, e):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "print(`number o
+f trees found`, tcount):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 62 "print(`
+number of NON-ISOMORPHIC trees found`, nops(subtrees)):" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 14 "for k to 20 do" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 20 "if nrmd[k] > 0 then " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 55 "pri
+nt( nrmd[k],` NON-ISOMORPHIC trees with maxdeg`, k):" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 3 "fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "subtreez := cleanup(subtrees):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "for sn in subtreez do" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 10 "print(sn):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+27 "print(nr[t[sn]],ds[t[sn]]):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "
+print(edges[t[sn]]):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "notreq := []:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "for k to nops(e) do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 11 "treq := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "for sn in subt
+reez do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "\011if member(k, reqedge
+[t[sn]]) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "\011\011treq := [o
+p(treq), sn[1]]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "\011fi:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "if nops(treq) > 0 then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "
+\011print(`Edge`, e[k], `is required by trees`, treq):" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "\011
+notreq := [op(notreq), e[k]]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "fi:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "print(`Edges not required:`, notreq):" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 17 "RETURN(subtreez);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 53 "\"\"\"set
+ctr\"\"\"  initializes m and the control array ctr" }}{PARA 0 "" 0 "" 
+{TEXT -1 44 "e is the list of edges, each as a pair [u,v]" }}{PARA 0 "
+" 0 "" {TEXT -1 24 "m is the number of edges" }}{PARA 0 "" 0 "" {TEXT 
+-1 27 "n is the number of vertices" }}{PARA 0 "" 0 "" {TEXT -1 12 "INP
+UT:  e, n" }}{PARA 0 "" 0 "" {TEXT -1 14 "v is a vertex " }}{PARA 0 "
+" 0 "" {TEXT -1 40 "bond is the set of edges incident with v" }}{PARA 
+0 "" 0 "" {TEXT -1 50 "maxi is 1 more than the largest edge index in b
+ond" }}{PARA 0 "" 0 "" {TEXT -1 48 "ctr[i] consists of all those bonds
+ with maxi = i" }}{PARA 0 "" 0 "" {TEXT -1 11 "RETURNS ctr" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 25 "setctr := proc(e::list,n)" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 38 "local ctr,deg, i, v, vert, bond, maxi:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 9 "global m:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 10 "deg := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m := nops(e);" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "ctr := array(1..m+1):" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 15 "for i to m+1 do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "\011ctr[i] := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+15 "\011vert[i] := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "for v from 1 to n do" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 12 "\011bond := \{\}:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "\011\011maxi := 0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+21 "\011for i from 1 to m do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "
+\011\011if member(v,e[i]) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "
+\011\011\011bond := bond union \{i\}:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 15 "\011\011\011maxi := i+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "
+\011\011fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "\011od:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 34 "ctr[maxi] := [op(ctr[maxi]),bond]:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 34 "vert[maxi] := [op(vert[maxi]), v]:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "deg := [op(deg), [v, nops(bond)]]:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 55 "print(`Es gibt`, m, `Kanten.  The vertex degrees are`
+):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "print(deg):" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 22 "for i from 1 to m+1 do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "if nops(ctr[i]) > 0 then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "\011print(i, ctr[i]):" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 19 "\011print(i, vert[i]):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "
+\011fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 4 "ctr;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "complet := proc(n::integer)
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "local i,j,e:" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 8 "e := []:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "for \+
+i to n-1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for j from i+1 to n \+
+do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "\011e := [op(e),[i,j]]:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "RETURN(e):" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 35 "degseq := proc(e::list, n::integer)" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "local m,deg, sq, s,k,v:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "global maxdeg:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "
+maxdeg := 0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m := nops(e):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "deg := array(sparse,1..n):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "sq := array(sparse,0..n):" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 13 "for k to m do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 33 "\011deg[e[k][1]] := deg[e[k][1]] +1:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 33 "\011deg[e[k][2]] := deg[e[k][2]] +1:" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 3 "od:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "fo
+r v to n do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "sq[deg[v]] := sq[deg
+[v]] + 1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "if deg[v] > maxdeg the
+n maxdeg := deg[v] fi:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "s := []:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 18 "for k to maxdeg do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+20 "s := [op(s), sq[k]]:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "od:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "RETURN(s):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "etr
+y := [[1,2],[2,3],[3,4],[4,5],[5,6],[6,1],[2,5]]:" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 10 "ntry := 6:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "ctr := setctr(etry,ntry);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6%%(Es~gibtG\"\"(%@Kanten.~~The~vertex~degrees~areG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#7(7$\"\"\"\"\"#7$F&\"\"$7$F(F&7$\"\"%F
+&7$\"\"&F(7$\"\"'F&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"%7#<$\"\"#
+\"\"$" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"%7#\"\"$" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6$\"\"&7#<$\"\"$\"\"%" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6$\"\"&7#\"\"%" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"(7$<$\"\"\"
+\"\"'<$\"\"&F'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"(7$\"\"\"\"\"'" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\")7$<%\"\"\"\"\"#\"\"(<%\"\"%\"\"
+&F(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\")7$\"\"#\"\"&" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%$ctrG%$ctrG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 40 "unterbaume := spantree(etry,ctr,ntry,1);" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#\"\"
+$\"\"%\"\"&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"\"%2subtrees~found~
+atG$\"#9!\"$%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6$\"\"\"%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"
+\"\"#\"\"$\"\"%\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"#%2subtree
+s~found~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6$\"\"\"%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"
+\"\"#\"\"$\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"$%2subtree
+s~found~atG$\"#9!\"$%6average~time~per~treeG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$\"\"\"%Tcurrently~found~isomorphism~types~of~spanning~t
+reesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~by
+G7'\"\"\"\"\"#\"\"$\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"%
+%2subtrees~found~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$\"\"#%Tcurrently~found~isomorphism~types~of~spanning~tr
+eesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG
+7'\"\"\"\"\"#\"\"$\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"&%
+2subtrees~found~atG$\"#9!\"$%6average~time~per~treeG" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6$\"\"#%Tcurrently~found~isomorphism~types~of~spanning
+~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~
+byG7'\"\"\"\"\"#\"\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"
+\"'%2subtrees~found~atG$\"#9!\"$%6average~time~per~treeG" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6$\"\"#%Tcurrently~found~isomorphism~types~of~span
+ning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~gi
+ven~byG7'\"\"\"\"\"#\"\"%\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+&\"\"(%2subtrees~found~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~types~of~span
+ning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~gi
+ven~byG7'\"\"\"\"\"#\"\"%\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+&\"\")%2subtrees~found~atG$\"#9!\"$%6average~time~per~treeG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~types~of~
+spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~i
+s~given~byG7'\"\"\"\"\"$\"\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6&\"\"*%2subtrees~found~atG\"\"!%6average~time~per~treeG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~types~of~
+spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~i
+s~given~byG7'\"\"\"\"\"$\"\"%\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6&\"#5%2subtrees~found~atG$\"#9!\"$%6average~time~per~treeG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~typ
+es~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~sub
+tree~is~given~byG7'\"\"\"\"\"$\"\"%\"\"'\"\"(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&\"#6%2subtrees~found~atG\"\"!%6average~time~per~treeG" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~t
+ypes~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~s
+ubtree~is~given~byG7'\"\"#\"\"$\"\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&\"#7%2subtrees~found~atG\"\"!%6average~time~per~treeG" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~t
+ypes~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~s
+ubtree~is~given~byG7'\"\"#\"\"$\"\"&\"\"'\"\"(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&\"#8%2subtrees~found~atG\"\"!%6average~time~per~treeG" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~t
+ypes~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~s
+ubtree~is~given~byG7'\"\"#\"\"%\"\"&\"\"'\"\"(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&\"#9%2subtrees~found~atG\"\"!%6average~time~per~treeG" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphism~t
+ypes~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%<current~s
+ubtree~is~given~byG7'\"\"$\"\"%\"\"&\"\"'\"\"(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&\"#:%2subtrees~found~atG$\"#8!\"$%6average~time~per~tre
+eG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$%Tcurrently~found~isomorphi
+sm~types~of~spanning~treesG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%$TheG
+\"\"(%*edges~areG7)7$\"\"\"\"\"#7$F)\"\"$7$F+\"\"%7$F-\"\"&7$F/\"\"'7$
+F1F(7$F)F/" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%6number~of~trees~foundG
+\"#:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%Enumber~of~NON-ISOMORPHIC~tre
+es~foundG\"\"$" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%\"\"\"%B~NON-ISOMORP
+HIC~trees~with~maxdegG\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%\"\"#%B
+~NON-ISOMORPHIC~trees~with~maxdegG\"\"$" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#7%\"#j,$%\"oG\"\"'F'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\")7$
+\"\"#\"\"%" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7'7$\"\"\"\"\"#7$F&\"\"$
+7$F(\"\"%7$F*\"\"&7$F,\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7'\"$6
+\",$%\"oG\"\"&\"\"#F&\"\"%" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"'7%
+\"\"$\"\"#\"\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7'7$\"\"\"\"\"#7$F
+&\"\"$7$F(\"\"%7$\"\"&\"\"'7$F&F," }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7
+)\"$$=,$%\"oG\"\"%\"\"\"F&\"\"#F&\"\"$" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6$\"\"\"7%\"\"%\"\"!\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7'7$
+\"\"\"\"\"#7$F&\"\"$7$\"\"%\"\"&7$F+\"\"'7$F&F+" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&%%EdgeG7$\"\"\"\"\"#%5is~required~by~treesG7#\"$$=" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"#\"\"$%5is~required~by~tr
+eesG7#\"$$=" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"%\"\"&%5is
+~required~by~treesG7#\"$$=" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%%EdgeG7
+$\"\"&\"\"'%5is~required~by~treesG7#\"$$=" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6&%%EdgeG7$\"\"#\"\"&%5is~required~by~treesG7$\"$6\"\"$$=
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%4Edges~not~required:G7$7$\"\"$\"
+\"%7$\"\"'\"\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%3Total~time~elaps
+edG$\"$;\"!\"$" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%+unterbaumeG7%7%\"
+#j,$%\"oG\"\"'F*7'\"$6\",$F)\"\"&\"\"#F)\"\"%7)\"$$=,$F)F0\"\"\"F)F/F)
+\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "18 67
+" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

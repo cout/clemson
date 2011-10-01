@@ -1,0 +1,6 @@
+1) instruction value
+2) instruction mask
+3) 
+4) fetch, decode, execute (though only fetch was fully implemented)
+5) the number of instructions processed by fetch was dependent on the total
+   number of total instructions loaded.

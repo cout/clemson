@@ -1,0 +1,27 @@
+/* XPM */
+static char *tb_superscript[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      3            1",
+/* colors */
+"  c None",
+"X c #000000",
+"y c #ffffff",
+/* pixels */
+"                 ",
+"                 ",
+"                 ",
+"           XXX X ",
+"          XX  XX ",
+"          X    X ",
+"          XX     ",
+"           XXX   ",
+"             XX  ",
+"               X ",
+" yyyyyyy  X    X ",
+" yyyyyyy  XX  XX ",
+" yyyyyyy  X XXX  ",
+"                 ",
+"                 ",
+"                 ",
+"                 "
+};

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+./xaudio gregorian.mp3 &
+ew $1 $2 $3
+killall xaudio

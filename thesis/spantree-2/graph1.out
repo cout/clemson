@@ -1,0 +1,24 @@
+------
+
+k = 0
+j = 1
+i = 0
+f = [ 0 ]
+g = 
+0 1 
+0 0 
+Subtree found: 0 
+------
+
+k = 1
+j = 1
+i = 1
+Backtracking...
+
+Total time: 0 seconds.
+Number of trees found: 1
+Number of NON-ISOMORPHIC trees found: 1
+Tree 3 occured 1 times (edges: [0 1] )
+
+Edge [0 1] is required by trees 3
+Edges not required: 

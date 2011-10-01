@@ -1,0 +1,378 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 1 10 255 0 0 1 0 1 0 
+0 1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Heading 1" 0 3 1 
+{CSTYLE "" -1 -1 "" 1 18 0 0 0 0 0 1 0 0 0 0 0 0 0 }1 0 0 0 8 4 0 0 0 
+0 0 0 -1 0 }{PSTYLE "Heading 2" 3 4 1 {CSTYLE "" -1 -1 "" 1 12 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 8 2 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Out
+put" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 
+-1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 256 1 {CSTYLE "" -1 -1 "" 0 1 
+0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "
+" 0 257 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 
+-1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 258 1 {CSTYLE "" -1 -1 "" 0 1 0 
+0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 
+0 259 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 
+-1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 260 1 {CSTYLE "" -1 -1 "" 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 
+261 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 262 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 
+263 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 264 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 
+265 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 266 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 
+267 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 268 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "interface(quiet=true
+,warnlevel=0):" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 7 "Globals" }}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 182 "Note on globals -- global variabl
+es are used in the spantree, nextree, childe, and gbuild functions for
+ the purpose of emulating \"pass by reference.\"  The following global
+s are used:" }}{PARA 256 "" 0 "" {TEXT -1 131 "f lists the indices i o
+f the edges e[i] used in the spanning tree.  The program is designed s
+o that f is always an increasing list." }}{PARA 260 "" 0 "" {TEXT -1 
+214 "g is an nxn array with g(j,v) telling the component number of ver
+tex v at the jth stage of building the subtree.  At stage j=0, these n
+umbers are all different.  At stage j=n-1 all these numbers should be \+
+the same." }}{PARA 257 "" 0 "" {TEXT -1 96 "f and g are used to determ
+ine the starting point in the next call of nextree.\nc is a child arra
+y" }}{PARA 258 "" 0 "" {TEXT -1 27 "h is a heap order as a list" }}
+{PARA 259 "" 0 "" {TEXT -1 18 "p is a parent list" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 149 "Finally, MinnameTable is a table of minnames that
+ is used to store previously calculated global minnames, to speed up c
+alculation of global minnames." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "M
+innameTable := table(sparse):" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 53 "
+And TableUsed is tells us if we used the table or not" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 15 "TableUsed := 0:" }}}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 29 "Isomorphism testing functions" }}{SECT 0 {PARA 4 "" 0 "" 
+{TEXT -1 192 "LLT determines if p is lexicographically less than q.\nI
+NPUT: Two lists p and q of tree binames, represented by 0's and 1's.\n
+OUTPUT: true if p is lexicographically less than q, false otherwise." 
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 476 "LLT := proc(p,q::list) op
+tion remember;\n  local i, m:\n\n  # m is the length of the shorter of
+ p and q\n  m := nops(p):\n  if nops(q) < m then m := nops(q) fi:\n\n \+
+ # check to see if p is less than q, up to position m\n  for i from 1 \+
+to m do\n    if p[i] < q[i] then\n      RETURN(true):\n    fi:\n    if
+ p[i] > q[i] then\n      RETURN(false):\n    fi:\n  od:\n  # if we are
+ still here, then compare lengths\n  if nops(p) <= nops(q) then\n    R
+ETURN(true):\n  else\n    RETURN(false):\n  fi:\nend:" }}}}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 256 "smerg merges a list of binames into a si
+ngle list r in lexicographic order, and places a 0 to the left and a 1
+ to the right of the merged list.  This is useful for traversing a tre
+e.\nINPUT: s is a list of binames to be merged.\nOUTPUT: r is the merg
+ed list." }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 598 "smerg := proc(s
+::list) option remember;\n  local d,j,k,q,r:\n\n  # d is the number of
+ lists in s to be merged.\n  d := nops(s):\n  # q is the list s in sor
+ted order.\n  # We use [9] because it is greater than both [0] and [1]
+.\n  q := [[9]]:\n\n  # sort the list  \n  for k from 1 to d do\n    j
+ := 1:\n    # find the correct position of s[k]\n    while not LLT(s[k
+], q[j]) do\n      j := j+1:\n    od:\n    q := [op(1..j-1,q),s[k],op(
+j..nops(q),q)]:\n  od:\n\n  # construct r from q\n  r := [0]:\n  for k
+ from 1 to d do\n    r := [op(r), op(q[k])]:\n  od:\n  r := [op(r),1]:
+\n\n  # Return r to the caller.\n  RETURN(r):\nend:" }}}}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 445 "LocalMinnameArr generates the lexicograp
+hically least biname (minname) for each possible node in a tree by cre
+ating an array of local minnames.\nINPUT: A child array c representing
+ the tree, a heap ordering h of its vertices, and an integer n represe
+nting the number of nodes.\nOUTPUT: r is an array of binames, where r[
+x] gives the local minname of the branch of the tree rooted at node x.
+\nNOTE: The root must receive the highest label, namely n." }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 593 "LocalMinnameArr := proc(c::array, \+
+h::list, n::integer)\n  local i, r, s, x, y:\n  r := array(1..n):\n  #
+ Traverse the entire tree using the heap ordering\n  # Note that r is \+
+created bottom-up, so that minnames of lower nodes\n  # can be used to
+ generate minnames of the higher nodes.\n  for i from 1 to n do\n    x
+ := h[i]:\n    s := []:\n    # Combine binames of the children of the \+
+current node\n    for y in c[x] do\n      s := [op(s),r[y]]:\n    od:
+\n    # Find the minimal biname (local minname) at this point and crea
+te\n    # the biname for this subtree\n    r[x] := smerg(s):\n  od:\n \+
+ RETURN(r):\nend:\n" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 711 "GlobalM
+inname generates the lexicographically least biname for an input unroo
+ted tree.  The procedure starts with a local best labelling rooted at \+
+n.  Then the procedure moves from parent w to child v throughout the t
+ree, modifying the existing local labellings to produce best local lab
+ellings t for each node as root.  Along\nthe way a local branch labell
+ing tt is required at the parent w of v by regarding v as the root and
+ w as the root of one branch at v.\nINPUT: a child array c, representi
+ng a rooted tree, a heap ordering h as a list, the parent list p, and \+
+an integer n representing the number of nodes and the label of the roo
+t.\nOUTPUT: best is the lexicographically least biname for the unroote
+d tree." }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1165 "GlobalMinname :
+= proc(c::array, h::list, p::list, n::integer)\n  local best, i, r, s,
+ t, tt, v, w, y:\n  global MinnameTable, TableUsed:\n\n  # Generate an
+ array of local minname\n  # We start with the root we are given.\n  r
+ := LocalMinnameArr(c,h,n):\n\n  t := array(1..n):\n  tt := array(1..n
+):\n  tt[n] := []:\n  t[n] := r[n]:\n  best := r[n]:\n\n  if(MinnameTa
+ble[best] <> 0) then\n    TableUsed := 1;\n    RETURN(MinnameTable[bes
+t]):\n  fi:\n\n  # Try different roots until we find the one with the
+\n  # lexicographically least associated minname.\n  for i from n-1 to
+ 1 by -1 do\n    v := h[i]:\n    w := p[v]:\n    s := [tt[w]]:\n\n    \+
+for y in c[w] do\n      if y=v then next fi:\n      s := [op(s),r[y]]:
+\n    od:\n    tt[v] := smerg(s):\n    s :=  [tt[v]]:\n\n    for y in \+
+c[v] do\n      s := [op(s),r[y]]:\n    od:\n    t[v] := smerg(s):\n\n \+
+   # If the current root is lexicographically less than the best root
+\n    # found so far, then set best accordingly.\n    if LLT(t[v],best
+) then best := t[v] fi:\n  od:\n\n  # Insert each minname t[i] into th
+e lookup table\n  for i from 1 to n do\n    MinnameTable[t[i]] := best
+:\n  od:\n\n  # Return the lexicographically least minname.\n  RETURN(
+best):\nend:" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 28 "Subtree genera
+tion functions" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 92 "nextree produce
+s the next spanning tree in a graph with given input ordered edge set.
+\nINPUT:" }}{PARA 264 "" 0 "" {TEXT -1 96 "e is the list of edges of t
+he graph whose order determines the ordering of the spanning subtrees
+" }}{PARA 261 "" 0 "" {TEXT -1 114 "ctr is an array of list sets where
+ ctr[i] is a list of the sets of edges which must be used before edge \+
+i is used." }}{PARA 262 "" 0 "" {TEXT -1 29 "m is the number of edges \+
+in e" }}{PARA 263 "" 0 "" {TEXT -1 37 "e is the number of nodes in the
+ graph" }}{PARA 4 "" 0 "" {TEXT -1 135 "OUTPUT: the number of edges in
+ the next tree.  If j=0, then there is no next tree and the search thr
+ough all spanning subtrees is over." }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 1335 "nextree := proc(e::list, ctr::array, m,n::integer)
+\n  local backtrack, i, j, k, s, v, x, y:\n  global f,g:\n\n  k := nop
+s(f):\n  if k = (n-1) then\n    j := k:\n    i := f[k]+1:\n    f := [o
+p(1..k-1,f)]:\n  elif k > 0 then\n    j := k+1:\n    i := f[k]+1:\n  e
+lse\n    j := 1:\n    i := 1:\n  fi:\n\n  # We are not backtracking in
+itially\n  backtrack := false:\n\n  while j < n do\n    for s in ctr[i
+] do\n      # If there are no common vertices between s and f, then se
+t backtrack\n      if nops(s intersect \{op(f)\}) = 0 then\n        ba
+cktrack := true:\n        break:\n      fi:\n    od:\n    # If (the nu
+mber of edges in the spanning tree) - (the index of the\n    # edge) +
+ 1 is less than (the number of nodes in the graph) - (the\n    # stage
+ of building the subtree) then set backtrack?\n    if (m-i+1) < (n-j) \+
+then backtrack := true fi:\n\n    if backtrack then    \n      j := j-
+1:\n      if j = 0 then RETURN(j) fi:\n      i := f[j]+1:\n      f := \+
+[op(1..j-1,f)]:\n      backtrack := false:\n    else\n      x := g[j-1
+,op(1,e[i])]:\n      y := g[j-1,op(2,e[i])]:\n      if x = y then\n   \+
+     i := i+1:\n      else\n        f := [op(f),i]:\n        for v to \+
+n do\n          if g[j-1,v] = y then\n            g[j,v] := x:\n      \+
+    else \n            g[j,v] := g[j-1,v]:\n          fi:\n        od:
+\n        j := j+1:\n        i := i+1:\n      fi:\n    fi:\n  od:\n  R
+ETURN(j):\nend:\n" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 187 "childe pr
+oduces a child array c, a heap order h, and a parent list p\nfrom an i
+nput list e of edges for a spanning subtree.\nINPUT: a list of edges e
+ and the number of nodes n\nOUTPUT: none." }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 805 "childe := proc(e::list, n::integer)\n  local doitnow
+, doitlater, undun, i,k,pa,x,y:\n  global c,h,p:\n\n  undun := \{\}:\n
+  for i to n-1 do\n    c[i] := \{\}:\n    undun := undun union \{i\}:
+\n  od:\n  c[n] := \{\}:\n  doitnow := \{n\}:\n  doitlater := \{\}:\n \+
+ h := [n]:\n  pa := array(1..n-1):\n  k := 1:\n  colordiff := 1:\n  wh
+ile nops(undun) > 0 do\n    k := -k:\n    for x in doitnow do\n      f
+or i in undun do\n        if member(x,e[i]) then\n          y := e[i][
+1]:\n          if x = y then y := e[i][2] fi:\n          c[x] := c[x] \+
+union \{y\}:\n          pa[y] := x:\n          h := [y,op(h)]:\n      \+
+    undun := undun minus \{i\}:\n          doitlater := doitlater unio
+n \{y\}:\n        fi:\n      od:             \n    od:\n    doitnow :=
+ doitlater:\n    doitlater := \{\}:\n  od:\n  p := []:\n  for x to n-1
+ do\n    p := [op(p),pa[x]]:\n  od:\nend:\n" }}}}{SECT 1 {PARA 4 "" 0 
+"" {TEXT -1 186 "gbuild produces the nxn component status array g for \+
+a given edge list\ne and globally passed(partial) edge-index selector \+
+f.\nINPUT: an edge list e and the number of nodes n\nOUTPUT: none." }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 364 "gbuild := proc(e::list, n::
+integer)\n  local g,v,j,x,y:\n  global f:\n  g := array(0..n-1,1..n):
+\n  for v to n do\n    g[0,v] := v:\n  od:\n  for j to nops(f) do\n   \+
+ x := g[j-1,op(1,e[f[j]])]:\n    y := g[j-1,op(2,e[f[j]])]:\n    for v
+ to n do\n      if g[j-1,v] = y then\n        g[j,v] := x:\n      else
+ \n        g[j,v] := g[j-1,v]:\n      fi:\n    od:\n  od:\n  RETURN(g)
+:\nend:" }}}}}{SECT 1 {PARA 3 "" 0 "" {TEXT -1 27 "Output formatting f
+unctions" }}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 8 "deciname" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 138 "deciname := proc(s::list)\n  local
+ t, n, N:\n  t := 0:\n  N := nops(s):\n  for n from 1 to N do\n    t :
+= t * 2 + s[n]:\n  od:\n  RETURN(t):\nend:" }}}}{SECT 1 {PARA 4 "" 0 "
+" {TEXT -1 6 "dumpum" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1262 "du
+mpum := proc(e::list)\n  local k, subtreez, sn, treq, notreq: \n  glob
+al  edges, tcount, subtrees, nr, reqedge,t, nrmd,ds:\n\n  print(`The`,
+ m, `edges are`, e):\n  print(`number of trees found`, tcount):\n  pri
+nt(`number of NON-ISOMORPHIC trees found`, nops(subtrees)):\n  # for k
+ to 20 do\n  #   if nrmd[k] > 0 then \n  #     print( nrmd[k],` NON-IS
+OMORPHIC trees with maxdeg`, k):\n  #   fi:\n  # od:\n#  subtreez := c
+leanup(subtrees):\n#  for sn in subtreez do\n#    print(sn):\n#    pri
+nt(nr[t[sn]],ds[t[sn]]):\n#    print(edges[t[sn]]):\n#  od:\n  for sn \+
+in subtrees do\n    subtreez := [op(subtreez), [deciname(sn), convert(
+deciname(sn), hex)]]:\n    print([deciname(sn), convert(deciname(sn), \+
+hex)]):\n    print(nr[sn], ds[sn]):\n    print(edges[sn]):\n  od:\n  n
+otreq := []:\n  for k to nops(e) do\n    treq := []:\n    for sn in su
+btrees do\n      if member(k, reqedge[sn]) then\n        treq := [op(t
+req), [deciname(sn), convert(deciname(sn), hex)]]:\n      fi:\n    od:
+\n    if nops(treq) > 0 then\n      print(`Edge`, e[k], `is required b
+y trees`, treq):\n    else\n      notreq := [op(notreq), e[k]]:\n    f
+i:\n  od:\n  print(`Edges not required:`, notreq):\n\n  if(TableUsed =
+ 0) then\n    print(`Table used: false`):\n  else\n    print(`Table us
+ed: true`):\n  fi:\n\n  RETURN(subtreez);\nend:" }}}}}{SECT 0 {PARA 3 
+"" 0 "" {TEXT -1 12 "Main program" }}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 
+6 "degseq" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 453 "degseq := proc
+(e::list, n::integer)\n  local m,deg, sq, s,k,v:\n  global maxdeg:\n\n
+  maxdeg := 0:\n  m := nops(e):\n  deg := array(sparse,1..n):\n  sq :=
+ array(sparse,0..n):\n\n  for k to m do\n\011   deg[e[k][1]] := deg[e[
+k][1]] +1:\n\011    deg[e[k][2]] := deg[e[k][2]] +1:\n  od:\n\n  for v
+ to n do\n    sq[deg[v]] := sq[deg[v]] + 1:\n    if deg[v] > maxdeg th
+en maxdeg := deg[v] fi:\n  od:\n\n  s := []:\n  for k to maxdeg do\n  \+
+  s := [op(s), sq[k]]:\n  od:\n  RETURN(s):\nend:" }}}}{SECT 1 {PARA 
+4 "" 0 "" {TEXT -1 73 "spantree determines all spanning trees of a gra
+ph with edge list e\nINPUT:" }}{PARA 265 "" 0 "" {TEXT -1 38 "e is a l
+ist of edges of the supergraph" }}{PARA 266 "" 0 "" {TEXT -1 450 "ctr \+
+is an array of list sets where ctr[i[ is a list of the sets of edges w
+hich must be used before edge i is used.  For example, if the edges in
+cident with a vertex v are 1, 3 and 7, then the list ctr[8] would cont
+ain the set \{1,3,7\} because at least one of these edges must be used
+ if the result is to connect with vertex v.  Since edges are added in \+
+order, one of 1, 3, or 7 must be used before 8 or there is no hope of \+
+getting a connected subtree." }}{PARA 267 "" 0 "" {TEXT -1 29 "m is th
+e number of edges in e" }}{PARA 268 "" 0 "" {TEXT -1 37 "e is the numb
+er of nodes in the graph" }}{PARA 4 "" 0 "" {TEXT -1 13 "OUTPUT: none.
+" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 2541 "spantree := proc(e::li
+st, ctr::array, n::integer, freq::integer)\n  local  edgs, i, j, k, m,
+ time1, time2, TIME1, TIME2, avertime, minname,\n         jcount, tc, \+
+subtreez, nn, sn, treq:\n  global f,g,c,h,p,sh,t,edges, tcount, subtre
+es, nr, reqedge, maxdeg,\n         nrmd,ds:\n\n  # TIME1 is the start \+
+time.  time1 is the start time for a piece of\n  # the puzzle.\n  TIME
+1 := time():\n\n  # Initialize values\n  # nrmd := array(sparse, 1..20
+):\n  m := nops(e):                     # number of edges\n  c := arra
+y(1..n):                 # a child array\n  f := []:                  \+
+        # list of indices of edges\n  g := gbuild(e,n):               \+
+  # component number array\n  h := []:                          # heap
+ ordering as a list\n  p := []:                          # a parent li
+st\n  subtrees := []:                   # a list of minnames for each \+
+subtree found\n  time1 := time():\n  tcount := 0:                     \+
+ # total number of spanning subtrees\n  jcount := nextree(e,ctr,m,n): \+
+    # number of edges in the current subtree\n\n  while(jcount > 0) do
+\n\n    # Get the edges in the spanning tree\n    edgs := []:\n    for
+ k from 1 to n-1 do\n      edgs := [op(edgs), e[f[k]]]:\n    od:\n\n  \+
+  # Get the child array and lexcode for the subtree\n    childe(edgs,n
+):\n    minname := GlobalMinname(c,h,p,n):\n\n    # Determine if this \+
+subtree has been found already.\n    # This is done by comparing the m
+inname with the list of\n    # minnames already found.\n    if member(
+minname, subtrees) then\n      nr[minname] := nr[minname] + 1:\n      \+
+reqedge[minname] := \{op(f)\} intersect reqedge[minname]:\n    else\n \+
+     subtrees := [op(subtrees), minname]:\n      ds[minname] := degseq
+(edgs,n):\n      # nrmd[maxdeg] := nrmd[maxdeg] + 1:\n      nr[minname
+] := 1:\n      edges[minname] := edgs:\n      reqedge[minname] := \{op
+(f)\}:\n    fi:\n\n    tcount := tcount+1:\n    \n    # Give an interm
+ediate report of what has happened since\n    # the last report.\n    \+
+tc := tcount mod freq:\n    if tc = 0 then\n      time2 := time():\n  \+
+    avertime := (time2-time1)/freq:\n      print(`current subtree is g
+iven by`, f):\n      print(tcount, `subtrees found at`, avertime,`aver
+age time per tree`):\n      print(nops(subtrees),`currently found isom
+orphism types of spanning trees`):\n      time1 := time():\n    fi:\n
+\n    # Find the next spanning tree.  nextree returns 0 if there are\n
+    # no spanning trees left, which will end the loop.\n    jcount := \+
+nextree(e,ctr,m,n):\n  od:\n\n  subtreez := dumpum(e):\n  TIME2 := tim
+e():\n  print(`Total time elapsed`, TIME2-TIME1):\n  RETURN(subtreez):
+\nend:\n" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 130 "setctr initializes
+ m and the control array ctr\nINPUT: a list of edges e and the number \+
+of vertices n\nOUTPUT: the control array ctr" }}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 1203 "setctr := proc(e::list, n)\n  local ctr,deg, i, \+
+v, vert, bond, maxi, m:\n  deg := []:\n\n  # m is the number of edges
+\n  m := nops(e):\n  # ctr is the control array to return\n  ctr := ar
+ray(1..m+1):\n\n  # initialize the control array and the vertex array
+\n  for i to m+1 do\n    ctr[i] := []:\n    vert[i] := []:\n  od:\n  \+
+\n  for v from 1 to n do\n    bond := \{\}:\n    maxi := 0:\n\n    # F
+ind every vertex connected to vertex v and add it to bond\n    for i f
+rom 1 to m do\n      if member(v,e[i]) then\n        bond := bond unio
+n \{i\}:\n        maxi := i+1:\n      fi:\n    od:\n\n    # Add the bo
+nd list to the control array at position maxi.\n    # The bond list is
+ only added to one position, since we only\n    # want to traverse edg
+es once.\n    ctr[maxi] := [op(ctr[maxi]),bond]:\n\n    # Keep track o
+f which vertex this bond list is associated with.\n    vert[maxi] := [
+op(vert[maxi]), v]:\n\n    # The number of elements in bond is the deg
+ree of vertex v.\n    deg := [op(deg), [v, nops(bond)]]:\n\n  od:\n\n \+
+ print(`There are `, m, `edges.  The vertex degrees are`):\n  print(de
+g):\n  # for i from 1 to m+1 do\n  #   if nops(ctr[i]) > 0 then\n  #  \+
+   print(i, ctr[i]):\n  #     print(i, vert[i]):\n  #   fi:\n  # od:\n
+\n  RETURN(ctr);\nend:" }}}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 49 
+"e := [[1,2],[2,3],[3,4],[4,5],[5,6],[6,1],[2,5]];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%\"eG7)7$\"\"\"\"\"#7$F(\"\"$7$F*\"\"%7$F,\"\"&7$F.
+\"\"'7$F0F'7$F(F." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "ctr :=
+ setctr(e,6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%%+There~are~G\"\"(%?e
+dges.~~The~vertex~degrees~areG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7(7$
+\"\"\"\"\"#7$F&\"\"$7$F(F&7$\"\"%F&7$\"\"&F(7$\"\"'F&" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$ctrG%$ctrG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "A := spantree(e, ctr, 6, 1);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#\"\"$\"\"%\"
+\"&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"\"%2subtrees~found~atG\"\"!
+%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"\"%Tcu
+rrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#\"\"$\"\"%
+\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"#%2subtrees~found~atG\"\"
+!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"\"%Tc
+urrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#\"\"$\"\"&
+\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"$%2subtrees~found~atG$\"
+\"%!\"$%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"
+\"\"%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#
+\"\"$\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"%%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"#%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#
+\"\"$\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"&%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"#%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#
+\"\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"'%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"#%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#
+\"\"%\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"(%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"#
+\"\"%\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\")%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"$
+\"\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"\"*%2subtrees~fou
+nd~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+$\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"$
+\"\"%\"\"&\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#5%2subtrees~foun
+d~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$
+\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"\"\"\"$
+\"\"%\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#6%2subtrees~foun
+d~atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$
+\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"#\"\"$\"
+\"%\"\"&\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#7%2subtrees~found~
+atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"
+\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"#\"\"$\"\"&
+\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#8%2subtrees~found~atG
+$\"#G!\"$%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$
+\"\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"#\"\"%\"
+\"&\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#9%2subtrees~found~
+atG\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"
+\"$%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6$%<current~subtree~is~given~byG7'\"\"$\"\"%\"\"&
+\"\"'\"\"(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&\"#:%2subtrees~found~atG
+\"\"!%6average~time~per~treeG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"$
+%Tcurrently~found~isomorphism~types~of~spanning~treesG" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6&%$TheG%\"mG%*edges~areG7)7$\"\"\"\"\"#7$F)\"\"$7$F
++\"\"%7$F-\"\"&7$F/\"\"'7$F1F(7$F)F/" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6$%6number~of~trees~foundG\"#:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%Enu
+mber~of~NON-ISOMORPHIC~trees~foundG\"\"$" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#7$\"#j%#3FG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\")7$\"\"#\"\"%
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7'7$\"\"\"\"\"#7$F&\"\"$7$F(\"\"%7
+$F*\"\"&7$F,\"\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7$\"$6\"%#6FG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"'7%\"\"$\"\"#\"\"\"" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#7'7$\"\"\"\"\"#7$F&\"\"$7$F(\"\"%7$\"\"&\"\"'7$F
+&F," }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7$\"$$=%#B7G" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6$\"\"\"7%\"\"%\"\"!\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#7'7$\"\"\"\"\"#7$F&\"\"$7$\"\"%\"\"&7$F+\"\"'7$F&F+" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"\"\"\"#%5is~required~by~treesG7#7$
+\"$$=%#B7G" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"#\"\"$%5is~
+required~by~treesG7#7$\"$$=%#B7G" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%%
+EdgeG7$\"\"%\"\"&%5is~required~by~treesG7#7$\"$$=%#B7G" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"&\"\"'%5is~required~by~treesG7#7$\"$$
+=%#B7G" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&%%EdgeG7$\"\"#\"\"&%5is~requ
+ired~by~treesG7$7$\"$6\"%#6FG7$\"$$=%#B7G" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$%4Edges~not~required:G7$7$\"\"$\"\"%7$\"\"'\"\"\"" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#%1Table~used:~trueG" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6$%3Total~time~elapsedG$\"#S!\"$" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"AG7&%)subtreezG7$\"#j%#3FG7$\"$6\"%#6FG7$\"$$=%#B7G
+" }}}}{MARK "8 66" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

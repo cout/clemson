@@ -1,0 +1,28 @@
+Paul Brannan
+April 15, 1999
+CPSC 360 BTree Assignment
+Report 3
+
+Changes to DBFile class: none
+
+Changes to BTreeNode class:
+	Added setNextLeaf() to set the "next" pointer.  Should this be used
+		for index nodes as well as leaf nodes?
+	Made NodeSize() public -- this is necessary for reading/writing
+		straight to a file
+	Added doSplit() -- performs a split, takes a BTreeNode reference
+		as an argument
+	Added findElementIndex() -- this is called by insertElement and
+		searchForElement.
+	
+Changes to BTreeDB class:
+	Implemented insertRecord for a BTree (not for B+)
+	Implemented deleteRecord for a BTree (not for B+)
+	Implemented findRecord for a BTree (should be the same as for B+)
+	Added a stack of indexes -- useful in insertion (deletion too?)
+
+Notes:
+	The BTreeDB class has not been tested.  It probably doesn't work
+	quite right yet; what's not working is insert/delete, which haven't
+	yet been completely implemented.  Search should work just fine,
+	but can't be tested without insert.

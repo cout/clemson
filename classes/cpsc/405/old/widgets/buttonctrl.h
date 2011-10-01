@@ -1,0 +1,19 @@
+#ifndef BUTTONCTRL_H
+#define BUTTONCTRL_H
+
+enum buttonctrl_types {
+	CAMERA_ROTATE,
+	CAMERA_ZOOM,
+	CAMERA_ROLL,
+	OBJECT_ROTATE,
+	OBJECT_MOVEXZ,
+	OBJECT_MOVEXY,
+	SCENE_ROTATE,
+	LIGHT_ROTATE,
+	LIGHT_MOVEXZ,
+	LIGHT_MOVEXY,
+};
+
+extern int buttonctrl_type[2];
+
+#endif

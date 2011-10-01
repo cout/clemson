@@ -1,0 +1,2 @@
+#!/bin/sh
+cc prog.c -o prog

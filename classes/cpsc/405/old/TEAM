@@ -1,0 +1,15 @@
+CPSC 405 -- Section 1
+Paul Brannan
+SS# not disclosed
+Assignment 1
+
+This assignment was an exercise in GUI design and basic 3D object manipluation
+techniques.  The interface was implmented in Glade/GTK+, and the graphics
+code was implemented using GTK glarea, and OpenGL.  
+
+The program will read simple 3D objects (i.e. Alias|Wavefront polygonal
+object files), has user-adjustable face and normal display, provides
+interactive control for object, camera, and scene transformations, and
+implements hidden surface removal that matches the surface removal used by
+OpenGL.  This was tested by using OpenGL face culling, and comparing results
+to the home-brewed hidden surface removal.

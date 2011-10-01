@@ -1,0 +1,156 @@
+                              PVM Overview
+                              ------------
+
+
+General Description
+-------------------
+
+PVM (Parallel Virtual Machine) is a software system that enables a
+collection of heterogeneous computers to be used as a coherent and flexible
+concurrent computational resource. The individual computers may be shared- or
+local-memory multiprocessors, vector supercomputers, specialized graphics
+engines, or scalar workstations, that may be interconnected by a variety of
+networks, such as ethernet, FDDI, etc.  PVM support software executes on
+each machine in a user-configurable pool, and presents a unified, general,
+and powerful computational environment for concurrent applications. User
+programs written in C or Fortran, are provided access to PVM through the use
+of calls to PVM library routines for functions such as process initiation,
+message transmission and receptions, and synchronization via barriers or
+rendezvous. Users may optionally control the execution location of specific
+application components; the PVM system transparently handles message
+outing, data conversion for incompatible architectures, and other tasks
+that are necessary for operation in a heterogeneous, network environment.
+
+Applications
+------------
+
+PVM is ideally suited for concurrent applications composed of many
+interrelated parts. PVM is particularly effective for heterogeneous
+applications that exploit specific strengths of individual machines on a
+network. As a loosely coupled concurrent supercomputer environment PVM is a
+viable scientific computing platform. PVM system has been used for a number
+of applications such a molecular dynamics simulations, superconductivity
+studies, distributed fractal computations, matrix algorithms, and in the
+classroom as the basis for teaching concurrent computing.
+
+
+PVM Message Passing
+-------------------
+
+PVM allows programs running on different machines to communicate with each
+other. One scheme for sending data through a parallel architecture is to 
+send each integer, real number, string, etc. one piece at a time; i.e. send 
+one number, then another, then a string, then a number, etc. However, this 
+can cause a great deal of communication over the network and will adversely 
+affect performance. 
+
+PVM uses a different scheme. Instead of sending individual pieces of data, 
+PVM utilizes buffers that can contain lots of data. Data is stored in a 
+buffer at the request of a sending program (process),  and then the entire
+buffer containing all of the data is sent to a receiving process.
+
+
+The following diagram represents the communication that PVM controls.  In this
+diagram, "Host" is the master process, "PVM" is the PVM monitor, and each
+"Node" is a slave process.
+
+                          ----------- 
+                          |         |
+                          |  Host   |
+                          |         |
+                          -----------
+                               ^
+                               |
+                               | ---- (mytid, initsend, pack, send, recv, etc.)
+                               |                |
+                               v                |
+                          -----------           |
+        ----------------->|         |<-----------------
+        |                 |   PVM   |                 |
+        |            ---> |         |<---             |
+        |            |    -----------   |             |
+        |            |         ^        |             |
+        |            |         |        |             |
+        |            |         |        |             |
+        |            |         V        |             |
+        |            |    -----------   |             |
+        |            |    |         |   |             |
+        |            |    | Buffers |   |             |
+        |            |    |         |   |             |
+        |            |    -----------   |             |
+        v            v                  v             v
+    ---------    ---------          ---------     ---------    
+    |       |    |       |          |       |     |       |    
+    | Node1 |    | Node2 |          | Node3 |     | Node4 |    
+    |       |    |       |          |       |     |       |    
+    ---------    ---------          ---------     ---------    
+
+
+To send a message, the programmer uses three steps:
+
+1. Clear the buffer. 
+   Before putting new data into the buffer, erase the current contents of the
+   buffer.
+
+   pvm_initsend(<data packing code>);
+
+2. Put the data into the buffer.
+   The "pvm_pack" commands pack data into the buffer.  (PVM commands are
+   function calls in C.)  Note that each "pvm_pack" returns an error condition
+   if one exists.  Example:
+
+   /* Send <count> integers to the message buffer, starting at <int var> and
+    * incrementing by <incr> integers to obtain each additional integer to
+    * place into the buffer.  */
+
+      pvmerr = pvm_pkint(&<int var>, <count>, <incr>);
+
+   /* Send <count> double values to the message buffer, starting at <double var>
+    * and incrementing by <incr>.  */
+
+      pvmerr = pvm_pkdouble(&<double var>, 1, 1);
+
+3. Send the buffer. 
+   After putting the data into the buffer, the "pvm_send" command will send it 
+   to a particular program and will tag the buffer with some identifying 
+   number (called the message type). PVM uses message types because at any
+   one time, there may be many messages being sent and received in the net-
+   work. The buffer can be sent to a particular instance of the program if 
+   more than one are running; alternatively, the buffer can be sent to all 
+   instances of the program by using "pvm_mcast" instead of "pvm_send".  Note
+   that "pvm_send" returns an error condition if one exists.
+
+   The following illustrates how a slave process might send a message that has
+   been prepared using "pvm_initsend" and "pvm_pack" commands to the master
+   process.  ("pvm_parent" returns the process id for the parent of a process.)
+
+   proc_id = pvm_parent();
+   msg_type = 10;
+   pvmerr = pvm_send(proc_id,  msg_type);
+
+
+When a program needs to receive data, there is a two-step process to follow:
+
+1. Receive the buffer. 
+   Since messages are sent with a particular message type, the receiving 
+   program must specify which message it wants to receive. Note that "pvm_recv"
+   returns an error condition if one exists.  If the process id is -1, then
+   a message is accepted from any other process; otherwise <process id>
+   specifies the process from which a message is requested.  
+
+   msg_type = 10;
+   pvmerr = pvm_recv(<process id>, msg_type);
+
+2. Get the data out of the buffer.
+   After receiving the data, the program needs to get ("unpack") the data from
+   the buffer.  Data must be extracted in the same order it was inserted
+   (packed) into the buffer.  Note that a "pvm_unpack" command returns an error
+   condition if one exists.
+
+   pvmerr = pvm_upkint(&<int var>, <count>, <incr>);
+   pvmerr = pvm_upkdouble(&<double var>, <count>, <incr>);
+
+
+
+
+

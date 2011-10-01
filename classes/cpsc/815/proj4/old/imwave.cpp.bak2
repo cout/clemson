@@ -1,0 +1,478 @@
+// Imwave
+// Paul Brannan <pbranna@clemson.edu
+// Please use a tab size of 8 when reading this file
+
+#include <gtk/gtk.h>
+#include <glade/glade.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
+#include <vector>
+
+using namespace std;
+
+// Some useful macros
+#ifndef MIN
+#define MIN(a,b) (((a)<(b))?(a):(b))
+#endif
+#ifndef MAX
+#define MAX(a,b) (((a)>(b))?(a):(b))
+#endif
+#ifndef M2A
+#define M2A(x,y,w,h,r,d) (((x)%(w))*(d) + ((y)%(h))*(r))
+#endif
+#ifndef M_PI
+#define M_PI 3.1415926535793238462643383
+#endif
+#define SCALE(a,b,c,d,n) ((n-a)*(d-c)/(b-a)+c)
+
+// Some wavelet stuphs
+struct Wavelet {
+	vector<float> h, g, ht, gt;
+	float maxh, maxg, minh, ming;
+	int size;
+};
+
+struct Haar: public Wavelet {
+	Haar() {
+		h.push_back(1.0/sqrt(2));
+		h.push_back(1.0/sqrt(2));
+		g.push_back(1.0/sqrt(2));
+		g.push_back(-1.0/sqrt(2));
+		minh = 0.0;
+		maxh = 2.0/sqrt(2);
+		ming = -1.0/sqrt(2);
+		maxg = 1.0/sqrt(2);
+		size = 2;
+	}
+} haar;
+
+struct Daub4: public Wavelet {
+	Daub4() {
+		h.push_back((1+sqrt(3))/(4*sqrt(2)));
+		h.push_back((3+sqrt(3))/(4*sqrt(2)));
+		h.push_back((3-sqrt(3))/(4*sqrt(2)));
+		h.push_back((1-sqrt(3))/(4*sqrt(2)));
+		g.push_back((1-sqrt(3))/(4*sqrt(2)));
+		g.push_back((-3+sqrt(3))/(4*sqrt(2)));
+		g.push_back((3+sqrt(3))/(4*sqrt(2)));
+		g.push_back((-1-sqrt(3))/(4*sqrt(2)));
+		minh = (1-sqrt(3))/(4*sqrt(2));
+		maxh = (7+sqrt(3))/(4*sqrt(2));
+		ming = (-3-sqrt(3))/(4*sqrt(2));
+		maxg = (3+sqrt(3))/(4*sqrt(2));
+		size = 4;
+	}
+} daub4;
+
+Wavelet *wavelet = &haar;
+
+// Global widgets
+GtkWidget *loadfile_dlg;
+GtkWidget *savefile_dlg;
+GtkWidget *about_dlg;
+GtkWidget *drawingarea;
+GtkWidget *options_dlg;
+GtkWidget *levels_sb;
+GtkWidget *threshold_sb;
+
+// Global variables
+GdkPixbuf *pixbuf, *orig_pixbuf;
+bool image_loaded = false;
+bool bilinear = false;
+int levels = 2;
+int threshold = 255;
+
+extern "C" {
+
+// ------------------------------------------------------------
+// Initialization
+// ------------------------------------------------------------
+
+void init_widgets(GladeXML *xml) {
+	loadfile_dlg = glade_xml_get_widget(xml, "loadfile_dlg");
+	savefile_dlg = glade_xml_get_widget(xml, "savefile_dlg");
+	about_dlg = glade_xml_get_widget(xml, "about_dlg");
+	drawingarea = glade_xml_get_widget(xml, "drawingarea");
+	options_dlg = glade_xml_get_widget(xml, "options_dlg");
+	levels_sb = glade_xml_get_widget(xml, "levels_sb");
+	threshold_sb = glade_xml_get_widget(xml, "threshold_sb");
+
+	// Glade doesn't support word wrap
+	GtkWidget *about_text = glade_xml_get_widget(xml, "about_text");
+	gtk_text_set_word_wrap(GTK_TEXT(about_text), true);
+}
+
+// ------------------------------------------------------------
+// Drawing routines
+// ------------------------------------------------------------
+
+gboolean on_drawingarea_expose_event(GtkWidget *w, GdkEventExpose *event,
+	gpointer data) {
+
+	GdkWindow *win = w->window;
+	GdkGC *gc = drawingarea->style->fg_gc[w->state];
+
+	gdk_window_clear_area(win, event->area.x, event->area.y,
+		event->area.width, event->area.height);
+
+	gdk_gc_set_clip_rectangle(gc, &event->area);
+
+	if(!image_loaded) return true;
+
+	// Render the pixbuf to our drawing area
+	int width = MIN(event->area.width,
+		gdk_pixbuf_get_width(pixbuf) - event->area.x);
+	int height = MIN(event->area.height,
+		gdk_pixbuf_get_height(pixbuf) - event->area.y);
+	if(width < 0 || height < 0) return true;
+	gdk_pixbuf_render_to_drawable(pixbuf, win, gc,
+		event->area.x, event->area.y,
+		event->area.x, event->area.y,
+		width, height,
+		GDK_RGB_DITHER_NONE, 0, 0);
+
+	return true;
+}
+
+void redraw_pixbuf() {
+	GdkRectangle area = {0, 0,
+		drawingarea->allocation.width,
+		drawingarea->allocation.height
+	};
+	gtk_widget_draw(drawingarea, &area);
+}
+
+// ------------------------------------------------------------
+// Miscellaneous pixbuf operations
+// ------------------------------------------------------------
+
+gint gdk_pixbuf_get_size(const GdkPixbuf *p) {
+	int height = gdk_pixbuf_get_height(p);
+	int rowstride = gdk_pixbuf_get_rowstride(p);
+	return rowstride*height;
+}
+
+void gdk_pixbuf_clear(const GdkPixbuf *p) {
+	guchar *pixels = gdk_pixbuf_get_pixels(p);
+	memset(pixels, 0, gdk_pixbuf_get_size(p));
+}
+
+// ------------------------------------------------------------
+// File loading functions
+// ------------------------------------------------------------
+
+void on_load_activate(GtkWidget *w, gpointer data) {
+	gtk_widget_show(loadfile_dlg);
+}
+
+void on_load_ok_clicked(GtkWidget *w, gpointer data) {
+	gchar *filename = gtk_file_selection_get_filename(
+		GTK_FILE_SELECTION(loadfile_dlg));
+	gtk_widget_hide(loadfile_dlg);
+
+	if(image_loaded) {
+		gdk_pixbuf_unref(pixbuf);
+		gdk_pixbuf_unref(orig_pixbuf);
+	}
+
+	// Tell gdk-pixbuf to load the image
+	pixbuf = gdk_pixbuf_new_from_file(filename);
+	if(!pixbuf) {
+		g_print("Unable to load image!\n");
+		image_loaded = false;
+	} else {
+		// Add an alpha channel if the image does not already have one
+		// We want full opacity (alpha = 1.0 for all pixels)
+		GdkPixbuf *tmp_pixbuf;
+		tmp_pixbuf = gdk_pixbuf_add_alpha(pixbuf, 0, 0, 0, 0);
+		gdk_pixbuf_unref(pixbuf);
+		pixbuf = tmp_pixbuf;
+		if(!gdk_pixbuf_get_has_alpha(pixbuf)) g_print("um... no alpha?\n");
+
+		// We now have an image loaded (hopefully)
+		image_loaded = true;
+	}
+	orig_pixbuf = gdk_pixbuf_copy(pixbuf);
+
+	redraw_pixbuf();
+}
+
+void on_load_cancel_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(loadfile_dlg);
+}
+
+// ------------------------------------------------------------
+// File saving functions
+// ------------------------------------------------------------
+
+void on_save_activate(GtkWidget *w, gpointer data) {
+	if(!image_loaded) return;
+	gtk_widget_show(savefile_dlg);
+}
+
+void on_save_ok_clicked(GtkWidget *w, gpointer data) {
+	gchar *filename = gtk_file_selection_get_filename(
+		GTK_FILE_SELECTION(savefile_dlg));
+	gtk_widget_hide(savefile_dlg);
+
+	FILE *fp;
+	if((fp = fopen(filename, "wb")) == NULL) {
+		g_print("Error writing file %s\n", filename);
+		return;
+	}
+
+	int width = gdk_pixbuf_get_width(pixbuf);
+	int height = gdk_pixbuf_get_height(pixbuf);
+
+	fprintf(fp, "P6\n");
+	fprintf(fp, "%d %d\n",
+		gdk_pixbuf_get_width(pixbuf),
+		gdk_pixbuf_get_height(pixbuf));
+	fprintf(fp, "255\n");
+	g_print("Writing %d bytes\n", width*height*3);
+
+	guchar *src = gdk_pixbuf_get_pixels(pixbuf);
+	int srs = gdk_pixbuf_get_rowstride(pixbuf);
+
+	for(int y = 0; y < height; y++) {
+		for(int x = 0; x < width; x++) {
+			for(int d = 0; d < 3; d++) {
+				guchar pixel;
+				pixel = src[M2A(x,y,width,height,srs,4)+d];
+				fputc(pixel, fp);
+			}
+		}
+	}
+
+	fclose(fp);
+}
+
+void on_save_cancel_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(savefile_dlg);
+}
+
+// ------------------------------------------------------------
+// Wavelet functions
+// ------------------------------------------------------------
+
+float lowpass(const Wavelet *w, const vector<float> &p) {
+	float t = 0.0;
+	for(int j = 0; j < w->size; j++) t += w->h[j]*p[j];
+	return t;
+}
+
+float highpass(const Wavelet *w, const vector<float> &p) {
+	float t = 0.0;
+	for(int j = 0; j < w->size; j++) t += w->g[j]*p[j];
+	return t;
+}
+
+void do_transform_y(int x1, int y1, int x2, int y2, int dir) {
+	guchar *src = gdk_pixbuf_get_pixels(orig_pixbuf);
+	guchar *dest = gdk_pixbuf_get_pixels(pixbuf);
+	int w = gdk_pixbuf_get_width(pixbuf);
+	int h = gdk_pixbuf_get_height(pixbuf);
+	int srs = gdk_pixbuf_get_rowstride(orig_pixbuf);
+	int drs = gdk_pixbuf_get_rowstride(pixbuf);
+
+	vector<float> pixel;
+	float low, high;
+	int dpos, hpos;
+
+	for(int j = 0; j < wavelet->size; j++) pixel.push_back (0.0);
+
+	for(int y = y1; y < y2; y+=2) {
+		for(int x = x1; x < x2; x++) {
+			hpos = dir?((y2-y1)/2+y1):((x2-x1/2+x1));
+			for(int d = 0; d < 3; d++) {
+				for(int j = 0; j < wavelet->size; j++) {
+					pixel[j] = src[M2A(x,y+j,w,h,srs,4)+d]
+						/ 255.0;
+				}
+
+				low = lowpass(wavelet, pixel);
+				high = highpass(wavelet, pixel);
+				drow = (y-y1)/2+y1;
+				dest[M2A(x,drow,w,h,drs,4)+d] =
+					(int)SCALE(wavelet->minh, wavelet->maxh,
+					0, 255, low);
+				dest[M2A(x,drow+hrow,w,h,drs,4)+d] =
+					(int)SCALE(wavelet->ming, wavelet->maxg,
+					0, 255, high);
+			}
+		}
+	}
+}
+
+void do_transform_x(int x1, int y1, int x2, int y2) {
+	guchar *src = gdk_pixbuf_get_pixels(orig_pixbuf);
+	guchar *dest = gdk_pixbuf_get_pixels(pixbuf);
+	int w = gdk_pixbuf_get_width(pixbuf);
+	int h = gdk_pixbuf_get_height(pixbuf);
+	int srs = gdk_pixbuf_get_rowstride(orig_pixbuf);
+	int drs = gdk_pixbuf_get_rowstride(pixbuf);
+
+	vector<float> pixel;
+	float low, high;
+	int dcol, hcol;
+
+	for(int j = 0; j < wavelet->size; j++) pixel.push_back (0.0);
+
+	for(int x = x1; x < x2; x+=2) {
+		for(int y = y1; y < y2; y++) {
+			hcol = (x2-x1)/2+x1;
+			for(int d = 0; d < 3; d++) {
+				for(int j = 0; j < wavelet->size; j++) {
+					pixel[j] = src[M2A(x,y+j,w,h,srs,4)+d]
+						/ 255.0;
+				}
+
+				low = lowpass(wavelet, pixel);
+				high = highpass(wavelet, pixel);
+				dcol = (x-x1)/2+x1;
+				dest[M2A(x,drow,w,h,drs,4)+d] =
+					(int)SCALE(wavelet->minh, wavelet->maxh,
+					0, 255, low);
+				dest[M2A(x,drow+hrow,w,h,drs,4)+d] =
+					(int)SCALE(wavelet->ming, wavelet->maxg,
+					0, 255, high);
+			}
+		}
+	}
+}
+
+void decimate(int x1, int x2, int y1, int y2) {
+	guchar *src = gdk_pixbuf_get_pixels(orig_pixbuf);
+	int w = gdk_pixbuf_get_width(pixbuf);
+	int h = gdk_pixbuf_get_height(pixbuf);
+	int srs = gdk_pixbuf_get_rowstride(orig_pixbuf);
+
+	guchar pixel;
+
+	for(int x = x1; x < x2; x+=2) {
+		for(int y = y1; y < y2; y++) {
+			for(int d = 0; d < 3; d++) {
+				pixel = src[M2A(x,y,w,h,srs,4)+d];
+				if(pixel <= (255-threshold)) pixel = 0;
+				src[M2A(x,y,w,h,srs,4)+d] = pixel;
+			}
+		}
+	}
+	
+}
+
+// ------------------------------------------------------------
+// Wavelet UI
+// ------------------------------------------------------------
+
+void on_transform_activate(GtkMenuItem *m, gpointer data) {
+	int width = gdk_pixbuf_get_width(pixbuf);
+	int height = gdk_pixbuf_get_height(pixbuf);
+
+	GdkPixbuf *tmp_pixbuf = gdk_pixbuf_copy(orig_pixbuf);
+	GdkPixbuf *tpb2;
+
+	for(int j = 0, n = 1; j < levels; j++) {
+		do_transform_y(0, 0, width/n, height/n);
+/*		tpb2 = orig_pixbuf; orig_pixbuf = pixbuf; pixbuf = tpb2;
+		do_transform_x(0, 0, width/n, height/n);
+		tpb2 = orig_pixbuf; orig_pixbuf = pixbuf; pixbuf = tpb2;
+*/
+
+		n <<= 1;
+/*
+		decimate(width/n, 0, width, height/n);
+		decimate(width/n, height/n, width, height);
+		decimate(0, height/n, width/2, height);
+*/
+	}
+
+	// tpb2 = orig_pixbuf; orig_pixbuf = pixbuf; pixbuf = tpb2;
+	gdk_pixbuf_unref(orig_pixbuf);
+	orig_pixbuf = tmp_pixbuf;
+
+	redraw_pixbuf();
+}
+
+void on_untransform_activate(GtkMenuItem *m, gpointer data) {
+	redraw_pixbuf();
+}
+
+void on_reset_activate(GtkMenuItem *m, gpointer data) {
+	pixbuf = gdk_pixbuf_copy(orig_pixbuf);
+	redraw_pixbuf();
+}
+
+void on_options_activate(GtkMenuItem *m, gpointer data) {
+	gtk_widget_show(options_dlg);
+}
+
+void on_options_ok_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(options_dlg);
+	levels = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(levels_sb));
+	threshold = gtk_spin_button_get_value_as_int(
+		GTK_SPIN_BUTTON(threshold_sb));
+}
+
+void on_options_cancel_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(options_dlg);
+}
+
+// ------------------------------------------------------------
+// Help functions
+// ------------------------------------------------------------
+
+void on_about_activate(GtkMenuItem *w, gpointer data) {
+	gtk_widget_show(about_dlg);
+}
+
+void on_about_ok_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(about_dlg);
+}
+
+// ------------------------------------------------------------
+// Exit routines
+// ------------------------------------------------------------
+gint on_main_window_delete_event(GtkWidget *w, gpointer data) {
+	gtk_main_quit();
+	return FALSE;
+}
+
+gint on_main_window_destroy_event(GtkWidget *w, gpointer data) {
+	// glarea widgets don't get destroyed properly, but we don't have
+	// any of those.
+	gtk_main_quit();
+	return FALSE;
+}
+
+void on_quit_activate(GtkWidget *w, gpointer data) {
+	gtk_main_quit();
+}
+
+} // extern "C"
+
+int main(int argc, char *argv[]) {
+	GladeXML *xml;
+
+	gtk_init(&argc, &argv);
+	glade_init();
+	gdk_rgb_init();
+
+	gtk_widget_set_default_visual(gdk_rgb_get_visual());
+	gtk_widget_set_default_colormap(gdk_rgb_get_cmap());
+	xml = glade_xml_new("imwave.glade", (char*)NULL);
+	if(!xml) {
+		g_warning("Error creating the interface");
+		exit(1);
+	}
+
+	init_widgets(xml);
+	glade_xml_signal_autoconnect(xml);
+	gtk_main();
+
+	// We will never reach this point
+	return 0;
+}
+

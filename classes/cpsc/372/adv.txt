@@ -1,0 +1,121 @@
+
+
+                                  KEY ADVANTAGES
+
+       Overview | What's New | Evaluation Criteria | Key Advantages |
+   Competitive Comparison | Installation | Suggested Tasks | Fact Sheet |
+                                        Primer
+
+
+
+ENTERPRISEARCHITECTURE
+Netscape Calendar Server's native enterprise architecture supports single
+and multiple servers for large, geographically dispersed organizations.
+
+Real-time scheduling. Some calendaring and scheduling systems are
+added on to proprietary messaging or replication systems. Messaging-based
+calendaring is simply not a reasonable architecture for calendaring and
+scheduling, particularly for reserving resources such as conference
+rooms. Because of the requirements for real-time calendaring and
+scheduling, the IETF Calendar and Scheduling Working Group is currently
+trying to define a real-time protocol that does not rely on messaging
+protocols. Calendar Server schedules meetings and events in real time,
+ensuring that people and conference rooms are available at the meeting
+time proposed.
+
+Broad platform support. Netscape Communicator Professional Edition is
+available for Windows 3.1, Windows 95, Windows NT, Mac OS, and major Unix
+platforms. Calendar Server 3.0 will be available for Sun Solaris, IBM
+AIX, HP-UX, Windows NT, and Digital Unix.
+
+POWERFULCALENDARING ANDSCHEDULING SUPPORT
+Calendar Server offers the following benefits:
+
+       Multiple priority and event access options let users specify events
+       with various levels of access, such as normal, public, and private. 
+       Sophisticated designation capabilities allow users to designate
+       access to their workgroups, enabling workgroup members to view
+       details of normal meetings while restricting their view of
+       confidential meetings. Users can designate viewing and modification
+       access to their executive assistants for all meetings except
+       personal ones. 
+       Powerful group management allows users to create and share their own
+       groups. 
+       Simultaneous group viewing of multiple calendars can be done
+       side-by-side with meeting details. 
+       Private and members-only groups simplify scheduling of ad hoc
+       meetings by allowing end users to create and manage groups.
+
+Resource and conference-room scheduling. Netscape Calendar and
+Netscape Calendar Server provide support for conference-room and resource
+scheduling.
+
+       Netscape Calendar supports the scheduling of resources such as
+       audio-visual equipment and computers as well as conference rooms. 
+       Conference rooms and resources can be confirmed when the meeting is
+       created, ensuring that users know when and where the meeting can
+       take place when scheduling the meeting. Compare this real-time
+       scheduling with message or replication-based systems that may force
+       the user to wait for email confirmation. 
+       Resources and conference rooms are scheduled at the same time as
+       people. Some systems require the user to schedule meetings twice -
+       once for users and once for the conference room and resources. 
+       Conference rooms can be configured on a first-come, first-served
+       basis, or they can be managed by an administrator.
+
+REMOTE, DISCONNECTED, AND MOBILE-USERSUPPORT
+The Calendar client offers the following benefits to remote users:
+
+       User and resource calendars can be easily viewed offline. 
+       Scheduling can be done with local copies of data when disconnected
+       and then synchronized with server data when reconnected to the
+       network. 
+       Protected, remote access network connections to enterprise Calendar
+       Server data allow viewing of up-to-date calendars and scheduling
+       when working at home or traveling. 
+       Sophisticated printing capabilities accommodate those who prefer to
+       use paper organizers, including DayRunner, Day-Timer, Franklin, and
+       Time System. 
+       Remote access to calendars using a web browser is also supported for
+       maximum flexibility.
+
+OPEN STANDARDS SUPPORT
+On July 24, 1996, Netscape hosted a multivendor calendaring summit that
+resulted in the formation of an IETF Working Group to define appropriate
+calendaring and scheduling standards.
+
+Communicator Professional Edition supports the vCard and vCalendar data
+interchange standards from Versit. VCard enables applications to exchange
+ID information such as names, addresses, phone numbers, and email
+addresses. VCalendar enables applications to exchange information about
+meetings and tasks. Calendar Server 3.0 supports LDAP for directory
+access, SMTP for meeting notifications, and Hypertext Transfer Protocol
+(HTTP) for Web access.
+
+SMTP integration for meeting notification means that users can schedule
+meetings with people outside the organization as easily as adding them to
+the directory. Centralized LDAP directory access enables administrators
+to spend less time managing user accounts because they will have fewer
+directories to administer.
+
+Netscape is committed to the IETF Calendaring and Scheduling Working
+Group and will adopt standards as they are defined by the group. Netscape
+has also committed senior resources to work with the IETF Calendaring and
+Scheduling Working Group.
+
+SUMMARY
+Calendaring and scheduling system evaluators should carefully consider
+the architecture of any calendaring and scheduling system. Calendar
+Server is a native calendaring and scheduling system designed to support
+the complex needs of the enterprise. In addition, calendaring and
+scheduling standards will become increasingly important as the IETF
+Calendaring and Scheduling Working Group defines them. Netscape supports
+existing calendaring and scheduling standards such as vCard and
+vCalendar, and will adopt new standards as defined by the IETF. Finally,
+an enterprise calendaring and scheduling system should support the way
+end users work. This includes cross-platform client support, support for
+remote and mobile users, and robust printing support. Calendar Server and
+Communicator Professional Edition provide powerful end-user support
+across platforms.
+
+ 

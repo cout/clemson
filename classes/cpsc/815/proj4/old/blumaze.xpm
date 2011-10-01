@@ -1,0 +1,2880 @@
+/* XPM */
+static char *blumaze[] = {
+/* width height num_colors chars_per_pixel */
+"   128   128       16            1",
+/* colors */
+". c #ffffff",
+"# c #6666cc",
+"a c #3333cc",
+"b c #0000cc",
+"c c #000099",
+"d c #000066",
+"e c #000033",
+"f c #0000bb",
+"g c #0000aa",
+"h c #000088",
+"i c #000077",
+"j c #000055",
+"k c #000044",
+"l c #000022",
+"m c #000011",
+"n c #000000",
+/* pixels */
+"kkkkkkkkkkkakkkkeblnnleakkklnnleeeebellmnnnnmmmmgmmnnncnnmmlfleekkajjjjjjjjjjjjjjkkkblmnmebeekelcnmleebeeeeeeaekkkkkkkkkkkkkkkka",
+"kkkkkkkkkkkakkkkkakelnngekjkelnnleeakeelmnnnnnnmgmmnnncnnnnmgllleebkkkkkkjjjjjjjjjjkakelmncmlkkkblnnmlbeeeeeeakkkkkkkkkkkkkkkkka",
+"aaaaaaaaaaaakkkkkakkeelccfaaaaklnmlbbaabffgnnnnncmmmmncnnnnncmmmmlfeeeeebaaaaaakjjjkakkkeefmnlekakkelngleeeeeakkkkkaaaaaaaaaaaaa",
+"kkkkkkkkkkkakkkkkkkkkkkemnnleajkemnmleekkeflmnnncnnmmmcmnnnnhnnnmmgmllllllleeebekkkkakkkkkaelmnmlkjjkegnmleeeakkkkkakkkkkakkkkkk",
+"kkkkkkkkkkkakkkkkkkkkkkkeelnmfkjkkelnmleekaellmncnnnmmgmmmnncnnnnncmmmmmmmmlllfleeeeakkkkkakkelmnmekkkaklmnllbekkkkakkkkkakkkkkk",
+"kkkkkkkkjkkakkkkkkkkkkkkkkkemcnlejjklmnleeakkelmcnnnnncmmmmmcnnnnncnnnmmnmmmmmgmmmllfllekkakkkkelmnnmeajkklnnglekkkakkkkkakkkkkk",
+"kkkkkkjjjjkakkkkkkkkkkkkkkkkeblnmekjkkenmlfeekeefmnnnncmmmmmgmnnnncnnnnnnnnnnncnnnmmgmmlllfeekkkeeelmngekkkkefnmleeakkkkkakkkkkk",
+"jjjjjjjjjjjajjjkkkkkkkkkkkkkkakemnmlkjkemngleeekbemmnnhnnmmmgmmmmncnnnnnnnnnnncnnnnncnnnnmgmmllekeeeeegnnlekjaemnnmbkkkkkakkkkkk",
+"aaaaaajjjjjaaaaaaakkkkkaaaaaaaaabfgclekjkegnleeeabbffgcnnnnmgmmmmmcnnnnncccccccccccccnnnnnccccgffeeeeebbfgcfbaaabfgcmlekkakkkkka",
+"jjjjjajjjjjajjjjjjjjjjkakkkkkkkkkkelnnmekkblnnmebeeeelmnnnnncnnmmmcnnnnnmmnnnnnnnnnmgmmmmmmmnnnncnmlleeeeelmnnmekkkemnnleakkkkjj",
+"jjjjjajjjjjajjjjjjjjjjjakkkkkkkkkkkeelnmekakelnmfeeeeeelmnnncnnmmmgmmnnmmmmmmmmmmmmmglllllllllmmgmnnnmleeeeeelmnleeeeelmnglekkjj",
+"jjjjjajjjjjajjjjjjjjjjjajkkkkkkkkkkkkeemnmfkkklmcmleeekellmncnnnnncmmmmmmmmmmmmmmlllflleeeeeeeeefllmmnnmmeeeeeeemnnmlekelgnnmlek",
+"eekkjajjjjjajjjjjjjjjjjajjjkkkkkkkkkkkkelmclekkkfmnleeeeeeelgnnnnncnmmmmmmmmmlllllllfeeeeeekkkkkakeellmnnmlleeeeeelmnmleebellnnl",
+"nmmleakjjjjajjjjjjjjjjjajjjjjkkkkkkkkkkkkegnnlekaemnnleeekkefmmnnncnnnnmmmmmmmllllllfeeeeekkkkkkakkkeellmmnnnmlekekeelnnmfekeemn",
+"llmnnglekkkaa####aaaaaaajjjjjaaaaaaaaaaaaabemnmeakkemngfbbaabelmmncccccggggggfflllllfbbbaaakkkkkaaaaaaaabbffgccgfbaaaabfgcgfffff",
+"eeelmgnnmllbkkjjjjjjjjjajjjjjjjjkkkakkkkkkkkelmngekkelnnleeeakeelmgnnnnnmmmmmlfllllleeeeekakkkkkkkkkkkkkkkkeelmnnnmlekkkkelmnnml",
+"mllelfllmnngmlekkkjjjjj#jjjjjjjjjjjakkkkkkkkkkelcmekkkemnmleaeeeelfmnnnnnmmmmmfllllleeeeekakkkkkkeeeeeekkkkkkkeelmnnmlekkkkkelmn",
+"lmnnmfleelmcnnmmllekkjj#jjjjjjjjjjjajkkkkkkkkkkefmnmlkkemnnmfeeekeflmmmnnnnmmmgmllllleeeekakkkkkeeeellllleeeekkkkellmnnmekkkkkke",
+"jkelmcnmlllfllmmnnmllekajjjjjjjjjjjajjkkkkkkkkkkaelnmlekkelnglleeeaeellmnnnnmmgmmlllleeeekakkkkeeellllmmmlllleekkkkkeelnnlekkkjj",
+"jjjjkblmnnnglllllmnnnmmfekkjjjjjjjjajjjjjkkkkkkkakelmnmekkelgnmleeaekellmnnnnngmmlllleeeekakkkkeeelllmmmmmmmmmmlleekkkelmnnmlekj",
+"kkjjjajkeemcnmmlllllllmcnmlekkkjjjjajjjjjkkkkkkkakkkelnmlkkkblnmlebeeeeelmnnnncmmmlllleeeeakkkkeeellmmmnnnnnnnnmmlleekkkeelmnnle",
+"gfbaaajjjjkbllmnncmmlllfgcccgglekkjaaaaaaaakkkkkaaaaabfnnmekaklmnmfeeeeeflmmnncccgggflleeeaaaaaabeellmgccccccccccccggffbaaabfgcc",
+"mnnlekkjjjj#jjkelgmnnmmlllllmgnnmleakjjjjjjjkkkkakkkkkblmnmekkkemnclleeebeelmncnnnmmglllleeekkkkaeellmgnnnnnnnnnnnnnnnmllbkkeeel",
+"elmnnmlekjj#jjjjjaeellmnnmmllflmnnmglekkjjjjjjjkakkkkkaelmnnmekkelcnmleebeeelmgnnnnngmlllleeeekkaeeellgmnnnnnnnmmmnnnnnnngmleeke",
+"eeeelmnnlekajjjjj#djjkkelmnnmgmllllgnnmlekkkjjjjakkkkkakeemnnlekkkfmnmlebeeeelfmnnnncmmmlllleeeeaeeeelfmmnnnnnmmmmmmmmmmncnmmlee",
+"mleeeelmnnmflekjd#dddddjkkellgnnmllflmnnnmleekkjajjkkkakkelmnnmlekaemnnmfeeeeeflmnnncnmmmmlllleebeeeeeflmmnnnnnmmmmmlllmmgnnnnnm",
+"nmlleeeellmcnmlekajjddddddjjjaelmnmglllllmnnleekakkjjjajkkellmnmlkakelmngleeeebellmncnnnnmmmllllbeeeeeflmmmnnnnmmmlllllllflmmmnn",
+"ccccggleeelfmnnmmffbaa##ddddd#jjkelgnnmlllgnnnmlfeekkkaaaabbfggcgfbkkklmcnmleebeeelmgcccccgmmmllfeeeeebllmmnnccgggffleeeebllllmg",
+"lmmnncmllleflllmncmmleeajjddddddddjaelmnmmglllmmnnmleekkkkeeflmmnmlekkkegnnmlebeeeelmmnnnnnnmmmmlleeeebellmmncnnmmllleeeeeeeeelf",
+"lllmmgnnnnmfleellgnnnnmfleekjjddddd#djkelmcnmlelmmnnnmlllellflmmnnmlekkkfmnnmlbeeeeelmmnnnnnnnmmmllleebeeellmcnnnmmlleeeeeeeeeef",
+"eeeelfmmmnncmllllfllmmncnmmleekkjjd#dddjjkblnmmlllllmnnmmlllflmmmnnmlekkaelmnmfeeeeeellmmnnnnnnmmmllllfeeeellgnnnnmmlleeekkkkkka",
+"kkeeeblllmmcnnnmmflllllgmnnnnmmllekajjdddd#jelmnnmleelmnnnnmgmmmnnnnmlekakelmncmleeeeeellmmnnnnnnnmmmlfleeeelfmnnnnmmleeekkkkkka",
+"kkkkkakeeelfmmnnngmllllflllmmnnnnmlfekjjjd#ddjkelmnmllllllmnhnnnnnnnnmleakkelmcnmleeeeeeelmmmnnnnnnmmmglleeeeflmnnnnmmleeeekkkka",
+"kkkkkakkkkebellmmcnnnnmgfffffggcccccmmleeka######afgccgleellgnnnnncccggfbkkkelgnnmlebbaaabffggccccccgggmlleeefllmmnhcggfffbbaaaa",
+"jkkkkkkjjkkakeeelfmmnnnnmmmlllllmmmgnnnnmlbkjjddddjjklgnmllefellmmgnnmmlfkkkkefmmnmleeeekkeelmmmcnnnnnnmmmllefellmmcnnmllleekkka",
+"jjjkkkkkjjjakkkeefllmmmnnnnnnmmllllflmmnnncmllekjddjjjaemnnmfeeellfmmmllfekkkkblmnnmleeekkkeellmgmnnnnnnnmmllfllllmgnnnmlleekkka",
+"jjjkkkkkkkjajjjkkaeelllmmmnnnnnmmmlflllllmgmnnmlekjjjj#jkelncmlleebeeeeebkkkkkaelmnnmleekkkkkellgmnnnnnnnnmmlflllllgmnnnmlleekka",
+"kjjjjjjkkkjajjjjkakeeelllmmmnnnnnnncmmmlllflmmnnnmleej#ddjjkfmnnmlfeeeeebkkkkkaeelmnnmleekkkkkelfmmmnnnnnnnmmglllllfmmnnnmmlleea",
+"kkkjjjjkkkkajjjjjajkkkeeelllmmmmnnnhnnnmmmglllllmmnnmlajjjjjakelmnglleeeakkkkkakeelmnnmleekkkkkebllmmmnnnnnnngmllllflmmnnnmmllea",
+"baaaaaaaaaaajjjjjaaaaaaaeeellflmmmmcnnnnnncnnmmlfllmnngmlkjj###abfgnnmmlfeekkkaabffggccgfbakkkkkaelllmggccccccmmmllfllmmncnnmmlf",
+"eeekkjjjjkkakkjjjjjjjjjjkkeeefllllmgmmmmnncnnnmmglllllgmnmlekjjjjjaelmnnmlleeebeeellmnnnmlbkkkkkakellmmmmnnnncnmmmlfllllmcnnnmml",
+"lleekkjjjkkakkjjjjjjjjjjjkkkkbeelllflmmmmmgmmnnncnnmmlflmmnnmlkjjj#jkelmnnnmllflllllmmnnnmfekkkkakeellmmmnnnncnnmmmfllllmgmnnnmm",
+"mlleekkjjkkakkkjjjjjjjjjjjjjkaeeeeefllllllfllmmmgmnnnmglllllmnmekj#jjjkkelnnnmglllllmmnnnmfeekkkakkkeelllmmnncnnnnmgmllllflmnnnn",
+"nmmllekkjjkakkkkjjjjjjjjjjjjjakkeeebelllllflllllflmmmncnnmlllmnnmlbkjjjjkelmnncnmmmmmmnnnnglekkkakkkkeeellmmmcnnnnncmmmllfllmmnn",
+"nnmmllekkkkakkkkkkjjjjjjjjjjjakkkkebeeeeeefeeeelflllllgmnnmlllllmnglekjjjjkkelgnnnnnnnnnnncmlekkakkkkkkeellmmgmnnnncnnmmlflllmmn",
+"ccccgfleekkaaaaaaaaaaaaaa####ajkkkkaeeeeeefeeeeefellllffggcccgffffgnnlekaaaaaablmmnnchcccccmleekaaaaaaakeellmgmmnnncnnnmmfllllmg",
+"mnnnnglleeekkkkkkkkkjjjajjjjjjjjjkkaeeeeeeeeeeeebeeeeeeeellmmnnmllllmnnlfkkkkkkkeelmmnnnnnnmmlekakkkjjjkkeellfmmmnncnnnnmglllllg",
+"mmmnncmmlleekkkkkkkkkjjajjjjjjjjjjkakeeeeeeeeeeebeeeeeekeeeellmnnnmlllmncmlekkkkkkeellmmnnmmmleeakkkkjjjkkeelfllmmncnnnnngmllllf",
+"llmmncnmmlleekkkkkkkkkjajjjjjjjjjjjakkkkeeeeeeeebeeeekkkkkkeeellmnnmllllfmnnleekkkkkeeellmmmmlleakkkkjjjjkkeefllmmncnnnnncmmmllf",
+"llllmcnnnmmlleekkkkkkkjajjjjjjjjjjjajkkkkkeeeeeebeeeeekkkkkkkeeeelmmnnmlfelmnnmlekkkkkkeellllleebkkkkjjjjjkkeblllmmgnnnnncnnmmmf",
+"lllllgmnnnnmlleekkkkkkkajjjjjjjjjjj#jjjkkkkeeeeebeeeekkkkkkkkkkkkeelmnnmfleellnnmlekkkkkeeeeleeebkkkkkjjjjjkkaeellmgmmmnncnnnnmg",
+"mllllfggccccggffbbaaaaaaaaaaaajjjjj#jjjkkkaabbbbbbbbbaaaaaaaaaaaaabfffgcccffbffmnnmlbaaaabbbbbbbbkkkkkaaaa#aaaaabfffmmmmmcnnnnng",
+"mmlllfllmmnnnmmlleekkkkakkkkjajjjjj#jjjjkkkkeeeeeeeeeeekkkkkkkkkkkkeeellmnnmlefelmnngleeeeeeeeeekkkkkkjjjjjjjajkkeelllmmmcnnnnnn",
+"nmmmlflllmmnnnnmmlleekkakkkkkajjjjjajjjjjkkkeeeeelleeeeeeeeekkkkkkkkeeeelmmnnmfeeelmcnnleeeeeeeekkkkkkjjjjjjj#jkkeeellllmgmnnnnn",
+"nnnmmflllllmmnnnmmlleekakkkkkakjjjjajjjjjjkkkeeeellllleeeeeeekkkkkkkkkkkeelmnngleeeeflnnmleeeeeeekkkkkkjjjjjj#jjjkkeellllgmmnnnn",
+"nnnnmgmlllllmmnnnnmmlleakkkkkakkjjjajjjjjjjkkkeeeellllleeeeeeeekkkkkkkkkkeelmmcnmlekaelmnnmlleeeekkkkkkjjjjjj#djjjkkeeeelfmmmmnn",
+"nnnnncmmllllllmmnnnnmllfekkkkakkkkjajjjjjjjjkkkeeellllllllllleeeeeekkkkkkkeellgmnmlebkeelmnnmlleeekkkkkkjjjjj#jddjjkkkeeeflmmmmm",
+"gccchcccggffllllmcnnnmmfleekkakkkkkaaaaaaa#aaaaabbfffffffffffffffbbbbbaaakeeelfggccgfekkelgcccgffbaaaaakjjjjj######akkkeeffffggg",
+"mmmnnnnnnmmllleelfmmnnnmmlleeakkkkkakjjjjjjjjjkkkeelllllllmmlllllleeeeekkkkeeefllmnnnlekkkblmnnmleekkkakkjjjjjjjdddjjjjkkeeellll",
+"llmmmmmnnnnmmlleefllmnnnnmmlebkkkkkakkjjjjjjjjjjkkeeelllllmmmmlllllleeeekkeeeeblllmnnnmlkkaelmmnnmlekkakkkjjjjjjddddddjjjkkeeeel",
+"llllmmmmnnnnnmllebeellmnnnnmlfekkkkakkkkjjjjjjjjjkkeeellllmmmmmmmmmlllleeeeeeebellmmnnnmekakkelmnnmleeakkkjjjjjjjdddddddjjkkkeee",
+"eelllllmmnnnnnmmlfeeeelmmnnnngleekkakkkkkjjjjjjjjjkkkeeellmmmmmmmmmmmmlllllleefllllmmnnnmlbkkkeelmnnmlbkkkkjjjjjjjdddddddjjkkkke",
+"keeelllllmmnnnnnmfleeeeelmmnncmlleeakkkkkkkjjjjjjjjkkkeeelmmmmnnmnnnmmmmllllllflllllmmnnnmfekkkkelmnnmfekkkjjjjjjjjddddddddjjjkk",
+"aaaabbbfffgggcccccmlleebbffggcnnmllbkkkkkkaaaa#####aaaaabffggmmnnncccccgggggfffllllmgggcccgfbaaaaelmnnglekkkja################aa",
+"jjkkkaeeeelllmmmnnnmmlebekeelmmnnmmfekkkkkakjjjjjjjjjjakkellmmmnnncnnnnnnnnmmmmmmmmmmmmnnnnmlekkakkelnnmlekkjajjjjjjdddddddddddd",
+"djjjjakkkeeelllmmmnnnmmfekkkellmnnngleekkkakkjjjjjjjjjajkkelllmmmncnnnnnnnnnnnnmmmmmmmmnnnnmmlekajkkelnnmlekkajjjjjjdddddddddddd",
+"ddddd#jjjkkeeeelllmmnnngleekkkkelmncmmleekakkjjjjjjjjd#jjkeeellmmncnnnnnnnnnnnnnnnmmmmmnnnnnmmleajjjkemnnmlekajjjjjjjddddddddddd",
+"ddddd#ddjjjkkkkeeellmmncnmmlekkkeelgnnmmleakkkjjjjjjjd#djjkkeellmmcnnnnnnnnnnnnnnnnnnnnnnnnnmmlebkjjkklmnnmleajjjjjjjddddddddddd",
+"ddddd#iidddjjjjkkkeelllgnnnmlekkkkkblmnnmlbkkkjjjjjjjd#ddjjkkeellmgnnnnnnnnnnnnnnnnnnnnnnnnnmmllbkkjjkelmnnmlbkjjjjjjddddddddddd",
+"ddddd#..#######aaaaabbfflmnnngfbaaaaeelnnmglekkjajjjjj#####aakeellgmnnnnhccccccggcccccccccgmmmllbekjjjabfgccgfekjjj#############",
+"ddddddiiddddddddj#jjjkkkellmnhnlekkjjjkemnnmlekkajjjjjdddddj#jkkelfmmnnncnnmmmmmmmmmmmnmmmmmmmllfekkjjakelmnnglekjjjjjddd#ddddd#",
+"ddddddiiidddddddd#ddjjjjkeellgnnnmlekjjkelmnnmleakjjjjdddddd#jjkkefllmmncnnnmmmmmmmmmmmmmmmmllllfekkjjakeelmncmlekjjjjddd#ddddd#",
+"ddddddiiidddddddd#ddjjjjjjkkeblmnnmlekjjkkelnnmlfkkjjjjddddd#jjjkkbllmmmcnnnmmmmlllllllllllllleebekkjjajkelmmcnmlekjjjjdd#ddddd#",
+"jjjjddddidddddddd#dddjjjjjjjkaeelmnnnmlekjkelmnngleekkjjdddd#djjjkaeellmgnnnnnmmlllllllleeeeeeeeakkkjjajkkelmcnmllekjjjdd#dddjj#",
+"jjjjjjddddddddddd#dddjdjjjjjjakkeellmnnlekkkkeemcnmlekkjjddd#dddjjakeellfmnnnnnmmllllllleeeeeeeeakkkjjajjkeelgnnmlekjjjjd#dddjja",
+"aaaaaaaaaaaajjddd#ddddd###aaaaaaaaaaelmnnmfbaaabfgccgffkkjjj######akkeeeffgccccgggffffffffbbbbbaakkkjjajjjkelggccgfbkjjjj#dddjja",
+"kkkkkakkkkkkkjjjj#jjjjjjjjjjjkkkkkkakkellmnmleekeeemnnglekkjjjjddjajkkkebllmnnnnmmmlllllleeeeeekkkkkkjajjkkeelmnnmmfekjjjjdddjja",
+"kkkeebeeeeeeekkkkakkkkkkkkkkkkkkkkkakkkkelmnnnmlekeemncmlleekkjjjjajkkkkaellmmnnnmmlllllleeeeeekkkkkkkajkkkeelmnnnmfekjjjjjddjja",
+"kkkeebeeeeeeeeeeebeeeeeeeeeeeeeeeekakkkkkkeelmnnmleeeefmnmmlekkkjjajjjkkakellmmnnnmmllllleeeeeeekkkkkkakkkkeellmnnnglekjjjjjddja",
+"kkkeebellllllllllflllllllllllllllllfeeekkkkeeelmmnnmleblmnnmmleekkakjjkkakeellmmnnnmmlllleeeeeeeeekkkkakkkkkellmmnngllekjjjjddj#",
+"jkkeeflllmmmmmmmmgmmmmmmmmmmmmmmmmmgllleeekkkekeelmnnmfelllmnnmleeakkkkkakkeellmmnnnmmmllleeeeeeeeeeeeakkkkeellmmnncmlekjjjjjdd#",
+"jjkeefllmmmggcccccccgggggcccccnnnnncccgggffeekkkaabfggccgfffgnnnmlffbbaaaaabbfffggchcnmlllfbbbbfffbbbbbeeeeeeffggcccggfbaajjjjd#",
+"djkeefllmmmcnnnnnnnnnnnnnnnnnnnnnnncnnnnnnmmlleeakkkkkemnmlllllmnnmmleeeakkeeeellmmncnnmllfeeeeeeeeeeeeeeeeeebllmmnnnmmlekjjjjd#",
+"djkkebllmmmcnnnnnnnnnnnnnmmmmmmmmmmgmmmmmnnnnnnmfekkkkkkelmnmlllmmnnmmllbeeeeeellmmncnnnmlfeeeeeeeeeeeeeeeekebellmmnnnmlekkjjjd#",
+"ddjkkbelmmncnnnnnmmmmmmmmmlllllllllflllllllllmmncmleekkkjkelmnmmllllmnnmflleeeelllmmcnnnmmfleeeeeeeeeeeeeeeeebellmmnnnmmlekjjjj#",
+"ddjjkaellmncnnnnmmmmmmlllllllllleeebeeeeeeeeeellgmnnmlekjjjkkelnnmllllnncmmmllllllmmgnnnnmglleeeeeeeeeeeeeeeebellmmnnnnmllekjjj#",
+"jjjjjaeelmmcnnnnmmmllllllllllleeeeefeeeeeeeeeeeebeelmnnlekjjjjkklmnmllmmgnnnmmmlmmmmgmnnnngmlleeeeeeeeeeeeeeebellmmmnnnmmleekjj#",
+"jjjjjakellmcnnnnmmmllllllllllllllllfllllllllleeeakkkelmnnmlkjjjjjklmnnnmflmnnnnmmmmmgmnnnncmmlleeeeekeeeeeeeebeellmmmnnnmmleekj#",
+"jjjjj#jkelmgnnnnmgffffffffffffffffggggggggggggfffeeeekabfgcgfaa####jklmngllllmgnnnnncnnnnncmmmlebbbaaabbbbbbbbeellmggccccgffbaa#",
+"jjjjj#jkkelmmnnnmgllllllllmmmmmmmmmnnnnnnnnnnnnnnnmmllbkkelmnnmekj#jjjklmnnmllfmmnnncnnnnncmmmllfeeeekeeeeeeebeelllgmnnnngmllekj",
+"kjjjj#djkkelmmnnngmllllllmmmmmnnnnnnnnnnnnnnnnnnnnnnnmgleeeeelmnmlajjjdjkemnnmglllllgmnnnncnmmmlfeeeekkkeeeeebeeellfmmmnncnmmlek",
+"ekjjj#ddjjkelmmnncmllllllmmmmnnnnnnnnnnnmmmmmmmmmmmmmmcnnmmlleeemnclejdddjkelmcnmlllfmmmmmgmmmmlfeeeeekkkkkeebeeeeefllmmncnnmmle",
+"ekkjj#jddjkkelmnncmmlllllmmmnnnnnnnnnmmmmmmlllllllllllflmnnnmlllllfmnmejdddjjkbmnnmlflllllflllllfeeeeekkkkkkkakkeeeflllmmcnnnmml",
+"lekkj#jjdjjkeelmncnmmlllllmmnnnnnnnnmmmmmllllleeeeeeeebeellmmmnnmlfelmnmekjdddakelmncmllllfeeelebeeeeeekkkkkkakkeeebellmmgnnnnml",
+"mlekka######aaffgchcgfffllmmmcnnnnnggggfffffbbbaaaaaaaakkkkebbffgcgffffgcnlkjj#djjkegnnmmlfleeeebeeeeeakkkkkkakkkkebeellmgmnnnng",
+"mmllekjjjjjjjjkelmnnnmmflllmmcnnnnngmmmllleeeekkkjjjjjajjkkkakkkellmnnmlflnnmeajdddjaelmnncmlleebeeeeeakkkkkkkkkkkkbeeelllmmnnnc",
+"nmmllekjjjjjjjjkelmmnnngllllmgnnnnngmmllleeeekkkjjjjjjajjjjkakkkkkkkelmnglllmnclkjjj#jjkelcnnmllfleeeebeeekkkkkkkkkaeeeellmmmnnh",
+"nnmmllekjjjjjjjjkellmnncmllllgmnnnncmmlllleeekkkjjjjjj#jjjjjakkkkkjjjkkegnnlllgnmlej#jdjjkflmnnncmmlllfeeeeeeeeekkkaeeeeellmmmnc",
+"nnnnmmleekjjjjjjjjkelmmcnmmllfmmnnncmmmllleeekkjjjjjjj#jjjjjakkkkkkkjjjjaelnnmgmmmnmfkjjjjajkelmcnnmmmgllleeeeeeeeeakeeeeelllmmg",
+"mmnnnnmlleekjjjjjjjkellgnnnmlflmmnncnnmmlleeekkkjjdjjj#jjjjjajjkkkkkjjjjajjkelcnmlelcmlkjj#jjjkefmmnnncmmmllllleeeebeeeeeeellllg",
+"mmmnnccggffaaa####jjjkefmnnnmflllmmcnnmmllffbaaaajjjjj#jjjjjajjkkkakkkjjaaaaaablmnmlglmnmeajjjjjakeelmccccggggfffffbbbbbbbbfffff",
+"lmmmncnnmmllekjjj#jjjjkblmmnngmlllmgnnnmmmlleeekajjjjj#jjjjjjjjjjkakkkjjjjjjjj#jkemnclelmnmlekjjajjkeelmmnnnncmmmlllleeeeeeellll",
+"lllmmgnnnnmmlekkjajjjjjaeelmncnmlllfmmnnnmmllleeakjjjj#jjjjjjjjjjkakkkkjjjjjjjajjjkefnmmmlmmnmlkajjjjkkkellmncnnmmmllleeeeeeelll",
+"llllmgmnnnnnmllekajjjjj#kkelmgnnmmlfllmnnnnmmllebekjjj#jjjjjjjjjjjakkkkkjjjjjjajjjjjaklmnmlelmnngekkjjjkkkellgmnnnnmmmllllllllll",
+"lllllgmmmnnnnmmleakjjjj#jjkkefmnnmmfllllmnnnmmmlfeekjj#jjjjjjjjjjjakkkkkkkjjjjajjjjjajkkemnmllllgnnlekkkkkkkkbellmnnnnmmmlllllll",
+"lllllgmmmmnnnnmmlfekjjj#jjjjkblmmnncmlllmmnnnnmmfleekkajdjjjjjjjjjajjkkkkkkkjjajjjjjajjjjkelnnmebemnnmlekkkkkakkellmmnnnnmmmmmml",
+"gggfffmmmmmgcchccgleekkajjjjjakelmmcccggffgmmnnngmlleeaa#####jjjjjaaaaaaaaaaaaajjjjjaaaaaaaabfgcgfffffgnmleekakkkeebffgccccggggg",
+"mmmmmmmlllmgmmnnnnnmleekjjjjd#jjkelgmnnnmmlllmmncnmmllekkjdd#jjjjjjjjjjkkkkkkkjjjjjjjjjjjjjjjjkemnnleeblmnnmlfekkkebeellmmnnnnnm",
+"nnmmmmmmlllfmmmmnnnnmmlekjjjj#djjkkblmmnnmmllllmgnnnmmleekjj#jjjjjjjjjjkkkkkkkkkjjjjjjjjjjjjjjjkkelnnlfeeeelmcmleeebeeeeellmmnnn",
+"nnnnnnmmmmmgmmmmmnnnnnmllekjj#jjdjjaeelmnnnmmlllfmmnnnmmleekajjjjjjjjjjjkkkkkkkkkkkkjjjjjjjjjjjjjkkklmcnlekkefmnnmmfeeeeeeeellmm",
+"lmmnnnnnmmmgmllmmmmnnnnnmlekkajjjjj#jkeelmnnnmmlflllmnnnmmlebkjjjjjjjjjjkkkkkkkkkkkkkkjjjjjjjjjjkkkkkkflnmleebeeelncmlleeeeeeeel",
+"eelmmnnnnnmgmmmmmmmmmnnnnmmleakjjjd#djjkellmmnnnglllllmnnnmmfeekjjjjjjjjjjkkkkkkkkkkkkkkjkkkjjjkkkkkkkakelmnnfekkklfmnnmleeeeeee",
+"eeeelfggccccmmmmmgggggcccccgffaaa###dddjjkbffgcccggfffflmmnnggfbaaa###aaaaaaaaaaaaaaakkkkkaaaaaaakkkkkakkkeelcmlekkakelmnggffbbb",
+"eeeeeellmnnnnnnmmgmmmmmnnnnnmllekkj#dddddjakeelmmnnnmmfllmmncnmmlekjjjjjjjjjjkkkkkkkakkkkkakkkkkkkkkkkakkkkkkelnnmlbkkkelgnnnmlf",
+"lleeeeeeelmmnnnnmgmmmmmmmnnnnnmmlekajjdddd#jjjkellmnnngmllllgmnnnmlekjjjjjjjjkkkkkkkakkkkkakkkkkkkkkkkakkkkkkkeelmnglekkkakemnng",
+"nnmleeeeeeelmmnnncmmmmmmmmmnnnnnmllbkkjddd#dddjkkeelmmcnnmmlflmmnnnmlekjjjjjjjkkkkkkakkkkkakkkkkkkkkkkakkkkkkkkkkelgnnmleakkellg",
+"elmnmlleeeeeeelmnhnmmmmmmmmmmmnnnnmglekjjj#dddddjjkeelgmnnmmflllllmnnmlekkkjjjkkkkkkakkkkkakkkkkkkkkkkakkkkkkkkkkkkbelmnmfekkkka",
+"kkelmnnmleeeeeelmgnnnnmmmmmmmmmnnnngmllekk#jdddddjjkkefllmnncmmlllllmnnnmlekjjkkkkkkakkkkkakkkkkkkkkkkakkkkkkkkkkkkakkeemcnmleka",
+"aaaaabfccgfbbbabbflmnnngggggggmmmnncnmmlleajjjdd#dddjjakellmgnnmmlfllllmchgfbaakkkkkaaaaaaakkkkkaaaaaaaaaaaaaaaaaaaakkkkeblmnnlb",
+"nmekkakemnnmleeeeaelmmnnnnmmmgmmmmnnnnnmmlfekkjj#ddddd#jkkeefmmnnncmleeefmnnnmfkkkkkkkkkkkkkkkkkakkkkkkkkkkkkkkkkkkakkkkkakkelmn",
+"lnnleakkkklmnmleebeeeelmnnnmmgmmmmmmnnnnnmgleekjajdddd#djjjkaellmmcnmllefeellmcmeekkkkkkkkkkkkkkakkkkkkkkkkkkkkkkkkakkkkkakkkkee",
+"kemmncmekjkelmnmlbeeeeelmmnnncnmmmmmmnnnnncmmleeajjjdd#ddddjakkeelgmnnnngleeelgnnmlekkkkkkkkkkkkakkkkkkkkkkkkkkkkkkakkkkkakkkkkk",
+"kkeelgnmlekkkkelngleeeeeellmncnnmmmmmmmmnnhnnmmlfekkjj#ddddd#jjjkkaellmnhnmleefelmnnleekkkkekekkakkkkkkkkkkkkekkkkkakkkkkakkkkkk",
+"kkkkkaemnnmlejjklgnnleeeeeelmgnnnnnmmmmmmmcnnnnmglleekajjddd#ddddjakkeelfmnnnmfeeelmnnmekkkkkeeeaekkkkkkkkkekkkkkkkakkkkkakkkkkk",
+"kkkkkakeelmcmekkkabfccfbeeeeeffgchccgggggggmnnnncmmlleakjjjj#jjjjj##aaaaaellmngffbbbbemnmlbekeeebeeeeebeeeeeeaaaaaaakkkkkakkkkka",
+"kkkkkkkkkkefmnnleajkelncmeeeeeelmmncnnnmmmmmmnnncnmmmlfeekkj#jjjjj#jjjjjjkkellmnnnmeakelmncleeeebeeeeebeeeeeeakkkkkkkkkkkkkkkkka",
+"kkkkkkkkkkkaeemnmfkkkkkfnnleeeeeellgnnnnmmmmmmmncnnnnmglleekajjjjj#jjjjjjjjkkkeelmnmfeeeeefmnmlebeeeeebeeeeeeakkkkkkkkkkkkkkkkka",
+"kkkkkkkkkkkakkkemcnlekjaemnnmeeeeeefmmnnnnmmmmmmgnnnnncmmllebekkkj#jjjjjjjjjjjjkeelmcnmlekaelmnmfeeeeebeeeeeeakkkkkkkkkkkkkkkkka"
+};
+SIMPLE  =                    T                                                  BITPIX  =                    8                                                  NAXIS   =                    2                                                  NAXIS1  =                  128                                                  NAXIS2  =                  128                                                  HISTORY Written by XV 3.10a                                                     END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+
+
+
+
+
+
+
+
+
+J
+
+
+ 
+J           
+
+
+u
+ 
+J J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J 
+
+
+
+
+           
+Ju
+
+
+  J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+  J
+         
+
+uu
+
+   J
+ J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+J    J
+uuuJJJJJ  
+JJJJJJJ
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+J  
+           
+JuJ
+
+     
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+ 
+
+
+
+        
+
+uu
+
+J    
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+ 
+
+          JuJ
+
+      
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+  J
+
+
+
+         
+Ju
+J 
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+ 
+
+J
+  J         
+
+uu
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+ JJJJJJ      JuJ
+  JJ
+
+
+
+
+JJJJJJJ
+
+
+
+
+JJJJJJJJJJJJJJJJJJJJ
+
+
+
+  
+
+          
+
+u
+
+     
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+J
+
+ 
+J       
+u
+    
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+J          
+
+u
+
+     
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+  J
+
+         
+Ju
+      
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+ 
+
+
+J
+             
+
+uJ
+     
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+  
+
+
+   JJJuuu
+  JJJuuuJJJJJJJJJJJJJJJ
+
+
+
+
+JJJJJJJ
+
+
+
+
+J
+
+
+
+
+J
+          J
+u
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+  
+
+
+            
+
+Ju
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+uJ      
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+        
+u
+
+     
+u
+
+
+
+
+
+
+
+
+
+
+          
+u
+     
+
+u
+
+
+
+
+
+
+
+    
+
+
+     
+
+JJ
+   JJuuuuuJJJJJJJJJJJJJJJJJJJJJ 
+J
+
+
+    
+u
+      
+
+JJ
+
+
+
+
+
+
+JJ
+    
+
+
+
+
+J
+
+        J
+u
+
+     
+uJ
+
+
+
+
+
+
+JJ
+
+   
+
+
+
+
+
+
+
+         
+Ju
+
+      
+uJ
+
+
+
+
+JJ
+   
+
+
+
+
+        
+
+JJ     J
+u
+J
+
+
+
+J
+  
+J
+
+
+      
+u
+     
+Ju
+J
+
+
+u
+  
+J
+      JJJuuuu
+     JJJJuJ
+
+
+J
+
+
+JJJJJJ  JJ
+    
+
+       
+
+
+uJ
+
+
+
+
+J
+ 
+u
+       
+
+    
+
+uJ
+
+
+
+
+
+
+J   
+J
+  J
+  
+
+      
+
+
+uJ
+
+
+
+
+
+
+   u
+   
+
+
+J  
+
+        
+
+
+J
+J
+
+
+
+
+
+
+  
+u
+  
+
+
+
+
+
+
+
+
+J  
+
+        
+
+
+J
+
+
+J
+
+
+    JJ  J
+
+
+
+
+
+
+
+
+
+
+
+   
+
+JuuuuuuJJ     JJJJJJJJ
+
+
+
+ 
+u
+  J
+
+
+
+
+
+J
+
+
+
+    
+
+u
+             
+J
+ 
+
+
+
+
+
+J
+
+    
+
+u
+
+               
+  
+
+
+
+
+
+
+J
+
+   
+u
+                
+ 
+
+
+
+
+   
+u
+
+                           J
+       
+
+
+   
+u
+
+                  
+
+  
+u
+          
+    
+u
+    
+JJJuuuu
+           JJJJJuJ
+    J
+
+
+  
+
+           
+   
+uJ      
+
+
+           
+u
+J       
+
+
+            
+u
+
+       
+
+
+
+         
+u
+
+                   
+
+
+
+
+
+       
+   
+
+u
+                             J
+
+
+
+
+   J
+
+      
+u
+     
+
+
+JJ   JJJJJ JJu
+
+
+
+
+
+    J
+
+
+
+
+J
+
+   J
+
+
+
+  
+u
+
+
+
+
+
+
+    
+
+J
+
+
+J
+   
+
+
+
+J
+
+
+
+
+  
+u
+
+
+
+J
+
+
+
+
+
+   
+
+
+J
+
+J
+   
+
+
+
+
+
+J
+
+
+
+   
+J
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+   
+ 
+
+J
+
+
+
+J   
+
+
+
+
+
+
+J
+
+
+   
+J
+
+
+
+
+J
+
+
+
+
+
+
+u
+
+
+
+
+
+J
+
+ 
+  
+
+J
+
+
+    
+
+
+
+
+
+J
+
+  
+JJJJJJJJJJJJJuuuuJJJJJJJJJJ  JJJ
+
+uuuuuuJ
+
+JJ
+
+
+J
+
+uJuJ
+
+  
+
+
+
+ 
+
+uJ
+     J
+
+
+J
+  
+uJu
+J   
+
+  
+
+u
+J     J
+
+
+J
+
+ 
+uuu
+
+  
+
+
+  
+
+u
+
+   
+
+J
+ 
+uuu
+   
+
+  J
+u
+
+    
+
+J
+ 
+uuu
+
+
+  
+
+
+  
+
+Ju
+
+      
+
+J
+  
+uuuÿÿuuuuuuuJJJJJ   JJJJ  
+
+JuuuuuJJ
+    
+J
+uuuuuuuuuuuuuu
+
+
+   
+
+
+
+
+  
+
+
+u
+
+                         
+
+
+  
+u
+
+
+
+  
+
+
+  J
+
+
+u
+
+                         
+
+
+  Ju
+
+   
+
+
+
+ 
+J
+
+u
+                     J
+  
+JJ
+
+
+   
+
+
+   
+
+
+J
+
+J
+
+                 
+J
+
+  
+
+J
+
+
+J   
+  
+
+
+
+
+J
+J
+
+               
+
+J
+
+  
+
+JJJJJ  
+
+
+
+
+
+JJJJuuuuuJJJJJ   JJJJ  
+
+
+JuuuuuuuuuuuuuuuuJJ
+       J
+
+
+
+
+
+
+
+
+
+        
+
+
+
+  
+
+
+
+
+         
+
+J
+
+
+
+
+
+
+
+   
+
+
+  
+
+
+
+
+
+
+
+         
+
+
+
+J
+
+
+
+
+
+   
+J
+
+  J
+
+
+
+
+
+        
+
+
+
+
+J
+
+
+
+
+
+   
+
+J  
+
+J
+
+
+
+
+         J
+
+
+
+
+J
+
+
+
+
+
+
+
+   
+
+
+  
+
+
+J
+
+
+
+   
+
+J
+
+
+
+
+JJJJJJJuJJJJJJJJ
+
+
+JJJJJ
+uuuuuuJ
+
+
+         
+
+
+
+J
+
+
+
+J
+
+
+
+
+
+
+
+
+
+ 
+  
+
+
+
+
+
+u
+
+
+        J
+
+
+
+
+J
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+J  
+
+
+
+
+
+u
+
+        
+J
+
+
+
+
+J
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+u
+
+         
+
+J
+
+
+
+
+JJ
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+u
+
+        
+
+
+
+J
+
+
+
+Ju
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+J
+
+      JJJJJJJJJJJJu
+
+
+JJJJJJJJJJJJJJJ  JJJJ
+
+
+
+
+JJJJuJJJJJ         
+
+
+
+
+
+
+Ju
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+J         
+
+
+
+
+
+
+JJ
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+JJ
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+J
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+J
+J
+
+    
+
+
+
+
+
+  J
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+J
+
+J    
+
+
+
+
+
+
+      
+J
+
+
+
+
+      
+
+JJJJJJJJJJJJJJuuuuJ
+
+
+
+J  
+JJJJJJ  
+JJJJJJJ
+        
+
+
+
+J
+
+
+
+
+
+J
+
+
+
+   
+
+
+           
+
+J
+
+
+
+
+
+        
+
+
+J
+
+
+
+J
+
+     
+
+       
+
+
+J
+
+
+
+       
+
+
+
+J
+
+
+
+J    
+u
+
+      
+
+
+J
+
+
+          
+
+
+
+J
+
+
+
+
+
+       
+u
+      
+
+
+
+J
+         
+
+
+
+J
+
+
+
+      
+J     
+
+
+
+
+J
+        JJJJJJJJJJJJJJJJJJ          
+uuuJ  
+
+
+JJJ
+
+
+
+
+J   
+
+
+
+
+
+
+JJ
+
+
+        JJ
+ J
+
+
+
+
+J
+  
+
+
+
+
+          J
+
+
+
+J
+J
+          u
+  
+
+
+
+
+J  
+
+
+
+
+          J
+
+
+
+
+
+
+J
+
+J       
+u
+ 
+
+
+
+
+J  
+
+
+
+
+           
+
+J
+
+
+
+
+J
+
+
+         
+J  
+
+
+
+  
+
+
+          
+
+
+J
+
+
+
+
+
+
+
+J
+        
+
+   
+
+
+
+ 
+
+        
+
+
+J
+
+
+
+
+J
+
+
+
+    
+JuuuuuuJ     
+
+
+  JJJ JJJJ
+
+
+
+
+J
+       
+u
+          J
+
+           
+
+
+
+J
+
+       
+Ju          
+J
+            
+
+
+
+
+
+J    
+
+u
+     
+
+J           
+
+
+
+
+
+J        
+u
+      
+
+
+               JJ   
+
+
+
+ 
+
+
+             JJuuu
+     
+
+
+JJJJ
+
+
+     
+JJ   
+J
+
+J
+
+ 
+J
+              
+u
+
+     
+
+J
+
+
+J
+
+  
+J                  
+Ju
+
+    
+
+
+J
+
+
+
+
+J
+  
+
+
+     J         
+uJ    
+
+
+J
+
+
+
+
+J  
+
+      
+
+J              
+  
+
+u
+    J
+
+
+
+
+J
+
+
+
+
+ 
+
+
+     
+
+
+
+J               
+
+JJJ
+  
+
+JJJJJJJJ
+
+
+
+
+JJJJJ  
+J
+   JJJJJJJJJ
+
+J
+  
+
+
+J
+
+
+
+
+
+
+J
+
+
+ 
+
+
+     J
+
+
+
+        
+
+
+  
+      
+
+J
+
+
+
+
+
+
+J
+ 
+
+ J
+     
+J
+
+
+
+
+
+
+  
+
+   
+JJ
+
+
+
+
+
+
+
+
+
+J 
+
+ J    
+J
+
+
+
+
+
+
+
+
+  
+
+
+    
+
+uJ
+
+
+
+
+
+
+
+
+
+ 
+
+  
+    
+J
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+uJ
+
+
+
+
+
+
+
+
+
+
+
+
+ J     
+J
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+   
+
+J
+
+
+J
+
+
+
+
+
+
+
+ 
+
+  J
+     
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+    
+
+
+JJuuuuJJJJJJJJJJJJJJJJJJJJ J
+
+ JJ JJJ
+
+
+
+
+JJJJJJJJJJJJ J
+JJ
+
+
+
+
+
+
+
+
+
+
+
+  
+J  
+
+       
+
+
+
+
+
+J
+
+
+   
+
+  
+ 
+
+JJJ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+J
+     JJJ
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+          
+  
+JJJ
+
+
+
+
+
+
+
+
+
+
+ 
+J
+             
+
+JJ
+J
+
+
+
+
+
+
+
+
+
+  
+
+                              
+
+
+  J
+
+
+
+JJJJJJJJJJJJJ
+
+
+
+
+JJJJJJJJJ
+
+ J              JJJ
+
+J
+
+
+
+
+JJ
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+ 
+
+ 
+                         
+  
+J  
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+                      
+
+
+ 
+
+
+
+ J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ J
+
+              
+
+J
+
+
+
+  J
+
+  
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+J           J
+
+
+
+
+J
+
+ 
+
+
+J
+ 
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+  J
+ 
+
+            
+
+
+
+J
+
+
+
+
+J 
+
+ J
+
+
+
+
+J
+
+
+
+
+J
+
+
+
+
+
+JJJJJJJJJJJJ
+
+
+
+
+J
+
+JJJJ
+ JJ           JJJJJJ
+
+J
+
+
+ 
+J
+
+ J
+
+
+
+
+JJJJJJJJJJJJJ
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+J
+  
+
+  J
+             
+
+
+
+
+
+
+J
+ 
+
+
+  J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+
+
+
+
+
+
+
+J
+
+
+
+  J
+
+
+           
+
+J
+
+
+ 
+ J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

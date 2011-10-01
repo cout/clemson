@@ -1,0 +1,219 @@
+// BTree Project
+// Design phase
+// Paul Brannan
+// March 30, 1999
+
+// Schedule of due dates:
+//   Design - March 30
+//   Low-level I/O - April 1
+//   Funcitoning BTree Node - April 8
+//   Functioning BTree - April 15
+//   Primary Key (Add, Search, Delete, Import) - April 20
+//   Secondary Key (Add, Search, Delete, Import) - April 22
+//   Option (Boolean query)
+//   Final Revision - April 26, 8:30 AM
+//   Demo/Walk-Through/Oral Exam - schedule an appointment
+
+// This may look like C/C++ code, but it is pseudocode with C/C++ syntax.
+
+struct record 
+{ 
+  char pkey[32]; 
+  char fname[16]; 
+  char lname[32]; 
+  char addr1[80]; 
+  char addr2[80]; 
+  char city[32]; 
+  char state[3]; 
+  char zip[11]; 
+  char phone[13]; 
+};
+
+// The user should not be able to type this at the keyboard.
+#define MAXKEY	"\0xFF"
+
+class DBFile {
+public:
+	insertRecord(const void *rec);
+	// inserts a record into the first free space
+
+	deleteRecord(int n);
+	// deletes the nth record from the file.  (actually just marks it
+	// deleted).
+
+	open(const char *filename);
+	// open file filename and set up necessary data structures.  returns 0
+	// on error, any other value otherwise.
+
+	close();
+	// close a file.
+
+	getRecord(int n, char *buf);
+	// place the nth record into the memory pointed to by buf.
+private:
+	int fd;				// file descriptor
+	int recsize;			// size of records
+}
+
+// since our records only contain char arrays, that is all we need to handle
+class BTreeNode {
+public:
+	insertElement(const char *element, int offset);
+	// insertElement inserts an element into the list.  returns 0 if
+	// full, any other value if not full.
+
+	deleteElement(const char *element);
+	// delete an element from the list.  this involves searching through
+	// the array for the element.  returns 0 if the element was not found,
+	// or any other value if the delete was successful.
+
+	searchForElement(const char *element);
+	// searches for the first element greater than element.
+	// returns the offset associated with the element found.
+	
+	isFull();
+	// returns 0 if the node is not full, any other value otherwise
+
+	isLeaf() {return isLeafNode;}
+private:
+	char *elementList;
+	int *offsetList;
+	int elementSize;
+	int numElements;
+	bool isLeafNode;
+}
+
+class BTreeDB {
+public:
+	insertRecord(const void *key, const void *rec);
+	// insert a record into the database.  This involves finding the correct
+	// position in the list, and splitting a node if necessary.  it should not
+	// be possible to insert maxkey into the tree, so inserting the maxkey is
+	// an error condidtion.  returns 0 if unsuccessful, any other value if
+	// successful.
+
+	deleteRecord(const void *key);
+	// delete a record from the list.  Use lazy deletion.
+
+	open(const char *filename);
+	// open a file.  This makes the necessary call to db.open and sets up any
+	// data structures that were not set up by the constructor.  Returns 0 on
+	// error, any other value otherwise.
+
+	close();
+	// close the file.
+
+	findRecord(const void *key, void *rec);
+	// find a record in the database with associated key.  returns 0 if
+	// unsuccessful, 1 otherwise.
+private:
+	doSplit();
+	// perform a split.
+private:
+	BTreeNode *bufferedNodes;
+	DBFile db;
+	int elementSize;
+	int numElements;
+}
+
+DBFileTest() {
+	DBFile db(10);			// record size of ten
+	int j;
+
+	// insert and delete random elements
+	for(j = 0; j < 100; j++) {
+		switch(rand() % 2) {
+		case 0:
+			str = [random string]
+			cout << "Inserting" << str << endl;
+			tot++;
+			db.InsertRecord(str);
+			break;
+		case 1:
+			rec = rand() % tot;
+			cout << "Deleting record" << rec
+			     << (char *)db.getRecord(rec) << endl;
+			tot--;
+			db.getRecord(rec);
+			break;
+		}
+	}
+
+	// print the elements out
+	for(j = 0; j < tot; j++) {
+		cout << (char *)db.getRecord(j);
+	}
+}
+
+BTreeNodeTest() {
+	BTreeNode node(10, 10);
+
+	// test insertion
+	for(int j = 0; j < 10; j++) {
+		node.insertElement(arr[j], j);
+		// should print "full" exactly once
+		if(node.isFull()) cout << "full" << endl;
+	}
+
+	// test searching
+	for(int j = 0; j < 9; j++) {
+		assert(node.searchForElement(arr[j]) == j);
+	}
+
+	// test deletion here
+}
+
+BTreeTest() {
+	BTreeDB btree(10, 10);
+	DBFile keydb(10), valdb(10);
+	int tot = 0;
+
+	keydb.open();
+	valdb.open();
+	btree.open();
+
+	// perform inserts -- we know that DBFile works, so compare
+	// BTreeDB data against DBFile data.
+	for(int j = 0; j < 100; j++) {
+		switch(rand() % 2) {
+		case 0:
+			key = [random string];
+			val = [random string];
+			tot++;
+			keydb.insertRecord(key);
+			valdb.insertRecord(val);
+			btree.insertRecord(key, val);
+			break;
+		case 1:
+			rec = rand() % tot;
+			tot--;
+			key = keydb.getRecord(rec);
+			btree.deleteRecord(key);
+			keydb.deleteRecord(rec);
+			valdb.deleteRecord(rec);
+			break;
+		}
+	}
+
+	// test the data
+	for(j = 0; j < tot; j++) {
+		key = keydb.getRecord(j);
+		btree.findRecord(key, &val);
+		assert(val == valdb.getRecord(j));
+	}
+
+	// insert the maxkey
+	key = MAXKEY
+	val = [random string]
+	keydb.insertRecord(key);
+	valdb.insertRecord(val);
+	btree.insertRecord(key, val);
+	tot++;
+
+	// test the data again
+	for(j = 0; j < tot; j++) {
+		key = keydb.getRecord(j);
+		btree.findRecord(key, &val);
+		assert(val != valdb.getRecord(j));
+	}
+}

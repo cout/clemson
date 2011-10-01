@@ -1,0 +1,31 @@
+Spantree version 1.0
+Dr. Robert E. Jamison
+Paul Brannan
+
+To make the binaries:
+	1) make clean
+	2) make dep
+	3) make
+
+To test the binaries:
+	1) ./biname_test
+	2) ./tree_test
+	3) ./graph_test
+	4) ./spantree_test
+
+To use the software, type:
+	./spantree inputfile
+where inputfile is the name of the input file.  Alternately, you can type:
+	./spantree inputfile outputfile
+to write all the output to file outputfile.
+
+To create an input file, use your favorite editor (vi, pico, nedit, etc.).
+The format of the input file is as follows:
+e1v1 e1v2
+e2v1 e2v2
+e3v1 e3v2
+...
+
+Where e1v1 is vertex 1 of edge 1, etc.  A sample input file sample.in has been
+provided.  Note that the smallest vertex in this file is 0; you can start
+with 1 instead, if you wish; the file sample2.in is arranged this way.

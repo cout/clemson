@@ -1,0 +1,22 @@
+Subtree found: 0 1 2 3 4 
+Subtree found: 0 1 2 3 5 
+Subtree found: 0 1 2 4 5 
+Subtree found: 0 1 2 4 6 
+Subtree found: 0 1 2 5 6 
+Subtree found: 0 1 3 4 5 
+Subtree found: 0 1 3 4 6 
+Subtree found: 0 1 3 5 6 
+Subtree found: 0 2 3 4 5 
+Subtree found: 0 2 3 4 6 
+Subtree found: 0 2 3 5 6 
+Subtree found: 1 2 3 4 5 
+Subtree found: 1 2 4 5 6 
+Subtree found: 1 3 4 5 6 
+Subtree found: 2 3 4 5 6 
+
+Total time: 0 seconds.
+Number of trees found: 15
+Number of NON-ISOMORPHIC trees found: 1
+Tree 0 occured 15 times (edges: [0 1] [1 2] [2 3] [3 4] [4 5] )
+
+Edges not required: [0 1] [1 2] [2 3] [3 4] [4 5] [5 0] [4 1] 

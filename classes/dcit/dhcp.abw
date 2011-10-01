@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<abiword version="0.7.9">
+<!-- =====================================================================  -->
+<!-- This file is an AbiWord document.                                      -->
+<!-- AbiWord is a free, Open Source word processor.                         -->
+<!-- You may obtain more information about AbiWord at www.abisource.com     -->
+<!-- You should not edit this file by hand.                                 -->
+<!-- =====================================================================  -->
+
+<!--         Build_ID          = (none) -->
+<!--         Build_Version     = 0.7.9 -->
+<!--         Build_Options     = LicensedTrademarks:On Debug:Off Gnome:Off -->
+<!--         Build_Target      = /var/tmp/builds/0956890453/tmp/abi-0.7.9/src/Linux_2.2.14-5.0_i386_OBJ/obj -->
+<!--         Build_CompileTime = 21:58:58 -->
+<!--         Build_CompileDate = Apr 27 2000 -->
+
+<section>
+<p><c props="font-size:14pt; font-weight:bold">DHCP Overview</c></p>
+<p></p>
+<p>The dynamic host configuration protocol is a system by which a client's configuration can be managed by a server.  The protocol specifies many configuration options, the most important of which is the IP address.  The IP address is intended to be a unique identifier, and thus it is not efficient for users to select their own IP addresses, as this could easily result in a collision, which would cause an interrupt of service for both parties.  A DHCP server can easily keep track of which IP belongs to which machine, and can manage IPs in a smart manner.  Because the DHCP protocol does not specify any way for DHCP servers to communicate to one another, it is important that there be only one DHCP server on a network.  From RFC 2131:</p>
+<p></p>
+<p props="margin-left:.5in; margin-right:.5in"><c props="font-style:italic">"A host should not act as a DHCP server unless explicitly configured to do so by a system administrator. The diversity of hardware and protocol implementations in the Internet would preclude reliable operation if random hosts were allowed to respond to DHCP requests. For example, IP requires the setting of many parameters within the protocol implementation software. Because IP can be used on many dissimilar kinds of network hardware, values for those parameters cannot be guessed or assumed to have correct defaults. Also, distributed address allocation schemes depend on a polling/defense mechanism for discovery of addresses that are already in use. IP hosts may not always be able to defend their network addresses, so that such a distributed address allocation scheme cannot be guaranteed to avoid allocation of duplicate network addresses."</c></p>
+<p></p>
+<p>DHCP supports three methods for allocation of addresses: automatic allocation, manual allocation, and dynamic allocation.  It is based on the BOOTP protocol, allowing BOOTP clients and DHCP clients to exist together on the same network.  The protocol supports numerous configuration options, and is not limited to simply the internet protocol (IP).</p>
+<p></p>
+<p><c props="font-size:14pt; font-weight:bold">DHCP Operation</c></p>
+<p></p>
+<p><c props="font-size:12pt; font-weight:normal">A single DHCP message consists of a number of fields, which include (but are not limited to):</c></p>
+<p></p>
+<p>	op		Message type (BOOTREQUEST or BOOTREPLY)</p>
+<p>	ciaddr		Client address</p>
+<p>	siaddr		Server address</p>
+<p>	chaddr		Client hardware address</p>
+<p>	file		Boot file name (can be DHCPDISCOVER/DHCPOFFER)</p>
+<p>	options		Miscellaneous field</p>
+<p></p>
+<p>An initial transaction with the server involves broadcasting a message in which the op field contains a BOOTREQUEST, and the file field contains a DHCPDISCOVER.  This is a request for the DHCP server to reply.</p>
+<p></p>
+<p>The DHCP server responds with the op field set to BOOTREPLY, and the file field set to DHCPDISCOVER, to indicate that the server has configuration parameters available for the client.</p>
+<p></p>
+<p>The client then sends a DHCPREQUEST, requesting the configuration parameters that were offered.  The DHCP server can respond with one of two replies:</p>
+<p>	DHCPACK - The returned message includes the requested configuration parameters</p>
+<p>	DHCPNAK - The client did not send a request with proper address fields, indicating that the client has a misconstrued idea of the network's topology (i.e., if the client has moved to a different location).</p>
+<p></p>
+<p>If the client has knowledge that the returned address is already in use, it may return a DHCPDECLINE message.  When the client is done with the address, it may send a DHCPRELEASE message, to indicate that it no longer needs the address.</p>
+<p></p>
+<p><c props="font-size:14pt; font-weight:bold">DHCP Issues</c></p>
+<p></p>
+<p>There are a number of issues that can arise from misuse of the DHCP protocol.  These are described extensively in RFC 2131, but here is a summary of a few:</p>
+<p></p>
+<p><c props="font-style:italic">1. The client receives no DHCPOFFER messages.</c></p>
+<p></p>
+<p>In this case, the client times out, and may or may not retransmit its DHCPDISCOVER message.  If multiple DHCPDISCOVER requests are sent without a DHCPOFFER response, then there is probably no DHCP server on the local network.</p>
+<p></p>
+<p><c props="font-style:italic">2. The client receives multiple DHCPOFFER messages.</c></p>
+<p></p>
+<p>The client is under no obligation to respond to any particular DHCPOFFER message.  It can wait a given period of time to see if more DHCPOFFER messages arrive, or it can respond to the first DHCPOFFER message that is sent across the network.  In this case, the DHCPREQUEST message that follows must set the server address field according to the server that it has selected.</p>
+<p></p>
+<p><c props="font-style:italic">3. The address received from the DHCP server is already in use.</c></p>
+<p></p>
+<p><c props="font-style:normal">In this case, the client must send a DHCPDECLINE message to the server and request a new network address.  In other words, the client must send a new DHCPREQUEST, asking for a new address.  The server must mark the address as not available.</c></p>
+<p></p>
+<p><c props="font-style:italic">4. The client receives a DHCPNAK message.</c></p>
+<p></p>
+<p><c props="font-style:normal">In this case, the client may not use the network address that it had previously been using.  It must restart the configuration process.  The RFC is ambiguous here, as it does not specify whether a new DHCPDISCOVER request must be sent, or whether the configuration process is to be restarted on the DHCPREQUEST step.  Any DCHPNAK message is authoritative.</c></p>
+<p></p>
+<p><c props="font-style:italic">5. The client receives neither a DHCPACK nor a DHCPNAK.</c></p>
+<p></p>
+<p>The client should time out and retransmit its DHCPREQUEST message.  If the lease on the client's previous network address has not expired, the client may continue to use it until the lease has expired.</p>
+</section>
+</abiword>

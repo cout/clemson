@@ -1,0 +1,11 @@
+1) foo copies the asciiz string pointed to by B to the location pointed to by
+   A.  It terminates when *B==0.
+
+2) #define POW2(n) (1<<n)
+
+3) Macros cannot be recursive.
+
+4) #define HIGH32(n) (n>>31)
+
+5) #define MID32(n) ((n&0xf0)>>4)
+

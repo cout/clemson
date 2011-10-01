@@ -1,0 +1,23 @@
+cyclone[31] cat data.in
+0 0 1
+10 0 1
+5 10
+cyclone[32] ./main bear.out girl.out < data.in
+Girl's x position: Girl's y position: Girl's speed: Bear's x position: Bear's y position: Bear's speed: Telephone booth's x position: Telephone booth's y position:     X_G     Y_G     X_B     Y_B
+        0       0       10      0
+        0.447214        0.894427        9.00435 0.0932223
+        0.894427        1.78885 8.02552 0.297878
+        1.34164 2.68328 7.0837  0.634002
+        1.78885 3.57771 6.20969 1.11991
+        2.23607 4.47214 5.44535 1.76473
+        2.68328 5.36656 4.83683 2.55826
+        3.1305  6.26099 4.4183  3.46646
+        3.57771 7.15542 4.19613 4.44147
+        4.02492 8.04984 4.14873 5.44035
+        4.47214 8.94427 4.24064 6.43612
+        4.91935 9.8387  4.43626 7.4168
+The girl won.
+Distance from bear to girl: 3.44435
+Final positions: 
+        5.36656 10.7331 4.43626 7.4168
+

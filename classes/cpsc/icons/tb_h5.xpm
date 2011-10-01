@@ -1,0 +1,26 @@
+/* XPM */
+static char *tb_h5[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17       2            1",
+/* colors */
+"  c None",
+"m c #000000",
+/* pixels */
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+" mmm mmm    mmm  ",
+"  m   m     m    ",
+"  m   m    mmm   ",
+"  mmmmm       m  ",
+"  m   m       m  ",
+"  m   m       m  ",
+" mmm mmm   mmm   ",
+"                 ",
+"                 ",
+"                 ",
+"                 ",
+"                 "
+};

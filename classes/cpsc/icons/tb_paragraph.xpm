@@ -1,0 +1,28 @@
+/* XPM */
+static char *tb_paragraph[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      4            1",
+/* colors */
+"  c None",
+"x c #ffffff",
+"X c #000000",
+"z c #c0c0c0",
+/* pixels */
+"                 ",
+"      xxxxxxx    ",
+"     xXXXXXXX    ",
+"    xXXX  Xzz    ",
+"   xXXXX  Xz     ",
+"   xXXXX  Xz     ",
+"   xXXXX  Xz     ",
+"     XXX  Xz     ",
+"      XX  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"       X  Xz     ",
+"                 "
+};

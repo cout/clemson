@@ -1,0 +1,32 @@
+Escherworld
+David Borland
+Paul Brannan
+David Stone
+
+Starting the program
+
+Use ewsound for sound, and ew for no sound.  To enable helmet display, use
+the --helmet option.  Note that bird control is not yet implemented.
+
+Navigation
+
+Use the mouse or keyboard to navigate.  The left mouse button controls
+zoom, while the middle mouse button controls rotation about angle theta and
+phi.  The right mouse button will bring up a menu.
+
+Keyboard controls
+
+T       Toggle textures
+L       Toggle lighting
+X       Toggle axes
+W       Toggle weapon
+F	Toggle linear filtering
+E	Toggle terrain
+G	Toggle gridlines
+C	Toggle craters
+S	Toggle smooth shading
+\,K	Toggle motion lock
++       Zoom in
+-       Zoom out
+Q	Quit
+

@@ -1,0 +1,12 @@
+1) Immediate means the operand is stored in the instruction itself.
+
+2) sethi sets the high 
+
+3) A branch instruction is analgous to a goto in a high level language
+   (i.e. jmp $label)
+
+4) A delayed branch
+   It is implemented in SPARC by
+
+5) 3 Major diffs b/t CISC and RISC:
+   They are implemented in SPARC by

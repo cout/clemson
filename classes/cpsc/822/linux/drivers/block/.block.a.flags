@@ -1,0 +1,3 @@
+ifeq (ll_rw_blk.o ide.o md.o xor.o genhd.o floppy.o rd.o ide-probe.o rz1000.o cmd640.o ide-pci.o ide-dma.o ide-proc.o ide-disk.o ide-cd.o,$(strip $(subst $(comma),:,$(EXTRA_ARFLAGS) $(LX_OBJS) $(L_OBJS))))
+FILES_FLAGS_UP_TO_DATE += block.a
+endif

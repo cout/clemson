@@ -1,0 +1,1283 @@
+This is Info file gmp.info, produced by Makeinfo-1.63 from the input
+file gmp.texi.
+
+   This file documents GNU MP, a library for arbitrary-precision integer
+and rational number arithmetic.
+
+   This is a draft edition of the documentation, last updated May 20
+1993.
+
+   Copyright (C) 1991, 1993 Free Software Foundation, Inc.
+
+   Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+   Permission is granted to copy and distribute modified versions of
+this manual under the conditions for verbatim copying, provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+   Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be stated in a
+translation approved by the Foundation.
+
+
+File: gmp.info,  Node: Top,  Next: Copying,  Prev: (dir),  Up: (dir)
+
+* Menu:
+
+* Copying::                  GMP Copying Conditions.
+* Intro::                    Introduction to GMP.
+* Nomenclature::             Terminology and basic data types.
+* Initialization::           Initialization of multi-precision number objects.
+* Integer Functions::        Functions for arithmetic on signed integers.
+* Rational Number Functions:: Functions for arithmetic on rational numbers.
+* Low-level Functions::      Fast functions for natural numbers.
+* BSD Compatible Functions:: All functions found in BSD MP (somewhat faster).
+* Miscellaneous Functions::  Functions that do particular things.
+* Custom Allocation::        How to customize the internal allocation.
+* Reporting Bugs::           Help us to improve this library.
+
+* References::
+* Concept Index::
+* Function Index::
+
+
+GNU MP Copying Conditions
+*************************
+
+   This library is "free"; this means that everyone is free to use it
+and free to redistribute it on a free basis.  The library is not in the
+public domain; it is copyrighted and there are restrictions on its
+distribution, but these restrictions are designed to permit everything
+that a good cooperating citizen would want to do.  What is not allowed
+is to try to prevent others from further sharing any version of this
+library that they might get from you.
+
+   Specifically, we want to make sure that you have the right to give
+away copies of the library, that you receive source code or else can get
+it if you want it, that you can change this library or use pieces of it
+in new free programs, and that you know you can do these things.
+
+   To make sure that everyone has such rights, we have to forbid you to
+deprive anyone else of these rights.  For example, if you distribute
+copies of the GMP library, you must give the recipients all the rights
+that you have.  You must make sure that they, too, receive or can get
+the source code.  And you must tell them their rights.
+
+   Also, for our own protection, we must make certain that everyone
+finds out that there is no warranty for the GMP library.  If it is
+modified by someone else and passed on, we want their recipients to
+know that what they have is not what we distributed, so that any
+problems introduced by others will not reflect on our reputation.
+
+   The precise conditions of the license for the GMP library are found
+in the General Public License that accompany the source code.
+
+Introduction to MP
+******************
+
+   GNU MP is a portable library for arbitrary precision integer and
+rational number arithmetic.(1)  It aims to provide the fastest possible
+arithmetic for all applications that need more than two words of
+integer precision.
+
+   Most often, applications tend to use just a few words of precision;
+but some applications may need thousands of words.  GNU MP is designed
+to give good performance for both kinds of applications, by choosing
+algorithms based on the sizes of the operands.
+
+   There are five groups of functions in the MP library:
+
+  1. Functions for signed integer arithmetic, with names beginning with
+     `mpz_'.
+
+  2. Functions for rational number arithmetic, with names beginning with
+     `mpq_'.
+
+  3. Functions compatible with Berkeley MP, such as `itom', `madd', and
+     `mult'.
+
+  4. Fast low-level functions that operate on natural numbers.  These
+     are used by the functions in the preceding groups, and you can
+     also call them directly from very time-critical user programs.
+     These functions' names begin with `mpn_'.
+
+  5. Miscellaneous functions.
+
+   As a general rule, all MP functions expect output arguments before
+input arguments.  This notation is based on an analogy with the
+assignment operator.  (The BSD MP compatibility functions disobey this
+rule, having the output argument(s) last.)  Multi-precision numbers,
+whether output or input, are always passed as addresses to the declared
+type.
+
+* Menu:
+* Nomenclature::
+* Thanks::
+
+   ---------- Footnotes ----------
+
+   (1)  The limit of the precision is set by the available memory in
+your computer.
+
+Nomenclature and Data Types
+===========================
+
+   In this manual, "integer" means a multiple precision integer, as
+used in the MP package.  The C data type for such integers is `MP_INT'.
+For example:
+
+     MP_INT sum;
+     
+     struct foo { MP_INT x, y; };
+     
+     MP_INT vec[20];
+
+   "Rational number" means a multiple precision fraction.  The C data
+type for these fractions is `MP_RAT'.  For example:
+
+     MP_RAT quotient;
+
+   A "limb" means the part of a multi-precision number that fits in a
+single word.  (We chose this word because a limb of the human body is
+analogous to a digit, only larger, and containing several digits.)
+Normally a limb contains 32 bits.
+
+
+Thanks
+======
+
+   I would like to thank Gunnar Sjoedin and Hans Riesel for their help
+with mathematical problems, Richard Stallman for his help with design
+issues and for revising this manual, Brian Beuning and Doug Lea for
+their testing of various versions of the library, and Joachim Hollman
+for his many valuable suggestions.
+
+   Special thanks to Brian Beuning, he has shaked out many bugs from
+early versions of the code!
+
+   John Amanatides of York University in Canada contributed the function
+`mpz_probab_prime_p'.
+
+
+Initialization
+**************
+
+   Before you can use a variable or object of type `MP_INT' or
+`MP_RAT', you must initialize it.  This fills in the components that
+point to dynamically allocated space for the limbs of the number.
+
+   When you are finished using the object, you should clear out the
+object.  This frees the dynamic space that it points to, so the space
+can be used again.
+
+   Once you have initialized the object, you need not be concerned about
+allocating additional space.  The functions in the MP package
+automatically allocate additional space when the object does not already
+have enough space.  They do not, however, reduce the space in use when a
+smaller number is stored in the object.  Most of the time, this policy
+is best, since it avoids frequent re-allocation.  If you want to reduce
+the space in an object to the minimum needed, you can do `_mpz_realloc
+(&OBJECT, mpz_size (&OBJECT))'.
+
+   The functions to initialize numbers are `mpz_init' (for `MP_INT') and
+`mpq_init' (for `MP_RAT').
+
+   `mpz_init' allocates space for the limbs, and stores a pointer to
+that space in the `MP_INT' object.  It also stores the value 0 in the
+object.
+
+   In the same manner, `mpq_init' allocates space for the numerator and
+denominator limbs, and stores pointers to these spaces in the `MP_RAT'
+object.
+
+   To clear out a number object, use `mpz_clear' and `mpq_clear',
+respectively.
+
+   Here is an example of use:
+
+     {
+       MP_INT temp;
+       mpz_init (&temp);
+     
+       ... store and read values in `temp' zero or more times ...
+     
+       mpz_clear (&temp):
+     }
+
+   You might be tempted to copy an integer from one object to another
+like this:
+
+     MP_INT x, y;
+     
+     x = y;
+
+   Although valid C, *this is an error.* Rather than copying the
+integer value from `y' to `x' it will make the two variables share
+storage.  Subsequent assignments to one variable would change the other
+mysteriously.  And if you were to clear out both variables
+subsequently, you would confuse `malloc' and cause your program to
+crash.
+
+   To copy the value properly, you must use the function `mpz_set'.
+(*note Assigning Integers::.)
+
+
+Integer Functions
+*****************
+
+   This chapter describes the MP functions for performing integer
+arithmetic.
+
+   The integer functions use arguments and values of type
+pointer-to-`MP_INT' (*note Nomenclature::.).  The type `MP_INT' is a
+structure, but applications should not refer directly to its
+components.  Include the header `gmp.h' to get the definition of
+`MP_INT'.
+
+* Menu:
+
+* Initializing Integers::
+* Assigning Integers::
+* Simultaneous Integer Init & Assign::
+* Converting Integers::
+* Integer Arithmetic::
+* Logic on Integers::
+* I/O of Integers::
+
+
+Initializing Integer Objects
+============================
+
+   Most of the functions for integer arithmetic assume that the output
+is stored in an object already initialized.  For example, `mpz_add'
+stores the result of addition (*note Integer Arithmetic::.).  Thus, you
+must initialize the object before storing the first value in it.  You
+can do this separately by calling the function `mpz_init'.
+
+ - Function: void mpz_init (MP_INT *INTEGER)
+     Initialize INTEGER with limb space and set the initial numeric
+     value to 0.  Each variable should normally only be initialized
+     once, or at least cleared out (using `mpz_clear') between each
+     initialization.
+
+   Here is an example of using `mpz_init':
+
+     {
+       MP_INT integ;
+       mpz_init (&integ);
+       ...
+       mpz_add (&integ, ...);
+       ...
+       mpz_sub (&integ, ...);
+     
+       /* Unless you are now exiting the program, do ... */
+       mpz_clear (&integ);
+     }
+
+As you can see, you can store new values any number of times, once an
+object is initialized.
+
+ - Function: void mpz_clear (MP_INT *INTEGER)
+     Free the limb space occupied by INTEGER.  Make sure to call this
+     function for all `MP_INT' variables when you are done with them.
+
+ - Function: void * _mpz_realloc (MP_INT *INTEGER, mp_size NEW_ALLOC)
+     Change the limb space allocation to NEW_ALLOC limbs.  This
+     function is not normally called from user code, but it can be used
+     to give memory back to the heap, or to increase the space of a
+     variable to avoid repeated automatic re-allocation.
+
+ - Function: void mpz_array_init (MP_INT INTEGER_ARRAY[], size_t
+          ARRAY_SIZE, mp_size FIXED_NUM_LIMBS)
+     Allocate *fixed* limb space for all ARRAY_SIZE integers in
+     INTEGER_ARRAY.  The fixed allocation for each integer in the array
+     is FIXED_NUM_LIMBS.  This function is useful for decreasing the
+     working set for some algorithms that use large integer arrays.  If
+     the fixed space will be insufficient for storing the result of a
+     subsequent calculation, the result is unpredictable.
+
+     There is no way to de-allocate the storage allocated by this
+     function.  Don't call `mpz_clear'!
+
+
+Integer Assignment Functions
+----------------------------
+
+   These functions assign new values to already initialized integers
+(*note Initializing Integers::.).
+
+ - Function: void mpz_set (MP_INT *DEST_INTEGER, MP_INT *SRC_INTEGER)
+     Assign DEST_INTEGER from SRC_INTEGER.
+
+ - Function: void mpz_set_ui (MP_INT *INTEGER, unsigned long int
+          INITIAL_VALUE)
+     Set the value of INTEGER from INITIAL_VALUE.
+
+ - Function: void mpz_set_si (MP_INT *INTEGER, signed long int
+          INITIAL_VALUE)
+     Set the value of INTEGER from INITIAL_VALUE.
+
+ - Function: int mpz_set_str (MP_INT *INTEGER, char *INITIAL_VALUE, int
+          BASE)
+     Set the value of INTEGER from INITIAL_VALUE, a '\0'-terminated C
+     string in base BASE.  White space is allowed in the string, and is
+     simply ignored.  The base may vary from 2 to 36.  If BASE is 0,
+     the actual base is determined from the leading characters: if the
+     first two characters are `0x' or `0X', hexadecimal is assumed,
+     otherwise if the first character is `0', octal is assumed,
+     otherwise decimal is assumed.
+
+     This function returns 0 if the entire string up to the '\0' is a
+     valid number in base BASE.  Otherwise it returns -1.
+
+
+Combined Initialization and Assignment Functions
+------------------------------------------------
+
+   For your convenience, MP provides a parallel series of
+initialize-and-set arithmetic functions which initialize the output and
+then store the value there.  These functions' names have the form
+`mpz_init_set...'.
+
+   Here is an example of using one:
+
+     {
+       MP_INT integ;
+       mpz_init_set_str (&integ, "3141592653589793238462643383279502884", 10);
+       ...
+       mpz_sub (&integ, ...);
+     
+       mpz_clear (&integ);
+     }
+
+   Once the integer has been initialized by any of the
+`mpz_init_set...' functions, it can be used as the source or
+destination operand for the ordinary integer functions.  Don't use an
+initialize-and-set function on a variable already initialized!
+
+ - Function: void mpz_init_set (MP_INT *DEST_INTEGER, MP_INT
+          *SRC_INTEGER)
+     Initialize DEST_INTEGER with limb space and set the initial numeric
+     value from SRC_INTEGER.
+
+ - Function: void mpz_init_set_ui (MP_INT *DEST_INTEGER, unsigned long
+          int SRC_ULONG)
+     Initialize DEST_INTEGER with limb space and set the initial numeric
+     value from SRC_ULONG.
+
+ - Function: void mpz_init_set_si (MP_INT *DEST_INTEGER, signed long
+          int SRC_SLONG)
+     Initialize DEST_INTEGER with limb space and set the initial numeric
+     value from SRC_SLONG.
+
+ - Function: int mpz_init_set_str (MP_INT *DEST_INTEGER, char
+          *SRC_CSTRING, int BASE)
+     Initialize DEST_INTEGER with limb space and set the initial
+     numeric value from SRC_CSTRING, a '\0'-terminated C string in base
+     BASE.  The base may vary from 2 to 36.  There may be white space
+     in the string.
+
+     If the string is a correct base BASE number, the function returns
+     0; if an error occurs it returns -1.  DEST_INTEGER is initialized
+     even if an error occurs.  (I.e., you have to call mpz_clear for
+     it.)
+
+
+
+Conversion Functions
+====================
+
+ - Function: unsigned long int mpz_get_ui (MP_INT *SRC_INTEGER)
+     Return the least significant limb from SRC_INTEGER.  This function
+     together with
+     `mpz_div_2exp(..., SRC_INTEGER, CHAR_BIT*sizeof(unsigned long
+     int))' can be used to extract the limbs of an integer efficiently.
+
+ - Function: signed long int mpz_get_si (MP_INT *SRC_INTEGER)
+     If SRC_INTEGER fits into a `signed long int' return the value of
+     SRC_INTEGER.  Otherwise return the least significant bits of
+     SRC_INTEGER, with the same sign as SRC_INTEGER.
+
+ - Function: char * mpz_get_str (char *STRING, int BASE, MP_INT
+          *INTEGER)
+     Convert INTEGER to a '\0'-terminated C string in STRING, using
+     base BASE.  The base may vary from 2 to 36.  If STRING is NULL,
+     space for the string is allocated using the default allocation
+     function.
+
+     If STRING is not NULL, it should point to a block of storage
+     enough large for the result.  To find out the right amount of
+     space to provide for STRING, use `mpz_sizeinbase (INTEGER, BASE) +
+     2'.  The "+ 2" is for a possible minus sign, and for the
+     terminating null character.  (*note Miscellaneous Functions::.).
+
+     This function returns a pointer to the result string.
+
+
+Integer Arithmetic Functions
+============================
+
+ - Function: void mpz_add (MP_INT *SUM, MP_INT *ADDEND1, MP_INT
+          *ADDEND2)
+
+ - Function: void mpz_add_ui (MP_INT *SUM, MP_INT *ADDEND1, unsigned
+          long int ADDEND2)
+     Set SUM to ADDEND1 + ADDEND2.
+
+ - Function: void mpz_sub (MP_INT *DIFFERENCE, MP_INT *MINUEND, MP_INT
+          *SUBTRAHEND)
+
+ - Function: void mpz_sub_ui (MP_INT *DIFFERENCE, MP_INT *MINUEND,
+          unsigned long int SUBTRAHEND)
+     Set DIFFERENCE to MINUEND - SUBTRAHEND.
+
+ - Function: void mpz_mul (MP_INT *PRODUCT, MP_INT *MULTIPLICATOR,
+          MP_INT *MULTIPLICAND)
+
+ - Function: void mpz_mul_ui (MP_INT *PRODUCT, MP_INT *MULTIPLICATOR,
+          unsigned long int MULTIPLICAND)
+     Set PRODUCT to MULTIPLICATOR times MULTIPLICAND.
+
+   Division is undefined if the divisor is zero, and passing a zero
+divisor to the divide or modulo functions, as well passing a zero mod
+argument to the powm functions, will make these functions intentionally
+divide by zero.  This gives the user the possibility to handle
+arithmetic exceptions in these functions in the same manner as other
+arithmetic exceptions.
+
+ - Function: void mpz_div (MP_INT *QUOTIENT, MP_INT *DIVIDEND, MP_INT
+          *DIVISOR)
+
+ - Function: void mpz_div_ui (MP_INT *QUOTIENT, MP_INT *DIVIDEND,
+          unsigned long int DIVISOR)
+     Set QUOTIENT to DIVIDEND / DIVISOR.  The quotient is rounded
+     towards 0.
+
+ - Function: void mpz_mod (MP_INT *REMAINDER, MP_INT *DIVDEND, MP_INT
+          *DIVISOR)
+
+ - Function: void mpz_mod_ui (MP_INT *REMAINDER, MP_INT *DIVDEND,
+          unsigned long int DIVISOR)
+     Divide DIVIDEND and DIVISOR and put the remainder in REMAINDER.
+     The remainder has the same sign as the dividend, and its absolute
+     value is less than the absolute value of the divisor.
+
+ - Function: void mpz_divmod (MP_INT *QUOTIENT, MP_INT *REMAINDER,
+          MP_INT *DIVIDEND, MP_INT *DIVISOR)
+
+ - Function: void mpz_divmod_ui (MP_INT *QUOTIENT, MP_INT *REMAINDER,
+          MP_INT *DIVIDEND, unsigned long int DIVISOR)
+     Divide DIVIDEND and DIVISOR and put the quotient in QUOTIENT and
+     the remainder in REMAINDER.  The quotient is rounded towards 0.
+     The remainder has the same sign as the dividend, and its absolute
+     value is less than the absolute value of the divisor.
+
+     If QUOTIENT and REMAINDER are the same variable, the results are
+     not defined.
+
+ - Function: void mpz_mdiv (MP_INT *QUOTIENT, MP_INT *DIVIDEND, MP_INT
+          *DIVISOR)
+
+ - Function: void mpz_mdiv_ui (MP_INT *QUOTIENT, MP_INT *DIVIDEND,
+          unsigned long int DIVISOR)
+     Set QUOTIENT to DIVIDEND / DIVISOR.  The quotient is rounded
+     towards -infinity.
+
+ - Function: void mpz_mmod (MP_INT *REMAINDER, MP_INT *DIVDEND, MP_INT
+          *DIVISOR)
+
+ - Function: unsigned long int mpz_mmod_ui (MP_INT *REMAINDER, MP_INT
+          *DIVDEND, unsigned long int DIVISOR)
+     Divide DIVIDEND and DIVISOR and put the remainder in REMAINDER.
+     The remainder is always positive, and its value is less than the
+     value of the divisor.
+
+     For `mpz_mmod_ui' the remainder is returned, and if REMAINDER is
+     not NULL, also stored there.
+
+ - Function: void mpz_mdivmod (MP_INT *QUOTIENT, MP_INT *REMAINDER,
+          MP_INT *DIVIDEND, MP_INT *DIVISOR)
+
+ - Function: unsigned long int mpz_mdivmod_ui (MP_INT *QUOTIENT, MP_INT
+          *REMAINDER, MP_INT *DIVIDEND, unsigned long int DIVISOR)
+     Divide DIVIDEND and DIVISOR and put the quotient in QUOTIENT and
+     the remainder in REMAINDER.  The quotient is rounded towards
+     -infinity.  The remainder is always positive, and its value is
+     less than the value of the divisor.
+
+     For `mpz_mdivmod_ui' the remainder is small enough to fit in an
+     `unsigned long int', and is therefore returned.  If REMAINDER is
+     not NULL, the remainder is also stored there.
+
+     If QUOTIENT and REMAINDER are the same variable, the results are
+     not defined.
+
+ - Function: void mpz_sqrt (MP_INT *ROOT, MP_INT *OPERAND)
+     Set ROOT to the square root of OPERAND.  The result is rounded
+     towards zero.
+
+ - Function: void mpz_sqrtrem (MP_INT *ROOT, MP_INT *REMAINDER, MP_INT
+          *OPERAND)
+     Set ROOT to the square root of OPERAND, as with `mpz_sqrt'.  Set
+     REMAINDER to OPERAND-ROOT*ROOT, (i.e. zero if OPERAND is a perfect
+     square).
+
+     If ROOT and REMAINDER are the same variable, the results are not
+     defined.
+
+ - Function: int mpz_perfect_square_p (MP_INT *SQUARE)
+     Return non-zero if SQUARE is perfect, i.e. if the square root of
+     SQUARE is integral.  Return zero otherwise.
+
+ - Function: int mpz_probab_prime_p (MP_INT *N, int REPS)
+     An implementation of the probabilistic primality test found in
+     Knuth's Seminumerical Algorithms book.  If the function
+     `mpz_probab_prime_p(N, REPS)' returns 0 then N is not prime.  If
+     it returns 1, then N is `probably' prime.  The probability of a
+     false positive is (1/4)**REPS, where REPS is the number of
+     internal passes of the probabilistic algorithm.  Knuth indicates
+     that 25 passes are reasonable.
+
+ - Function: void mpz_powm (MP_INT *RES, MP_INT *BASE, MP_INT *EXP,
+          MP_INT *MOD)
+
+ - Function: void mpz_powm_ui (MP_INT *RES, MP_INT *BASE, unsigned long
+          int EXP, MP_INT *MOD)
+     Set RES to (BASE raised to EXP) modulo MOD.  If EXP is negative,
+     the result is undefined.
+
+ - Function: void mpz_pow_ui (MP_INT *RES, MP_INT *BASE, unsigned long
+          int EXP)
+     Set RES to BASE raised to EXP.
+
+ - Function: void mpz_fac_ui (MP_INT *RES, unsigned long int N)
+     Set RES N!, the factorial of n.
+
+ - Function: void mpz_gcd (MP_INT *RES, MP_INT *OPERAND1, MP_INT
+          *OPERAND2)
+     Set RES to the greatest common divisor of OPERAND1 and OPERAND2.
+
+ - Function: void mpz_gcdext (MP_INT *G, MP_INT *S, MP_INT *T, MP_INT
+          *A, MP_INT *B)
+     Compute G, S, and T, such that AS + BT = G = `gcd' (A, B).  If T is
+     NULL, that argument is not computed.
+
+ - Function: void mpz_neg (MP_INT *NEGATED_OPERAND, MP_INT *OPERAND)
+     Set NEGATED_OPERAND to -OPERAND.
+
+ - Function: void mpz_abs (MP_INT *POSITIVE_OPERAND, MP_INT
+          *SIGNED_OPERAND)
+     Set POSITIVE_OPERAND to the absolute value of SIGNED_OPERAND.
+
+ - Function: int mpz_cmp (MP_INT *OPERAND1, MP_INT *OPERAND2)
+
+ - Function: int mpz_cmp_ui (MP_INT *OPERAND1, unsigned long int
+          OPERAND2)
+
+ - Function: int mpz_cmp_si (MP_INT *OPERAND1, signed long int OPERAND2)
+     Compare OPERAND1 and OPERAND2.  Return a positive value if
+     OPERAND1 > OPERAND2, zero if OPERAND1 = OPERAND2, and a negative
+     value if OPERAND1 < OPERAND2.
+
+ - Function: void mpz_mul_2exp (MP_INT *PRODUCT, MP_INT *MULTIPLICATOR,
+          unsigned long int EXPONENT_OF_2)
+     Set PRODUCT to MULTIPLICATOR times 2 raised to EXPONENT_OF_2.
+     This operation can also be defined as a left shift, EXPONENT_OF_2
+     steps.
+
+ - Function: void mpz_div_2exp (MP_INT *QUOTIENT, MP_INT *DIVIDEND,
+          unsigned long int EXPONENT_OF_2)
+     Set QUOTIENT to DIVIDEND divided by 2 raised to EXPONENT_OF_2.
+     This operation can also be defined as a right shift, EXPONENT_OF_2
+     steps, but unlike the >> operator in C, the result is rounded
+     towards 0.
+
+ - Function: void mpz_mod_2exp (MP_INT *REMAINDER, MP_INT *DIVIDEND,
+          unsigned long int EXPONENT_OF_2)
+     Set REMAINDER to DIVIDEND mod (2 raised to EXPONENT_OF_2).  The
+     sign of REMAINDER will have the same sign as DIVIDEND.
+
+     This operation can also be defined as a masking of the
+     EXPONENT_OF_2 least significant bits.
+
+
+Logical Functions
+=================
+
+ - Function: void mpz_and (MP_INT *CONJUNCTION, MP_INT *OPERAND1,
+          MP_INT *OPERAND2)
+     Set CONJUNCTION to OPERAND1 logical-and OPERAND2.
+
+ - Function: void mpz_ior (MP_INT *DISJUNCTION, MP_INT *OPERAND1,
+          MP_INT *OPERAND2)
+     Set DISJUNCTION to OPERAND1 inclusive-or OPERAND2.
+
+ - Function: void mpz_xor (MP_INT *DISJUNCTION, MP_INT *OPERAND1,
+          MP_INT *OPERAND2)
+     Set DISJUNCTION to OPERAND1 exclusive-or OPERAND2.
+
+     This function is missing in the current release.
+
+ - Function: void mpz_com (MP_INT *COMPLEMENTED_OPERAND, MP_INT
+          *OPERAND)
+     Set COMPLEMENTED_OPERAND to the one's complement of OPERAND.
+
+
+Input and Output Functions
+==========================
+
+   Functions that perform input from a standard I/O stream, and
+functions for output conversion.
+
+ - Function: void mpz_inp_raw (MP_INT *INTEGER, FILE *STREAM)
+     Input from standard I/O stream STREAM in the format written by
+     `mpz_out_raw', and put the result in INTEGER.
+
+ - Function: void mpz_inp_str (MP_INT *INTEGER, FILE *STREAM, int BASE)
+     Input a string in base BASE from standard I/O stream STREAM, and
+     put the read integer in INTEGER.  The base may vary from 2 to 36.
+     If BASE is 0, the actual base is determined from the leading
+     characters: if the first two characters are `0x' or `0X',
+     hexadecimal is assumed, otherwise if the first character is `0',
+     octal is assumed, otherwise decimal is assumed.
+
+ - Function: void mpz_out_raw (FILE *STREAM, MP_INT *INTEGER)
+     Output INTEGER on standard I/O stream STREAM, in raw binary
+     format.  The integer is written in a portable format, with 4 bytes
+     of size information, and that many bytes of limbs.  Both the size
+     and the limbs are written in decreasing significance order.
+
+ - Function: void mpz_out_str (FILE *STREAM, int BASE, MP_INT *INTEGER)
+     Output INTEGER on standard I/O stream STREAM, as a string of
+     digits in base BASE.  The base may vary from 2 to 36.
+
+
+File: gmp.info,  Node: Rational Number Functions,  Next: Low-level Functions,  Prev: Integer Functions,  Up: Top
+
+Rational Number Functions
+*************************
+
+   All rational arithmetic functions canonicalize the result, so that
+the denominator and the numerator have no common factors.  Zero has the
+unique representation 0/1.
+
+   The set of functions is quite small.  Maybe it will be extended in a
+future release.
+
+ - Function: void mpq_init (MP_RAT *DEST_RATIONAL)
+     Initialize DEST_RATIONAL with limb space and set the initial
+     numeric value to 0/1.  Each variable should normally only be
+     initialized once, or at least cleared out (using the function
+     `mpq_clear') between each initialization.
+
+ - Function: void mpq_clear (MP_RAT *RATIONAL_NUMBER)
+     Free the limb space occupied by RATIONAL_NUMBER.  Make sure to
+     call this function for all `MP_RAT' variables when you are done
+     with them.
+
+ - Function: void mpq_set (MP_RAT *DEST_RATIONAL, MP_RAT *SRC_RATIONAL)
+     Assign DEST_RATIONAL from SRC_RATIONAL.
+
+ - Function: void mpq_set_ui (MP_RAT *RATIONAL_NUMBER, unsigned long
+          int NUMERATOR, unsigned long int DENOMINATOR)
+     Set the value of RATIONAL_NUMBER to NUMERATOR/DENOMINATOR.  If
+     NUMERATOR and DENOMINATOR have common factors, they are divided
+     out before RATIONAL_NUMBER is assigned.
+
+ - Function: void mpq_set_si (MP_RAT *RATIONAL_NUMBER, signed long int
+          NUMERATOR, unsigned long int DENOMINATOR)
+     Like `mpq_set_ui', but NUMERATOR is signed.
+
+ - Function: void mpq_add (MP_RAT *SUM, MP_RAT *ADDEND1, MP_RAT
+          *ADDEND2)
+     Set SUM to ADDEND1 + ADDEND2.
+
+ - Function: void mpq_sub (MP_RAT *DIFFERENCE, MP_RAT *MINUEND, MP_RAT
+          *SUBTRAHEND)
+     Set DIFFERENCE to MINUEND - SUBTRAHEND.
+
+ - Function: void mpq_mul (MP_RAT *PRODUCT, MP_RAT *MULTIPLICATOR,
+          MP_RAT *MULTIPLICAND)
+     Set PRODUCT to MULTIPLICATOR * MULTIPLICAND
+
+ - Function: void mpq_div (MP_RAT *QUOTIENT, MP_RAT *DIVIDEND, MP_RAT
+          *DIVISOR)
+     Set QUOTIENT to DIVIDEND / DIVISOR.
+
+ - Function: void mpq_neg (MP_RAT *NEGATED_OPERAND, MP_RAT *OPERAND)
+     Set NEGATED_OPERAND to -OPERAND.
+
+ - Function: int mpq_cmp (MP_RAT *OPERAND1, MP_RAT *OPERAND2)
+     Compare OPERAND1 and OPERAND2.  Return a positive value if
+     OPERAND1 > OPERAND2, zero if OPERAND1 = OPERAND2, and a negative
+     value if OPERAND1 < OPERAND2.
+
+ - Function: void mpq_inv (MP_RAT *INVERTED_NUMBER, MP_RAT *NUMBER)
+     Invert NUMBER by swapping the numerator and denominator.  If the
+     new denominator becomes zero, this routine will divide by zero.
+
+ - Function: void mpq_set_num (MP_RAT *RATIONAL_NUMBER, MP_INT
+          *NUMERATOR)
+     Make NUMERATOR become the numerator of RATIONAL_NUMBER by copying.
+
+ - Function: void mpq_set_den (MP_RAT *RATIONAL_NUMBER, MP_INT
+          *DENOMINATOR)
+     Make DENOMINATOR become the denominator of RATIONAL_NUMBER by
+     copying.  If DENOMINATOR < 0 the denominator of RATIONAL_NUMBER is
+     set to the absolute value of DENOMINATOR, and the sign of the
+     numerator of RATIONAL_NUMBER is changed.
+
+ - Function: void mpq_get_num (MP_INT *NUMERATOR, MP_RAT
+          *RATIONAL_NUMBER)
+     Copy the numerator of RATIONAL_NUMBER to the integer NUMERATOR, to
+     prepare for integer operations on the numerator.
+
+ - Function: void mpq_get_den (MP_INT *DENOMINATOR, MP_RAT
+          *RATIONAL_NUMBER)
+     Copy the denominator of RATIONAL_NUMBER to the integer
+     DENOMINATOR, to prepare for integer operations on the denominator.
+
+
+File: gmp.info,  Node: Low-level Functions,  Next: BSD Compatible Functions,  Prev: Rational Number Functions,  Up: Top
+
+Low-level Functions
+*******************
+
+   *The next release of the GNU MP library (2.0) will include changes
+to some mpn functions.  Programs that use these functions according to
+the descriptions below will therefore not work with the next release.*
+
+   The low-level function layer is designed to be as fast as possible,
+*not* to provide a coherent calling interface.  The different functions
+have similar interfaces, but there are variations that might be
+confusing.  These functions do as little as possible apart from the
+real multiple precision computation, so that no time is spent on things
+that not all callers need.
+
+   A source operand is specified by a pointer to the least significant
+limb and a limb count.  A destination operand is specified by just a
+pointer.  It is the responsability of the caller to ensure that the
+destination has enough space for storing the result.
+
+   With this way of specifying source operands, it is possible to
+perform computations on subranges of an argument, and store the result
+into a subrange of a destination.
+
+   All these functions require that the operands are normalized in the
+sense that the most significant limb must be non-zero.  (A future
+release of might drop this requirement.)
+
+   The low-level layer is the base for the implementation of the `mpz_'
+and `mpq_' layers.
+
+   The code below adds the number beginning at SRC1_PTR and the number
+beginning at SRC2_PTR and writes the sum at DEST_PTR.  A constraint for
+`mpn_add' is that SRC1_SIZE must not be smaller that SRC2_SIZE.
+
+     mpn_add (dest_ptr, src1_ptr, src1_size, src2_ptr, src2_size)
+
+   In the description below, a source operand is identified by the
+pointer to the least significant limb, and the limb count in braces.
+
+ - Function: mp_size mpn_add (mp_ptr DEST_PTR, mp_srcptr SRC1_PTR,
+          mp_size SRC1_SIZE, mp_srcptr SRC2_PTR, mp_size SRC2_SIZE)
+     Add {SRC1_PTR, SRC1_SIZE} and {SRC2_PTR, SRC2_SIZE}, and write the
+     SRC1_SIZE least significant limbs of the result to DEST_PTR.
+     Carry-out, either 0 or 1, is returned.
+
+     This function requires that SRC1_SIZE is greater than or equal to
+     SRC2_SIZE.
+
+ - Function: mp_size mpn_sub (mp_ptr DEST_PTR, mp_srcptr SRC1_PTR,
+          mp_size SRC1_SIZE, mp_srcptr SRC2_PTR, mp_size SRC2_SIZE)
+     Subtarct {SRC2_PTR, SRC2_SIZE} from {SRC1_PTR, SRC1_SIZE}, and
+     write the result to DEST_PTR.
+
+     Return 1 if the minuend < the subtrahend.  Otherwise, return the
+     negative difference between the number of words in the result and
+     the minuend.  I.e. return 0 if the result has SRC1_SIZE words, -1
+     if it has SRC1_SIZE - 1 words, etc.
+
+     This function requires that SRC1_SIZE is greater than or equal to
+     SRC2_SIZE.
+
+ - Function: mp_size mpn_mul (mp_ptr DEST_PTR, mp_srcptr SRC1_PTR,
+          mp_size SRC1_SIZE, mp_srcptr SRC2_PTR, mp_size SRC2_SIZE)
+     Multiply {SRC1_PTR, SRC1_SIZE} and {SRC2_PTR, SRC2_SIZE}, and
+     write the result to DEST_PTR.  The exact size of the result is
+     returned.
+
+     The destination has to have space for SRC1_SIZE + SRC1_SIZE limbs,
+     even if the result might be one limb smaller.
+
+     This function requires that SRC1_SIZE is greater than or equal to
+     SRC2_SIZE.  The destination must be distinct from either input
+     operands.
+
+ - Function: mp_size mpn_div (mp_ptr DEST_PTR, mp_ptr SRC1_PTR, mp_size
+          SRC1_SIZE, mp_srcptr SRC2_PTR, mp_size SRC2_SIZE)
+     Divide {SRC1_PTR, SRC1_SIZE} by {SRC2_PTR, SRC2_SIZE}, and write
+     the quotient to DEST_PTR, and the remainder to SRC1_PTR.
+
+     Return 0 if the quotient size is at most (SRC1_SIZE - SRC2_SIZE),
+     and 1 if the quotient size is at most (SRC1_SIZE - SRC2_SIZE + 1).
+     The caller has to check the most significant limb to find out the
+     exact size.
+
+     The most significant bit of the most significant limb of the
+     divisor has to be set.
+
+     This function requires that SRC1_SIZE is greater than or equal to
+     SRC2_SIZE.  The quotient, pointed to by DEST_PTR, must be distinct
+     from either input operands.
+
+ - Function: mp_limb mpn_lshift (mp_ptr DEST_PTR, mp_srcptr SRC_PTR,
+          mp_size SRC_SIZE, unsigned long int COUNT)
+     Shift {SRC_PTR, SRC_SIZE} COUNT bits to the left, and write the
+     SRC_SIZE least significant limbs of the result to DEST_PTR.  COUNT
+     might be in the range 1 to n - 1, on an n-bit machine. The limb
+     shifted out is returned.
+
+     Overlapping of the destination space and the source space is
+     allowed in this function, provdied DEST_PTR >= SRC_PTR.
+
+ - Function: mp_size mpn_rshift (mp_ptr DEST_PTR, mp_srcptr SRC_PTR,
+          mp_size SRC_SIZE, unsigned long int COUNT)
+     Shift {SRC_PTR, SRC_SIZE} COUNT bits to the right, and write the
+     SRC_SIZE least significant limbs of the result to DEST_PTR.  COUNT
+     might be in the range 1 to n - 1, on an n-bit machine. The size of
+     the result is returned.
+
+     Overlaping of the destination space and the source space is
+     allowed in this function, provdied DEST_PTR <= SRC_PTR.
+
+ - Function: mp_size mpn_rshiftci (mp_ptr DEST_PTR, mp_srcptr SRC_PTR,
+          mp_size SRC_SIZE, unsigned long int COUNT, mp_limb INLIMB)
+     Like mpn_rshift, but use INLIMB to feed the least significant end
+     of the destination.
+
+ - Function: int mpn_cmp (mp_srcptr SRC1_PTR, mp_srcptr SRC2_PTR,
+          mp_size SIZE)
+     Compare {SRC1_PTR, SIZE} and {SRC2_PTR, SIZE} and return a
+     positive value if src1 > src2, 0 of they are equal, and a negative
+     value if src1 < src2.
+
+
+File: gmp.info,  Node: BSD Compatible Functions,  Next: Miscellaneous Functions,  Prev: Low-level Functions,  Up: Top
+
+Berkeley MP Compatible Functions
+********************************
+
+   These functions are intended to be fully compatible with the
+Berkeley MP library which is available on many BSD derived U*ix systems.
+
+   The original Berkeley MP library has a usage restriction: you cannot
+use the same variable as both source and destination in a single
+function call.  The compatible functions in GNU MP do not share this
+restriction--inputs and outputs may overlap.
+
+   It is not recommended that new programs are written using these
+functions.  Apart from the incomplete set of functions, the interface
+for initializing `MINT' objects is more error prone, and the `pow'
+function collides with `pow' in `libm.a'.
+
+   Include the header `mp.h' to get the definition of the necessary
+types and functions.  If you are on a BSD derived system, make sure to
+include GNU `mp.h' if you are going to link the GNU `libmp.a' to you
+program.  This means that you probably need to give the -I<dir> option
+to the compiler, where <dir> is the directory where you have GNU `mp.h'.
+
+ - Function: MINT * itom (signed short int INITIAL_VALUE)
+     Allocate an integer consisting of a `MINT' object and dynamic limb
+     space.  Initialize the integer to INITIAL_VALUE.  Return a pointer
+     to the `MINT' object.
+
+ - Function: MINT * xtom (char *INITIAL_VALUE)
+     Allocate an integer consisting of a `MINT' object and dynamic limb
+     space.  Initialize the integer from INITIAL_VALUE, a hexadecimal,
+     '\0'-terminate C string.  Return a pointer to the `MINT' object.
+
+ - Function: void move (MINT *SRC, MINT *DEST)
+     Set DEST to SRC by copying.  Both variables must be previously
+     initialized.
+
+ - Function: void madd (MINT *SRC_1, MINT *SRC_2, MINT *DESTINATION)
+     Add SRC_1 and SRC_2 and put the sum in DESTINATION.
+
+ - Function: void msub (MINT *SRC_1, MINT *SRC_2, MINT *DESTINATION)
+     Subtract SRC_2 from SRC_1 and put the difference in DESTINATION.
+
+ - Function: void mult (MINT *SRC_1, MINT *SRC_2, MINT *DESTINATION)
+     Multiply SRC_1 and SRC_2 and put the product in DESTINATION.
+
+ - Function: void mdiv (MINT *DIVIDEND, MINT *DIVISOR, MINT *QUOTIENT,
+          MINT *REMAINDER)
+
+ - Function: void sdiv (MINT *DIVIDEND, signed short int DIVISOR, MINT
+          *QUOTIENT, signed short int *REMAINDER)
+     Set QUOTIENT to DIVIDEND / DIVISOR, and REMAINDER to DIVIDEND mod
+     DIVISOR.  The quotient is rounded towards zero; the remainder has
+     the same sign as the dividend.
+
+     Some implementations of this function return a remainder whose
+     sign is inverted if the divisor is negative.  Such a definition
+     makes little sense from a mathematical point of view.  GNU MP
+     might be considered incompatible with the traditional MP in this
+     respect.
+
+ - Function: void msqrt (MINT *OPERAND, MINT *ROOT, MINT *REMAINDER)
+     Set ROOT to the square root of OPERAND, as with `mpz_sqrt'.  Set
+     REMAINDER to OPERAND-ROOT*ROOT, (i.e. zero if OPERAND is a perfect
+     square).
+
+ - Function: void pow (MINT *BASE, MINT *EXP, MINT *MOD, MINT *DEST)
+     Set DEST to (BASE raised to EXP) modulo MOD.
+
+ - Function: void rpow (MINT *BASE, signed short int EXP, MINT *DEST)
+     Set DEST to BASE raised to EXP.
+
+ - Function: void gcd (MINT *OPERAND1, MINT *OPERAND2, MINT *RES)
+     Set RES to the greatest common divisor of OPERAND1 and OPERAND2.
+
+ - Function: int mcmp (MINT *OPERAND1, MINT *OPERAND2)
+     Compare OPERAND1 and OPERAND2.  Return a positive value if
+     OPERAND1 > OPERAND2, zero if OPERAND1 = OPERAND2, and a negative
+     value if OPERAND1 < OPERAND2.
+
+ - Function: void min (MINT *DEST)
+     Input a decimal string from stdin, and put the read integer in
+     DEST.  SPC and TAB are allowed in the number string, and are
+     ignored.
+
+ - Function: void mout (MINT *SRC)
+     Output SRC to stdout, as a decimal string.  Also output a newline.
+
+ - Function: char * mtox (MINT *OPERAND)
+     Convert OPERAND to a hexadecimal string, and return a pointer to
+     the string.  The returned string is allocated using the default
+     memory allocation function, `malloc' by default. (*Note
+     Initialization::, for an explanation of the memory allocation in
+     MP).
+
+ - Function: void mfree (MINT *OPERAND)
+     De-allocate, the space used by OPERAND.  *This function should
+     only be passed a value returned by `itom' or `xtom'.*
+
+
+File: gmp.info,  Node: Miscellaneous Functions,  Next: Custom Allocation,  Prev: BSD Compatible Functions,  Up: Top
+
+Miscellaneous Functions
+***********************
+
+ - Function: void mpz_random (MP_INT *RANDOM_INTEGER, mp_size MAX_SIZE)
+     Generate a random integer of at most MAX_SIZE limbs.  The generated
+     random number doesn't satisfy any particular requirements of
+     randomness.
+
+ - Function: void mpz_random2 (MP_INT *RANDOM_INTEGER, mp_size MAX_SIZE)
+     Generate a random integer of at most MAX_SIZE limbs, with long
+     strings of zeros and ones in the binary representation.  Useful for
+     testing functions and algorithms, since this kind of random
+     numbers have proven to be more likely to trigger bugs.
+
+ - Function: size_t mpz_size (MP_INT *INTEGER)
+     Return the size of INTEGER measured in number of limbs.  If
+     INTEGER is zero, the returned value will be zero, if INTEGER has
+     one limb, the returned value will be one, etc.  (*Note
+     Nomenclature::, for an explanation of the concept "limb".)
+
+ - Function: size_t mpz_sizeinbase (MP_INT *INTEGER, int BASE)
+     Return the size of INTEGER measured in number of digits in base
+     BASE.  The base may vary from 2 to 36.  The returned value will be
+     exact or 1 too big.  If BASE is a power of 2, the returned value
+     will always be exact.
+
+     This function is useful in order to allocate the right amount of
+     space before converting INTEGER to a string.  The right amount of
+     allocation is normally two more than the value returned by
+     `mpz_sizeinbase' (one extra for a minus sign and one for the
+     terminating '\0').
+
+
+File: gmp.info,  Node: Custom Allocation,  Next: Reporting Bugs,  Prev: Miscellaneous Functions,  Up: Top
+
+Custom Allocation
+=================
+
+   By default, the initialization functions use `malloc', `realloc',
+and `free' to do their work.  If `malloc' or `realloc' fails, the MP
+package terminates execution after a printing fatal error message on
+standard error.
+
+   In some applications, you may wish to allocate memory in other ways,
+or you may not want to have a fatal error when there is no more memory
+available.  To accomplish this, you can specify alternative functions
+for allocating and de-allocating memory.  Use `mp_set_memory_functions'
+to do this.
+
+   `mp_set_memory_functions' has three arguments, ALLOCATE_FUNCTION,
+REALLOCATE_FUNCTION, and DEALLOCATE_FUNCTION, in that order.  If an
+argument is NULL, the corresponding default function is retained.
+
+   The functions you supply should fit the following declarations:
+
+`void * ALLOCATE_FUNCTION (size_t ALLOC_SIZE)'
+     This function should return a pointer to newly allocated space
+     with at least ALLOC_SIZE storage units.
+
+`void * REALLOCATE_FUNCTION (void *PTR, size_t OLD_SIZE, size_t NEW_SIZE)'
+     This function should return a pointer to newly allocated space of
+     at least NEW_SIZE storage units, after copying the first OLD_SIZE
+     storage units from PTR.  It should also de-allocate the space at
+     PTR.
+
+     You can assume that the space at PTR was formely returned from
+     ALLOCATE_FUNCTION or REALLOCATE_FUNCTION, for a request for
+     OLD_SIZE storage units.
+
+`void DEALLOCATE_FUNCTION (void *PTR, size_t SIZE)'
+     De-allocate the space pointed to by PTR.
+
+     You can assume that the space at PTR was formely returned from
+     ALLOCATE_FUNCTION or REALLOCATE_FUNCTION, for a request for SIZE
+     storage units.
+
+   (A "storage unit" is the unit in which the `sizeof' operator returns
+the size of an object, normally an 8 bit byte.)
+
+   *NOTE: call `mp_set_memory_functions' only before calling any other
+MP functions.* Otherwise, the user-defined allocation functions may be
+asked to re-allocate or de-allocate something previously allocated by
+the default allocation functions.
+
+
+File: gmp.info,  Node: Reporting Bugs,  Prev: Custom Allocation,  Up: Top
+
+Reporting Bugs
+**************
+
+   If you think you have found a bug in the GNU MP library, please
+investigate it and report it.  We have made this library available to
+you, and it is not to ask too much from you, to ask you to report the
+bugs that you find.
+
+   Please make sure that the bug is really in the GNU MP library.
+
+   You have to send us a test case that makes it possible for us to
+reproduce the bug.
+
+   You also have to explain what is wrong; if you get a crash, or if the
+results printed are not good and in that case, in what way.
+
+   Make sure that the bug report includes all information you would
+need to fix this kind of bug for someone else.  Think twice.
+
+   If your bug report is good, we will do our best to help you to get a
+corrected version of the library; if the bug report is poor, we won't do
+anything about it (aside of chiding you to send better bug reports).
+
+   Send your bug report to: tege@gnu.ai.mit.edu.
+
+   If you think something in this manual is unclear, or downright
+incorrect, or if the language needs to be improved, please send a note
+to the same address.
+
+
+File: gmp.info,  Node: References,  Up: Top
+
+References
+**********
+
+   * Donald E. Knuth, "The Art of Computer Programming", vol 2,
+     "Seminumerical Algorithms", 2nd edition, Addison-Wesley, 1981.
+
+   * John D. Lipson, "Elements of Algebra and Algebraic Computing", The
+     Benjamin Cummins Publishing Company Inc, 1981.
+
+   * Richard M. Stallman, "Using and Porting GCC", Free Software
+     Foundation, 1993.
+
+   * Peter L. Montgomery, "Modular Multiplication Without Trial
+     Division", Mathematics of Computation, volume 44, number 170,
+     April 1985.
+
+
+File: gmp.info,  Node: Concept Index,  Up: Top
+
+Concept Index
+*************
+
+* Menu:
+
+* Arithmetic functions:                 Integer Arithmetic.
+* BSD MP compatible functions:          BSD Compatible Functions.
+* Conditions for copying GNU MP:        Copying.
+* Conversion functions:                 Converting Integers.
+* Copying conditions:                   Copying.
+* I/O functions:                        I/O of Integers.
+* Initialization and assignment functions, combined: Simultaneous Integer Init & Assign.
+* Input and output functions:           I/O of Integers.
+* integer:                              Nomenclature.
+* Integer arithmetic functions:         Integer Arithmetic.
+* Integer assignment functions:         Assigning Integers.
+* Integer functions:                    Integer Functions.
+* Introduction:                         Intro.
+* limb:                                 Nomenclature.
+* Logical functions:                    Logic on Integers.
+* Low-level functions:                  Low-level Functions.
+* Miscellaneous functions:              Miscellaneous Functions.
+* nomenclature:                         Nomenclature.
+* Output functions:                     I/O of Integers.
+* Overview:                             Intro.
+* rational number:                      Nomenclature.
+* Rational number functions:            Rational Number Functions.
+* Reporting bugs:                       Reporting Bugs.
+
+
+File: gmp.info,  Node: Function Index,  Up: Top
+
+Function and Type Index
+***********************
+
+* Menu:
+
+* MP_INT:                               Nomenclature.
+* MP_RAT:                               Nomenclature.
+* _mpz_realloc:                         Initializing Integers.
+* gcd:                                  BSD Compatible Functions.
+* itom:                                 BSD Compatible Functions.
+* madd:                                 BSD Compatible Functions.
+* mcmp:                                 BSD Compatible Functions.
+* mdiv:                                 BSD Compatible Functions.
+* mfree:                                BSD Compatible Functions.
+* min:                                  BSD Compatible Functions.
+* mout:                                 BSD Compatible Functions.
+* move:                                 BSD Compatible Functions.
+* mp_set_memory_functions:              Custom Allocation.
+* mpn_add:                              Low-level Functions.
+* mpn_cmp:                              Low-level Functions.
+* mpn_div:                              Low-level Functions.
+* mpn_lshift:                           Low-level Functions.
+* mpn_mul:                              Low-level Functions.
+* mpn_rshift:                           Low-level Functions.
+* mpn_rshiftci:                         Low-level Functions.
+* mpn_sub:                              Low-level Functions.
+* mpq_add:                              Rational Number Functions.
+* mpq_clear:                            Rational Number Functions.
+* mpq_cmp:                              Rational Number Functions.
+* mpq_div:                              Rational Number Functions.
+* mpq_get_den:                          Rational Number Functions.
+* mpq_get_num:                          Rational Number Functions.
+* mpq_init:                             Rational Number Functions.
+* mpq_inv:                              Rational Number Functions.
+* mpq_mul:                              Rational Number Functions.
+* mpq_neg:                              Rational Number Functions.
+* mpq_set:                              Rational Number Functions.
+* mpq_set_den:                          Rational Number Functions.
+* mpq_set_num:                          Rational Number Functions.
+* mpq_set_si:                           Rational Number Functions.
+* mpq_set_ui:                           Rational Number Functions.
+* mpq_sub:                              Rational Number Functions.
+* mpz_abs:                              Integer Arithmetic.
+* mpz_add:                              Integer Arithmetic.
+* mpz_add_ui:                           Integer Arithmetic.
+* mpz_and:                              Logic on Integers.
+* mpz_array_init:                       Initializing Integers.
+* mpz_clear:                            Initializing Integers.
+* mpz_cmp:                              Integer Arithmetic.
+* mpz_cmp_si:                           Integer Arithmetic.
+* mpz_cmp_ui:                           Integer Arithmetic.
+* mpz_com:                              Logic on Integers.
+* mpz_div:                              Integer Arithmetic.
+* mpz_div_2exp:                         Integer Arithmetic.
+* mpz_div_ui:                           Integer Arithmetic.
+* mpz_divmod:                           Integer Arithmetic.
+* mpz_divmod_ui:                        Integer Arithmetic.
+* mpz_fac_ui:                           Integer Arithmetic.
+* mpz_gcd:                              Integer Arithmetic.
+* mpz_gcdext:                           Integer Arithmetic.
+* mpz_get_si:                           Converting Integers.
+* mpz_get_str:                          Converting Integers.
+* mpz_get_ui:                           Converting Integers.
+* mpz_init:                             Initializing Integers.
+* mpz_init_set:                         Simultaneous Integer Init & Assign.
+* mpz_init_set_si:                      Simultaneous Integer Init & Assign.
+* mpz_init_set_str:                     Simultaneous Integer Init & Assign.
+* mpz_init_set_ui:                      Simultaneous Integer Init & Assign.
+* mpz_inp_raw:                          I/O of Integers.
+* mpz_inp_str:                          I/O of Integers.
+* mpz_ior:                              Logic on Integers.
+* mpz_mdiv:                             Integer Arithmetic.
+* mpz_mdiv_ui:                          Integer Arithmetic.
+* mpz_mdivmod:                          Integer Arithmetic.
+* mpz_mdivmod_ui:                       Integer Arithmetic.
+* mpz_mmod:                             Integer Arithmetic.
+* mpz_mmod_ui:                          Integer Arithmetic.
+* mpz_mod:                              Integer Arithmetic.
+* mpz_mod_2exp:                         Integer Arithmetic.
+* mpz_mod_ui:                           Integer Arithmetic.
+* mpz_mul:                              Integer Arithmetic.
+* mpz_mul_2exp:                         Integer Arithmetic.
+* mpz_mul_ui:                           Integer Arithmetic.
+* mpz_neg:                              Integer Arithmetic.
+* mpz_out_raw:                          I/O of Integers.
+* mpz_out_str:                          I/O of Integers.
+* mpz_perfect_square_p:                 Integer Arithmetic.
+* mpz_pow_ui:                           Integer Arithmetic.
+* mpz_powm:                             Integer Arithmetic.
+* mpz_powm_ui:                          Integer Arithmetic.
+* mpz_probab_prime_p:                   Integer Arithmetic.
+* mpz_random:                           Miscellaneous Functions.
+* mpz_random2:                          Miscellaneous Functions.
+* mpz_set:                              Assigning Integers.
+* mpz_set_si:                           Assigning Integers.
+* mpz_set_str:                          Assigning Integers.
+* mpz_set_ui:                           Assigning Integers.
+* mpz_size:                             Miscellaneous Functions.
+* mpz_sizeinbase:                       Miscellaneous Functions.
+* mpz_sqrt:                             Integer Arithmetic.
+* mpz_sqrtrem:                          Integer Arithmetic.
+* mpz_sub:                              Integer Arithmetic.
+* mpz_sub_ui:                           Integer Arithmetic.
+* mpz_xor:                              Logic on Integers.
+* msqrt:                                BSD Compatible Functions.
+* msub:                                 BSD Compatible Functions.
+* mtox:                                 BSD Compatible Functions.
+* mult:                                 BSD Compatible Functions.
+* pow:                                  BSD Compatible Functions.
+* rpow:                                 BSD Compatible Functions.
+* sdiv:                                 BSD Compatible Functions.
+* xtom:                                 BSD Compatible Functions.
+
+
+
+Tag Table:
+Node: Top987
+Node: Copying1859
+Node: Intro3529
+Node: Nomenclature5247
+Node: Thanks6011
+Node: Initialization6601
+Node: Integer Functions8841
+Node: Initializing Integers9519
+Node: Assigning Integers11808
+Node: Simultaneous Integer Init & Assign13174
+Node: Converting Integers15231
+Node: Integer Arithmetic16664
+Node: Logic on Integers24408
+Node: I/O of Integers25222
+Node: Rational Number Functions26649
+Node: Low-level Functions30201
+Node: BSD Compatible Functions35866
+Node: Miscellaneous Functions40358
+Node: Custom Allocation42000
+Node: Reporting Bugs44188
+Node: References45367
+Node: Concept Index45933
+Node: Function Index47364
+
+End Tag Table

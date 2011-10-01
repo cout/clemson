@@ -1,0 +1,29 @@
+/* XPM */
+static char * tb_winclose_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"17 17 6 1",
+/* colors */
+" 	s None	c None",
+".	c white",
+"X	c black",
+"o	c lightsteelblue",
+"O	c grey50",
+"x	c grey",
+/* pixels */
+"                 ",
+"  .XXXXXXXXXXX   ",
+"  .XxxxxxxxxxX   ",
+"  .XxxxxxxxxxXO  ",
+"  .XxxxxxxxxxXO  ",
+"  .XxxxxxxxxxXO  ",
+"  .XO........XO  ",
+"  .XXXXXXXXXXXO  ",
+"  .XOOOOXOOO.XO  ",
+"  .Xoo.oXooo.XO  ",
+"  .Xo..XXXoo.XO  ",
+"  .Xoooooooo.XO  ",
+"  .Xoooooooo.XO  ",
+"  .X.........XO  ",
+"  .XXXXXXXXXXXO  ",
+"     OOOOOOOOOO  ",
+"                 "};

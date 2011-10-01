@@ -1,0 +1,31 @@
+Paul Brannan
+CPSC 428 Assignment 6
+April 19, 1999
+
+Some notes:
+
+The name list uses multiple mode, so more than one name can be selected.
+All selected items are processed when "Change class" or "Show Selection" is
+clicked.
+
+I've added a quit button, and a dialog box for messages.
+
+The event handler is very unoptimized.  It is a long if-else chain.  I don't
+see how to implement this correctly off the top; I suppose a hash table of
+sorts would work, but this would be messy to implement on this simple
+project.
+
+Also, I get some interesting warnings:
+Warning: 
+    Cannot allocate colormap entry for default background
+Warning: 
+    Name: slist
+    Class: XmList
+    Invalid item(s) to delete.
+
+They don't appear to affect operation.
+
+Lastly, the window moves it self on startup.  I don't have a clue why.
+
+I'm submitting Name.java again in case my classes don't work with yours.
+

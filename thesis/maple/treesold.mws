@@ -1,0 +1,226 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 
+0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "interface(quiet=true
+,warnlevel=0):" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 182 "Note on global
+s -- global variables are used in the spantree, nextree,\nchilde, and \+
+gbuild functions for the purpose of emulating \"pass by\nreference.\" \+
+ The following globals are used:" }}{PARA 0 "" 0 "" {TEXT -1 746 "  f \+
+lists the indices i of the edges e[i] used in the spanning tree.\n    \+
+The program is designed so that f is always an increasing list.\n  g i
+s an nxn array with g(j,v) telling the component number of vertex v\n \+
+   at the jth stage of building the subtree.  At stage j=0, these\n   \+
+ numbers are all different.  At stage j=n-1 all these numbers should\n
+    be the same.\n  f and g are used to determine the starting point i
+n the next call of\n    nextree.\n  c is a child array\n  h is a heap \+
+order as a list\n  p is a parent list\n\nThere is also a global used t
+o return data from cleanup to dumpum:\n  t is a table which stores for
+ each shortname the corresponding\n    minname.  It is generated in th
+e cleanup procedure and passed as a\n    global variable." }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 71 "-----------------------------------------
+------------------------------" }}{PARA 0 "" 0 "" {TEXT -1 29 "isomorp
+hism testing functions" }}{PARA 0 "" 0 "" {TEXT -1 72 "---------------
+-------------------------------------------------------- " }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 3939 "# LLT determines if p is lexicographically
+ less than q.\n# INPUT: Two lists p and q of tree binames, represented
+ by 0's and 1's.\n# OUTPUT: true if p is lexicographically less than q
+, false otherwise.\nLLT := proc(p,q::list)\n  local i, m:\n\n  # m is \+
+the length of the shorter of p and q\n  m := nops(p):\n  if nops(q) < \+
+m then m := nops(q) fi:\n\n  # check to see if p is less than q, up to
+ position m\n  for i from 1 to m do\n    if p[i] < q[i] then\n      RE
+TURN(true):\n    fi:\n    if p[i] > q[i] then\n      RETURN(false):\n \+
+   fi:\n  od:\n\n  # if we are still here, then compare lengths\n  if \+
+nops(p) <= nops(q) then\n    RETURN(true):\n  else\n    RETURN(false):
+\n  fi:\nend:\n\n# smerg merges a list of binames into a single list r
+ in lexicographic\n# order, and places a 0 to the left and a 1 to the \+
+right of the merged\n# list.  This is useful for traversing a tree.\n#
+ INPUT: s is a list of binames to be merged.\n# OUTPUT: r is the merge
+d list.\nsmerg := proc(s::list)\n  local d,j,k,q,r:\n\n  # d is the nu
+mber of lists in s to be merged.\n  d := nops(s):\n  # q is the list s
+ in sorted order.\n  q := [[9]]:\n\n  # sort the list  \n  for k from \+
+1 to d do\n    j := 1:\n    # find the correct position of s[k]\n    w
+hile not LLT(s[k], q[j]) do\n      j := j+1:\n    od:\n    q := [op(1.
+.j-1,q),s[k],op(j..nops(q),q)]:\n  od:\n\n  # construct r from q\n  r \+
+:= [0]:\n  for k to d do\n    r := [op(r), op(q[k])]:\n  od:\n  r := [
+op(r),1]:\n\n  # Return r to the caller.\n  RETURN(r):\nend:\n\n# Loca
+lMinname generates the lexicographically least biname (minname) for\n#
+ each possible node in a tree.\n# INPUT: A child array c representing \+
+the tree, a heap ordering h of its\n# vertices, and an integer n repre
+senting the number of nodes.\n# OUTPUT: r is an array of binames, wher
+e r[x] gives the lexicographically\n# least biname representing the br
+anch of the rooted tree beyond node x.\n# NOTE: The root must receive \+
+the highest label, namely n.\nLocalMinnameArr := proc(c::array, h::lis
+t, n::integer)\n  local i, r, s, x, y:\n  r := array(1..n):\n  # Trave
+rse the entire tree using the heap ordering\n  for i to n do\n    x :=
+ h[i]:\n    s := []:\n    # Combine binames of the children of the cur
+rent node\n    for y in c[x] do\n      s := [op(s),r[y]]:\n    od:\n  \+
+  # Find the minimal biname at this point and create the biname for\n \+
+   # this subtree\n    r[x] := smerg(s):\n  od:\n  RETURN(r):\nend:\n
+\n# GlobalMinname generates the lexicographically least biname for an \+
+input\n# unrooted tree.  The procedure starts with a local best labell
+ing rooted\n# at n.  Then the procedure moves from parent w to child v
+ throughout the\n# tree, modifying the existing local labellings to pr
+oduce best local\n# labellings t for each node as root.  Along the way
+ a local branch\n# labelling tt is required at the parent w of v by re
+garding v as the root\n# and w as the root of one branch at v.\n# INPU
+T: a child array c, representing the tree, a heap ordering h as a\n# l
+ist, the parent list p, and an integer n representing the number of\n#
+ nodes and the label of the root.\n# OUTPUT: best is the lexicographic
+ally least biname for the input tree.\nGlobalMinname := proc(c::array,
+ h::list, p::list, n::integer)\n  local best, i, r, s, t, tt, v, w, y:
+\n\n  # Generate an array of local minnames for each possible root nod
+e\n  r := LocalMinnameArr(c,h,n):\n\n  t := array(1..n):\n  tt := arra
+y(1..n):\n  tt[n] := []:\n  t[n] := r[n]:\n  best := r[n]:\n\n  # Find
+ the root with the lexicographically least associated minname\n  for i
+ from n-1 to 1 by -1 do\n    v := h[i]:\n    w := p[v]:\n    s := [tt[
+w]]:\n    for y in c[w] do\n      if y=v then next fi:\n      s := [op
+(s),r[y]]:\n    od:\n    tt[v] := smerg(s):\n    s :=  [tt[v]]:\n    f
+or y in c[v] do\n      s := [op(s),r[y]]:\n    od:\n    t[v] := smerg(
+s):\n\n    # If the current root is lexicographically less than the be
+st root\n    # found so far, then set best accordingly.\n    if LLT(t[
+v],best) then best := t[v] fi:\n  od:\n\n  # Return the lexicographica
+lly least minname.\n  RETURN(best):\nend:" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 71 "---------------------------------------------------------
+--------------" }}{PARA 0 "" 0 "" {TEXT -1 28 "subtree generation func
+tions" }}{PARA 0 "" 0 "" {TEXT -1 72 "--------------------------------
+--------------------------------------- " }{MPLTEXT 1 0 0 "" }{TEXT 
+-1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 3444 "# nextree produces the \+
+next spanning tree in a graph with given input\n# ordered edge set.\n#
+ INPUT:\n#   e is the list of edges of the graph whose order determine
+s the\n#     ordering of the spanning subtrees\n#   ctr is an array of
+ list sets where ctr[i[ is a list of the sets of\n#     edges which mu
+st be used before edge i is used.\n#   m is the number of edges in e\n
+#   e is the number of nodes in the graph\n# OUTPUT: the number of edg
+es in the next tree.  If j=0, then there is no\n# next tree and the se
+arch through all spanning subtrees is over.\nnextree := proc(e::list, \+
+ctr::array, m,n::integer)\n  local backtrack, i, j, k, s, v, x, y:\n  \+
+global f,g:\n\n  k := nops(f):\n  if k = (n-1) then\n    j := k:\n    \+
+i := f[k]+1:\n    f := [op(1..k-1,f)]:\n  elif k > 0 then\n    j := k+
+1:\n    i := f[k]+1:\n  else\n    j := 1:\n    i := 1:\n  fi:\n\n  # W
+e are not backtracking initially\n  backtrack := false:\n\n  while j <
+ n do\n    for s in ctr[i] do\n      # If there are no common vertices
+ between s and f, then set backtrack\n      if nops(s intersect \{op(f
+)\}) = 0 then\n        backtrack := true:\n        break:\n      fi:\n
+    od:\n    # If (the number of edges in the spanning tree) - (the in
+dex of the\n    # edge) + 1 is less than (the number of nodes in the g
+raph) - (the\n    # stage of building the subtree) then set backtrack?
+\n    if (m-i+1) < (n-j) then backtrack := true fi:\n\n    if backtrac
+k then    \n      j := j-1:\n      if j = 0 then RETURN(j) fi:\n      \+
+i := f[j]+1:\n      f := [op(1..j-1,f)]:\n      backtrack := false:\n \+
+   else\n      x := g[j-1,op(1,e[i])]:\n      y := g[j-1,op(2,e[i])]:
+\n      if x = y then\n        i := i+1:\n      else\n        f := [op
+(f),i]:\n        for v to n do\n          if g[j-1,v] = y then\n      \+
+      g[j,v] := x:\n          else \n            g[j,v] := g[j-1,v]:\n
+          fi:\n        od:\n        j := j+1:\n        i := i+1:\n    \+
+  fi:\n    fi:\n  od:\n  RETURN(j):\nend:\n\n# childe produces a child
+ array c, a heap order h, and a parent list p\n# from an input list e \+
+of edges for a spanning subtree.\n# INPUT: a list of edges e and the n
+umber of nodes n\n# OUTPUT: none.\nchilde := proc(e::list, n::integer)
+\n  local doitnow, doitlater, undun, i,k,pa,x,y:\n  global c,h,p:\n\n \+
+ undun := \{\}:\n  for i to n-1 do\n    c[i] := \{\}:\n    undun := un
+dun union \{i\}:\n  od:\n  c[n] := \{\}:\n  doitnow := \{n\}:\n  doitl
+ater := \{\}:\n  h := [n]:\n  pa := array(1..n-1):\n  k := 1:\n  color
+diff := 1:\n  while nops(undun) > 0 do\n    k := -k:\n    for x in doi
+tnow do\n      for i in undun do\n        if member(x,e[i]) then\n    \+
+      y := e[i][1]:\n          if x = y then y := e[i][2] fi:\n       \+
+   c[x] := c[x] union \{y\}:\n          pa[y] := x:\n          h := [y
+,op(h)]:\n          undun := undun minus \{i\}:\n          doitlater :
+= doitlater union \{y\}:\n        fi:\n      od:             \n    od:
+\n    doitnow := doitlater:\n    doitlater := \{\}:\n  od:\n  p := []:
+\n  for x to n-1 do\n    p := [op(p),pa[x]]:\n  od:\nend:\n\n# gbuild \+
+produces the nxn component status array g for a given edge list\n# e a
+nd globally passed(partial) edge-index selector f.\n# INPUT: an edge l
+ist e and the number of nodes n\n# OUTPUT: none.\ngbuild := proc(e::li
+st, n::integer)\n  local g,v,j,x,y:\n  global f:\n  g := array(0..n-1,
+1..n):\n  for v to n do\n    g[0,v] := v:\n  od:\n  for j to nops(f) d
+o\n    x := g[j-1,op(1,e[f[j]])]:\n    y := g[j-1,op(2,e[f[j]])]:\n   \+
+ for v to n do\n      if g[j-1,v] = y then\n        g[j,v] := x:\n    \+
+  else \n        g[j,v] := g[j-1,v]:\n      fi:\n    od:\n  od:\n  RET
+URN(g):\nend:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 71 "----------------
+-------------------------------------------------------" }}{PARA 0 "" 
+0 "" {TEXT -1 27 "output formatting functions" }}{PARA 0 "" 0 "" 
+{TEXT -1 71 "---------------------------------------------------------
+--------------" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 2015 "shortna
+me := proc(lpe::list)\n  local i,k,n,z,par,sum,x,y:\n  n := nops(lpe):
+\n  z := 0:\n  for i to n do\n    z := z + lpe[n-i+1] * 2^(i-1):\n  od
+:\n  y := [z]:\n  k := 1:\n  par := 0:\n  sum := 0:\n  for k to n do\n
+    x := lpe[k]:\n    if x = 0 and par = 0 then\n      sum := sum + o:
+\n    elif x = 1 and par = 1 then\n      sum  := sum + 1:\n    elif x \+
+<par then\n      y := [op(y), sum]:\n      par := x:\n      if x = 0 t
+hen sum := o fi:\n      if x = 1 then sum := 1 fi:\n    fi:\n  od:\n  \+
+y := [op(y), sum]:\n  RETURN(y):\nend:\n\ncleanup := proc(s::list)\n  \+
+local N, k, sn, place, j, z, snlist:\n  global  t:\n\n  N := nops(s):
+\n  sn := shortname(s[1]):\n  snlist := [sn]:\n  t[sn] := s[1]:\n  for
+ k from 2 to N do\n    sn := shortname(s[k]):\n    t[sn] := s[k]:\n   \+
+ place := -1:\n    z := sn[1]:\n    for j to k-1 do\n      if snlist[j
+][1] > z then\n        place := j-1:\n        break:\n      fi:\n    o
+d:\n    if place < 0 then \n      snlist := [op(snlist),sn]:\n    elif
+ place = 0 then\n      snlist := [sn, op(snlist)]:\n    elif place > 0
+ then\n      snlist := [op(1..place,snlist),sn, op(place+1..k-1,snlist
+)]:\n    fi:\n  od:\n  RETURN(snlist):\nend:\n\ndumpum := proc(e::list
+)\n  local k, subtreez, sn, treq, notreq: \n  global  edges, tcount, s
+ubtrees, nr, reqedge,t, nrmd,ds:\n\n  print(`The`, m, `edges are`, e):
+\n  print(`number of trees found`, tcount):\n  print(`number of NON-IS
+OMORPHIC trees found`, nops(subtrees)):\n  for k to 20 do\n    if nrmd
+[k] > 0 then \n      print( nrmd[k],` NON-ISOMORPHIC trees with maxdeg
+`, k):\n    fi:\n  od:\n  subtreez := cleanup(subtrees):\n  for sn in \+
+subtreez do\n    print(sn):\n    print(nr[t[sn]],ds[t[sn]]):\n    prin
+t(edges[t[sn]]):\n  od:\n  notreq := []:\n  for k to nops(e) do\n    t
+req := []:\n    for sn in subtreez do\n      if member(k, reqedge[t[sn
+]]) then\n        treq := [op(treq), sn[1]]:\n      fi:\n    od:\n    \+
+if nops(treq) > 0 then\n      print(`Edge`, e[k], `is required by tree
+s`, treq):\n    else\n      notreq := [op(notreq), e[k]]:\n    fi:\n  \+
+od:\n  print(`Edges not required:`, notreq):\n  RETURN(subtreez);\nend
+:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 71 "----------------------------
+-------------------------------------------" }}{PARA 0 "" 0 "" {TEXT 
+-1 12 "main program" }}{PARA 0 "" 0 "" {TEXT -1 71 "------------------
+-----------------------------------------------------" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3092 "# spantree determines all spannin
+g trees of a graph with edge list e\n# INPUT:\n#   e is a list of edge
+s of the supergraph\n#   ctr is an array of list sets where ctr[i[ is \+
+a list of\n#     the sets of edges which must be used before edge i is
+ used.\n#     For example, if the edges incident with a vertex v are 1
+, 3 and 7,\n#     then the list ctr[8] would contain the set \{1,3,7\}
+ because at least\n#     one of these edges must be used if the result
+ is to connect with\n#     vertex v.  Since edges are added in order, \+
+one of 1, 3, or 7 must\n#     be used before 8 or there is no hope of \+
+getting a connected subtree.\n#   m is the number of edges in e\n#   e
+ is the number of nodes in the graph\n# OUTPUT: none.\nspantree := pro
+c(e::list, ctr::array, n::integer, freq::integer)\n  local  edgs, i, j
+, k, m, time1, time2, TIME1, TIME2, avertime, lpe,\n         jcount, t
+c, subtreez, nn, sn, treq:\n  global f,g,c,h,p,sh,t,edges, tcount, sub
+trees, nr, reqedge, maxdeg,\n         nrmd,ds:\n\n  TIME1 := time():\n
+  nrmd := array(sparse, 1..20):\n  m := nops(e):\n  c := array(1..n):
+\n  f := []:\n  g := gbuild(e,n):\n  h := []:\n  p := []:\n  subtrees \+
+:= []:\n  time1 := time():\n  tcount := 0:\n  jcount := nextree(e,ctr,
+m,n):\n  while(jcount > 0) do\n    edgs := []:\n    for k from 1 to n-
+1 do\n      edgs := [op(edgs), e[f[k]]]:\n    od:\n    childe(edgs,n):
+\n    lpe := GlobalMinname(c,h,p,n):\n    if member(lpe, subtrees) the
+n\n      nr[lpe] := nr[lpe] + 1:\n      reqedge[lpe] := \{op(f)\} inte
+rsect reqedge[lpe]:\n    else\n      subtrees := [op(subtrees), lpe]:
+\n      ds[lpe] := degseq(edgs,n):\n      nrmd[maxdeg] := nrmd[maxdeg]
+ + 1:\n      nr[lpe] := 1:\n      edges[lpe] := edgs:\n      reqedge[l
+pe] := \{op(f)\}:\n    fi:\n    tcount := tcount+1:\n    tc := tcount \+
+mod freq:\n    if tc = 0 then\n      time2 := time():\n      avertime \+
+:= (time2-time1)/freq:\n      print(`current subtree is given by`, f):
+\n      print(tcount, `subtrees found at`, avertime,`average time per \+
+tree`):\n      print(nops(subtrees),`currently found isomorphism types
+ of spanning trees`):\n      time1 := time():\n    fi:\n    jcount := \+
+nextree(e,ctr,m,n):\n  od:\n  subtreez := dumpum(e):\n  TIME2 := time(
+):\n  print(`Total time elapsed`, TIME2-TIME1):\n  RETURN(subtreez):\n
+end:\n\n# setctr initializes m and the control array ctr\n# INPUT: a l
+ist of edges e and the number of vertices n\n# OUTPUT: the control arr
+ay ctr\n# GLOBALS:\n#   m is the number of edges in the graph\nsetctr \+
+:= proc(e::list, n)\n  local ctr,deg, i, v, vert, bond, maxi:\n  globa
+l m:\n  deg := []:\n  m := nops(e);\n  ctr := array(1..m+1):\n  for i \+
+to m+1 do\n    ctr[i] := []:\n    vert[i] := []:\n  od:\n  for v from \+
+1 to n do\n    bond := \{\}:\n    maxi := 0:\n    for i from 1 to m do
+\n      if member(v,e[i]) then\n        bond := bond union \{i\}:\n   \+
+     maxi := i+1:\n      fi:\n    od:\n    ctr[maxi] := [op(ctr[maxi])
+,bond]:\n    vert[maxi] := [op(vert[maxi]), v]:\n    deg := [op(deg), \+
+[v, nops(bond)]]:\n  od:\n  print(`Es gibt`, m, `Kanten.  The vertex d
+egrees are`):\n  print(deg):\n  for i from 1 to m+1 do\n    if nops(ct
+r[i]) > 0 then\n      print(i, ctr[i]):\n      print(i, vert[i]):\n   \+
+ fi:\n  od:\n  ctr;\nend:" }}}}{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 }

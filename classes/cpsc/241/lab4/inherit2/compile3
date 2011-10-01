@@ -1,0 +1,3 @@
+#! /bin/csh -f
+#
+fCC circle.c rectangle.c main3.c

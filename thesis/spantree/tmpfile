@@ -1,0 +1,276 @@
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [f] ]
+t[v] = 7b
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 1 2 3 4 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [f] ]
+t[v] = 7b
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 1 2 3 5 
+Entering GlobalMinnameArr
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 1 2 4 5 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [1b] ]
+t[v] = db
+tt[v] = 3
+[3] [1] [3] ]
+t[v] = 19b
+tt[v] = 67
+[67] ]
+t[v] = cf
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 0 1 2 4 6 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [1b] ]
+t[v] = db
+tt[v] = 3
+[3] [3] [1] ]
+t[v] = 19b
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 67
+[67] ]
+t[v] = cf
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 0 1 2 5 6 
+Entering GlobalMinnameArr
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 1 3 4 5 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [1] [b] ]
+t[v] = 16b
+tt[v] = 5b
+[5b] ]
+t[v] = b7
+tt[v] = b
+[b] [1] [1] ]
+t[v] = 16b
+tt[v] = 5b
+[5b] ]
+t[v] = b7
+tt[v] = 5b
+[5b] ]
+t[v] = b7
+
+Current subtree: 0 1 3 4 6 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [1b] ]
+t[v] = db
+tt[v] = 3
+[3] [1] [3] ]
+t[v] = 19b
+tt[v] = 67
+[67] ]
+t[v] = cf
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 0 1 3 5 6 
+Entering GlobalMinnameArr
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 2 3 4 5 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [3] [3] ]
+t[v] = 19b
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 37
+[37] ]
+t[v] = 6f
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 0 2 3 4 6 
+Entering GlobalMinnameArr
+tt[v] = 1
+[1] [f] ]
+t[v] = 7b
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 0 2 3 5 6 
+Entering GlobalMinnameArr
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 1 2 3 4 5 
+Entering GlobalMinnameArr
+tt[v] = 3
+[3] [7] ]
+t[v] = e7
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+tt[v] = 7
+[7] [3] ]
+t[v] = e7
+tt[v] = f
+[f] [1] ]
+t[v] = 7b
+tt[v] = 1f
+[1f] ]
+t[v] = 3f
+
+Current subtree: 1 2 4 5 6 
+Entering GlobalMinnameArr
+tt[v] = 3
+[3] [1] [3] ]
+t[v] = 19b
+tt[v] = 37
+[37] ]
+t[v] = 6f
+tt[v] = 67
+[67] ]
+t[v] = cf
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 1 3 4 5 6 
+Entering GlobalMinnameArr
+tt[v] = 3
+[3] [3] [1] ]
+t[v] = 19b
+tt[v] = 37
+[37] ]
+t[v] = 6f
+tt[v] = 1b
+[1b] [1] ]
+t[v] = db
+tt[v] = 67
+[67] ]
+t[v] = cf
+tt[v] = 37
+[37] ]
+t[v] = 6f
+
+Current subtree: 2 3 4 5 6 
+Total time: 0.01 seconds.
+Number of trees found: f
+Number of NON-ISOMORPHIC trees found: 3
+Tree 3f occured 8 times.
+Tree 6f occured 6 times.
+Tree b7 occured 1 times.

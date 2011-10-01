@@ -1,0 +1,83 @@
+# Scene definition file
+# Any line that begins with '#' is a comment
+#
+# Format:
+#   Name <tank name>
+#   One of:
+#     Model <model file> |
+#     Terrain <length> <width> <crater radius> <crater height> |
+#     Box <length> <width> <height>
+#   Skin <skin file>
+#   Rotate[1|2|3] theta x y z
+#   Translate x y z
+#
+# Begin each item definition with "NewItem"
+#
+# Note: Using a skin with an improperly-prepared md2 will result
+# in a core dump.
+
+Name Bird1
+Model bird.md2
+Tex_Type Grid
+#Skin be.pcx
+Translate 0.0 -20.0 -20.0
+Rotate -225.0 0.0 1.0 0.0
+Scale 1 1 1
+
+NewItem
+Name Bird2
+Model bird.md2
+Translate 0.0 20.0 -20.0
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 90.0 1.0 0.0 0.0
+Draw_Outline
+
+NewItem
+Name Bird3
+Model bird.md2
+Translate 0.0 -20.0 20.0
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 -90.0 1.0 0.0 0.0
+
+NewItem
+Name Terrain
+Terrain 50 50
+Translate -45.0 -20.0 0.0
+#Tex_Type Std
+
+NewItem
+Name Terrain
+Terrain 50 50
+Translate 0.0 45.0 -20.0
+Rotate 90.0 1.0 0.0 0.0
+
+NewItem
+Name Box1
+Box 47 4 4
+Translate 6.0 -20.0 -20.0
+Tex_Type Grid
+
+NewItem
+Name Box2
+Box 4 4 45
+Translate 28.0 5.0 -20.0
+Tex_Type Grid
+
+NewItem
+Name Box3
+Box 47 4 4
+Translate 6.0 20.0 -20.0
+Tex_Type Grid
+
+NewItem
+Name Box4
+Box 4 54 4
+Translate -20.0 20.0 0.0
+Tex_Type Grid
+
+NewItem
+Name Box5
+Box 4 54 4
+Translate -20.0 -20.0 0.0
+Tex_Type Grid
+

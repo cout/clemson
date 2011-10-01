@@ -1,0 +1,10 @@
+echo "fcfs results:"
+fcfs <$1 | sort | rel
+echo "rr results:"
+rr <$1 | sort | rel
+echo "mlfq results:"
+mlfq <$1 | sort | rel
+echo "srtn results:"
+srtn <$1 | sort | rel
+echo "hrrn results:"
+hrrn <$1 | sort | rel

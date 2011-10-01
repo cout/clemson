@@ -1,0 +1,132 @@
+Part 1: Test functions
+
+zeroin:
+
+For function x^3 - 2*x - 5
+in [2,3] root is	2.094551482e+00
+No. of iterations		10
+Function value at the root found	-9.1160e-16
+Exact root is 		2.0945514815
+
+For function sin(x)
+in [2,3] root is	3.000000000e+00
+No. of iterations		52
+Function value at the root found	1.4112e-01
+Exact root is 3.141592654
+
+For function cos(x)-x
+in [2,3] root is	2.000000000e+00
+No. of iterations		52
+Function value at the root found	-2.4161e+00
+
+For function cos(x)-x
+in [-1,3] root is	7.390851332e-01
+No. of iterations		11
+Function value at the root found	-5.1283e-17
+
+For function sin(x)-x
+in [-1,3] root is	-4.782415938e-10
+No. of iterations		68
+Function value at the root found	0.0000e+00
+
+secant:
+
+For function x^3 - 2*x - 5
+in [2,3] root is	2.094551482e+00
+No. of iterations		10
+Function value at the root found	-9.1160e-16
+Exact root is 		2.0945514815
+
+For function sin(x)
+in [2,3] root is	3.000000000e+00
+No. of iterations		52
+Function value at the root found	1.4112e-01
+Exact root is 3.141592654
+
+For function cos(x)-x
+in [2,3] root is	2.000000000e+00
+No. of iterations		52
+Function value at the root found	-2.4161e+00
+
+For function cos(x)-x
+in [-1,3] root is	7.390851332e-01
+No. of iterations		11
+Function value at the root found	-5.1283e-17
+
+For function sin(x)-x
+in [-1,3] root is	-4.782415938e-10
+No. of iterations		68
+Function value at the root found	0.0000e+00
+
+bisection:
+
+For function x^3 - 2*x - 5
+in [2,3] root is	2.094551482e+00
+No. of iterations		10
+Function value at the root found	-9.1160e-16
+Exact root is 		2.0945514815
+
+For function sin(x)
+in [2,3] root is	3.000000000e+00
+No. of iterations		52
+Function value at the root found	1.4112e-01
+Exact root is 3.141592654
+
+For function cos(x)-x
+in [2,3] root is	2.000000000e+00
+No. of iterations		52
+Function value at the root found	-2.4161e+00
+
+For function cos(x)-x
+in [-1,3] root is	7.390851332e-01
+No. of iterations		11
+Function value at the root found	-5.1283e-17
+
+For function sin(x)-x
+in [-1,3] root is	-4.782415938e-10
+No. of iterations		68
+Function value at the root found	0.0000e+00
+
+Part 2: World on a string
+
+zeroin:
+Method 1: intuitive method
+theta = 0.013303
+tan theta - theta - l/2r = -3.1764e-22
+height = 563.782478
+Method 2: Taylor expansion
+theta = 0.013303
+tan theta - theta - l/2r = 1.5665e-23
+height = 563.782476
+Method 3: Horner's rule
+theta = 1.047198
+tan theta - theta - l/2r = -7.8481e-07
+height = 6371000.000000
+
+secant:
+Method 1: intuitive method
+theta = -0.000001
+tan theta - theta - l/2r = -7.8481e-07
+height = 0.000002
+Method 2: Taylor expansion
+theta = -0.000001
+tan theta - theta - l/2r = -7.8481e-07
+height = 0.000002
+Method 3: Horner's rule
+theta = -0.000001
+tan theta - theta - l/2r = -7.8481e-07
+height = 0.000002
+
+bisection:
+Method 1: intuitive method
+theta = 0.013303
+tan theta - theta - l/2r = -3.1764e-22
+height = 563.782478
+Method 2: Taylor expansion
+theta = 0.012272
+tan theta - theta - l/2r = -1.6873e-07
+height = 479.760708
+Method 3: Horner's rule
+theta = 1.570796
+tan theta - theta - l/2r = -7.8481e-07
+height = 104049762278533461180416.000000

@@ -1,0 +1,41 @@
+consumer 3 got item 0 
+consumer 4 got item 0   <-- replicated
+consumer 5 got item 0   <-- replicated
+consumer 3 got item 0   <-- replicated
+consumer 4 got item 0   <-- replicated
+consumer 5 got item 10
+consumer 3 got item 20
+consumer 4 got item 1 
+consumer 5 got item 11
+consumer 3 got item 3 
+consumer 4 got item 13
+consumer 5 got item 23
+consumer 3 got item 4 
+consumer 4 got item 14
+consumer 5 got item 24
+consumer 3 got item 16
+consumer 4 got item 26
+consumer 5 got item 25
+consumer 3 got item 17
+consumer 4 got item 27
+consumer 5 got item 26  <-- replicated
+consumer 3 got item 29
+consumer 4 got item 28
+consumer 5 got item 9 
+consumer 3 got item 19
+consumer 4 got item 29  <-- replicated
+consumer 5 got item 28  <-- replicated
+consumer 3 got item 9   <-- replicated
+consumer 4 got item 19  <-- replicated
+consumer 5 got item 29  <-- replicated
+all done
+
+Missing numbers: 2, 5, 6, 7, 8, 12, 15, 18, 21, 22
+
+The first problem is that we only have a buffer of size 4.  This means that if we produce 5 items before we consume, we will lose an item.  This does not happen in our scenario, because of the way the delays are arranged.
+
+On the other hand, if we begin to consume before we produce, then we will get items more than once.  This is why we have so many item 0's at the beginning -- because the producers are waiting 2 seconds before they insert, while the consumers consume immediately.  
+
+Additionally, two producers or two consumers operating at the same time also poses a problem.  Because the insert and remove operations are not atomic, it is possible to insert a value before the in/out variables are updated (these, incidentally, should probably be static locals rather than globals).
+
+Note that a producer and a consumer operating simultaneously is not an issue, unless the consumer gets ahead of the producer.

@@ -1,0 +1,59 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 
+0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 98 "f := (1.0/3.0 + (2.0
+/15.0 + (17.0/315.0 + 62.0/2835.0 * x*x) *\n               x*x) * x*x)
+ * x*x*x;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fG*&,&$\"+LLLLL!#5\"
+\"\"*&,&$\"+LLLL8F)F**&,&$\"+(RDoR&!#6F**$%\"xG\"\"#$\"+a)[p=#F3F*F5F6
+F*F*F5F6F*F*F5\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "delt
+ax := diff(f, x)/f;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'deltaxG*(,&*
+&,&*&,&*$%\"xG\"\"$$\"+3x*QP%!#6*&,&$\"+(RDoR&F0\"\"\"*$F,\"\"#$\"+a)[
+p=#F0F5F,F5F7F5F,F7F5*&,&$\"+LLLL8!#5F5*&F2F5F,F7F5F5F,F5F7F5F,F-F5*&,
+&$\"+LLLLLF>F5*&F;F5F,F7F5F5F,F7F-F5FA!\"\"F,!\"$" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 18 "cfx := x * deltax;" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%$cfxG*(%\"xG!\"#,&*&,&*&,&*$F&\"\"$$\"+3x*QP%!#6*&,&$
+\"+(RDoR&F1\"\"\"*$F&\"\"#$\"+a)[p=#F1F6F&F6F8F6F&F8F6*&,&$\"+LLLL8!#5
+F6*&F3F6F&F8F6F6F&F6F8F6F&F.F6*&,&$\"+LLLLLF?F6*&F<F6F&F8F6F6F&F8F.F6F
+B!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "cfxr := expand(cf
+x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%cfxrG,**&%\"xG\"\"',*$\"+LLL
+LL!#5\"\"\"*$F'\"\"#$\"+LLLL8F,*$F'\"\"%$\"+(RDoR&!#6*$F'F($\"+a)[p=#F
+6!\"\"$\"+oRDo>F,*&F'F3F)F:$\"+xxxxPF,*&F'F/F)F:$\"+lmmmmF,*$F)F:$\"+*
+*********F," }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "plot(cfxr, x
+ = 0..0.02);" }}{PARA 13 "" 1 "" {INLPLOT "6%-%'CURVESG6$7S7$\"\"!$\"
+\"$F(7$$\"1LLLL3VfV!#>$\"15r._,++I!#:7$$\"1nmm\"H[D:)F.$\"1%\\7<`+++$F
+17$$\"1LLLe0$=C\"!#=$\"1(G:PB,++$F17$$\"1MLL3RBr;F:$\"1x2UMA++IF17$$\"
+1nm;zjf)4#F:$\"1l<HBN++IF17$$\"1LL$e4;[\\#F:$\"1t&)Hz\\++IF17$$\"1++]i
+'y]!HF:$\"1i*3;v1++$F17$$\"1LL$ezs$HLF:$\"1C)=y')3++$F17$$\"1++]7iI_PF
+:$\"1wk!RE6++$F17$$\"1omm;_M(=%F:$\"1#p)=FS,+IF17$$\"1MLL3y_qXF:$\"1BD
+#>r;++$F17$$\"1,++]1!>+&F:$\"1jJT:+-+IF17$$\"1+++]Z/NaF:$\"1F]0KO-+IF1
+7$$\"1+++]$fC&eF:$\"1-(39SF++$F17$$\"1ML$ez6:B'F:$\"1Ia)e1J++$F17$$\"1
+nmm;=C#o'F:$\"1#yPDsN++$F17$$\"1nmmm#pS1(F:$\"1/bn@*R++$F17$$\"1++]i`A
+3vF:$\"1a'*z*4X++$F17$$\"1mmmm(y8!zF:$\"1FhqY*\\++$F17$$\"1,+]i.tK$)F:
+$\"1od4\\b0+IF17$$\"1++](3zMu)F:$\"1<glg61+IF17$$\"1omm\"H_?<*F:$\"17L
+b.t1+IF17$$\"1om;zihl&*F:$\"1+\\b.K2+IF17$$\"1MLL3#G,***F:$\"1)o#RX)z+
++$F17$$\"1LLezw5V5!#<$\"1^$p(\\q3+IF17$$\"1++v$Q#\\\"3\"Fcs$\"1(>WXd$4
++IF17$$\"1LL$e\"*[H7\"Fcs$\"198N')35+IF17$$\"1+++qvxl6Fcs$\"1-)Q!H(3,+
+$F17$$\"1++]_qn27Fcs$\"1x%yco;,+$F17$$\"1++Dcp@[7Fcs$\"1Y!*f^Y7+IF17$$
+\"1++]2'HKH\"Fcs$\"1P(*e/Q8+IF17$$\"1nmmwanL8Fcs$\"10ze0B9+IF17$$\"1++
++v+'oP\"Fcs$\"1#Ho7n^,+$F17$$\"1LLeR<*fT\"Fcs$\"1q.y:/;+IF17$$\"1+++&)
+Hxe9Fcs$\"11rKc-<+IF17$$\"1nm\"H!o-*\\\"Fcs$\"1lE0$yz,+$F17$$\"1++DTO5
+T:Fcs$\"1oh^=+>+IF17$$\"1nmmT9C#e\"Fcs$\"1.Qd*H+-+$F17$$\"1++D1*3`i\"F
+cs$\"10w=`8@+IF17$$\"1LLL$*zym;Fcs$\"11m')zAA+IF17$$\"1LL$3N1#4<Fcs$\"
+1->()QPB+IF17$$\"1nm\"HYt7v\"Fcs$\"1v(>vQX-+$F17$$\"1+++q(G**y\"Fcs$\"
+1ILBTjD+IF17$$\"1nm;9@BM=Fcs$\"1&*[o*=p-+$F17$$\"1MLL`v&Q(=Fcs$\"1***p
+x%4G+IF17$$\"1++DOl5;>Fcs$\"1,\"48w$H+IF17$$\"1++v.Uac>Fcs$\"1#oMKH1.+
+$F17$$\"1+++++++?Fcs$\"18vU_+K+IF1-%'COLOURG6&%$RGBG$\"#5!\"\"F(F(-%+A
+XESLABELSG6$%\"xG%!G-%%VIEWG6$;F($\"\"#!\"#%(DEFAULTG" 2 310 310 310 
+2 0 1 0 2 9 0 4 2 1.000000 45.000000 45.000000 10030 10061 10056 
+10074 0 0 0 20030 0 12020 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "cfxr(0.0133);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#$\"+A:9+I!\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

@@ -1,0 +1,8 @@
+initialize data structures
+do
+	generate the next spanning tree
+	generate a certificate for this spanning tree
+	if this certificate has not been found then
+		add this certificate to our list
+	end if
+while there are no more spanning trees

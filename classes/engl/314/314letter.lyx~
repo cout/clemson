@@ -1,0 +1,100 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 2.16
+\textclass letter
+\language default
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 0
+\paperorientation portrait
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout My Address
+
+711 Nomad Lane
+\newline 
+Mt.
+ Pleasant, SC 29464
+\layout Send To Address
+
+Automated Trading Desk
+\newline 
+389 Johnnie Dodds Blvd., Suite 200
+\newline 
+Mt.
+ Pleasant, SC 29464
+\layout Opening
+
+Dear Mr.
+ Butler:
+\layout Standard
+
+I am writing in regard to the career opportunities mentioned on your web
+ page.
+ I would like to be considered for the position of C++ Programmer.
+ I am sure you will find my C++ programming experience to be much more extensive
+ than most students fresh from college, and that my problem-solving skills
+ would make me a valuable addition to your team.
+\layout Standard
+
+In the summer of 1998, I was looking for a programming project to work on.
+ At that time, I felt the Internet community needed a good Windows-based
+ telnet client, as none of the products available at the time provided any
+ of the features that I needed.
+ At the time, Brad Johnson was becoming very busy with other projects, and
+ his Console Telnet project was slowing; as a result, he felt it prudent
+ to hand the project to someone else.
+ Later that summer, I became maintainer of the Console Telnet project.
+ The project is roughly 10,000 lines of code and includes an extensive class
+ hierarchy.
+\layout Standard
+
+I also have experience with computer simulations.
+ In the spring of 1998, I took a course in computational science.
+ In that class we studied how to optimize code to minimize loss of accuracy,
+ as well as other techniques useful in computer simulations, such as simulated
+ annealing and solving ODEs.
+ I have also written a simple Newtonian physics simulator for a project
+ here at Clemson.
+\layout Standard
+
+At the Medical University of South Carolina, where I worked as an intern,
+ I learned to develop my problem-solving skills and to work with many different
+ kinds of people.
+ Though we reduced our email conversion time from a two week estimate to
+ under two days, my greatest benefit from that job was learning to interact
+ with programmers, adminstrators, managers, help desk workers, and customers.
+ I learned to work as a team player and how to voice my opinion without
+ being imposing.
+\layout Standard
+
+More information about my programming experience and work experience is
+ included on the attached resume.
+ I would, nevertheless, like to meet with you to discuss an opportunity
+ for a career with ATD.
+ If you would like to discuss this further, please email me at pbranna@clemson.ed
+u.
+\layout Closing
+
+Sincerely,
+\layout Signature
+
+Paul Brannan
+\the_end

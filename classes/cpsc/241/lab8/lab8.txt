@@ -1,0 +1,42 @@
+Lab 8: Parallel "Hello World"
+
+Introduction:
+   The purpose of this lab is to acquaint you with the problems
+and methods involved in parallel computation methods, with
+particular concern to synchronization and communication issues.
+
+Instructions:
+   Write two programs hellomaster.c and helloslave.c.  These programs
+should use the PVM package (as seen in lab 7).  The master program
+(hellomaster.c) should spawn four slave processes (each running
+helloslave.c).  These four processes should then print the message
+"Hello World".  These processes should print these messages in the
+order that they were spawned.
+
+   In order to acheive this, the hellomaster.c program must send
+"go" messages to each of the processes in turn, and the helloslave.c
+program must wait for this message before producing its output.
+After these programs have finished, the must send "done" messages to
+hellomaster, which must wait for this before sending the next slave's
+"go".  The flow of messages for the entire problem should be as seen
+below:
+
++----------------------------------------------------------------+
+|     hellomaster                                                |
+|                                                                |
++----------------------------------------------------------------+
+   |    ^       |     ^        |     ^           |    ^
+   |go  |done   |go   |done    |go   |done       |go  |done
+   v    |       v     |        v     |           v    |
++-----------+  +-----------+   +-----------+   +-----------+
+|helloslave1|  |helloslave2|   |helloslave3|   |helloslave4|
++-----------+  +-----------+   +-----------+   +-----------+
+
+Use the make command and the provided makefile to compile your
+programs and place the object code in your pvm subdirectory.
+Consult the files in your /241/lab7 directory for information and
+examples of using pvm in your programs.
+
+Hand in:
+Your programs, hellomaster.c and helloslave.c
+

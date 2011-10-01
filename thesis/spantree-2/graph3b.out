@@ -1,0 +1,77 @@
+ctr = 
+0: 
+1: 
+2: 
+2: 0 1 
+3: 
+3: 0 2 
+3: 1 2 
+
+------
+
+k = 0
+j = 1
+i = 0
+f = [ 0 ]
+g = 
+0 1 2 
+0 0 2 
+-1 -1 -1 
+f = [ 0 1 ]
+g = 
+0 1 2 
+0 0 2 
+0 0 0 
+Subtree found: 0 1 
+------
+
+k = 2
+j = 2
+i = 2
+f = [ 0 2 ]
+g = 
+0 1 2 
+0 0 2 
+2 2 2 
+Subtree found: 0 2 
+------
+
+k = 2
+j = 2
+i = 3
+Backtracking...
+f = [ ]
+g = 
+0 1 2 
+0 0 2 
+2 2 2 
+f = [ 1 ]
+g = 
+0 1 2 
+0 1 1 
+2 2 2 
+f = [ 1 2 ]
+g = 
+0 1 2 
+0 1 1 
+1 1 1 
+Subtree found: 1 2 
+------
+
+k = 2
+j = 2
+i = 3
+Backtracking...
+f = [ ]
+g = 
+0 1 2 
+0 1 1 
+1 1 1 
+Backtracking...
+
+Total time: 0 seconds.
+Number of trees found: 3
+Number of NON-ISOMORPHIC trees found: 1
+Tree 7 occured 3 times (edges: [0 1] [1 2] )
+
+Edges not required: [0 1] [1 2] [2 0] 

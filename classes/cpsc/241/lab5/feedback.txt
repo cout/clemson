@@ -1,0 +1,5 @@
+This was a very interesting lab (er, as interesting as a c++ lab could be...),
+but I don't think I gained much from it in terms of what this course is for;
+it seemed more like a tutorial in gnuplot than anything else.  The curve
+fitting was inexact, and hardly scientific.  I think I could gain a quick
+dislike for gnuplot.

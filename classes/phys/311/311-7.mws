@@ -1,0 +1,113 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 2 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 3 }1 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 255 1 0 0 0 0 0 0 1 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {TEXT -1 5 "13.25" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 13 "with(linalg):" }}{PARA 7 "" 1 "" {TEXT -1 32 
+"Warning, new definition for norm" }}{PARA 7 "" 1 "" {TEXT -1 33 "Warn
+ing, new definition for trace" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 58 "A := matrix(3,3,[-2*k/m,k/m,0,0,-2*k/m,k/m,0,k/m,-2*k/m]);" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG
+-%'matrixG6#7%7%,$*&%\"kG\"\"\"%\"mG!\"\"!\"#F+\"\"!7%F1F*F+7%F1F+F*" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 117 "eigenvals(A);\neigenvect
+s(A);[1, 1, \{vector([1, 1, -2])\}], [-1, 1, \{vector([-1, 1, 0])\}], \+
+[4, 1, \{vector([1, 1, 1])\}];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%,$*&
+%\"kG\"\"\"%\"mG!\"\"!\"#,$F$!\"\",$F$!\"$" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6%7%,$*&%\"kG\"\"\"%\"mG!\"\"!\"\"\"\"\"<#-%'vectorG6#7%F
++F+F+7%,$F%!\"#F+<#-F.6#7%F+\"\"!F87%,$F%!\"$F+<#-F.6#7%F+F*F+" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6%7%\"\"\"F$<#-%'vectorG6#7%F$F$!\"#7%!
+\"\"F$<#-F'6#7%F,F$\"\"!7%\"\"%F$<#-F'6#7%F$F$F$" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 52 "We must find a matrix C such that C^TAC is diagona
+l." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 70 "We must obtain differential equations for the norm
+al coordinates X,Y,Z" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 "18.1" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 6 "(a) no" }}{PARA 0 "" 0 "" {TEXT -1 
+7 "(b) yes" }}{PARA 0 "" 0 "" {TEXT -1 6 "(c) no" }}{PARA 0 "" 0 "" 
+{TEXT -1 6 "(d) no" }}{PARA 0 "" 0 "" {TEXT -1 7 "(e) yes" }}{PARA 0 "
+" 0 "" {TEXT -1 7 "(f) yes" }}{PARA 0 "" 0 "" {TEXT -1 6 "(g) no" }}
+{PARA 0 "" 0 "" {TEXT -1 7 "(h) yes" }}{PARA 0 "" 0 "" {TEXT -1 7 "(i)
+ yes" }}{PARA 0 "" 0 "" {TEXT -1 7 "(j) yes" }}{PARA 0 "" 0 "" {TEXT 
+-1 7 "(k) yes" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 5 "18.12" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "with(DEtools):" }}{PARA 7 "" 1 "" 
+{TEXT -1 35 "Warning, new definition for adjoint" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 43 "eqn := diff(diff(x(t),t),t) + (g/l)*x(t)=0;" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$eqnG/,&-%%diffG6$-%\"xG6#%\"tG-%
+\"$G6$F-\"\"#\"\"\"*&*&%\"gGF2F*F2\"\"\"%\"lG!\"\"F2\"\"!" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "odeadvisor(eqn);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#7#7$%+_2nd_orderG%+_missing_xG" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 12 "dsolve(eqn);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#/-%\"xG6#%\"tG,&*&%$_C1G\"\"\"-%$sinG6#*&-%%sqrtG6#*&%\"gG\"\"\"%\"l
+G!\"\"F5F'F+F+F+*&%$_C2GF+-%$cosGF.F+F+" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 5 "19.1a" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "eqn :=
+ diff(x(t),t) + x(t) = 3*exp(2*t);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%$eqnG/,&-%%diffG6$-%\"xG6#%\"tGF-\"\"\"F*F.,$-%$expG6#,$F-\"\"#\"\"$
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "dsolve(eqn);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#/-%\"xG6#%\"tG,&-%$expG6#,$F'\"\"#\"\"\"*&-F
+*6#,$F'!\"\"F.%$_C1GF.F." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 5 "19.1b
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "eqn := diff(x(t),t) - 3
+*x(t) = t*t*t + 1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$eqnG/,&-%%dif
+fG6$-%\"xG6#%\"tGF-\"\"\"F*!\"$,&*$)F-\"\"$\"\"\"F.F.F." }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "dsolve(eqn);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#/-%\"xG6#%\"tG,,*$)F'\"\"$\"\"\"#!\"\"F+*$)F'\"\"#F,F-F
+'#!\"#\"\"*#!#6\"#F\"\"\"*&-%$expG6#,$F'F+F8%$_C1GF8F8" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 4 "20.2" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+18 "(a) leads by 1/2Pi" }}{PARA 0 "" 0 "" {TEXT -1 23 "(b) lags by (9/
+2-1/4)Pi" }}{PARA 0 "" 0 "" {TEXT -1 20 "(c) leads/lags by Pi" }}
+{PARA 0 "" 0 "" {TEXT -1 17 "(d) leads by Pi/2" }}{PARA 0 "" 0 "" 
+{TEXT -1 18 "(e) leads by 9/4Pi" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 
+"20.8" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 70 "eqn := \{diff(diff
+(x(t),t),t) + 10*diff(x(t),t) + 24*x(t) = 0,x(0)=-3\};" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$eqnG<$/,(-%%diffG6$-%\"xG6#%\"tG-%\"$G6$F.\"\"#
+\"\"\"-F)6$F+F.\"#5F+\"#C\"\"!/-F,6#F8!\"$" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 19 "dsolve(eqn,\{x(t)\});" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#/-%\"xG6#%\"tG,&*&,&%$_C2G!\"\"!\"$\"\"\"F.-%$expG6#,$F'!\"'F.F.
+*&F+F.-F06#,$F'!\"%F.F." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 "20.9" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "eqn := diff(diff(x(t),t),t
+) + 2*k*diff(x(t),t) + omega*omega*x(t);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$eqnG,(-%%diffG6$-%\"xG6#%\"tG-%\"$G6$F,\"\"#\"\"\"*&%\"kGF1-F
+'6$F)F,F1F0*&)%&omegaGF0\"\"\"F)F1F1" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "eqn2 := subs(omega=k,eqn);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%eqn2G,(-%%diffG6$-%\"xG6#%\"tG-%\"$G6$F,\"\"#\"\"\"*
+&%\"kGF1-F'6$F)F,F1F0*&)F3F0\"\"\"F)F1F1" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "dsolve(eqn2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#/-%
+\"xG6#%\"tG,&*&%$_C1G\"\"\"-%$expG6#,$*&%\"kGF+F'F+!\"\"F+F+*(%$_C2GF+
+F,\"\"\"F'F5F+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 5 "20.11" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 95 "eqn := diff(diff(x(t),t),t) \+
++ 2*a*x(t)*(g+2*a*diff(x(t),t)*diff(x(t),t))/(1+4*a*a*x(t)*x(t))=0;" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$eqnG/,&-%%diffG6$-%\"xG6#%\"tG-%\"
+$G6$F-\"\"#\"\"\"*&*(%\"aG\"\"\"F*F2,&%\"gGF2*&F5F2)-F(6$F*F-F1F6F1F2F
+6,&F2F2*&)F5F1F6)F*F1F6\"\"%!\"\"F1\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "dsolve(eqn);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6$/,(-%
+$IntG6$*&,&%\"aG\"\"#*&)F*\"\"$\"\"\")%#_aGF+F/\"\")F/*$-%%sqrtG6#*(,(
+*()F*F+F/F0F/%\"gG\"\"\"!\")-%$expG6#,$*&%$_C1GF<F:F/F=F+F;!\"#F<F*F<,
+&F<F<*&F:F/F0F/\"\"%F<F/!\"\"/F1;%!G-%\"xG6#%\"tG!\"\"FOFP%$_C2GFP\"\"
+!/,(F%F<FOFPFQFPFR" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 93 "Ick, this i
+s ugly.  We must show that for small oscillations the period is 2^0.5*
+Pi/(ag)^0.5." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 "21.1" }}{PARA 0 "
+" 0 "" {TEXT -1 4 "21.5" }}{PARA 0 "" 0 "" {TEXT -1 4 "21.6" }}{PARA 
+0 "" 0 "" {TEXT -1 4 "21.8" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 "19.1
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 94 "eqn := \{2*diff(diff(x(
+t),t),t) + 3*diff(x(t),t)+x(t) = cos(t), diff(x(t),t)(0) = 0, x(0) = 1
+\};" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$eqnG<%/--%%diffG6$-%\"xG6#%
+\"tGF.6#\"\"!F0/,(-F)6$F+-%\"$G6$F.\"\"#F8F(\"\"$F+\"\"\"-%$cosGF-/-F,
+F/F:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "dsolve(eqn, x(t));
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 4 "20.1" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 66 "eqn := \{diff(diff(x(t),t),t) + x(t) = 0,x(0)=1,
+diff(x(t),t)(0)=0\};" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$eqnG<%/--%%
+diffG6$-%\"xG6#%\"tGF.6#\"\"!F0/,&-F)6$F+-%\"$G6$F.\"\"#\"\"\"F+F9F0/-
+F,F/F9" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "dsolve(eqn,x(t));
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 71 "eqn := \{diff(diff(x(t)
+,t),t) + sin(x(t)) = 0,x(0)=1,diff(x(t),t)(0)=0\};" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%$eqnG<%/--%%diffG6$-%\"xG6#%\"tGF.6#\"\"!F0/,&-F)6$
+F+-%\"$G6$F.\"\"#\"\"\"-%$sinG6#F+F9F0/-F,F/F9" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 17 "dsolve(eqn,x(t));" }}}}{MARK "41 0 0" 1 }
+{VIEWOPTS 1 1 0 1 1 1803 }

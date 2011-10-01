@@ -1,0 +1,18 @@
+User Info Mgr
+	SetUserPreferences/UserPrefsDlg
+	SetUserInfo/UserInfoDlg
+	ChangeUserPassword/UserPasswordDlg
+	GetActiveUsername
+
+User Database
+	Get/SetServerPrefs
+	Get/SetLocalPrefs
+	Get/SetActivePrefs
+	Get/SetUserInfo
+	Get/SetDefaultPrefs
+	ValidatePassword
+	ChangePassword
+
+Admin Tool
+	SetSystemPreferences/SystemPrefsDlg
+	Get/SetSystemPrefs

@@ -1,0 +1,37 @@
+------
+
+k = 0
+j = 1
+i = 0
+f = [ 0 ]
+g = 
+0 1 2 
+0 0 2 
+-1 -1 -1 
+f = [ 0 1 ]
+g = 
+0 1 2 
+0 0 2 
+0 0 0 
+Subtree found: 0 1 
+------
+
+k = 2
+j = 2
+i = 2
+Backtracking...
+f = [ ]
+g = 
+0 1 2 
+0 0 2 
+0 0 0 
+Backtracking...
+
+Total time: 0 seconds.
+Number of trees found: 1
+Number of NON-ISOMORPHIC trees found: 1
+Tree 7 occured 1 times (edges: [0 1] [1 2] )
+
+Edge [0 1] is required by trees 7
+Edge [1 2] is required by trees 7
+Edges not required: 

@@ -1,0 +1,58 @@
+---entry---
+rule:	2000
+fix:	n
+title:	brannan1
+entry:	0
+date:	Fri Mar 31 21:37:20 UTC 2000
+host:	Redhat Linux 6.1
+---remark---
+This is a small utility for displaying 24-bit color PPM images in ANSI color.
+To run the program, simply use ./prog filename.ppm, where filename.ppm is the
+name of a 24-bit ppm file.  This is my first attemt at an entry into the
+IOCCC, and so it's probably not as obfuscated (or complete) as I would like
+it to be.  However, the program is somewhat obfuscated because of:
+	1) Difficult formatting (all lines are 80-chars in length)
+	2) The above can be beautified, I know
+	3) Excessive nesting of for loops
+	4) Use of undescriptive variable names
+	5) All functions are inlined, some loops unrolled
+	6) I was so surprised it actually worked
+---author---
+name:	Paul Brannan
+org:	Clemson University
+addr:	PO Box 3673
+	Clemson, SC 29632
+email:	pbranna@clemson.edu
+url:	http://hubacp.clemson.edu/~pbranna/
+anon:	n
+---build---
+begin 664 build
+<(R$O8FEN+W-H"F-C('!R;V<N8R`M;R!P<F]G"@``
+`
+end
+---program---
+begin 664 prog.c
+M(VEN8VQU9&4@/'-T9&EO+F@^"FEN="!O6UT]>S`L,"PP+#$L,"PP+#`L,2PP
+M+#$L,2PP+#`L,"PQ+#$L,"PQ+#`L,2PQ+#$L,2PQ?3MI;G0@;6%I;BAI;G0@
+M96YT:6]N86PL"F-H87(@*BIZ87(I>T9)3$4@*FUE.W5N<VEG;F5D(&-H87(@
+M8ELU,3)=+"IP+"IS+&<[=6YS:6=N960@:6YT('<L:"QJ+'@L>2QZ+'0L7ULS
+M"ET[:6YT(&XL9"QE.V);,%T],#$V,CMB6S%=/3!X,#MM93UF;W!E;BAZ87);
+M,5TL8BD[9F=E=',H8BPU,3(L;64I.V1O>V9G971S*&(L-3$R"BQM92D[?7=H
+M:6QE*&);,%T]/3!X,C,I.V9O<BAP/7,]8CLJ<"$],S([<"LK*3LJ<#TP.W<]
+M871O:2AS*3MP*RL[9F]R*',]<#LJ<"$],S(["G`K*RD[*G`],#MH/6%T;VDH
+M<RD[9F=E=',H8BPP,3`P,"QM92D[<STH8VAA<BHI;6%L;&]C*#,J=RIH*3MF
+M<F5A9"AS+#$L,RIW*F@L;64I"CMF8VQO<V4H;64I.W!R:6YT9B@B7&5;,DHB
+M*3MF;W(H>3TP.WD\:#MY*STX*7MF;W(H>#TP.W@\=SMX*STX*7MF;W(H:CTP
+M.VH\,SMJ*RLI"GMF;W(H=#TP.W0\,#$P.W0K*RE[>CTS*BAY*W0I*G<K,RIX
+M*VH[7UMJ73US6WI=*W-;>BLS72MS6WHK-ETK<UMZ*SE=*W-;>BLQ,ET[7UMJ
+M"ETK/7-;>BLQ-5TK<UMZ*S$X72MS6WHK,C%=.WU?6VI=/CX]-3M]9STS,CMI
+M9BA?6S!=*U];,5TK7ULR728S,BEG/3`U-CMI9BA?6S!=*U];"C%=*U];,ETF
+M-C0I9STQ,3$[:68H7ULP72M?6S%=*U];,ETF,'@X,"EG/3`Q,3<[7ULP73X^
+M/34[7ULQ73X^/34[7ULR73X^/34[9#TQ,#`["F4],#MF;W(H:CTP.VH\.#MJ
+M*RLI>VX]*%];,%TM;UMJ*C-=*2HH7ULP72UO6VHJ,UTI*RA?6S%=+6];:BHS
+M*S%=*2HH7ULQ72UO6VHJ,RLQ"ETI*RA?6S)=+6];:BHS*S)=*2HH7ULR72UO
+M6VHJ,RLR72D[:68H;CPP*6X]+6X[:68H;CQD*7MD/6X[93UJ.WU]<')I;G1F
+M*")<92(B6R4B"B)D;5QE6R5D.R5D2"5C(BPS,"ME+#$K>2\X+#$K>"\X+&<I
+6.WU]9G)E92AS*3MP=71S*"(B*3M]"@``
+`
+end

@@ -1,0 +1,26 @@
+/* XPM */
+static char *tb_strong[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      2            1",
+/* colors */
+"  c None",
+"X c #000000",
+/* pixels */
+"                 ",
+"                 ",
+" XXXXXXXXXX   X  ",
+"  XXX    XX  XXX ",
+"  XXX     X  XXX ",
+"  XXX        XXX ",
+"  XXX        XXX ",
+"  XXX   X    XXX ",
+"  XXXXXXX    XXX ",
+"  XXX   X     X  ",
+"  XXX         X  ",
+"  XXX            ",
+"  XXX     X  XXX ",
+"  XXX    XX  XXX ",
+" XXXXXXXXXX  XXX ",
+"                 ",
+"                 "
+};

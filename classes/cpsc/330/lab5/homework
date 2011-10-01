@@ -1,0 +1,10 @@
+1) A nop is used so that no instruction will be executed after the branch
+   instruction.  Code can be optimized by replacing the nop with the
+   instruction preceding the branch.
+2) majority of instructions composed of ALU operations
+3) 000000 to 111111
+4) 2^29-1
+5) a - add R8, R24, R16
+   b - st R16, R30, 0x00001FE8
+   c - jmpl R0, R31, 0x00000008
+

@@ -1,0 +1,28 @@
+/* XPM */
+static char *tb_title[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      4            1",
+/* colors */
+"  c None",
+". c #ffffff",
+"x c #c0c0c0",
+"X c #000000",
+/* pixels */
+"XXXXXXXXXXX      ",
+"XxxxxxxxxxxX     ",
+"Xx....XX....X    ",
+"Xx....XXx....X   ",
+"Xx.....xx.....X  ",
+"Xx..XXXX..XXXXXX ",
+"Xx...xXXx..xxxxX ",
+"Xx....XXx......X ",
+"Xx....XXx......Xx",
+"Xx....XXx......Xx",
+"Xx....XXx......Xx",
+"Xx....XXx......Xx",
+"Xx....XXx......Xx",
+"Xx..XXXXXX.....Xx",
+"Xx...xxxxxx....Xx",
+"XXXXXXXXXXXXXXXXx",
+"   xxxxxxxxxxxxxx"
+};

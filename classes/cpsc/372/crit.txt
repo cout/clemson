@@ -1,0 +1,114 @@
+EVALUATION CRITERIA
+
+       Overview | What's New | Evaluation Criteria | Key Advantages |
+   Competitive Comparison | Installation | Suggested Tasks | Fact Sheet |
+                                        Primer
+
+
+
+Here are some specific questions to ask concerning calendaring and
+scheduling products. 
+
+ENTERPRISE ARCHITECTURE
+Verify that the solution has supported calendaring and scheduling in
+organizations similar to the one in which it will be used. Examine the
+architecture of the product by asking the following questions:
+
+       Is the client available for the variety of platforms in the
+       organization so that everyone can use it? 
+       Does the solution support the server platforms in the IS department?
+       Will IS need to add another hardware or OS platform for this
+       application? Will there be additional training and support costs? 
+       Can the server support the number of users required? Are there
+       existing implementations that are comparable in size? 
+       If the organization is located at multiple sites, does the
+       architecture support multiple calendar servers? 
+       Does the calendar solution support real-time access, or will users
+       be scheduling against old data? For example, resources or conference
+       rooms require real-time scheduling to avoid frequent double booking.
+       Are administration tools consistent, supported on multiple client
+       platforms, and powerful enough for large installations? 
+       If there are mobile or remote users, does the calendaring solution
+       support them? Can mobile users access not only their own, but other
+       users' calendars while away from the office?
+
+ 
+
+POWERFUL CALENDARING AND SCHEDULING SUPPORT
+As with other networked applications, the power and productivity of
+calendaring and scheduling grows as the number of users increases.
+Consider these questions:
+
+       Does the solution have the features, platform support, and
+       simplicity to be used widely? 
+       Is the product flexible enough to fit the way the organization
+       works? Will major changes be required to accommodate limitations? 
+       Do administrative personnel have access to other users' calendars?
+       Can users control access by classifying meetings, tasks, and notes
+       by various levels such as normal, public, and private? 
+       Can others be given limited viewing and modification access? 
+       Does the solution provide powerful group-support capabilities to
+       simplify scheduling? 
+       Can users create and access groups without involving systems
+       administrators? 
+       Can groups of individuals simultaneously view calendars to speed
+       selection of meeting time and resources? 
+       If users frequently reference paper calendars, does the solution
+       provide adequate printing capabilities? 
+
+RESOURCES AND CONFERENCE SCHEDULING
+Today's organization need to schedule more than just people. Efficient
+organizations can also use calendaring and scheduling solutions to
+reserve conference rooms and other resources, eliminating paper-based
+calendars, which might not get updated. Consider these requirements:
+
+       Does the system allow users to reserve conference rooms and
+       resources? 
+       Can the conference rooms and resources be reserved and confirmed at
+       the time the meeting is entered, or does the system require users to
+       wait for an email confirmation from the conference room? 
+       Can conference rooms be reserved on a first-come, first-serve basis
+       and also be managed by an administrator? 
+       Does the system schedule and confirm reservations in real time so
+       that resource and conference room reservations are not subject to
+       latencies due to store-and-forward or replication architectures?
+
+REMOTE, DISCONNECTED, AND MOBILE-USER SUPPORT
+For modern enterprises it is critical that remote, disconnected, and
+mobile users are able to fully participate in calendaring and scheduling.
+Be sure to ask the following questions:
+
+       Can users maintain paper calendars when out of the office? Does the
+       solution provide adequate printing capabilities? 
+       Is secure remote access supported? Are gateways required? 
+       Is web-based access available for users who are away from their
+       desktops? 
+       Does the solution provide support for popular PDAs such as
+       PalmPoint? 
+       Are all features available remotely, or are there restrictions? 
+       Can schedules be accessed offline, such as on a mobile computer? 
+       Is automatic resynchronization of schedules provided between mobile
+       and desktop systems? Is redundant data entry required?
+
+COMMITMENT TO OPEN STANDARDS
+Determine interoperability with other applications and other calendaring
+and scheduling products by examining the vendor's commitment to open
+standards. 
+
+       Does the vendor support existing open, industry-supported protocols
+       and formats for calendaring and scheduling, such as vCard and
+       vCalendar? 
+       Has the vendor committed to supporting the open calendaring and
+       scheduling standards that will be defined by the Internet
+       Engineering Task Force (IETF) Working Group? Some vendors are
+       backing protocols or standards that do not have support from several
+       major calendaring and scheduling vendors. If protocol support is
+       lacking, it may not be a truly open IETF standard. 
+       Does the product support related groupware protocols and standards,
+       such as the Lightweight Directory Access Protocol (LDAP) for
+       directory services, Simple Mail Transfer Protocol (SMTP) for
+       messaging services, and Network News Transfer Protocol (NNTP) for
+       group-discussion services? Even if a product supports calendaring
+       standards, vendor lock-in can occur through proprietary directory,
+       messaging, and group-discussion protocols.
+

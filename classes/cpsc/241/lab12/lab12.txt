@@ -1,0 +1,165 @@
+Lab 12: Intractable Algorithms (Traveling Salesperson Problem)
+--------------------------------------------------------------
+
+OBJECTIVE
+---------
+
+   To introduce the student to the notion of intractability in algorithms
+and to a well-known example of an intractable algorithm: the Traveling
+Salesperson Problem.
+
+
+DISCUSSION/BACKGROUND
+---------------------
+
+
+   The traveling salesperson problem (TSP) can be stated as follows: 
+Given a set of cities and the distance between each pair, find the shortest
+route that visits each city once and returns to the initial city.  For a
+very small number of cities, this problem can be solved easily on a single
+computer but for any "large" number of cities, it becomes intractable, i.e.,
+it can not be solved exactly but only approximated.  The problem is that even
+though we can find an algorithm that solves the problem, the amount of
+time required to execute a program that implements the algorithm is too
+large to make solving the problem by computer practical (tractable) for
+all but relatively small numbers of cities.  In practice, we are then
+reduced to accepting a route that seems to be good, without knowing
+whether it is the best.
+
+   The straightforward solution to the TSP is to generate all possible
+routes through the given cities, calculate the length of each route, and
+choose the route with the smallest length.  As you will see, this may be
+straightforward, but it results in execution times that are too long for
+practical use in solving the TSP with very many cities.
+
+   It is possible to gain some improvement in the TSP algorithm by eliminating
+the generation of all remaining paths that would complete a route whenever
+the length of a (partial) route exceeds the minimum route already found.
+This process is sometimes called "pruning".
+
+   Pruning is a relatively simple concept: 1) Evaluate each potential solution
+(i.e, each route) as it is being created;  2) If its evaluation becomes worse
+than the evaluation of the best solution so far, then stop searching down that
+route.  The term "pruning" comes from considering the generation and evaluation
+of paths through the cities as a depth-first traversal of a tree.  The
+transition from one level to the next lower level represents the addition of a
+previously unused city to the path that is currently under construction.  (The
+transition from the root to level 1 represents the choice of the initial city
+in a possible route.)
+
+   For example, consider the tree below, where there are four possible cities,
+numbered 1-4, in a route.  The set of all possible paths from the root to a
+leaf corresponds to the set of all possible routes for the TSP.  If we do a
+"left-to-right" depth-first traversal of the tree, then each time a leaf is
+reached the cities along the path back to the root represent a route for the
+TSP.  Let's say that you have already partially traversed the tree and your
+best evaluation thus far is from the permutation 2314. You are now about to
+start down branch 3214, but because you are evaluating as you go along, you
+determine that 32 already has a worse evaluation than the best solution thus
+far (2314). So, you know you don't have to search down that branch anymore,
+thus eliminating the need to check paths 3214 and 3241.
+
+                                      o
+           ___________________________|___________________________
+           |                 |                 |                 |
+           1                 2                 3                 4
+     ______|______     ______|______     ______|______     ______|______
+     |     |     |     |     |     |     |     |     |     |     |     |
+     2     3     4     1     3     4     1     2     4     1     2     3
+   __|__ __|__ __|__ __|__ __|__ __|__ __|__ __|__ __|__ __|__ __|__ __|__ 
+   |   | |   | |   | |   | |   | |   | |   | |   | |   | |   | |   | |   |
+   3   4 2   4 2   3 3   4 1   4 1   3 2   4 1   4 1   2 2   3 1   3 1   2
+   |   | |   | |   | |   | |   | |   | |   | |   | |   | |   | |   | |   |
+   4   3 4   2 3   2 4   3 4   1 3   1 4   2 4   1 2   1 3   2 3   1 2   1
+
+
+ASSIGNMENT
+----------
+
+   You are given the following files, in addition to the usual .txt file:
+
+   a) tsp - a program to solve the TSP for a given set of cities, with or
+      without pruning;
+
+   b) input - a data file for program tsp.  Test data is included for up to
+      13 cities.
+
+Program tsp reads the following data from standard input:
+
+   a) an indicator (0/1) as to whether trace printing is to be done (0=>no);
+   b) an indicator (0/1) as to whether pruning is to be done (0 => no);
+   c) the number of cities to be used;
+   d) the distances between cities.
+
+The distances are entered as a matrix, one row per line with entries on a
+row separated by one or more blanks.  All excess distances on a line (once
+the row of the distance matrix has been completed) are ignored, so that a
+test file for a large number of cities can be generated and then used for
+a smaller number of cities by only changing the number of cities (leaving
+the distance matrix unchanged).  A distance of 0 indicates no path between
+the cities (for the diagonal of the matrix only).
+
+Again, the tsp reads from the standard input, so to execute, issue the command
+
+   tsp < input
+
+which will redirect the file "input" to the standard input of the tsp program.
+
+   The program tsp generates possible paths in the order indicated by the
+tree above.  It prints the execution time and the best route for the given
+data.
+
+   You are to do the following:
+
+   1. Run tsp for input sizes of  8, 9, 10, 11, and 12, with and without
+      pruning.  (There is no need to turn the trace printing on.)  Record the
+      times in a table and include the table in your lab report (rather than
+      turning it in separately).  (The given file "input" is initially set up
+      for 7 cities and no pruning, but the distance matrix is large enough for
+      up to 13 cities, so you can modify the file "input" for each of the 10
+      test cases by just changing the number of cities and the pruning
+      indicator.) NOTE:  You may want to start working on the next step while
+      tsp executes for 12 cities.
+
+   2. Find a set of data for 10 cities for which the pruning option provides
+      no improvement in performance.  Include this set of data in your lab
+      report.  Note that for there to be no improvement in performance, every
+      possible sequence of cities must be generated without EXCEEDING the best
+      previous route until each possible route is complete.  This can only
+      happen if no route exceeds any other route.)
+
+   3. Find a set of data for 10 cities representing a "best case" for pruning.
+      That is, find a set of data such that no other set of data would run
+      faster with the pruning option on.  (Note that for this case, the first
+      path found must be the best path, and EVERY other PARTIAL path must
+      be worse.)  Test your data.
+
+REPORT: Include the following in file report.txt as your report.
+-------
+
+   1. Include your timing table for step 1 of the assignment.
+
+   2. Include your distance matrix for step 2 of the assignment.
+
+   3. Include your matrix for step 3 of the assignment.
+
+   4. What is the execution-time complexity for tsp without pruning, in terms
+      of the number of cities?  (Note that this is just the number of possible
+      paths for n cities.)
+
+   5. Roughly how long would it require to execute tsp without pruning on
+      16 cities, on the basis of your timing and your answer to (1) above.
+      Express your answer in years, and indicate how you obtained your answer.
+
+   6. Is pruning significant in terms of finding an algorithm to solve the
+      TSP for a large number of cities?  Explain your answer.
+
+   7. What if you could find an algorithm that always ran 100 times faster
+      than tsp without pruning.  Would this be significant in terms of a
+      way to solve the TSP for a large number of cities?  Why?
+
+FEEDBACK: Prepare file feedback.txt containing your feedback on the lab.
+--------
+
+SUBMIT: Files report.txt and feedback.txt using sendlab241.
+------

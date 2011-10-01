@@ -1,0 +1,51 @@
+start
+Wed Oct 18 15:46:38 EDT 2000
+6 done
+Wed Oct 18 15:46:44 EDT 2000
+Sum of services:     22.504000
+Sum of waits:        193.851000
+Number of requests:  1521
+Mean service time:   0.014796
+Mean wait time:      0.127450
+2 done
+Wed Oct 18 15:46:45 EDT 2000
+Sum of services:     25.825000
+Sum of waits:        221.313000
+Number of requests:  1696
+Mean service time:   0.015227
+Mean wait time:      0.130491
+4 done
+Wed Oct 18 15:46:48 EDT 2000
+Sum of services:     36.104000
+Sum of waits:        288.130000
+Number of requests:  2233
+Mean service time:   0.016168
+Mean wait time:      0.129033
+7 done
+Wed Oct 18 15:47:15 EDT 2000
+Sum of services:     136.507000
+Sum of waits:        1084.814000
+Number of requests:  8634
+Mean service time:   0.015810
+Mean wait time:      0.125644
+3 done
+Wed Oct 18 15:47:20 EDT 2000
+Sum of services:     147.789000
+Sum of waits:        1143.747000
+Number of requests:  9303
+Mean service time:   0.015886
+Mean wait time:      0.122944
+1 done
+Wed Oct 18 16:06:43 EDT 2000
+Sum of services:     3399.494000
+Sum of waits:        9305.733000
+Number of requests:  224240
+Mean service time:   0.015160
+Mean wait time:      0.041499
+5 done
+Wed Oct 18 16:12:33 EDT 2000
+Sum of services:     4237.514000
+Sum of waits:        11122.738000
+Number of requests:  400615
+Mean service time:   0.010578
+Mean wait time:      0.027764

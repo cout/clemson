@@ -1,0 +1,133 @@
+                     PVM Commands and C/C++
+
+Include Files
+--------------------
+To use PVM functions in a C/C++ program, you must include the PVM functions
+from the PVM library. For example:
+
+#include "~pvm/pvm3/include/pvm3.h"
+
+Note that you will also have to reference the PVM library (~pvm/pvm3/lib)
+when linking the master and slave programs.
+
+NOTE:  The pvm library is set up for C function calls.  Because the naming
+conventions are different for C and C++, this library cannot be used directly
+in the usual way in C++.  Thus it is easier to use C (with a C compiler) than
+C++ for PVM programs.  The information here applies to C programs only.
+
+Commands 
+--------
+The following is a description of the most commonly used PVM commands.
+The command
+
+   man -M ~pvm/pvm3/man <function_name>
+
+can be used to obtain additional information about the PVM commands.
+Note:  Insert "pvm_" before each command name below to obtain the corresponding
+C function name.  For example, the function name for "mytid" is "pvm_mytid".
+
+mytid - enroll program as PVM process; returns process (task) id number.
+
+spawn - initiate new PVM processes; returns process number(s).
+
+initsend - initialize new message to send; no return value.
+
+pack - pack data into message; returns error message (if any).
+   pkint      - pack int(s)
+   pkfloat    - pack float(s)
+   pkdouble   - pack double(s)
+   pkstr      - pack string (char*)
+
+send - send a message to a PVM process.  returns error code (if any).
+
+mcast - send a message to multiple PVM processes.
+
+probe - poll for receivable messages; returns msgtype if found, a negative
+        number if not found; if the msgtype is -1, then any message type is 
+        matched.
+
+parent - returns process (task) id number of parent process.
+
+recv - accept a message from process receive queue; returns error message (if
+       any).
+
+unpack - unpack data from received message; data must be unpacked in the
+            same order in which it was originally packed.
+   upkint      - unpack int(s)
+   upkfloat    - unpack float(s)
+   upkdouble   - unpack double(s)
+   upkstr      - unpack string (char*)
+
+exit - unenroll program as PVM process; always issue this command 
+        before program (master or slave) terminates; no return value.
+
+Note: All of these commands, except exit, are functions that return
+      an error indicator. In the programs we are doing for CpSc 241,
+      we are usually ignoring the error indicator for simplicity in order to
+      more clearly indicate the basic concepts and procedures.
+     
+
+
+
+Examples
+--------
+For these examples, assume the following definitions:
+
+   int    tids[MAX_PROC], msgtype, mytid, nproc, partitions, idata,
+          msg, len, tid;
+   double delta_x, lower, upper, rdata;
+
+Assume that appropriate definitions (e.g., #define) are given for DATA,
+RESULTS, and MAX_PROC.  Also, note that "PvmTaskDefault"  and "PvmDataDefault"
+are defined in ~pvm/pvm3/lib/pvm3.h.
+
+Starting (master program)
+------------------------
+   /* Enroll in pvm.  */
+      mytid=pvm_mytid();
+
+   /* Start up slave tasks.  */
+      pvm_spawn("intslave", (char **)0, PvmTaskDefault, "", nproc, tids);
+
+
+Sending (to all slave processes)
+--------------------------------
+   /* Clear buffer.  */
+      pvm_initsend(PvmDataDefault);
+
+   /* Put data in the buffer.  */
+      pvm_pkint(&nproc, 1, 1);
+      pvm_pkdouble(&lower, 1, 1);
+      pvm_pkdouble(&upper, 1, 1);
+      pvm_pkdouble(&delta_x, 1, 1);
+      pvm_pkint(&partitions, 1, 1);
+      pvm_pkint(tids, nproc, 1);
+
+   /* Broadcast message to all slaves.  */
+      pvm_mcast(tids, nproc, DATA);
+
+
+Receiving
+---------
+   /* Wait until a message arrives.  */
+      msgtype = RESULTS;  /* Look for a message of type RESULTS. */
+      tid = -1;  /* Look for a message from anybody. */
+      msg = pvm_probe(tid, msgtype);
+      while (msg <= 0) 
+         msg = pvm_probe(tid, msgtype);
+
+   /* Who is the message from (and how long is it and what kind is it)?  */
+      pvm_bufinfo(msg, &len, &msgtype, &tid);
+
+   /* Receive the message.  */
+      pvm_recv(tid, msgtype);
+
+   /* Get data from buffer.  */
+      pvm_upkint(&idata, 1, 1);
+      pvm_upkdouble(&rdata, 1, 1);
+
+Quitting
+---------
+   /* Leave pvm before program exits.  */
+      pvm_exit();
+

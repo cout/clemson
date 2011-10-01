@@ -1,0 +1,1714 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 2.16
+\textclass article
+\language default
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Title
+
+An Object-Oriented Approach to Spanning Trees
+\layout Author
+
+Paul Brannan
+\newline 
+Advisor: Dr.
+ Robert E.
+ Jamison
+\layout Abstract
+
+The goal of this project was to produce efficient C++ code for taking a
+ graph G as input and producing data on the isomorphism types of spanning
+ subtrees contained in G.
+ There are two main issues to be resolved.
+ First, there needs to be a method for generating all spanning subtrees.
+ This is solved using a backtracking variant of Kruskal's algorithm.
+ Second, as each spanning tree is generated, its isomorphism type needs
+ to be determined and added to a list.
+ This is done using a binary "minname" certificate for the unrooted tree.
+ This results in a roughly 1,000 time speed-up of earlier Maple code.
+ This paper focuses on the general problem, the two main algorithms, and
+ discusses ways that C++ was used to speed up the computations and make
+ the code more maintanable.
+\layout Standard
+
+
+\begin_inset LatexCommand \tableofcontents{}
+
+\end_inset 
+
+
+\layout Section
+
+Introduction
+\layout Subsection
+
+What are spanning trees?
+\layout Standard
+
+A spanning tree of a graph is a tree that includes all the vertices of the
+ given graph, whose only edges are the edges in that graph.
+ Spanning trees are useful for many tasks.
+ In computing, they can be used to describe a network; specifically, to
+ classify a network's reliability.
+ In mathematics, they have their uses in classifying graphs.
+ The problem of generating the spanning trees of a graph is not a simple
+ one (though many solutions are known 
+\begin_inset LatexCommand \cite{matsui}
+
+\end_inset 
+
+,
+\begin_inset LatexCommand \cite{gabow}
+
+\end_inset 
+
+,
+\begin_inset LatexCommand \cite{minty}
+
+\end_inset 
+
+,
+\begin_inset LatexCommand \cite{read}
+
+\end_inset 
+
+).
+ The problem of writing an optimal algorithm is even more difficult.
+\layout Subsection
+
+The purpose of this research
+\layout Standard
+
+In 1997, Dr.
+ Jamison wrote a Maple program which would generate the spanning trees of
+ a graph, given a description of the graph using its edges.
+ The program ran very slowly, taking many hours of CPU time to generate
+ the spanning trees even for small graphs.
+ Part of the problem here was the hardware used; an old Power Macintosh
+ and, in some cases, a Macintosh IIci were used.
+ Moving to a faster CPU did help, but was not enough.
+\layout Standard
+
+It was clear that a solution to the speed problem was necessary.
+ Maple, being an interpreted language, was not suited for this task; a compiled
+ language such as C or C++ would do much better for number crunching.
+ Morever, the algorithm represented each tree as a bit string, which was
+ placed into a Maple list, which is not efficient for storage; representing
+ the bit string as a 32-bit integer works much better.
+ A few other potential optimizations were also observed.
+\layout Standard
+
+The other problem noticed was that the program was not written for readability
+ or maintainability; rather, it was a collection of seemingly unrelated
+ routines which operated on seemingly unrelated data structures.
+ After analyzing the program, it was clear that a modular, or even an object-ori
+ented approach to the problem was better suited for the problem.
+\layout Subsection
+
+Goals to be met in this paper
+\layout Standard
+
+The goal of this paper is to describe the background of the spanning tree
+ problem, and to present the structure for the object-oriented implementation
+ of the Jamison algorithm.
+\layout Section
+
+The Spanning Tree Problem
+\layout Subsection
+
+Definition of a Graph
+\layout Standard
+
+A 
+\emph on 
+graph
+\emph default 
+ 
+\begin_inset Formula \( G \)
+\end_inset 
+
+ consists of a set of vertices 
+\begin_inset Formula \( V \)
+\end_inset 
+
+ (also called nodes) and a set of edges 
+\begin_inset Formula \( E\subseteq V\times V \)
+\end_inset 
+
+.
+ Mathematically speaking, this is all that is needed to describe a graph.
+ A graph can also be represented visually:
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset Figure size 267 235
+file graph.eps
+width 3 45.00
+flags 10
+
+\end_inset 
+
+
+\layout Standard
+
+In this example our 
+\emph on 
+vertex-set
+\emph default 
+ is:
+\layout Quote
+
+
+\begin_inset Formula \( \{1,2,3,4,5\} \)
+\end_inset 
+
+,
+\layout Standard
+
+and our 
+\emph on 
+edge-set
+\emph default 
+ is:
+\layout Quote
+
+
+\begin_inset Formula \( \{\{1,2\},\{2,3\},\{3,4\},\{4,5\},\{5,1\},\{1,4\},\{2,4\}\}. \)
+\end_inset 
+
+
+\layout Standard
+
+Note that the edges of this graph connect the vertices so that one might
+ travel between vertices by using the edges.
+ Such a traversal is known as a 
+\emph on 
+path
+\emph default 
+.
+ More precisely, a path is a non-repeating (acyclic) sequence of edges which
+ joins two vertices.
+\layout Standard
+
+In this paper, we will be concerned with comparing two graphs to see if
+ they are 
+\emph on 
+isomorphic
+\emph default 
+.
+ Two graphs are said to be isomorphic if and only if
+\layout Enumerate
+
+There is a bijection 
+\begin_inset Formula \( f \)
+\end_inset 
+
+ mapping the vertices of one graph to the vertices of the other graph, and
+ 
+\layout Enumerate
+
+The set 
+\begin_inset Formula \( \{x,y\} \)
+\end_inset 
+
+ belongs to the edge-set of one graph if and only if the set 
+\begin_inset Formula \( \{f(x),f(y)\} \)
+\end_inset 
+
+ belongs to the edge set of the other graph.
+\layout Standard
+
+The difficult part of comparing graphs is generating the bijection 
+\begin_inset Formula \( f \)
+\end_inset 
+
+.
+ It is not known whether the general graph isomorphism problem is polynomial
+ or NP-complete.
+ Finding isomorphisms between trees can be done in polynomial time; in this
+ paper we will discuss only algorithms for finding isomorphisms between
+ two trees.
+\layout Subsection
+
+Definition of a Tree
+\layout Standard
+
+A 
+\emph on 
+tree
+\emph default 
+ is an acyliclic, connected graph.
+ In other words, a tree is a special type of graph for which there is a
+ unique path from any vertex to any other vertex.
+ For example,
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset Figure size 357 234
+file tree.eps
+width 3 60.00
+flags 9
+
+\end_inset 
+
+
+\layout Standard
+
+represents a tree, because there is one and only one path between any two
+ vertices in the graph.
+ Some textbooks define a tree as a graph which has the following properties:
+ 
+\begin_inset LatexCommand \cite[p. 52]{aho}
+
+\end_inset 
+
+
+\layout Enumerate
+
+There is exactly one vertex, called the root, which no edges enter.
+\layout Enumerate
+
+Every vertex except the root has exactly one entering edge.
+\layout Enumerate
+
+There is a unique path from the root to each vertex.
+\layout Standard
+
+Such a tree is often called a 
+\emph on 
+rooted tree
+\emph default 
+, because it has a root.
+ A tree which has no root is called a 
+\emph on 
+non-rooted
+\emph default 
+ tree or a 
+\emph on 
+free tree
+\emph default 
+.
+\layout Standard
+
+In the rooted tree, there is a parent-child relationship between vertices.
+ The 
+\emph on 
+parent
+\emph default 
+ of a vertex v is the vertex adjacent to v that is on the path from the
+ root to v.
+ The 
+\emph on 
+child
+\emph default 
+ of a vertex v is a vertex adjavent to v that is not a parent of v.
+ Thus, in the above example, vertex 7 is the child of vertex 4, and vertex
+ 4 is the parent of vertex 7.
+ Vertex 1 is the root; note that the root of a tree is generally drawn at
+ the top.
+ All vertices except vertex 1 are descendants of the root, and the root
+ is the ancestor of all other vertices.
+\layout Standard
+
+Given these distinctions, a third class of tree, known as an 
+\emph on 
+ordered tree
+\emph default 
+, can be described.
+ An ordered tree is a tree in which the children of each vertex are given
+ an ordering.
+ There is therefore a firstborn child and a lastborn child.
+ This ordering becomes important in representing a tree in the computer.
+\layout Standard
+
+Every ordered tree has an underlying rooted tree, and every rooted tree
+ has an underlying free tree.
+ That is, a free tree is an abstraction of a rooted tree, and a rooted tree
+ is an abstraction of an ordered tree.
+\layout Subsection
+
+Definition of a Spanning Tree
+\layout Standard
+
+A 
+\emph on 
+spanning tree
+\emph default 
+ of a graph G is a tree which contains all the vertices of G, and whose
+ edge-set is a subset of the edge-set of G.
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset Figure size 446 243
+file spanning_tree.eps
+width 3 75.00
+flags 9
+
+\end_inset 
+
+
+\layout Standard
+
+In this example, the graph on the right has a number of spanning trees;
+ one spanning tree is shown on the right.
+ Note that the spanning tree connects all the vertices of the graph and
+ that the spanning tree only uses edges which are in the original graph.
+\layout Standard
+
+Our goal is to write a program which will generate and classify all the
+ spanning trees of a graph, for the purpose of classifying graphs.
+ In the process of doing so, it will be advantageous to remove duplicate
+ spanning trees; this must be done by finding whether the most recently
+ discovered spanning tree is isomorphic to any previous spanning trees.
+\layout Subsection
+
+Classifying Spanning Trees: Certificates
+\layout Standard
+
+To determine isomorphism between two graphs, it is often advantageous to
+ generate 
+\emph on 
+certificates
+\emph default 
+ for the two graphs and compare the certificates, rather than using a more
+ complex method to traverse the edges of the graphs.
+ Generally speaking, the fastest graph isomorphism algorithms use certificates
+ 
+\begin_inset LatexCommand \cite[p. 245]{kreher}
+
+\end_inset 
+
+.
+\layout Standard
+
+We can define a certificate as a function C such that for any graphs 
+\begin_inset Formula \( G_{1} \)
+\end_inset 
+
+and 
+\begin_inset Formula \( G_{2} \)
+\end_inset 
+
+:
+\layout Quote
+
+
+\begin_inset Formula \( C(G_{1})=C(G_{2}) \)
+\end_inset 
+
+ iff 
+\begin_inset Formula \( G_{1} \)
+\end_inset 
+
+ and 
+\begin_inset Formula \( G_{2} \)
+\end_inset 
+
+ are isomorphic.
+\layout Standard
+
+C is a certificate for a family F of graphs iff this holds true for all
+ graphs in F.
+ For our program, we require a certificate for the family of trees.
+\layout Subsection
+
+Overview of the Process
+\layout Standard
+
+The purpose of the program is to determine all the types of spanning trees
+ of a given graph.
+ It must therefore be able to generate all the spanning trees and to determine
+ if they are isomorphic to any previously found spanning tree.
+ Thus, pseudocode for the program might look like:
+\layout Address
+
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Initialize data structures
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+do
+\newline 
+
+\series default 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Generate the next spanning tree
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Generate a certificate for this spanning tree
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+if
+\series default 
+ this certificate has not been found 
+\series bold 
+then
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+add this certificate to our list
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end if
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+while
+\series default 
+ there are no more spanning trees
+\layout Section
+
+The Jamison Approach to Finding Spanning Trees
+\layout Subsection
+
+Generating the Spanning Trees
+\layout Standard
+
+The algorithm which is used is a variation on Kruskal's algorithm for finding
+ the minimal spanning tree of a graph.
+ While Kruskal's algorithm finds only one tree, we want all the spanning
+ trees of a graph; this requires the ability to be able to backtrack.
+ Kruskal's algorithm (in Algol-like notation) looks like: 
+\begin_inset LatexCommand \cite[p. 110]{aho}
+
+\end_inset 
+
+
+\layout Address
+
+
+\series bold 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+begin
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\begin_inset Formula \( T\leftarrow \emptyset  \)
+\end_inset 
+
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\begin_inset Formula \( VS\leftarrow \emptyset  \)
+\end_inset 
+
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+\SpecialChar ~
+for
+\series default 
+ each vertex 
+\begin_inset Formula \( v\subseteq V \)
+\end_inset 
+
+ 
+\series bold 
+do
+\series default 
+ add the singleton set 
+\begin_inset Formula \( \{v\} \)
+\end_inset 
+
+ to 
+\begin_inset Formula \( VS \)
+\end_inset 
+
+;
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+while
+\series default 
+ 
+\begin_inset Formula \( \Vert VS\Vert >1 \)
+\end_inset 
+
+ 
+\series bold 
+do
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+begin
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+choose 
+\begin_inset Formula \( \{v,w\} \)
+\end_inset 
+
+, an edge in 
+\begin_inset Formula \( E \)
+\end_inset 
+
+ of lowest cost;
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+delete 
+\begin_inset Formula \( \{v,w\} \)
+\end_inset 
+
+ from 
+\begin_inset Formula \( E \)
+\end_inset 
+
+;
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+if
+\series default 
+ 
+\begin_inset Formula \( v \)
+\end_inset 
+
+ and 
+\begin_inset Formula \( w \)
+\end_inset 
+
+ are in different sets 
+\begin_inset Formula \( W_{1} \)
+\end_inset 
+
+ and 
+\begin_inset Formula \( W_{2} \)
+\end_inset 
+
+ in 
+\begin_inset Formula \( VS \)
+\end_inset 
+
+ 
+\series bold 
+then
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+begin
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+replace 
+\begin_inset Formula \( W_{1} \)
+\end_inset 
+
+ and 
+\begin_inset Formula \( W_{2} \)
+\end_inset 
+
+ in 
+\begin_inset Formula \( VS \)
+\end_inset 
+
+ by 
+\begin_inset Formula \( W_{}1\cup W_{2} \)
+\end_inset 
+
+;
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+add 
+\begin_inset Formula \( \{v,w\} \)
+\end_inset 
+
+ to 
+\begin_inset Formula \( T \)
+\end_inset 
+
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end
+\series default 
+
+\newline 
+
+\series bold 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+end
+\layout Standard
+
+The revised implementation has some key differences:
+\layout Enumerate
+
+We start with the first edge and move on to the next edge, so that we attempt
+ to add all the edges, rather than only adding edges of lowest cost.
+\layout Enumerate
+
+We backtrack if certain conditions are met, so that the algorithm only stops
+ when we can neither for forward nor backward
+\layout Enumerate
+
+If v and w are not in different sets (we call these 
+\emph on 
+components
+\emph default 
+), then we pick a different edge.
+\layout Standard
+
+Thus, our revised implementation, in BASIC-like pseudocode, looks like:
+\layout Address
+
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+for
+\series default 
+ each vertex v 
+\series bold 
+do
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Insert v into the component list
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+next
+\series default 
+ 
+\layout Address
+
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+while
+\series default 
+ j < num_nodes 
+\series bold 
+do
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Perform some heuristics to see if we must backtrack 
+\layout Address
+
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+if
+\series default 
+ we do not backtrack 
+\series bold 
+then
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+if
+\series default 
+ the vertices 
+\begin_inset Formula \( \{v,w\} \)
+\end_inset 
+
+ of edge i are in different components 
+\series bold 
+then
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Add edge i to the tree 
+\begin_inset Formula \( T \)
+\end_inset 
+
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Save the old component numbering in case we must backtrack later
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Give 
+\begin_inset Formula \( v \)
+\end_inset 
+
+ and 
+\begin_inset Formula \( w \)
+\end_inset 
+
+ the same component numbering
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+else
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+Pick a different edge i
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end if
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end if
+\series default 
+
+\newline 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+
+\series bold 
+end
+\layout Standard
+
+The component numbering is used to detect cycles.
+ By giving two connected edges the same component numbering, a cycle can
+ be detected whenever an attempt is made to connect to vertices that are
+ in the same component.
+ For this to work, a consistent numbering must be used; this can be done
+ by picking the lowest or greatest component number, or by simply assigning
+ 
+\begin_inset Formula \( w \)
+\end_inset 
+
+'s component number to 
+\begin_inset Formula \( v \)
+\end_inset 
+
+ (or vise-versa).
+\layout Standard
+
+The conditions under which we must backtrack are determined by
+\layout Itemize
+
+a control array which determines which edges must be visited before other
+ edges can be visited
+\layout Itemize
+
+whether there are enough unused edges left to build a spanning tree
+\layout Standard
+
+The control array heuristic is beyond the scope of this document.
+\layout Subsection
+
+Certificates: Kidd's Hexnames and Minnames
+\layout Standard
+
+In order to efficiently determine whether a spanning tree has already been
+ found, we must generate certificates for every spanning tree we find and
+ compare the certificates.
+ Kreher and Stinson propose a method for generating certificates for trees
+ in 
+\emph on 
+Combinatorial Algorithms
+\emph default 
+ 
+\begin_inset LatexCommand \cite{kreher}
+
+\end_inset 
+
+.
+ An alternative method has been proposed by Travis Kidd 
+\begin_inset LatexCommand \cite{Kidd}
+
+\end_inset 
+
+ and is the method used in the Jamison approach.
+\layout Standard
+
+We repeat Kidd's approach, BINAME2, here:
+\layout Quote
+
+
+\series bold 
+Step 1
+\series default 
+: Label each leaf 01.
+\layout Quote
+
+
+\series bold 
+Step 2
+\series default 
+: If all the children of a node x have been labelled, then to determine
+ the label for x, concatenate the labels of the children (in order), add
+ a 0 to the beginning, and add a 1 to the end.
+\layout Quote
+
+
+\series bold 
+Step 3
+\series default 
+: Repeat step 2 until the root is labelled.
+\layout Standard
+
+Thus, we generate a string of 0's and 1's, which is known as a 
+\emph on 
+biname
+\emph default 
+.
+ A biname is a certificate for the family of ordered trees.
+ An important property of the biname is that the biname of each node of
+ a tree is the biname of the branch of the tree rooted at that node; this
+ is useful for finding the minname, a certificate for the family of rooted
+ or unrooted trees.
+\layout Subsection
+
+Finding the local minname
+\layout Standard
+
+While the biname is a certificate for the family of ordered trees, the local
+ minname is a certificate for the family of rooted trees.
+ In other words, the local minname is a certificate that is the same for
+ a rooted tree and all the rooted trees isomorphic to it.
+ Specfically, the local minname is the lexicographically least biname for
+ a complete set of isomorphic rooted trees.
+\layout Standard
+
+A lexicographic ordering is essentially a dictionary ordering.
+ That is, v is lexicographically less than w if:
+\layout Enumerate
+
+v is an initial substring of w, OR
+\layout Enumerate
+
+In the first position (from the left) in which v and w disagree, v has the
+ smaller entry
+\begin_inset LatexCommand \cite{jamison}
+
+\end_inset 
+
+.
+\layout Standard
+
+The simplest algorithm for finding the local minname for a tree is to find
+ all the trees isomorphic to the given tree, find all their binames, and
+ pick the lexicographically least biname as the minname.
+ However, this is not the most efficient method.
+\layout Standard
+
+Given a biname, there is a simple (though not obvious) procedure for finding
+ all the binames for all other rooted trees with the same local minname;
+ from this list of binames, the local minname can easily be found.
+ 
+\layout Standard
+
+The local minname can be generated using a modification of Kidd's BINAME2
+ algorithm:
+\layout Quote
+
+
+\series bold 
+Step 1
+\series default 
+: Label each leaf 01.
+\layout Quote
+
+
+\series bold 
+Step 2
+\series default 
+: (The smerg routine) If all the children of a node x have been labelled,
+ then to determine the label for x, concatenate the labels of the children
+ in lexicographic order, add a 0 to the beginning, and add a 1 to the end.
+\layout Quote
+
+
+\series bold 
+Step 3
+\series default 
+: Repeat Step 2 until the root is labelled.
+\layout Subsection
+
+Finding the global minname
+\layout Standard
+
+To find the global minname, it is important to note that each step of the
+ above procedure also generates a biname for each of the children.
+ Given one rooted tree, we can find a rooted tree isomorphic to that tree
+ by simply rotating the root.
+ Thus, given a minname of a rooted tree, we can find the minname of a rooted
+ tree isomorphic to that tree by 
+\begin_inset Quotes eld
+\end_inset 
+
+rotating the root
+\begin_inset Quotes erd
+\end_inset 
+
+ for the minname.
+\layout Standard
+
+Let v be the new root and w be the parent of v in the old rooted tree (and
+ thus the child of v).
+ The minname of this new rooted tree is thus smerg(children of v, children
+ of w not counting v).
+ We can calculate the local minnames of all the rooted trees associated
+ with a free tree using this method; the lexicographically least local minname
+ is the global minname.
+\layout Section
+
+An Object-Oriented Approach to the Jamison Algorithm
+\layout Standard
+
+The class hierarchy presented here is based on Dr.
+ Jamison's original program, written in Maple.
+ The structure is still a work-in-progress, and should be treated as such.
+ In fact, the design could be much improved, as discussed below.
+\layout Subsection
+
+Biname class
+\layout Standard
+
+The biname class represents a biname using an integer (or, if more than
+ 32-bits are required, using a GMP integer).
+ It provides no mechanism for generating the biname, but it does provide
+ procedures for comparing and concatenating binames.
+\layout Standard
+
+Two binames are equal if their integer representations are equal.
+ Testing for equality is thus O(1).
+\layout Standard
+
+We can compare binames using the following O(1) algorithm:
+\layout Enumerate
+
+Test to see if b1 and b2 have the same length
+\layout Enumerate
+
+Create a temporary b4 which is equal to max(b1, b2)
+\layout Enumerate
+
+Shift b3.i to the left to have the same length as b4.i
+\layout Enumerate
+
+return the appropriate value after comparing b3.i < b4.i
+\layout Standard
+
+In order for this algoritm to work, however, we must use a slightly different
+ representation for our binames than Kidd's approach.
+ Kidd's approach uses a 0 to represent going down a branch of the tree,
+ and a 1 to represent going back up; we want to do the opposite.
+ This can mostly be achieved with the NOT operation, but we must be careful
+ to perform this operation only on the bits actually present in the biname
+ (the container we are using probably contains more bits).
+ Thus, we require a count of the 1's in the biname to know the length of
+ the entire biname (which is the twice the number of 1's), and the best
+ we can hope for is an O(n) operation.
+ Note that with this representation, 0 is an invalid biname; we make use
+ of this later.
+\layout Standard
+
+We can concatenate binames by shifting one biname by the number of bits
+ present in the other biname, and OR'ing (or adding) the binames.
+ The OR operation is often faster than addition, especially if multi-precision
+ integers are used, since it doesn't require the use of a carry bit.
+ Concatenation is O(1).
+\layout Standard
+
+The last operation necessary is the smerg routine.
+ This is equivalent to step 2 of Kidd's BINAME2 algorithm, with the sorting
+ modification mentioned earlier.
+ The smerg routine takes as input a list of Binames, sorts and concatenates
+ them, and adds a root to the biname by placing a 0 to the left and a 1
+ to the right of the merged list.
+\layout Subsection
+
+Edge class
+\layout Standard
+
+The edge class is a simple class, used for representing an edge.
+ An edge is represented by two integers, which are the numbers of the vertices
+ which the edge connects.
+ Though in reality these two integers would be contained in a set (since
+ we are using undirected graphs), it is more efficient to represent them
+ as a vector or an array (as in directed graphs), since there are only two
+ entries in the set.
+ Our graphs are, in fact, undirected graphs, and all functions which operate
+ on edges must take the representation into account.
+\layout Subsection
+
+Tree class
+\layout Standard
+
+The tree class includes two types of operations: conversion operations (construc
+tors and assignment operators), and comparison operations.
+\layout Standard
+
+The conversion operations create a tree from a given tree or from a list
+ of edges in the tree.
+\layout Standard
+
+The comparison operations compare the global minnames of the two trees.
+ If the global minnames have not yet been generated (i.e.
+ they have an invalid value of 0), then they are generated before proceeding.
+ In generating the global minnames, the class retains a map from biname
+ to global minname as described earlier.
+\layout Subsection
+
+Graph class
+\layout Standard
+
+The graph class is simply a class which represents a graph.
+ The graph class contains two data members: a list of edges and a control
+ array, which specifies which edges must be visited first when generating
+ the spanning tree.
+ The control array is generated whenever an assignment is made or whenever
+ the constructor is called (unless the graph is created with the default
+ constructor).
+ Thus, the caller can assume that the control array has been initialized,
+ unless the number of edges and the number of vertices in the graph are
+ both zero.
+\layout Subsection
+
+Spantree class
+\layout Standard
+
+The spantree class is where most of the logic is.
+ The spantree class takes a graph (or a list of edges, from which it generates
+ a graph) as input.
+ The gbuild routine is used to initialize the data structures which are
+ used to traverse the tree.
+ The next_tree routine is used to find the next spanning tree; it returns
+ 0 when there are no more spanning trees.
+ Thus, there are two functions which can be used to find all the spanning
+ trees:
+\layout Quotation
+
+int first_tree();
+\layout Quotation
+
+int next_tree();
+\layout Standard
+
+This class is essentially an iterator for the graph class.
+\layout Subsection
+
+Function hierarchy of the original program
+\layout Standard
+
+The original Maple program was a collection of functions which formed a
+ hierarchy.
+ There is no apparent distinction made between which data types each function
+ operates on; moreover, the heavy use of globals provides a speed boost,
+ but at the cost of possible side effects.
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset Figure size 446 226
+file maple_diagram.eps
+width 3 75.00
+flags 9
+
+\end_inset 
+
+
+\layout Subsection
+
+UML diagram of the new program
+\layout Standard
+
+Below is a UML diagram of the class hierarchy used in the program.
+ The flow control is essentially the same as the original Maple program,
+ so the class functions have been discluded here for readability.
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset Figure size 446 197
+file thesis-uml.eps
+width 3 75.00
+flags 9
+
+\end_inset 
+
+
+\layout Section
+
+Conclusions
+\layout Standard
+
+Initial tests show that the new C++ program appears to run approximately
+ 1000 times faster than the original Maple program.
+ This is probably due to:
+\layout Enumerate
+
+Changing from an interpreted language to a compiled language,
+\layout Enumerate
+
+Using better data structures to represent the binames, and
+\layout Enumerate
+
+Using a table to cache the minnames
+\layout Standard
+
+Because of the new code organization, the new code is more maintainable
+ and easier to read and understand.
+ This is a purely subjective measurement, but could easily be demonstrated.
+\layout Section
+
+Further Research
+\layout Standard
+
+The algorithm that the program uses to generate the spanning trees of a
+ graph may be suboptimal.
+ This is because it operates on the edges of the graph instead of on the
+ vertices of the graph (the edges can grow exponentially with respect to
+ the vertices).
+ It would be an interesting problem to see if there is a significant difference
+ in speed with a more advanced algorithm.
+\layout Standard
+
+Additionally, there may be a speedup in generating the global minnames;
+ the root of the global mintree can be found using a search, which means
+ only some of the minnames need to be generated.
+ Because this would impact the use of the table which caches the minnames,
+ it is not immediately obvious whether this would provide a significant
+ increase.
+\layout Standard
+
+Lastly, there is much that can be done to improve on the program's structure.
+ The control structure in the graph class would be much better suited for
+ the spantree class.
+ The tree class would probably do well to inherit from the graph class,
+ as a tree is a type of graph.
+ The spantree class should probably be implemented as a C++ iterator.
+\layout Bibliography
+\bibitem {kreher}
+
+Kreher, Donald L.
+ and Douglas R.
+ Stinson.
+ 
+\emph on 
+Combinatorial Algorithms
+\emph default 
+.
+ CRC Press, Boca Raton: 1998.
+\layout Bibliography
+\bibitem {aho}
+
+Aho, Alfred V., John E.
+ Hopcroft, and Jeffrey D.
+ Ullman.
+ 
+\emph on 
+The Design and Analysis of Computer Algorithms
+\emph default 
+.
+ Addison-Wesley Publishing Company, 1974.
+\layout Bibliography
+\bibitem {kapoor}
+
+Kapoor, Sanjiv and H.
+ Ramesh.
+ 
+\emph on 
+Algorithms for Enumerating all Spanning Trees of Undirected and Weighted
+ Graphs
+\emph default 
+.
+ SIAM Journal on Computing, Vol.
+ 24, No.
+ 2.
+ pp.
+ 246-265.
+\layout Bibliography
+\bibitem {matsui}
+
+T.
+ Matsui.
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+Algorithms for finding all the spanning trees in undirected graphs.
+\begin_inset Quotes erd
+\end_inset 
+
+ Report METR93-08, Department of Mathematical Engineering and Information
+ Physics, Faculty of Engineering, University of Tokyo, 1993.
+\layout Bibliography
+\bibitem {gabow}
+
+GM78 H.N.
+ Gabow and E.W.
+ Myers.
+ Finding all spanning trees of directed and undirected trees.
+ 
+\emph on 
+SIAM Journal of Computing
+\emph default 
+, 7:280--287, 1978.
+\layout Bibliography
+\bibitem {jamison}
+
+
+\begin_inset Quotes eld
+\end_inset 
+
+Lex Ordering, Notes by R.
+ Jamison.
+\begin_inset Quotes erd
+\end_inset 
+
+ Jan.
+ 5, 1999., p.
+ 1.
+\layout Bibliography
+\bibitem {minty}
+
+GJ Minty, 
+\emph on 
+A simple algorithm for listing all the trees of a graph
+\emph default 
+, IEEE Trans.
+ Circuit Theory, CT-12 (1965) , p.
+ 120.
+\layout Bibliography
+\bibitem {read}
+
+RC Read and RE Tarjan.
+ 
+\emph on 
+Bounds on backtrack algorithms for listing cycles, paths, and spanning trees
+\emph default 
+, Networks 5(1975), pp.
+ 237-252.
+\layout Bibliography
+\bibitem {Kidd}
+
+Kidd, Travis D.
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+Naming the Trees in the Forest
+\begin_inset Quotes erd
+\end_inset 
+
+ (Master's Thesis).
+ Department of Mathematical Sciences, Clemson University, 1998.
+\the_end

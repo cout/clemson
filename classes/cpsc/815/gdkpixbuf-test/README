@@ -1,0 +1,11 @@
+gdkpixbuf-test
+Paul Brannan
+
+This is a test program for the GDK Pixbuf.  The main goals are:
+	1) to demonstrate the ease with which a gdk-pixbuf application can
+	   be written.
+	2) to show that the gdk-pixbuf does use the alpha channel information.
+
+If you have any comments, questions, or otherwise, please contact me at
+pbranna@clemson.edu.
+

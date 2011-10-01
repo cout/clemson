@@ -1,0 +1,11 @@
+This assignment is being submitted late because I forgot to turn it in.  If
+you check the timetamps, you will not see this since I did make a few
+modifications today.
+
+BTW, I put the "strip main" command in my Makefile which should remove a
+lot of unnecessary code from the executable (reduces my main to 70k!)
+
+Feeling pretty stupid right now,
+
+Paul Brannan
+

@@ -1,0 +1,6 @@
+The filenames are incorrect.  Some compilers will refuse to compile c++
+programs if they are in .c files.  Acceptable extensions would be .cc and
+.cpp (.cc is preferred, generally).  I was thinking about this last week,
+and then didn't think much of it, but when Dr. Malloy brought it up in class
+I thought it might be a good idea to let you know this.
+

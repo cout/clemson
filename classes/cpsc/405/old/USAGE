@@ -1,0 +1,122 @@
+GTK+ AW Model Viewer, version 0.1
+Author: Paul Brannan
+
+Program Features:
+  - File browser and GUI provided via GTK+
+  - Object loading options
+  - Wireframe and solid object view
+  - Axis of rotation provided for orientation
+  - Hown-brewed hidden surface removal
+  - OpenGL hidden surface removal (face culling)
+  - Face normal view and sizing
+  - Vertex normal view and sizing
+  - Image scaling
+  - Eye rotation, zoom (translation), and roll
+  - Object rotation and translation
+  - Scene rotation
+  - Rotation via trackball/quaternion code
+  - Status display and percentage display
+  - Multiple object scenes
+  - Rudimentary object selection and highlighting
+  - Tear-off menu, toolbar, view, and controls
+  - Pseudo-multiple window support
+  - Orientation view for determining "up"
+  - Scene lighting
+  - Optimized display via load-time calculations and display lists
+
+Program requirements:
+  - Unix machine with OpenGL support
+  - Mouse
+
+User guide:
+
+When the viewer starts you will see a window similar to the one below:
+
++-----------------------------------------------------------------------+
+| File Edit Options                                                     |
++----+------+------+-------+------+-------------------------------------+
+| O  |  []  |  []  |  ][   |  X   |                                     |
+|New | Load | Save | Clear | Quit |                                     |
++----+------+------+-------+------+-----------------\------\------\-----+
+|                                                   | Object\ Scene\ <> |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   +-------------------+
+|                                                   | Image Scale       |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   +-------------------+
+|                                                   | Orientation View  |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
++-----------------------------------------------------------------------+
+|                                                                       |
++-----------------------------------------------------------------------+
+
+The menu bar is at the top, the toolbar below that, and the controls and
+orientation display are at the right.  The black box in the middle is the
+view window, and the yellow bars you see are your axes.  The bar at the
+bottom is the status bar, which will display important information
+throughout your use of the program.
+
+To start off, load an object.  This can be done by selecting either File...Load
+or by clicking on the Load icon.  Highlight the file you wish to load, and
+select okay.
+
+You have many options for manipulating the camera, object, and scene.  This is
+all done using the notepad at the upper right of the window.  You can select
+which mouse buttons perform which functions.  Only the left buttons and middle
+buttons are remappable, however, since the right mouse button is reserved for
+future use.  Use the arrows in the corner of the notebook to "flip through" the
+pages to get different options for manipulations.  Your options include:
+  - Rotate eye: this will rotate the camera about its current position
+  - Zoom eye: this will translate the camera forward and backward.
+  - Roll eye: this will "roll" the camera to the left and to the right
+  - Rotate object: this will rotate an object about its center
+  - Move XZ object: this will move an object along the scene's XZ axis
+  - Move XY object: this will move an object along the scene's XY axis
+  - Rotate scen: this will rotate the entire scene and it's axes about the
+    origin.
+
+Use the above objects by selecting an option and clicking and dragging the
+mouse in the view window.  Note that as the axes of the scene move, so do
+the axes of the orientation view.  This allows you to determine which way
+your scene is tilted, even when the axes are out of view.
+
+If you load multiple objects, you can manipulate different objects by
+selecting different objects.  This is done with either +/- or ] and [.
+Currently there is no point-and-click object selection implemented.  You
+can tell which object is currently selected, because it's vertices will be
+drawn in green.  If there is no object selected, all objects will be drawn
+in white.
+
+There are also many options for viewing the objects.  All these are selected
+from the object menu.  Available options include:
+  - Wireframe on/off: switches between wireframe and solid view
+  - Axes on/off: turns the yellow axes on and off
+  - Hidden surface removal: the home-brewed way
+  - Hidden surface removal: the OpenGL way
+  - Face normals on/off: turns face normals on and off
+  - Vertex normals on/off: turns vertex normals on and off
+  - Lighting on/off: turns lighting on and off
+
+Once you have loaded an object and have turned normals on, you can manipulate
+the size of the normals using the scales at the right center.  Image scale
+changes the scale of the entire scene.  Face normal scale and vertex normal
+scale change the scale of the face and vertex normals, respectively.  The
+default scale is 1.0.
+
+That should just about do it; anything else should be roughly self
+explanatory.  Have fun!

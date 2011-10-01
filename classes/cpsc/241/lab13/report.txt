@@ -1,0 +1,77 @@
+1) Genetic: final = 3045.18
+            first = 11386.13
+2) Genetic (greedy generation of initial pop.): final = 3117.98
+                                                first = 3295.24
+3) Random: final = 10313.45
+           first = 15080
+   This approach does not appear to show much promise of ever producing a
+   good solution.
+4) The genetic algorithm was within 100 of the real answer, and produced the
+   best solution of these runs.
+5) approximately 81034
+6) the random algorithm is very easy to write.  the greedy algorithm gets a
+   good initial value, and the genetic algorithm gets a good value after a
+   number of runs.  The question to be asked is if it takes more time to
+   calculate a best route than it does to actually send something across that
+   route.
+
+Random, default values:
+Iteration	Length
+1		15080
+7		14278.97
+15		14159.05
+22		12511.38
+32		12030.51
+298		11893.07
+339		11575.74
+3063		11354.98
+6921		10712.04
+13291		10699.78
+25922		10330.91
+45185		10313.45
+User Time = 29sec.
+
+Greedy, solutions = 20
+Path		Length
+1		3642.66
+2		3930.62
+3		3664.25
+4		3994.32
+5		3369.11
+6		4198.99
+7		3986.79
+8		4147.93
+9		4427.54
+10		3295.24
+11		3469.65
+12		4214.46
+13		3989.83
+14		3983.90
+15		3932.73
+16		3614.53
+17		4113.42
+18		4173.21
+19		4349.72
+20		3989.36
+User Time: 0sec.
+
+Genetic, default values
+Iteration	Length
+1		11386.13
+226		10573.12
+1196		8828.29
+1494		8144.45
+1934		7844.92
+3340		6439.78
+4678		5372.39
+6315		4722.88
+8846		4333.47
+14002		3869.14
+21776		3301.6
+27307		3125.65
+29223		3096.84
+30077		3081.97
+31405		3062.00
+32541		3045.18
+User time = 47sec.
+

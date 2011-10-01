@@ -1,0 +1,18 @@
+# Tank definition file
+# Any line that begins with '#' is a comment
+# Format:
+#   Name <tank name>
+#   Model <model file>
+#   Weapon <weapon file>
+#   Skin <skin file>
+#   weapon_translate x y z
+#   weapon_rotate x y z
+# Keep in mind when positioning the weapon that it will be
+# rotated about the x-axis in battle.
+Name Dalek
+Model tris.md2
+Skin dalek.pcx
+Weapon weapon.md2
+Weapon_Translate 0 0 0
+Weapon_Rotate 0 0 0
+

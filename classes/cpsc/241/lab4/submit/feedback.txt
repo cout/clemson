@@ -1,0 +1,6 @@
+The filename extensions are still wrong.  .c is for C programs.  C++ programs
+should use .cc or .cpp.
+
+What is the purpose in using a shell script to compile the programs?  I think
+a Makefile would be much more appropriate (and it would be kind of nice for
+students to get experience with Makefiles in the lab).

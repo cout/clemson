@@ -1,0 +1,108 @@
+Paul Brannan
+David Chandler
+
+CPSC 411, Fall 1999, R. M. Geist
+Quasi Flight Simulation
+
+*****************************************************************************
+*****************************************************************************
+
+COMPILING
+
+On an O2, type 'make'.  The executable 'fly' should be built.  Run 'fly' from
+the directory containing the .ppm files required for textures.  The program
+does not accept any command-line arguments.
+
+*****************************************************************************
+
+CONTROLLING
+
+Three windows appear when the program opens: the "Roll", "Azimuth vs. 
+Elevation", and "Scene" windows.  The mouse buttons and keys
+work the same in any of the three windows.  The mouse motion matters only in
+the "Azimuth vs. Elevation" window, where up-down motion changes elevation
+and left-right motion changes the azimuth.
+
+
+The middle mouse button rolls clockwise, the left mouse button zooms in, and
+the right mouse button zooms out.  All actions are continuous.
+
+
+Pressing 'c' will destroy the "Roll" window if it exists, otherwise it
+will recreate it.
+
+Pressing 'b' will toggle the roll display in the "Scene" window.
+
+Pressing 'a' will toggle the azimuth vs. elevation display in the "Scene"
+window.
+
+Pressing 'g' toggles reality mode.  In reality mode, the azimuth constantly
+increases in proportion to the horizontal distance between the mouse cursor in 
+the "Azimuth vs. Elevation" window and the elevation axis.  The elevation
+constantly increases in proportion to the distance between the azimuth axis and
+the mouse cursor.
+
+Pressing 's' will toggle the spinning of the icosahedron and the cubes.
+This viewer is a CPU hog with spinning enabled and a visible "Scene" window,
+even if no spinning object is visible.  The viewer does not needlessly use
+CPU cycles if spinning is disabled.
+
+Pressing '+' will increase the speed at which you roll and zoom when
+the mouse buttons are down. (Press 'r' to set this to a sane speed if you
+press it too many times.)
+
+Pressing '-' will decrease the speed at which you roll and zoom when
+the mouse buttons are down. (Press 'r' to set this to a sane speed if you
+press it too many times.)
+
+Pressing 'f' will freeze the azimuth and elevation where they are.  The mouse
+buttons will continue to act normally, but mouse motion in the "Azimuth vs.
+Elevation window will be ignored until 'f' is pressed again.
+
+Pressing 'r' will reset the view to what it was initially and will reset the
+speed at which you roll and zoom when the mouse buttons are down.
+
+Pressing 'q' at any time exits the program (as does closing any of the three
+windows via the window manager).  
+
+
+BONUS FEATURES
+
+All windows may be resized.  All keyboard and mouse events that are not 
+mutually exclusive by their very nature, e.g. zooming in and zooming out, may
+be done simultaneously.  Zooming while rolling and toggling the "Roll" window
+and increasing the zoom/roll speed works fine.
+
+Textures are used in combination with an overhead light.  (GL_DECAL was found
+to be much slower than GL_MODULATE, by the way, which surprises us.)
+
+A counter is in the upper right corner of the "Scene" window: it calculates
+the average number of frames rendered per second.
+
+
+MUSIC
+
+You can disable MIDI with CFLAGS=-DNOMUSIC in the makefile.  There is no
+run-time disabling of music with this version.  Also note that the software
+synthesizer on SGI's is substandard.  For full enjoyment, try the simulator
+on a windows (cough, cough!) box with a wavetable card.  Also, ensure that
+-DSGI is specified for SGI's (/dev/midi seems to not be associated with a
+device on the O2's?).
+
+
+WIN32 PECULIARITIES
+
+Be sure to compile with /subsystem:windows and /entry:mainCRTStartup, or
+compile as a console application (otherwise you will get an undefined reference
+to WinMain).  The program seems to crash at exit on NT, and locks up on systems
+with Riva TNT cards.  Windows 95 with a Riva 128 works fine, and other
+hardware configurations should work equally well.
+
+
+PERFORMANCE
+
+The simulator gets 20-50 fps on an O2.  On Windows 95 with a Riva 128, it gets
+60-110 fps.  On an NT or Linux box with a similar hardware configuration it
+gets 50-90 fps.  Oddly, the performance is better with GL_MODULATE than with
+GL_DECAL.
+

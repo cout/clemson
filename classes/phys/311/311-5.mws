@@ -1,0 +1,78 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 2 1 {CSTYLE "" -1 -1 "Co
+urier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 3 }1 0 0 -1 -1 -1 0 0 0 0 0 0 
+-1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 "" 0 1 0 0 255 1 0 0 0 
+0 0 0 1 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 
+0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "with(linalg):" }}
+{PARA 7 "" 1 "" {TEXT -1 32 "Warning, new definition for norm" }}
+{PARA 7 "" 1 "" {TEXT -1 33 "Warning, new definition for trace" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 52 "1. Finding the eigenvalues and eig
+envectors is easy." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "A := \+
+matrix(4,4,[-6,1,2,0,1,0,-3,-1,2,1,-6,0,-2,2,0,-3]);" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#>%\"AG-%'matrixG6#7&7&!\"'\"\"\"\"\"#\"\"!7&F+F-!\"$
+!\"\"7&F,F+F*F-7&!\"#F,F-F/" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+28 "eigenvals(A);\neigenvects(A);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&!
+\")!\"$!\"#F%" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%7%!\"#\"\"#<#-%'vecto
+rG6#7&\"\"\"F%F+F%7%!\")F+<#-F(6#7&#\"#6\"\"'#F$\"\"$#!\"$F%F+7%F8F+<#
+-F(6#7&F+F+F+F+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 109 "So A has thre
+e linearly independent eigenvectors.  We must also find the eigenvecto
+rs of A^-1, A^2, and A+kI." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+103 "eigenvects(inverse(A));\neigenvects(multiply(A, A));\neigenvects(
+matadd(A, k*array(identity,1..4,1..4)));" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6%7%#!\"\"\"\")\"\"\"<#-%'vectorG6#7&#!#6\"\"%F'#\"\"*F/#!\"$\"\"#
+7%#F%F4F4<#-F*6#7&F'F4F'F47%#F%\"\"$F'<#-F*6#7&F'F'F'F'" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6%7%\"\"*\"\"\"<#-%'vectorG6#7&F%F%F%F%7%\"\"%\"\"
+#<#-F(6#7&F%F-F%F-7%\"#kF%<#-F(6#7&#!#6F,F%#F$F,#!\"$F-" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6%7%,&!\"#\"\"\"%\"kGF&\"\"#<#-%'vectorG6#7&F&F(F&
+F(7%,&!\")F&F'F&F&<#-F+6#7&#!#6\"\"%F&#\"\"*F7#!\"$F(7%,&F;F&F'F&F&<#-
+F+6#7&F&F&F&F&" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 60 "2. We must agai
+n find the eigenvalues and eigenvectors of A." }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 37 "A := matrix(3,3,[1,2,1,2,1,1,1,1,2]);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%\"AG-%'matrixG6#7%7%\"\"\"\"\"#F*7%F+F*F*7
+%F*F*F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "eigenvals(A);\ne
+igenvects(A);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6%\"\"\"\"\"%!\"\"" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6%7%\"\"\"F$<#-%'vectorG6#7%F$F$!\"#7%!
+\"\"F$<#-F'6#7%F,F$\"\"!7%\"\"%F$<#-F'6#7%F$F$F$" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 94 "We must also find a matrix P such that A = PQP^-1.
+  (Note that D is a protected name in Maple)" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 84 "P := matrix(3,3,\n            [[1,-1,1],\n      \+
+      [1,1,1],\n            [-2,0,1]]);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"PG-%'matrixG6#7%7%\"\"\"!\"\"F*7%F*F*F*7%!\"#\"\"!F*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "Q := matrix(3,3,[1,0,0,0,-1,
+0,0,0,4]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"QG-%'matrixG6#7%7%\"
+\"\"\"\"!F+7%F+!\"\"F+7%F+F+\"\"%" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "multiply(multiply(P, Q), inverse(P));" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#-%'matrixG6#7%7%\"\"\"\"\"#F(7%F)F(F(7%F(F(F)" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 96 "The generaly formula for A^n is CD
+^nC^-1.  The derivation for this in the book.  But, to verify:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "multiply(A, A);\nmultiply(mu
+ltiply(P, multiply(Q, Q)), inverse(P));" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#-%'matrixG6#7%7%\"\"'\"\"&F)7%F)F(F)7%F)F)F(" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#-%'matrixG6#7%7%\"\"'\"\"&F)7%F)F(F)7%F)F)F(" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 92 "multiply(multiply(A, A), A);
+\nmultiply(multiply(P, multiply(multiply(Q, Q), Q)), inverse(P));" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7%7%\"#@\"#AF(7%F)F(F(7%F(
+F(F)" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7%7%\"#@\"#AF(7%F)
+F(F(7%F(F(F)" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 47 "3. We must find t
+he inverse and transpose of A." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 45 "A := 1/3*matrix(3, 3, [1,2,2,2,1,-2,2,-2,1]);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%\"AG,$-%'matrixG6#7%7%\"\"\"\"\"#F,7%F,F+!\"#7%F
+,F.F+#F+\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "inverse(A)
+;\ntranspose(A);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7%7%#
+\"\"\"\"\"$#\"\"#F*F+7%F+F(#!\"#F*7%F+F.F(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#-%'matrixG6#7%7%#\"\"\"\"\"$#\"\"#F*F+7%F+F(#!\"#F*7%F+
+F.F(" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 34 "To test for orthogonality
+, we use " }{TEXT 256 6 "orthog" }{TEXT -1 1 "." }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 10 "orthog(A);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+%%trueG" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "eigenvals(A);" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6%!\"\"\"\"\"F$" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 71 "For an orthogonal matrix, we expect the eigenvalues \+
+to be real numbers." }}}}{MARK "22 0 0" 71 }{VIEWOPTS 1 1 0 1 1 1803 }
+

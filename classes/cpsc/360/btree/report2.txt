@@ -1,0 +1,24 @@
+Paul Brannan
+April 8, 1999
+CPSC 360 BTree Assignment
+Report 2
+
+Changes to DBFile class: none
+
+Changes to BTreeNode class:
+	Added constructor, destructor.  Possible parameters are number of
+		elements, size, and a buffer (to avoid a copy if the data
+		is already in memory).
+	Added isLeafNode, which is a pointer to an int.  The entire node is
+		stored in one buffer, with various elements pointing to
+		pieces of the buffer.  The start of the buffer is at
+		elementList.
+	Added NodeSize(), which calculates the number of bytes required to
+		store the BTree.  This is useful both for memory allocation
+		and writing to disk.
+	Added nextLeaf, which was left out of the project design
+		inadvertently.
+	Added getbuf(), which returns a pointer to the start of the buffer.
+		This is useful for reading/writing the node to/from disk
+		without performing unnecessary memory allocations.
+

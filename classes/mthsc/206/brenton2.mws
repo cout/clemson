@@ -1,0 +1,153 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 
+0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }{PSTYLE "Title" 0 18 1 {CSTYLE "" -1 -1 "" 1 18 
+0 0 0 0 0 1 1 0 0 0 0 0 0 }3 0 0 -1 12 12 0 0 0 0 0 0 19 0 }{PSTYLE "A
+uthor" 0 19 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 
+0 -1 8 8 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 18 "" 0 "" {TEXT -1 54 "MthSc H206 Section 1: Fou
+l Shooting Problem (Maple #2)" }}{PARA 19 "" 0 "" {TEXT -1 13 "Brenton
+ Meese" }}{PARA 0 "" 0 "" {TEXT -1 170 "The purpose of this Maple proj
+ect is to determine whether applying backspin to a free throw shot giv
+es you a greater or less margin of error for the velocity of the shot.
+" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 31 "Some \+
+initial value information:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "z0 :=
+ 7+4/12;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#z0G#\"#A\"\"$" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "alpha := 3; beta := 9; epsil
+on := 3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG\"\"$" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%%betaG\"\"*" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%(epsilonG\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 65 "p
+i := 3.14159; theta := (50 + alpha + beta/10)*2*pi/360; g := 32;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#piG$\"'fTJ!\"&" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%&thetaG$\"+BnJ2%*!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%\"gG\"#K" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "S := 4+eps
+ilon/10; c := 0.05;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"SG#\"#V\"#5
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"cG$\"\"&!\"#" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 92 "We first consider the case of no back-spin on t
+he shot given by the velocity equation below:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 72 "with(linalg):\nvel := vector(3, [0, v0*cos(theta), v0
+*sin(theta) - g*t]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$velG-%'VECT
+ORG6#7%\"\"!,$%#v0G$\"+$**p>*e!#5,&F+$\"+eT*)z!)F.%\"tG!#K" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 77 "The position of the ball at time t  is gi
+ven by the integral of the velocity:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 60 "disp := vector(3, [0, int(vel[2], t), z0 + int(vel[3], t)]);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dispG-%'VECTORG6#7%\"\"!,$*&%\"tG\"
+\"\"%#v0GF-$\"+$**p>*e!#5,(#\"#A\"\"$F-F+$\"+eT*)z!)F1*$F,\"\"#$!#;F)
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 114 "The time when the ball reach
+es 10 feet is found by solving the position equation's height vector (
+z)  for 10 feet:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "time10 := solve
+(disp[3] = 10, t);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'time10G6$,&%#
+v0G#\"+zq%*RS\"-+++++;*$,&*$F'\"\"#\"6p,p&35;b!*o9!8++++++++++%Q\"\"\"
+#F1F.#F1\"-+++++[,&F'F(F+#!\"\"F4" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+105 "Plugging this time into the (j vector) position equation gives yo
+u the equation for the initial velocity:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "eqnj := subs(t = time10[1], disp[2]);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%%eqnjG,$*&,&%#v0G#\"+zq%*RS\"-+++++;*$,&*$F(\"\"
+#\"6p,p&35;b!*o9!8++++++++++%Q\"\"\"#F2F/#F2\"-+++++[F2F(F2$\"+$**p>*e
+!#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "plot(eqnj, v0=0..50)
+;" }}{PARA 13 "" 1 "" {INLPLOT "6%-%'CURVESG6$7F7$\"\"!F(7$%%FAILGF*7$
+$\"+b/cq;!\")$\"+..?'>&!\"*7$$\"1+++')))G=<!#9$\"1o_:G2Oze!#:7$$\"1+++
+<t,m<F5$\"1PW-ycB1lF87$$\"1+++Tj0x=F5$\"1rVF5eJ/zF87$$\"1+++#pW`(>F5$
+\"1Ndin[*)R\"*F87$$\"1+++\"f#=$3#F5$\"1&Qdm*fq_5F57$$\"1+++t(pe=#F5$\"
+1oBRdf=*=\"F57$$\"1+++uI,$H#F5$\"11O&H0&)oL\"F57$$\"1+++rSS\"R#F5$\"1[
+dh%)Qlx9F57$$\"1+++`?`(\\#F5$\"1q()*f4d_j\"F57$$\"1++++#pxg#F5$\"1!3b8
+B%[0=F57$$\"1+++g4t.FF5$\"1)ym/B&=f>F57$$\"1+++!Hst!GF5$\"1)oL_LN58#F5
+7$$\"1+++ERW9HF5$\"1E.bOf,:BF57$$\"1+++KE>>IF5$\"1(y.1:!R,DF57$$\"1+++
+#RU07$F5$\"1/2o\">jxo#F57$$\"1+++?S2LKF5$\"1aBig!)p,HF57$$\"1+++$p)=ML
+F5$\"1YjY0KB+JF57$$\"1+++*=]@W$F5$\"1aD#QZ>)=LF57$$\"1+++]$z*RNF5$\"19
+k/W!)zANF57$$\"1+++kC$pk$F5$\"1&[x#R!RAv$F57$$\"1+++3qcZPF5$\"1aHI_eFu
+RF57$$\"1+++/\"fF&QF5$\"1+Du^:v7UF57$$\"1+++0OgbRF5$\"1TYxS*>AX%F57$$
+\"1+++nAFjSF5$\"1Y#ojI<'4ZF57$$\"1+++&)*pp;%F5$\"1?_#f<-S'\\F57$$\"1++
++ye,tUF5$\"1K<\"4dG2B&F57$$\"1+++fO=yVF5$\"1f&z!zE#=]&F57$$\"1+++E>#[Z
+%F5$\"14A?tnqcdF57$$\"1+++(G!e&e%F5$\"1&y\"yH+kbgF57$$\"1+++&)Qk%o%F5$
+\"1Y<VL;<HjF57$$\"1+++UjE!z%F5$\"1v\"fk#\\AFmF57$$\"1+++60O\"*[F5$\"1w
+Wpr$*p=pF57$$\"#]F($\"1P%f8m*oQsF5-%'COLOURG6&%$RGBG$\"#5!\"\"F(F(-%+A
+XESLABELSG6$%#v0G%!G-%%VIEWG6$;F(F_v%(DEFAULTG" 2 319 319 319 2 0 1 0 
+2 9 0 4 2 1.000000 45.000000 45.000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 132 "
+Solving this equation for the specific distances the ball can travel f
+or an all net shot we find the minimum and maximum velocities:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "v0_min := fsolve(eqnj = 13.398, v0=
+0..50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'v0_minG$\"+Jm3&H#!\")" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "v0_max := fsolve(eqnj = 14
+.102, v0=0..50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'v0_maxG$\"+FppW
+B!\")" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 52 "The margin for error in \+
+the velocity of the shot is:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "ran
+ge_ := v0_max - v0_min;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'range_G$
+\")'H5'\\!\")" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 73 "Now, with back-s
+pin on the shot, using the equation for the acceleration:" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 76 "accbs := vector(3, [0, c*S*(v0*sin(theta) - \+
+g*t), (c*S*v0*cos(theta) - g)]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%
+&accbsG-%'VECTORG6#7%\"\"!,&%#v0G$\"+Ws<P<!#5%\"tG$!++++!)o!\"*,&F+$\"
++[Nxm7F.!#K\"\"\"" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 90 "Taking the i
+ntegral and adding the constant of integration finds the velocity of t
+he ball:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 92 "velbs := vector(3, [0, \+
+int(accbs[2], t) + v0*cos(theta), int(accbs[3], t) + v0*sin(theta)]);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&velbsG-%'VECTORG6#7%\"\"!,(*&%
+\"tG\"\"\"%#v0GF-$\"+Ws<P<!#5*$F,\"\"#$!++++SM!\"*F.$\"+$**p>*eF1,&*&,
+&F.$\"+[Nxm7F1$!#KF)F-F-F,F-F-F.$\"+eT*)z!)F1" }}}{EXCHG {PARA 0 "" 0 
+"" {TEXT -1 124 "Taking the integral and adding the constrant of integ
+ration agian finds the equation for the position of the ball at time t
+:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "dispbs := vector(3, [0, int(ve
+lbs[2], t), z0 + int(velbs[3], t)]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%'dispbsG-%'VECTORG6#7%\"\"!,(*&%#v0G\"\"\"%\"tG\"\"#$\"+?i)eo)!#6*
+$F.\"\"$$!+nmmY6!\"**&F.F-F,F-$\"+$**p>*e!#5,(#\"#AF4F-*&,&F,$\"+[Nxm7
+F;$!#KF)F-F-F.F/$\"+++++]F;F8$\"+eT*)z!)F;" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 168 "Finding the time when the ball is vertically 10 feet and
+ substituting that time into the position equation finds the initial v
+elocity at that paticular time of 10 feet:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "time10bs := solve(dispbs[3] = 10, t);" }}{PARA 12 "" 
+1 "" {XPPMATH 20 "6#>%)time10bsG6$,$*&,&%#v0G\"*h,3]*!-+++++C\"\"\"!\"
+\",&F)!,P7%)>@\"*$,(*$F)\"\"#\"6p,p&35;b!*o9F)\"6+++++wDG,_\"!8+++++++
++++%QF,#F,F3F,F,F7,$*&F(F-,&F)F/F0F-F,F7" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 43 "eqnjbs := subs(t = time10bs[2], dispbs[2]);" }}{PARA 
+12 "" 1 "" {XPPMATH 20 "6#>%'eqnjbsG,(*(%#v0G\"\"\",&F'\"*h,3]*!-+++++
+CF(!\"#,&F'!,P7%)>@\"*$,(*$F'\"\"#\"6p,p&35;b!*o9F'\"6+++++wDG,_\"!8++
+++++++++%QF(#F(F2!\"\"F2$\"+b:Zr@!#6*&F)!\"$F-\"\"$$!+MLLL9!#5*(F)F7F-
+F(F'F($\"+(*\\)f%HF@" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 85 "Graphical
+ly, the initial velocity is shown as (the y-axis is the height of the \+
+ball):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "plot(eqnjbs, v0=0..50);" 
+}}{PARA 13 "" 1 "" {INLPLOT "6%-%'CURVESG6$7D7$$\"+b/cq;!\")$\"+WY[*H'
+!\"*7$$\"1+++')))G=<!#9$\"1TLn0a</q!#:7$$\"1+++<t,m<F1$\"1u6O.@-\"p(F4
+7$$\"1+++Tj0x=F1$\"1fV4)QupG*F47$$\"1+++#pW`(>F1$\"1f]Q(f^P2\"F17$$\"1
++++\"f#=$3#F1$\"1]PF8wUR7F17$$\"1+++t(pe=#F1$\"1sLGtIp/9F17$$\"1+++uI,
+$H#F1$\"1o!z$zAo&e\"F17$$\"1+++rSS\"R#F1$\"1SSv[$G+w\"F17$$\"1+++`?`(
+\\#F1$\"1X!3d&)*=d>F17$$\"1++++#pxg#F1$\"1)\\E8s>B<#F17$$\"1+++g4t.FF1
+$\"1ZG2oYRoBF17$$\"1+++!Hst!GF1$\"1z1XJgd*e#F17$$\"1+++ERW9HF1$\"1:DK=
+GbGGF17$$\"1+++KE>>IF1$\"1-bfZ/%G2$F17$$\"1+++#RU07$F1$\"1%HGFX_#>LF17
+$$\"1+++?S2LKF1$\"1m(\\HNAYg$F17$$\"1+++$p)=MLF1$\"1-j#Rfm<(QF17$$\"1+
+++*=]@W$F1$\"1FyciMPoTF17$$\"1+++]$z*RNF1$\"1FeJ'4BuW%F17$$\"1+++kC$pk
+$F1$\"1!HP&Qo#Qw%F17$$\"1+++3qcZPF1$\"19[<XXZs]F17$$\"1+++/\"fF&QF1$\"
+1#H7AOplS&F17$$\"1+++0OgbRF1$\"1V]R^ymWdF17$$\"1+++nAFjSF1$\"1)R[qO(*3
+6'F17$$\"1+++&)*pp;%F1$\"1E:W\"R3cZ'F17$$\"1+++ye,tUF1$\"1hypLF'3'oF17
+$$\"1+++fO=yVF1$\"1k?c]qIbsF17$$\"1+++E>#[Z%F1$\"1]S,7.sGwF17$$\"1+++(
+G!e&e%F1$\"1yq%zw/(p!)F17$$\"1+++&)Qk%o%F1$\"1G<.#4$)fZ)F17$$\"1+++UjE
+!z%F1$\"1?e42Zd@*)F17$$\"1+++60O\"*[F1$\"1cMxB>8g$*F17$$\"#]\"\"!$\"1f
+Wxg(\\Y%)*F1-%'COLOURG6&%$RGBG$\"#5!\"\"F]vF]v-%+AXESLABELSG6$%#v0G%!G
+-%%VIEWG6$;F]vF[v%(DEFAULTG" 2 319 319 319 2 0 1 0 2 9 0 4 2 1.000000 
+45.000000 45.000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 
+0 0 0 0 0 }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 145 "Solving this equatio
+n for the specific distances the ball can travel with backspin for an \+
+all net shot we find the minimum and maximum velocities" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 46 "v0_minbs := fsolve(eqnjbs = 13.398, v0=0..50);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)v0_minbsG$\"+v+7Y@!\")" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "v0_maxbs := fsolve(eqnjbs = \+
+14.102, v0=0..50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)v0_maxbsG$\"+
++(4#*=#!\")" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 52 "The margin for err
+or for the velocity ofthe shot is:" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 31 "rangebs := v0_maxbs - v0_minbs;" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%(rangebsG$\")D'*3V!\")" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 8 "SUMMARY:" }}{PARA 0 "" 0 "" {TEXT -1 295 "By determining t
+he margin of error for a no spin shot versus a backspin shot, the marg
+in of error in the backspin shot (.431) is less than the margin for er
+ror in the no spin shot (.496).  This implies that the shot with no sp
+in can be shot with a larger margin of error in its initial velocity!
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "21 1 0" 295 }
+{VIEWOPTS 1 1 0 1 1 1803 }

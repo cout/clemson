@@ -1,0 +1,14 @@
+Paul Brannan
+CPSC 428 Assignment 5
+April 5, 1999
+
+No extra functionality, just some notes.
+
+I used ArrayList instead of Vector.  This isn't thread-safe I think?  It
+doesn't really matter in this case.  I used Iterator instaed of Enumerator,
+since this is Java 1.2; Enumerator isn't thread-safe but it is probably
+faster.  Again, this probably doesn't make one bit of difference.
+
+Also, I put class Name inside Name.java.  This is more correct than what
+is in the assignment.
+

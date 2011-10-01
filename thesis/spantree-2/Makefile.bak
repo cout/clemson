@@ -1,0 +1,736 @@
+BINAME_SRC=gmpwrapper.cpp biname.cpp biname_test.cpp
+BINAME_OBJ=$(BINAME_SRC:.cpp=.o)
+BINAME_OUT=biname_test
+TREE_SRC=gmpwrapper.cpp biname.cpp tree.cpp tree_test.cpp
+TREE_OBJ=$(TREE_SRC:.cpp=.o)
+TREE_OUT=tree_test
+GRAPH_SRC=gmpwrapper.cpp biname.cpp tree.cpp graph.cpp graph_test.cpp
+GRAPH_OBJ=$(GRAPH_SRC:.cpp=.o)
+GRAPH_OUT=graph_test
+SPANTREE_SRC=gmpwrapper.cpp biname.cpp tree.cpp graph.cpp spantree.cpp spantree_test.cpp
+SPANTREE_OBJ=$(SPANTREE_SRC:.cpp=.o)
+SPANTREE_OUT=spantree_test
+MAIN_SRC=gmpwrapper.cpp biname.cpp tree.cpp graph.cpp spantree.cpp main.cpp
+MAIN_OBJ=$(MAIN_SRC:.cpp=.o)
+MAIN_OUT=spantree
+
+ALL=$(BINAME_OUT) $(TREE_OUT) $(GRAPH_OUT) $(SPANTREE_OUT) $(MAIN_OUT)
+SRC=$(BINAME_SRC) $(TREE_SRC) $(GRAPH_SRC) $(SPANTREE_SRC) $(MAIN_SRC)
+OBJ=$(BINAME_OBJ) $(TREE_OBJ) $(GRAPH_OBJ) $(SPANTREE_OBJ) $(MAIN_OBJ)
+OUT=$(ALL)
+
+INCLUDES=-I/usr/local/include -I. -I/usr/include/g++ -I/usr/include/g++-2
+CFLAGS=-O3 -w -g
+CC=gcc
+
+CCFLAGS=$(CFLAGS)
+CCC=g++
+
+LIBS=-lm -lgmp
+LDFLAGS=
+
+##### RULES #####
+
+.SUFFIXES: .c .cpp .ln .phony
+
+default: dep all
+
+all: $(ALL)
+
+$(BINAME_OUT): $(BINAME_OBJ)
+	$(CCC) $(INCLUDES) $(LDFLAGS) $(LIBS) $(BINAME_OBJ) -o $@
+
+$(TREE_OUT): $(TREE_OBJ)
+	$(CCC) $(INCLUDES) $(LDFLAGS) $(LIBS) $(TREE_OBJ) -o $@
+
+$(GRAPH_OUT): $(GRAPH_OBJ)
+	$(CCC) $(INCLUDES) $(LDFLAGS) $(LIBS) $(GRAPH_OBJ) -o $@
+
+$(SPANTREE_OUT): $(SPANTREE_OBJ)
+	$(CCC) $(INCLUDES) $(LDFLAGS) $(LIBS) $(SPANTREE_OBJ) -o $@
+
+$(MAIN_OUT): $(MAIN_OBJ)
+	$(CCC) $(INCLUDES) $(LDFLAGS) $(LIBS) $(MAIN_OBJ) -o $@
+
+.c.o: 
+	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
+
+.cpp.o: 
+	$(CCC) $(INCLUDES) $(CCFLAGS) -c $< -o $@
+
+
+depend: dep
+
+dep:
+	makedepend -- $(CFLAGS) -- $(INCLUDES) $(SRC)
+
+clean:
+	/bin/rm -f $(OBJ) $(OUT)
+
+# DO NOT DELETE
+
+gmpwrapper.o: gmpwrapper.h /usr/include/g++-2/iostream
+gmpwrapper.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+gmpwrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+gmpwrapper.o: /usr/include/bits/types.h /usr/include/features.h
+gmpwrapper.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+gmpwrapper.o: /usr/include/gmp.h
+biname.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+biname.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+biname.o: /usr/include/bits/types.h /usr/include/features.h
+biname.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+biname.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+biname.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+biname.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+biname.o: /usr/include/libio.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+biname.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+biname.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname.o: /usr/include/g++-2/stl_construct.h
+biname.o: /usr/include/g++-2/stl_uninitialized.h
+biname.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/algorithm
+biname.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+biname.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/iterator biname.h
+biname.o: intwrapper.h
+biname_test.o: /usr/include/g++-2/iostream /usr/include/g++-2/iostream.h
+biname_test.o: /usr/include/g++-2/streambuf.h /usr/include/libio.h
+biname_test.o: /usr/include/_G_config.h /usr/include/bits/types.h
+biname_test.o: /usr/include/features.h /usr/include/sys/cdefs.h
+biname_test.o: /usr/include/gnu/stubs.h
+biname_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname_test.o: biname.h /usr/include/g++-2/list
+biname_test.o: /usr/include/g++-2/stl_algobase.h
+biname_test.o: /usr/include/g++-2/stl_config.h
+biname_test.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname_test.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname_test.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname_test.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname_test.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname_test.o: /usr/include/sys/types.h /usr/include/time.h
+biname_test.o: /usr/include/endian.h /usr/include/bits/endian.h
+biname_test.o: /usr/include/sys/select.h /usr/include/bits/select.h
+biname_test.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+biname_test.o: /usr/include/alloca.h
+biname_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname_test.o: /usr/include/g++-2/stl_iterator.h
+biname_test.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+biname_test.o: /usr/include/pthread.h /usr/include/sched.h
+biname_test.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname_test.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname_test.o: /usr/include/g++-2/stl_construct.h
+biname_test.o: /usr/include/g++-2/stl_uninitialized.h
+biname_test.o: /usr/include/g++-2/stl_list.h intwrapper.h
+gmpwrapper.o: gmpwrapper.h /usr/include/g++-2/iostream
+gmpwrapper.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+gmpwrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+gmpwrapper.o: /usr/include/bits/types.h /usr/include/features.h
+gmpwrapper.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+gmpwrapper.o: /usr/include/gmp.h
+biname.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+biname.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+biname.o: /usr/include/bits/types.h /usr/include/features.h
+biname.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+biname.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+biname.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+biname.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+biname.o: /usr/include/libio.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+biname.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+biname.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname.o: /usr/include/g++-2/stl_construct.h
+biname.o: /usr/include/g++-2/stl_uninitialized.h
+biname.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/algorithm
+biname.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+biname.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/iterator biname.h
+biname.o: intwrapper.h
+tree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+tree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+tree.o: /usr/include/bits/types.h /usr/include/features.h
+tree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+tree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+tree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+tree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+tree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+tree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+tree.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+tree.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+tree.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+tree.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+tree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+tree.o: /usr/include/libio.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+tree.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+tree.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+tree.o: /usr/include/bits/sched.h /usr/include/signal.h
+tree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+tree.o: /usr/include/g++-2/stl_construct.h
+tree.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+tree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+tree.o: /usr/include/g++-2/stl_bvector.h /usr/include/g++-2/algorithm
+tree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+tree.o: /usr/include/g++-2/stl_heap.h biname.h intwrapper.h tree.h
+tree.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+tree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+tree.o: /usr/include/g++-2/stl_multimap.h edge.h
+tree_test.o: tree.h /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+tree_test.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+tree_test.o: /usr/include/bits/types.h /usr/include/features.h
+tree_test.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+tree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+tree_test.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+tree_test.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+tree_test.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+tree_test.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+tree_test.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+tree_test.o: /usr/include/sys/types.h /usr/include/time.h
+tree_test.o: /usr/include/endian.h /usr/include/bits/endian.h
+tree_test.o: /usr/include/sys/select.h /usr/include/bits/select.h
+tree_test.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+tree_test.o: /usr/include/alloca.h
+tree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+tree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+tree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+tree_test.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+tree_test.o: /usr/include/libio.h
+tree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+tree_test.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+tree_test.o: /usr/include/assert.h /usr/include/pthread.h
+tree_test.o: /usr/include/sched.h /usr/include/bits/sched.h
+tree_test.o: /usr/include/signal.h /usr/include/bits/pthreadtypes.h
+tree_test.o: /usr/include/bits/sigthread.h /usr/include/g++-2/stl_construct.h
+tree_test.o: /usr/include/g++-2/stl_uninitialized.h
+tree_test.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/vector
+tree_test.o: /usr/include/g++-2/stl_vector.h /usr/include/g++-2/stl_bvector.h
+tree_test.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+tree_test.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+tree_test.o: /usr/include/g++-2/stl_multimap.h biname.h intwrapper.h edge.h
+gmpwrapper.o: gmpwrapper.h /usr/include/g++-2/iostream
+gmpwrapper.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+gmpwrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+gmpwrapper.o: /usr/include/bits/types.h /usr/include/features.h
+gmpwrapper.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+gmpwrapper.o: /usr/include/gmp.h
+biname.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+biname.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+biname.o: /usr/include/bits/types.h /usr/include/features.h
+biname.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+biname.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+biname.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+biname.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+biname.o: /usr/include/libio.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+biname.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+biname.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname.o: /usr/include/g++-2/stl_construct.h
+biname.o: /usr/include/g++-2/stl_uninitialized.h
+biname.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/algorithm
+biname.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+biname.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/iterator biname.h
+biname.o: intwrapper.h
+tree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+tree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+tree.o: /usr/include/bits/types.h /usr/include/features.h
+tree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+tree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+tree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+tree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+tree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+tree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+tree.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+tree.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+tree.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+tree.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+tree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+tree.o: /usr/include/libio.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+tree.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+tree.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+tree.o: /usr/include/bits/sched.h /usr/include/signal.h
+tree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+tree.o: /usr/include/g++-2/stl_construct.h
+tree.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+tree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+tree.o: /usr/include/g++-2/stl_bvector.h /usr/include/g++-2/algorithm
+tree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+tree.o: /usr/include/g++-2/stl_heap.h biname.h intwrapper.h tree.h
+tree.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+tree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+tree.o: /usr/include/g++-2/stl_multimap.h edge.h
+graph.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+graph.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+graph.o: /usr/include/bits/types.h /usr/include/features.h
+graph.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+graph.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+graph.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+graph.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+graph.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+graph.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+graph.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+graph.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+graph.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+graph.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+graph.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+graph.o: /usr/include/libio.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+graph.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_construct.h
+graph.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+graph.o: /usr/include/g++-2/stl_heap.h graph.h /usr/include/g++-2/list
+graph.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+graph.o: /usr/include/pthread.h /usr/include/sched.h
+graph.o: /usr/include/bits/sched.h /usr/include/signal.h
+graph.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+graph.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+graph.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+graph.o: /usr/include/g++-2/stl_bvector.h tree.h /usr/include/g++-2/map
+graph.o: /usr/include/g++-2/stl_tree.h /usr/include/g++-2/stl_function.h
+graph.o: /usr/include/g++-2/stl_map.h /usr/include/g++-2/stl_multimap.h
+graph.o: biname.h intwrapper.h edge.h
+graph_test.o: /usr/include/g++-2/iostream /usr/include/g++-2/iostream.h
+graph_test.o: /usr/include/g++-2/streambuf.h /usr/include/libio.h
+graph_test.o: /usr/include/_G_config.h /usr/include/bits/types.h
+graph_test.o: /usr/include/features.h /usr/include/sys/cdefs.h
+graph_test.o: /usr/include/gnu/stubs.h
+graph_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+graph_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+graph_test.o: graph.h /usr/include/g++-2/list
+graph_test.o: /usr/include/g++-2/stl_algobase.h
+graph_test.o: /usr/include/g++-2/stl_config.h /usr/include/g++-2/stl_relops.h
+graph_test.o: /usr/include/g++-2/stl_pair.h /usr/include/g++-2/type_traits.h
+graph_test.o: /usr/include/string.h /usr/include/limits.h
+graph_test.o: /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h
+graph_test.o: /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h
+graph_test.o: /usr/include/stdlib.h /usr/include/sys/types.h
+graph_test.o: /usr/include/time.h /usr/include/endian.h
+graph_test.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+graph_test.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+graph_test.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+graph_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+graph_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+graph_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+graph_test.o: /usr/include/g++-2/stl_iterator.h
+graph_test.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+graph_test.o: /usr/include/pthread.h /usr/include/sched.h
+graph_test.o: /usr/include/bits/sched.h /usr/include/signal.h
+graph_test.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+graph_test.o: /usr/include/g++-2/stl_construct.h
+graph_test.o: /usr/include/g++-2/stl_uninitialized.h
+graph_test.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/vector
+graph_test.o: /usr/include/g++-2/stl_vector.h
+graph_test.o: /usr/include/g++-2/stl_bvector.h tree.h /usr/include/g++-2/map
+graph_test.o: /usr/include/g++-2/stl_tree.h /usr/include/g++-2/stl_function.h
+graph_test.o: /usr/include/g++-2/stl_map.h /usr/include/g++-2/stl_multimap.h
+graph_test.o: biname.h intwrapper.h edge.h
+gmpwrapper.o: gmpwrapper.h /usr/include/g++-2/iostream
+gmpwrapper.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+gmpwrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+gmpwrapper.o: /usr/include/bits/types.h /usr/include/features.h
+gmpwrapper.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+gmpwrapper.o: /usr/include/gmp.h
+biname.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+biname.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+biname.o: /usr/include/bits/types.h /usr/include/features.h
+biname.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+biname.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+biname.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+biname.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+biname.o: /usr/include/libio.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+biname.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+biname.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname.o: /usr/include/g++-2/stl_construct.h
+biname.o: /usr/include/g++-2/stl_uninitialized.h
+biname.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/algorithm
+biname.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+biname.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/iterator biname.h
+biname.o: intwrapper.h
+tree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+tree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+tree.o: /usr/include/bits/types.h /usr/include/features.h
+tree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+tree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+tree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+tree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+tree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+tree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+tree.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+tree.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+tree.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+tree.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+tree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+tree.o: /usr/include/libio.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+tree.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+tree.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+tree.o: /usr/include/bits/sched.h /usr/include/signal.h
+tree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+tree.o: /usr/include/g++-2/stl_construct.h
+tree.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+tree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+tree.o: /usr/include/g++-2/stl_bvector.h /usr/include/g++-2/algorithm
+tree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+tree.o: /usr/include/g++-2/stl_heap.h biname.h intwrapper.h tree.h
+tree.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+tree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+tree.o: /usr/include/g++-2/stl_multimap.h edge.h
+graph.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+graph.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+graph.o: /usr/include/bits/types.h /usr/include/features.h
+graph.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+graph.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+graph.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+graph.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+graph.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+graph.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+graph.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+graph.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+graph.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+graph.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+graph.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+graph.o: /usr/include/libio.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+graph.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_construct.h
+graph.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+graph.o: /usr/include/g++-2/stl_heap.h graph.h /usr/include/g++-2/list
+graph.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+graph.o: /usr/include/pthread.h /usr/include/sched.h
+graph.o: /usr/include/bits/sched.h /usr/include/signal.h
+graph.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+graph.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+graph.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+graph.o: /usr/include/g++-2/stl_bvector.h tree.h /usr/include/g++-2/map
+graph.o: /usr/include/g++-2/stl_tree.h /usr/include/g++-2/stl_function.h
+graph.o: /usr/include/g++-2/stl_map.h /usr/include/g++-2/stl_multimap.h
+graph.o: biname.h intwrapper.h edge.h
+spantree.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+spantree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+spantree.o: /usr/include/bits/types.h /usr/include/features.h
+spantree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+spantree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+spantree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+spantree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+spantree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+spantree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+spantree.o: /usr/include/sys/types.h /usr/include/time.h
+spantree.o: /usr/include/endian.h /usr/include/bits/endian.h
+spantree.o: /usr/include/sys/select.h /usr/include/bits/select.h
+spantree.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+spantree.o: /usr/include/alloca.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+spantree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+spantree.o: /usr/include/libio.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+spantree.o: /usr/include/g++-2/stl_iterator.h
+spantree.o: /usr/include/g++-2/stl_construct.h
+spantree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+spantree.o: /usr/include/g++-2/stl_heap.h /usr/include/assert.h spantree.h
+spantree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_alloc.h
+spantree.o: /usr/include/pthread.h /usr/include/sched.h
+spantree.o: /usr/include/bits/sched.h /usr/include/signal.h
+spantree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+spantree.o: /usr/include/g++-2/stl_uninitialized.h
+spantree.o: /usr/include/g++-2/stl_vector.h /usr/include/g++-2/stl_bvector.h
+spantree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_list.h graph.h
+spantree.o: tree.h /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+spantree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+spantree.o: /usr/include/g++-2/stl_multimap.h biname.h intwrapper.h edge.h
+spantree_test.o: /usr/include/g++-2/iostream /usr/include/g++-2/iostream.h
+spantree_test.o: /usr/include/g++-2/streambuf.h /usr/include/libio.h
+spantree_test.o: /usr/include/_G_config.h /usr/include/bits/types.h
+spantree_test.o: /usr/include/features.h /usr/include/sys/cdefs.h
+spantree_test.o: /usr/include/gnu/stubs.h
+spantree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+spantree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+spantree_test.o: spantree.h /usr/include/g++-2/vector
+spantree_test.o: /usr/include/g++-2/stl_algobase.h
+spantree_test.o: /usr/include/g++-2/stl_config.h
+spantree_test.o: /usr/include/g++-2/stl_relops.h
+spantree_test.o: /usr/include/g++-2/stl_pair.h
+spantree_test.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+spantree_test.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+spantree_test.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+spantree_test.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+spantree_test.o: /usr/include/sys/types.h /usr/include/time.h
+spantree_test.o: /usr/include/endian.h /usr/include/bits/endian.h
+spantree_test.o: /usr/include/sys/select.h /usr/include/bits/select.h
+spantree_test.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+spantree_test.o: /usr/include/alloca.h
+spantree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+spantree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+spantree_test.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+spantree_test.o: /usr/include/g++-2/stl_iterator.h
+spantree_test.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+spantree_test.o: /usr/include/pthread.h /usr/include/sched.h
+spantree_test.o: /usr/include/bits/sched.h /usr/include/signal.h
+spantree_test.o: /usr/include/bits/pthreadtypes.h
+spantree_test.o: /usr/include/bits/sigthread.h
+spantree_test.o: /usr/include/g++-2/stl_construct.h
+spantree_test.o: /usr/include/g++-2/stl_uninitialized.h
+spantree_test.o: /usr/include/g++-2/stl_vector.h
+spantree_test.o: /usr/include/g++-2/stl_bvector.h /usr/include/g++-2/list
+spantree_test.o: /usr/include/g++-2/stl_list.h graph.h tree.h
+spantree_test.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+spantree_test.o: /usr/include/g++-2/stl_function.h
+spantree_test.o: /usr/include/g++-2/stl_map.h
+spantree_test.o: /usr/include/g++-2/stl_multimap.h biname.h intwrapper.h
+spantree_test.o: edge.h
+gmpwrapper.o: gmpwrapper.h /usr/include/g++-2/iostream
+gmpwrapper.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+gmpwrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+gmpwrapper.o: /usr/include/bits/types.h /usr/include/features.h
+gmpwrapper.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+gmpwrapper.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+gmpwrapper.o: /usr/include/gmp.h
+biname.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+biname.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+biname.o: /usr/include/bits/types.h /usr/include/features.h
+biname.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+biname.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+biname.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+biname.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+biname.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+biname.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+biname.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+biname.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+biname.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+biname.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+biname.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+biname.o: /usr/include/libio.h
+biname.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+biname.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+biname.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+biname.o: /usr/include/bits/sched.h /usr/include/signal.h
+biname.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+biname.o: /usr/include/g++-2/stl_construct.h
+biname.o: /usr/include/g++-2/stl_uninitialized.h
+biname.o: /usr/include/g++-2/stl_list.h /usr/include/g++-2/algorithm
+biname.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+biname.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/iterator biname.h
+biname.o: intwrapper.h
+tree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_algobase.h
+tree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+tree.o: /usr/include/bits/types.h /usr/include/features.h
+tree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+tree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+tree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+tree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+tree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+tree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+tree.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+tree.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+tree.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+tree.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+tree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+tree.o: /usr/include/libio.h
+tree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+tree.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_alloc.h
+tree.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+tree.o: /usr/include/bits/sched.h /usr/include/signal.h
+tree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+tree.o: /usr/include/g++-2/stl_construct.h
+tree.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+tree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+tree.o: /usr/include/g++-2/stl_bvector.h /usr/include/g++-2/algorithm
+tree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+tree.o: /usr/include/g++-2/stl_heap.h biname.h intwrapper.h tree.h
+tree.o: /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+tree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+tree.o: /usr/include/g++-2/stl_multimap.h edge.h
+graph.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+graph.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+graph.o: /usr/include/bits/types.h /usr/include/features.h
+graph.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+graph.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+graph.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+graph.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+graph.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+graph.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+graph.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
+graph.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+graph.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+graph.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+graph.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+graph.o: /usr/include/libio.h
+graph.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+graph.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_construct.h
+graph.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+graph.o: /usr/include/g++-2/stl_heap.h graph.h /usr/include/g++-2/list
+graph.o: /usr/include/g++-2/stl_alloc.h /usr/include/assert.h
+graph.o: /usr/include/pthread.h /usr/include/sched.h
+graph.o: /usr/include/bits/sched.h /usr/include/signal.h
+graph.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+graph.o: /usr/include/g++-2/stl_uninitialized.h /usr/include/g++-2/stl_list.h
+graph.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_vector.h
+graph.o: /usr/include/g++-2/stl_bvector.h tree.h /usr/include/g++-2/map
+graph.o: /usr/include/g++-2/stl_tree.h /usr/include/g++-2/stl_function.h
+graph.o: /usr/include/g++-2/stl_map.h /usr/include/g++-2/stl_multimap.h
+graph.o: biname.h intwrapper.h edge.h
+spantree.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+spantree.o: /usr/include/g++-2/stl_config.h /usr/include/_G_config.h
+spantree.o: /usr/include/bits/types.h /usr/include/features.h
+spantree.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+spantree.o: /usr/include/g++-2/stl_relops.h /usr/include/g++-2/stl_pair.h
+spantree.o: /usr/include/g++-2/type_traits.h /usr/include/string.h
+spantree.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+spantree.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+spantree.o: /usr/include/bits/posix2_lim.h /usr/include/stdlib.h
+spantree.o: /usr/include/sys/types.h /usr/include/time.h
+spantree.o: /usr/include/endian.h /usr/include/bits/endian.h
+spantree.o: /usr/include/sys/select.h /usr/include/bits/select.h
+spantree.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+spantree.o: /usr/include/alloca.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+spantree.o: /usr/include/g++-2/iostream.h /usr/include/g++-2/streambuf.h
+spantree.o: /usr/include/libio.h
+spantree.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+spantree.o: /usr/include/g++-2/stl_iterator.h
+spantree.o: /usr/include/g++-2/stl_construct.h
+spantree.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+spantree.o: /usr/include/g++-2/stl_heap.h /usr/include/assert.h spantree.h
+spantree.o: /usr/include/g++-2/vector /usr/include/g++-2/stl_alloc.h
+spantree.o: /usr/include/pthread.h /usr/include/sched.h
+spantree.o: /usr/include/bits/sched.h /usr/include/signal.h
+spantree.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+spantree.o: /usr/include/g++-2/stl_uninitialized.h
+spantree.o: /usr/include/g++-2/stl_vector.h /usr/include/g++-2/stl_bvector.h
+spantree.o: /usr/include/g++-2/list /usr/include/g++-2/stl_list.h graph.h
+spantree.o: tree.h /usr/include/g++-2/map /usr/include/g++-2/stl_tree.h
+spantree.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+spantree.o: /usr/include/g++-2/stl_multimap.h biname.h intwrapper.h edge.h
+main.o: /usr/include/time.h /usr/include/bits/types.h /usr/include/features.h
+main.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+main.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stddef.h
+main.o: /usr/include/g++-2/iostream /usr/include/g++-2/iostream.h
+main.o: /usr/include/g++-2/streambuf.h /usr/include/libio.h
+main.o: /usr/include/_G_config.h
+main.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/stdarg.h
+main.o: /usr/include/g++-2/fstream /usr/include/g++-2/fstream.h
+main.o: /usr/include/g++-2/algorithm /usr/include/g++-2/stl_algobase.h
+main.o: /usr/include/g++-2/stl_config.h /usr/include/g++-2/stl_relops.h
+main.o: /usr/include/g++-2/stl_pair.h /usr/include/g++-2/type_traits.h
+main.o: /usr/include/string.h /usr/include/limits.h
+main.o: /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h
+main.o: /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h
+main.o: /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/endian.h
+main.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+main.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+main.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+main.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new.h
+main.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/new
+main.o: /usr/lib/gcc-lib/i586-mandrake-linux/2.95.3/include/exception
+main.o: /usr/include/g++-2/stl_iterator.h /usr/include/g++-2/stl_construct.h
+main.o: /usr/include/g++-2/stl_tempbuf.h /usr/include/g++-2/stl_algo.h
+main.o: /usr/include/g++-2/stl_heap.h /usr/include/g++-2/map
+main.o: /usr/include/g++-2/stl_tree.h /usr/include/g++-2/stl_alloc.h
+main.o: /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h
+main.o: /usr/include/bits/sched.h /usr/include/signal.h
+main.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h
+main.o: /usr/include/g++-2/stl_function.h /usr/include/g++-2/stl_map.h
+main.o: /usr/include/g++-2/stl_multimap.h /usr/include/g++-2/set
+main.o: /usr/include/g++-2/stl_set.h /usr/include/g++-2/stl_multiset.h
+main.o: spantree.h /usr/include/g++-2/vector
+main.o: /usr/include/g++-2/stl_uninitialized.h
+main.o: /usr/include/g++-2/stl_vector.h /usr/include/g++-2/stl_bvector.h
+main.o: /usr/include/g++-2/list /usr/include/g++-2/stl_list.h graph.h tree.h
+main.o: biname.h intwrapper.h edge.h

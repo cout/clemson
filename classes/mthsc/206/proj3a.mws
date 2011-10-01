@@ -1,0 +1,152 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 2 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 0 }1 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 255 1 0 0 0 0 0 0 1 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Error" 7 8 1 {CSTYLE "" -1 -1 "" 0 1 255 0 255 1 0 0 0 0 0 0 
+0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 
+0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }{PSTYLE "Title" 0 18 1 {CSTYLE "" -1 -1 "" 1 18 
+0 0 0 0 0 1 1 0 0 0 0 0 0 }3 0 0 -1 12 12 0 0 0 0 0 0 19 0 }{PSTYLE "A
+uthor" 0 19 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 
+0 -1 8 8 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 18 "" 0 "" {TEXT -1 31 "MTHSC H 206 Maple Project
+ No. 3" }}{PARA 19 "" 0 "" {TEXT -1 26 "Paul Brannan and Tim Smith" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 49 "d := (a,b) -> 1/(2*Pi)*exp(-((x-a)^2+(y-b)^2)/2);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"dGR6$%\"aG%\"bG6\"6$%)operatorG%&arrowGF),$*
+&-%$expG6#,&*$),&%\"xG\"\"\"9$!\"\"\"\"#\"\"\"#F9F:*$),&%\"yGF79%F9F:F
+;F<F;%#PiG!\"\"#F7F:F)F)F)" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+18 "d0 := R -> d(0,0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#d0GR6#%\"
+RG6\"6$%)operatorG%&arrowGF(-%\"dG6$\"\"!F/F(F(F(" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 18 "d1 := R -> d(0,R);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#d1GR6#%\"RG6\"6$%)operatorG%&arrowGF(-%\"dG6$\"\"!9$
+F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "d2 := R -> d(R*co
+s(Pi/6),-R*sin(Pi/6));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#d2GR6#%\"
+RG6\"6$%)operatorG%&arrowGF(-%\"dG6$*&9$\"\"\"-%$cosG6#,$%#PiG#F1\"\"'
+F1,$*&F0\"\"\"-%$sinGF4F1!\"\"F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 40 "d3 := R -> d(-R*cos(Pi/6),-R*sin(Pi/6));" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#>%#d3GR6#%\"RG6\"6$%)operatorG%&arrowGF(-%\"dG6
+$,$*&9$\"\"\"-%$cosG6#,$%#PiG#F2\"\"'F2!\"\",$*&F1\"\"\"-%$sinGF5F2F:F
+(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "d_total := R -> d0
+(R) + d1(R) + d2(R) + d3(R);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%(d_t
+otalGR6#%\"RG6\"6$%)operatorG%&arrowGF(,*-%#d0G6#9$\"\"\"-%#d1GF/F1-%#
+d2GF/F1-%#d3GF/F1F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "
+d_x := R -> diff(d_total(R),x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$
+d_xGR6#%\"RG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%(d_totalG6#9$%\"xGF(
+F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "d_y := R -> diff(d_
+total(R),y);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$d_yGR6#%\"RG6\"6$%)
+operatorG%&arrowGF(-%%diffG6$-%(d_totalG6#9$%\"yGF(F(F(" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 55 "bound := R -> subs(\{x=R*cos(t),y=R
+*sin(t)\},d_total(R));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&boundGR6#
+%\"RG6\"6$%)operatorG%&arrowGF(-%%subsG6$<$/%\"xG*&9$\"\"\"-%$cosG6#%
+\"tGF4/%\"yG*&F3\"\"\"-%$sinGF7F4-%(d_totalG6#F3F(F(F(" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "d_b := R -> diff(bound(R), t);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$d_bGR6#%\"RG6\"6$%)operatorG%&arrow
+GF(-%%diffG6$-%&boundG6#9$%\"tGF(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 65 "sol := R -> fsolve(\{d_x(R)=0, d_y(R)=0\},\{x,y\},\{x
+=-R..R,y=-R..R\});" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$solGR6#%\"RG6
+\"6$%)operatorG%&arrowGF(-%'fsolveG6%<$/-%$d_xG6#9$\"\"!/-%$d_yGF3F5<$
+%\"yG%\"xG<$/F;;,$F4!\"\"F4/F:F>F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 44 "solb := (R,a,b) -> fsolve(d_b(R)=0, t=a..b);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%solbGR6%%\"RG%\"aG%\"bG6\"6$%)opera
+torG%&arrowGF*-%'fsolveG6$/-%$d_bG6#9$\"\"!/%\"tG;9%9&F*F*F*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 207 "solb1 := R -> \{x=R*cos(sol
+b(R,0,Pi)),y=R*sin(solb(R,0,Pi))\}; \nsolb2 := R -> \{x=R*cos(solb(R,P
+i,3*Pi/2)),y=R*sin(solb(R,Pi,3*Pi/2))\};\nsolb3 := R -> \{x=R*cos(solb
+(R,3*Pi/2,2*Pi)),y=R*sin(solb(R,3*Pi/2,2*Pi))\};" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%&solb1GR6#%\"RG6\"6$%)operatorG%&arrowGF(<$/%\"xG*&9$
+\"\"\"-%$cosG6#-%%solbG6%F0\"\"!%#PiGF1/%\"yG*&F0\"\"\"-%$sinGF4F1F(F(
+F(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&solb2GR6#%\"RG6\"6$%)operator
+G%&arrowGF(<$/%\"xG*&9$\"\"\"-%$cosG6#-%%solbG6%F0%#PiG,$F8#\"\"$\"\"#
+F1/%\"yG*&F0\"\"\"-%$sinGF4F1F(F(F(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#>%&solb3GR6#%\"RG6\"6$%)operatorG%&arrowGF(<$/%\"xG*&9$\"\"\"-%$cosG6
+#-%%solbG6%F0,$%#PiG#\"\"$\"\"#,$F9F<F1/%\"yG*&F0\"\"\"-%$sinGF4F1F(F(
+F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "sol(2); solb1(2); sol
+b2(2); solb3(2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#<$/%\"xG\"\"!/%\"y
+G$\"+eVn-M!#>" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#<$/%\"xG$!+9w1-T!#>/%
+\"yG$\"\"#\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#<$/%\"yG$!+'*******
+**!#5/%\"xG$!+330K<!\"*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#<$/%\"xG$\"
++330K<!\"*/%\"yG$!+#*********!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 82 "d_ratio := R -> evalf(subs(sol(R),d_total(R))) / eval
+f(subs(solb1(R),d_total(R)));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%(d_
+ratioGR6#%\"RG6\"6$%)operatorG%&arrowGF(*&-%&evalfG6#-%%subsG6$-%$solG
+6#9$-%(d_totalGF5\"\"\"-F.6#-F16$-%&solb1GF5F7!\"\"F(F(F(" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "fsolve(diff(d_ratio(R),R)=0, R=0..2
+.5);" }}{PARA 8 "" 1 "" {TEXT -1 60 "Error, (in fsolve/setrange) x = -
+R .. R, is an invalid range" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+26 "minimize(eval(d_ratio),R);" }}{PARA 8 "" 1 "" {TEXT -1 187 "Error,
+ minimize expects its 1st argument, expr, to be of type algebraic, but
+ received proc (R) options operator, arrow; evalf(subs(sol(R),d_total(
+R)))/evalf(subs(solb1(R),d_total(R))) end" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 17 "eval(d_ratio(R));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}{PARA 8 "" 1 "" {TEXT -1 60 "Error, (in fsolve/setrange) x = \+
+-R .. R, is an invalid range" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 11 "d_ratio(0);" }}{PARA 8 "" 1 "" {TEXT -1 94 "Error, (in solb1) co
+s expects its 1st argument, x, to be of type algebraic, but received t
+ = t" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "d_ratio(0.00000001)
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+)*********!#5" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "d_ratio(R);" }}{PARA 8 "" 1 "" 
+{TEXT -1 60 "Error, (in fsolve) should use exactly all the indetermina
+tes" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "subs(sol,d_total);" 
+}}{PARA 8 "" 1 "" {TEXT -1 60 "Error, wrong number (or type) of parame
+ters in function subs" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "sol
+(R);" }}{PARA 8 "" 1 "" {TEXT -1 60 "Error, (in fsolve) should use exa
+ctly all the indeterminates" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+10 "R->sol(R);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#%$solG" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 409 "mbs := proc(xl,xr,f,tol,i,n)\nloca
+l d, axl, axr, faxl, faxr, fd:\nd := (xl + xr) /2:\nif d - tol < xl th
+en axl := xl else axl := d - tol fi:\nif d + tol < xr then axr := xr e
+lse axr := d + tol fi:\nfaxl := evalf(f(axl)): faxr := evalf(f(axr)): \+
+fd:= evalf(f(d)):\nif (fd < faxl and fd < faxr) or (i >= n) then RETUR
+N(d); fi:\nif faxr <= faxl then RETURN(mbs(d,xr,f,tol,i+1,n)); fi:\nRE
+TURN(mbs(xl,d,f,tol,i+1,n)):\nend;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+68 "mbisection := proc(xl,xr,f,tol,n)\nRETURN(mbs(xl,xr,f,tol,0,n)):\n
+end;" }}{PARA 0 "" 1 "" {XPPMATH 20 "6#>%+mbisectionGR6'%#xlG%#xrG%\"f
+G%$tolG%\"nG6\"F,F,-%'RETURNG6#-%$mbsG6(9$9%9&9'\"\"!9(F,F,F," }}
+{PARA 12 "" 1 "" {XPPMATH 20 "6#>%$mbsGR6(%#xlG%#xrG%\"fG%$tolG%\"iG%
+\"nG6(%\"dG%$axlG%$axrG%%faxlG%%faxrG%#fdG6\"F4C+>8$,&9$#\"\"\"\"\"#9%
+F:@%2,&F7F;9'!\"\"F9>8%F9>FDF@@%2,&F7F;FAF;F=>8&F=>FJFH>8'-%&evalfG6#-
+9&6#FD>8(-FO6#-FR6#FJ>8)-FO6#-FR6#F7@$532FenFM2FenFU19)9(-%'RETURNGFin
+@$1FUFM-Fco6#-F$6(F7F=FRFA,&FaoF;F;F;F`o-Fco6#-F$6(F9F7FRFAFjoF`oF4F4F
+4" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%+mbisectionGR6'%#xlG%#xrG%\"fG%
+$tolG%\"nG6\"F,F,-%'RETURNG6#-%$mbsG6(9$9%9&9'\"\"!9(F,F,F," }}}
+{EXCHG {PARA 11 "" 1 "" {XPPMATH 20 "6#>%+mbisectionGR6&%#xlG%#xrG%\"f
+G%$tolG6\"F+F+-%'RETURNG6#-%$mbsG6'9$9%9&9'\"\"!F+F+6\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "mbisection(1.25,2.5,d_ratio,0.1,10)
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+\\'*Q*\\#!\"*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 182 "fplot := proc(f,a,b,t)\nlocal x,p,
+pts,i,j:\nwith(geometry):\npts := table(): j := 1:\nfor x from a by t \+
+while x <= b do\n  point(pts[j],[x,f(x)]):\n  j := j + 1:\nod:\nprint(
+op(pts,1)):\nend;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 12 "
+" 1 "" {XPPMATH 20 "6#>%&fplotGR6&%\"fG%\"aG%\"bG%\"tG6'%\"xG%\"pG%$pt
+sG%\"iG%\"jG6\"F1C'-%%withG6#%)geometryG>8&-%&tableGF1>8(\"\"\"?(8$9%9
+'F11F?9&C$-%&pointG6$&F86#F<7$F?-9$6#F?>F<,&F<F=F=F=-%&printG6#-%#opG6
+$F8F=F1F1F1" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "fplot(d_rati
+o,1.25,2.5,0.1);" }}{PARA 7 "" 1 "" {TEXT -1 32 "Warning, computation \+
+interrupted" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "plot([1,1]);
+" }}{PARA 13 "" 1 "" {GLPLOT2D 400 300 300 {PLOTDATA 2 "6&-%'CURVESG6$
+7S7$$!#5\"\"!$\"\"\"F*7$$!1nmm;p0k&*!#:F+7$$!1LL$3<XZ=*F0F+7$$!1mmmT%p
+\"e()F0F+7$$!1nmm\"4m(G$)F0F+7$$!1LL$3i.9!zF0F+7$$!1nm;/R=0vF0F+7$$!1,
++]P8#\\4(F0F+7$$!1mm;/siqmF0F+7$$!1****\\(y$pZiF0F+7$$!1LLL$yaE\"eF0F+
+7$$!1mmm\">s%HaF0F+7$$!1******\\$*4)*\\F0F+7$$!1+++]_&\\c%F0F+7$$!1+++
+]1aZTF0F+7$$!1mm;/#)[oPF0F+7$$!1LLL$=exJ$F0F+7$$!1LLLL2$f$HF0F+7$$!1++
+]PYx\"\\#F0F+7$$!1MLLL7i)4#F0F+7$$!1****\\P'psm\"F0F+7$$!1****\\74_c7F
+0F+7$$!1:LL$3x%z#)!#;F+7$$!1ILL3s$QM%FjoF+7$$!1^omm;zr)*!#=F+7$$\"1WLL
+ezw5VFjoF+7$$\"1.++v$Q#\\\")FjoF+7$$\"1NLLe\"*[H7F0F+7$$\"1++++dxd;F0F
++7$$\"1,++D0xw?F0F+7$$\"1,+]i&p@[#F0F+7$$\"1+++vgHKHF0F+7$$\"1lmmmZvOL
+F0F+7$$\"1,++]2goPF0F+7$$\"1KL$eR<*fTF0F+7$$\"1-++])Hxe%F0F+7$$\"1mm;H
+!o-*\\F0F+7$$\"1,+]7k.6aF0F+7$$\"1mmm;WTAeF0F+7$$\"1****\\i!*3`iF0F+7$
+$\"1NLLL*zym'F0F+7$$\"1OLL3N1#4(F0F+7$$\"1pm;HYt7vF0F+7$$\"1-+++xG**yF
+0F+7$$\"1qmmT6KU$)F0F+7$$\"1OLLLbdQ()F0F+7$$\"1++]i`1h\"*F0F+7$$\"1-+]
+P?Wl&*F0F+7$$\"#5F*F+-%'COLOURG6&%$RGBG$Fit!\"\"F*F*-F$6$F&-F[u6&F]uF*
+F^uF*-%+AXESLABELSG6$%!GFgu-%%VIEWG6$;F(Fht%(DEFAULTG" 1 2 0 1 0 2 9 
+1 4 2 1.000000 45.000000 45.000000 0 }}}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{MARK "30 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

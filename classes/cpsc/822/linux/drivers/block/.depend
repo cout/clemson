@@ -1,0 +1,870 @@
+DAC960.o: \
+   /usr/src/linux-2.2.14/include/linux/version.h \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/locks.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/proc_fs.h \
+   /usr/src/linux-2.2.14/include/linux/reboot.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/segment.h \
+   /usr/src/linux-2.2.14/include/asm/spinlock.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   DAC960.h
+acsi.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/signal.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/scsi/scsi.h \
+   /usr/src/linux-2.2.14/include/scsi/scsi_ioctl.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/setup.h \
+   /usr/src/linux-2.2.14/include/asm/pgtable.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari/slm.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari/slm/module.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/acsi/multi/lun.h)
+acsi_slm.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/time.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/asm/pgtable.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h
+ali14xx.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+amiflop.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/fcntl.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/fd.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/slab.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/amifdreg.h \
+   /usr/src/linux-2.2.14/include/linux/amifd.h \
+   /usr/src/linux-2.2.14/include/asm/setup.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/version.h
+ataflop.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/fcntl.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/fd.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/setup.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/pgtable.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h
+cmd640.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd640/enhanced.h)
+cmd646.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h
+cpqarray.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/version.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/proc_fs.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/spinlock.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   cpqarray.h \
+   ida_cmd.h \
+   smart1,2.h \
+   ida_ioctl.h
+cpqarray.h: \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/locks.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/proc_fs.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   ida_cmd.h
+	@touch cpqarray.h
+dtc2278.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+floppy.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/tqueue.h \
+   /usr/src/linux-2.2.14/include/linux/fdreg.h \
+   /usr/src/linux-2.2.14/include/linux/fd.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/fcntl.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/mc146818rtc.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/dma.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/floppy.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/cdrom.h
+genhd.o: \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/unaligned.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/dac960.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/ppc.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/msdos/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/solaris/x86/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/bsd/disklabel.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/unixware/disklabel.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/osf/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/sun/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/sgi/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/amiga/partition.h) \
+   /usr/src/linux-2.2.14/include/linux/affs_hardblocks.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mac/partition.h) \
+   /usr/src/linux-2.2.14/include/linux/ctype.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/ultrix/partition.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/parport.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/boot.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/fc4/soc.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/scsi.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/cpq/da.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/net.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/vt.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ram.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/initrd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/md.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h)
+hd.o: \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/signal.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/mc146818rtc.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h
+hsm.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/raid/hsm.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h
+ht6560b.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+ida_cmd.h: \
+   /usr/src/linux-2.2.14/include/asm/types.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h
+	@touch ida_cmd.h
+ida_ioctl.h: \
+   ida_cmd.h \
+   cpqarray.h
+	@touch ida_ioctl.h
+ide-cd.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/cdrom.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/unaligned.h \
+   ide.h \
+   ide-cd.h
+ide-cd.h: \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h
+	@touch ide-cd.h
+ide-disk.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/time.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/pdc4030.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h)
+ide-dma.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/trm290.h)
+ide-floppy.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/cdrom.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/unaligned.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h)
+ide-pci.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/trm290.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/opti621.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ns87415.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd646.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/sl82c105.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/rz1000.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/via82c586.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/idedma/auto.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h)
+ide-pmac.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/pmac/pbook.h) \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   ide.h \
+   ide_modes.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma/pmac.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/pmac/idedma/auto.h)
+ide-probe.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/scsi/eata/dma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/scsi/eata/pio.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/scsi/eata.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/pdc4030.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd640.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apus.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/hd.h)
+ide-proc.o: \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/proc_fs.h \
+   /usr/src/linux-2.2.14/include/linux/stat.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/ctype.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idepci.h)
+ide-tape.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/unaligned.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   ide.h \
+   /usr/src/linux-2.2.14/include/linux/mtio.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h)
+ide.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/time.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   ide.h \
+   ide_modes.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/kmod.h) \
+   /usr/src/linux-2.2.14/include/linux/kmod.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/hd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/pci.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idepci.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/dtc2278.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/pdc4030.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ali14xx.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/umc8672.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd640.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ht6560b.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/qd6580.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/4drives.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/rz1000.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide/pmac.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apus.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedisk.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idecd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idetape.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idefloppy.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idescsi.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/scsi.h)
+ide.h: \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/proc_fs.h \
+   /usr/src/linux-2.2.14/include/asm/ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd640.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apm.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h) \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedisk.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idecd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idetape.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idefloppy.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idescsi.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idepci.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/offboard.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idedma.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/pdc4030.h) \
+   pdc4030.h
+	@touch ide.h
+ide_modes.h:  \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/cmd640.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/ide/chipsets.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/opti621.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide/pmac.h)
+	@touch ide_modes.h
+linear.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/raid/linear.h
+ll_rw_blk.o: \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/kernel_stat.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/locks.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/md.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/stram/swap.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/amiga/z2ram.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ram.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/loop.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/isp16/cdi.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ide.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/hd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ps2.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/xd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/mfm.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/paride.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mac/floppy.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/amiga/floppy.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari/floppy.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/fd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/pmac.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apus.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/cdu31a.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/atari/acsi.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mcd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mcdx.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/sbpcd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/aztcd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/cdu535.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/gscd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/cm206.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/optcd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/sjcd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apblock.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/ddv.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/nbd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mdisk.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/dasd.h)
+loop.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/file.h \
+   /usr/src/linux-2.2.14/include/linux/stat.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/linux/loop.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h
+md.o: \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/linux/raid/xor.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/kmod.h) \
+   /usr/src/linux-2.2.14/include/linux/kmod.h \
+   /usr/src/linux-2.2.14/include/linux/unistd.h \
+   /usr/src/linux-2.2.14/include/asm/unaligned.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/boot.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/autodetect/raid.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/linear.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/striped.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/hsm.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/translucent.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/mirroring.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/raid5.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/md/raid5/module.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/proc/fs.h)
+nbd.o: \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/stat.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/file.h \
+   /usr/src/linux-2.2.14/include/linux/ioctl.h \
+   /usr/src/linux-2.2.14/include/asm/segment.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/types.h \
+   /usr/src/linux-2.2.14/include/linux/nbd.h
+ns87415.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h
+opti621.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+pdc4030.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/irq.h \
+   ide.h \
+   pdc4030.h
+ps2esdi.o: \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/ps2.h) \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/ps2esdi.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/mca.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/segment.h \
+   /usr/src/linux-2.2.14/include/asm/dma.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/is.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/zd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/sf.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/fr.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/rt.h)
+qd6580.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+raid0.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/raid/raid0.h
+raid1.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/raid/raid1.h \
+   /usr/src/linux-2.2.14/include/asm/atomic.h
+raid5.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/locks.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/raid/raid5.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   /usr/src/linux-2.2.14/include/asm/atomic.h
+rd.o: \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/minix_fs.h \
+   /usr/src/linux-2.2.14/include/linux/ext2_fs.h \
+   /usr/src/linux-2.2.14/include/linux/romfs_fs.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/string.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/mman.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/ioctl.h \
+   /usr/src/linux-2.2.14/include/linux/fd.h \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/byteorder.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/initrd.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/arch/s390.h) \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/fd.h) \
+   ../../lib/inflate.c
+rz1000.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   ide.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/blk/dev/idepci.h)
+sl82c105.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/dma.h \
+   ide.h \
+   ide_modes.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/mbx.h)
+swim3.o: \
+   /usr/src/linux-2.2.14/include/linux/stddef.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/fd.h \
+   /usr/src/linux-2.2.14/include/linux/ioctl.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h
+translucent.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/raid/translucent.h
+trm290.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h
+umc8672.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h \
+   ide_modes.h
+via82c586.o: \
+   /usr/src/linux-2.2.14/include/linux/types.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/interrupt.h \
+   /usr/src/linux-2.2.14/include/linux/blkdev.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/pci.h \
+   /usr/src/linux-2.2.14/include/linux/delay.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   ide.h
+xd.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/errno.h \
+   /usr/src/linux-2.2.14/include/linux/sched.h \
+   /usr/src/linux-2.2.14/include/linux/mm.h \
+   /usr/src/linux-2.2.14/include/linux/fs.h \
+   /usr/src/linux-2.2.14/include/linux/kernel.h \
+   /usr/src/linux-2.2.14/include/linux/timer.h \
+   /usr/src/linux-2.2.14/include/linux/genhd.h \
+   /usr/src/linux-2.2.14/include/linux/hdreg.h \
+   /usr/src/linux-2.2.14/include/linux/ioport.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/asm/system.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/asm/uaccess.h \
+   /usr/src/linux-2.2.14/include/asm/dma.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   xd.h \
+   /usr/src/linux-2.2.14/include/asm/page.h
+xor.o: \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/linux/raid/md.h \
+   /usr/src/linux-2.2.14/include/asm/processor.h \
+   /usr/src/linux-2.2.14/include/asm/i387.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/x86/cpu/optimizations.h)
+z2ram.o: \
+   /usr/src/linux-2.2.14/include/linux/major.h \
+   /usr/src/linux-2.2.14/include/linux/malloc.h \
+   /usr/src/linux-2.2.14/include/linux/blk.h \
+   /usr/src/linux-2.2.14/include/linux/init.h \
+   /usr/src/linux-2.2.14/include/linux/module.h \
+   /usr/src/linux-2.2.14/include/asm/setup.h \
+   /usr/src/linux-2.2.14/include/asm/bitops.h \
+   $(wildcard /usr/src/linux-2.2.14/include/config/apus.h) \
+   /usr/src/linux-2.2.14/include/asm/pgtable.h \
+   /usr/src/linux-2.2.14/include/asm/io.h \
+   /usr/src/linux-2.2.14/include/linux/zorro.h

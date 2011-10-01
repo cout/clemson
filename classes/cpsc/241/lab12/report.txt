@@ -1,0 +1,32 @@
+# of cities	w/ pruning	w/o pruning
+8		0.04		0.03
+9		0.34		0.17
+10		3.38		1.04
+11		37.1		3.7
+12		449.57		35.4
+
+Pruning option provides no improvement:
+ 0  1  1  1  1  1  1  1  1  1   (row 1 of distance matrix)
+ 1  0  1  1  1  1  1  1  1  1
+ 1  1  0  1  1  1  1  1  1  1
+ 1  1  1  0  1  1  1  1  1  1
+ 1  1  1  1  0  1  1  1  1  1
+ 1  1  1  1  1  0  1  1  1  1
+ 1  1  1  1  1  1  0  1  1  1
+ 1  1  1  1  1  1  1  0  1  1
+ 1  1  1  1  1  1  1  1  0  1
+ 1  1  1  1  1  1  1  1  1  0   (last row of distance matrix)
+
+
+Best case for pruning:
+ 0  1  9  9  9  9  9  9  9  9    (row 1 of distance matrix)
+ 1  0  1  9  9  9  9  9  9  9
+ 9  1  0  1  9  9  9  9  9  9
+ 9  9  1  0  1  9  9  9  9  9
+ 9  9  9  1  0  1  9  9  9  9
+ 9  9  9  9  1  0  1  9  9  9
+ 9  9  9  9  9  1  0  1  9  9
+ 9  9  9  9  9  9  1  0  1  9
+ 9  9  9  9  9  9  9  1  0  1 
+ 9  9  9  9  9  9  9  9  1  0   (last row of distance matrix)
+

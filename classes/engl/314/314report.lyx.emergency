@@ -1,0 +1,614 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 2.16
+\textclass article
+\begin_preamble
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\makeatletter
+\end_preamble
+\language default
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 0
+\paperorientation portrait
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle headings
+
+\layout Title
+
+Companies Report
+\layout Author
+
+Paul Brannan
+\layout Abstract
+
+Three companies were compared for qualities which may be important in considerin
+g a job later in life.
+ The three companies compared include Healthcare.com, Not a Number, and the
+ Automated Trading Desk.
+ I am most familiar with Healthcare.com, and Not a Number does work which
+ is in my primary field of interest.
+ ATD also does interesting work, and brings in extraordinary revenues, and
+ can therefore provide the best benefits to its employees.
+ Of the three companies, ATD seems to be the best company to work for.
+\layout Standard
+
+
+\begin_inset LatexCommand \tableofcontents{}
+
+\end_inset 
+
+
+\layout Section
+
+Executive Summary
+\layout Standard
+
+The purpose of this report was to compare three different companies and
+ evaluate them as potential employers.
+ The companies selected are actual companies for whom I am considering working.
+ These companies include Healthcare.com, Not a Number, and the Automated
+ Trading Desk.
+\layout Standard
+
+Research was done on the three companies, and information was gathered from
+ the company's website, from an Internet search engine, and from interviews
+ with employees at the company (in the case of Not a Number, this was not
+ possible).
+\layout Standard
+
+Many different criteria were evaluated.
+ Monetary benefits such as salary and stock options were considered, though
+ non-monetary benefits such as attending conferences and personal development
+ were also considered.
+ Other information, such as the products the company produces, were also
+ looked at.
+\layout Standard
+
+Though each of the three companies would be a great place to work, the Automated
+ Trading Desk was evaluated as the most elligible potential employeer.
+ ATD has the greatest benefits, and does very challenging and interesting
+ work.
+\layout Section
+
+Introduction
+\layout Standard
+
+The purpose of this report is to compare three companies for which jobs
+ may be available.
+ This is in order that, when the time comes, an objective comparison can
+ be made between the companies as to which is the best company to work for.
+\layout Standard
+
+The scope of this document is limited, as the companies being compared are
+ companies for whom I am considering working.
+ Only qualities of the company are compared; no job characteristics are
+ being considered.
+ None of the companies compared are being considered as lifelong positions.
+\layout Standard
+
+The tree companies being compared include:
+\layout Itemize
+
+Healthcare.com
+\layout Itemize
+
+Not a Number
+\layout Itemize
+
+Automated Trading Desk
+\layout Standard
+
+Healthcare.com is actually an alias for the Center for Computing and Information
+ Technology, which runs all the computer systems at the Medical University
+ of South Carolina.
+ The work done is all outsourced, and healthcare.com currently holds the
+ contract with MUSC.
+ When I previously worked for CCIT, the contract was first with Coleman
+ Research Corporation and then with Thermo Information Systems.
+ Though the contract has now been sold, the job requirements and the work
+ environment remain the same.
+\layout Standard
+
+Not A Number, which is located in Amsterdam, is famous among the graphics
+ community for Blender, their modeling and animation package.
+ Though it was crippleware (software which is crippled until the user enters
+ a special key, which costs money) during the time in which it was being
+ developed, it is now free software.
+ Though this may seem to an economist a bad business practice, providing
+ a free service to the community is a great way to get cheap (and more important
+ly, effective) advertisement; Not a Number receives over a million hits
+ to their webpage monthly.
+\layout Standard
+
+The Automated Trading Desk was started about three years ago in a garage
+ when someone got the idea to hook up a computer to a satellite feed of
+ stock market information.
+ The company has expanded to using computer models to predict the market
+ using the real-time data coming from the feed.
+ The computer models are given freedom to make stock trades by themselves,
+ and seem to do a very good job at doing so.
+ In 1999, ATD reported $3 million revenue per employee.
+\layout Section
+
+Methods
+\layout Standard
+
+To complete this job comparison, I researched information on three different
+ companies.
+ This information was gathered from three sources:
+\layout Enumerate
+
+Each company's web page 
+\layout Enumerate
+
+Entering the company's name into search engine (namely, google.com) 
+\layout Enumerate
+
+Interviews with employees at the company, if possible
+\layout Standard
+
+Some basic categories were considered:
+\layout Enumerate
+
+Expected monetary benefits 
+\layout Enumerate
+
+Expected non-monetary benefits
+\layout Enumerate
+
+Expected costs
+\layout Enumerate
+
+Other pertinent information 
+\layout Section
+
+Results
+\layout Standard
+
+The below information summarizes the advantages and disadvantages of working
+ for each of the three companies being compared.
+ Note that the salary and hiring bonus are not available from the company;
+ thus offers received and offers expected were used instead.
+ Information on whether the company allows its employees to attend conferences
+ was primarily gained from interviews with employees in the company, but
+ it is common knowledge among the graphics community that Not a Number showcased
+ Blender at SIGGRAPH in 2000.
+\layout Subsection
+
+Monetary benefits
+\layout Standard
+\LyXTable
+multicol5
+7 4 0 0 0 0 0 0
+1 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+2 1 1 "1in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+0 2 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+
+
+\newline 
+Healthcare.com
+\newline 
+Not a Number
+\newline 
+Automated Trading Desk
+\newline 
+Salary
+\newline 
+$45,000
+\newline 
+No offer received
+\newline 
+No offer received
+\newline 
+Bonus
+\newline 
+None
+\newline 
+
+\begin_inset Quotes eld
+\end_inset 
+
+
+\newline 
+
+\begin_inset Quotes eld
+\end_inset 
+
+
+\newline 
+Stock Options
+\newline 
+No
+\newline 
+Yes
+\newline 
+Yes
+\newline 
+Other Compensation
+\newline 
+Full benefits package
+\newline 
+Full benefits package
+\newline 
+Full benefits package
+\newline 
+Retirement
+\newline 
+Yes
+\newline 
+Yes
+\newline 
+Yes, vests in 3 years
+\newline 
+Personal Development
+\newline 
+Yes
+\newline 
+Yes
+\newline 
+Yes 
+\layout Subsection
+
+Non-monetary benefits
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center \LyXTable
+multicol5
+3 4 0 0 -1 -1 -1 -1
+1 1 0 0
+1 0 0 0
+1 1 0 0
+2 1 0 "1in" ""
+2 1 0 "1.75in" ""
+2 1 0 "1.75in" ""
+2 1 1 "1.75in" ""
+0 2 1 0 0 0 0 "" ""
+0 2 1 0 0 0 0 "" ""
+0 2 1 0 0 0 0 "" ""
+0 2 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+0 8 1 0 0 0 0 "" ""
+
+
+\newline 
+Healthcare.com
+\newline 
+Not a Number
+\newline 
+Automated Trading Desk
+\newline 
+Conferences
+\newline 
+Yes
+\newline 
+SIGGRAPH
+\newline 
+Yes
+\newline 
+Personal Development
+\newline 
+Yes
+\newline 
+Yes
+\newline 
+Yes
+\layout Subsection
+
+Costs
+\layout Standard
+\LyXTable
+multicol5
+2 4 0 0 0 0 0 0
+1 1 0 0
+0 1 0 0
+2 1 1 "1in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+0 8 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 8 1 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 0 "" ""
+
+
+\newline 
+Healthcare.com
+\newline 
+Not a Number
+\newline 
+Automated Trading Desk
+\newline 
+Commitment
+\newline 
+1.5 years
+\newline 
+?
+\newline 
+3 years 
+\layout Subsection
+
+Other pertinent information
+\layout Standard
+\LyXTable
+multicol5
+10 4 0 0 0 0 0 0
+1 1 0 0
+0 1 0 0
+0 1 1 0
+0 1 1 0
+0 1 1 0
+0 1 0 0
+0 1 0 0
+0 1 1 0
+0 1 0 0
+0 1 1 0
+2 1 1 "1in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+2 0 1 "1.75in" ""
+0 2 1 1 0 0 0 "" ""
+0 2 1 1 0 0 1 "" ""
+0 2 1 1 0 0 1 "" ""
+0 8 1 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 1 0 1 "" ""
+0 2 0 1 1 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 1 0 0 "" ""
+0 2 0 1 1 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 1 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 1 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 1 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 0 0 0 "" ""
+0 2 0 1 0 0 1 "" ""
+0 2 0 1 0 0 1 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 1 0 1 "" ""
+0 8 0 1 1 0 1 "" ""
+0 8 0 1 1 0 1 "" ""
+0 8 0 1 0 0 0 "" ""
+0 8 0 1 0 0 1 "" ""
+0 8 0 1 0 0 1 "" ""
+0 8 0 1 0 0 1 "" ""
+
+
+\newline 
+Healthcare.com
+\newline 
+Not a Number
+\newline 
+Automated Trading Desk
+\newline 
+Location(s)
+\newline 
+Charleston, SC
+\newline 
+Amsterdam
+\newline 
+Mt.
+ Pleasant, SC
+\newline 
+
+\newline 
+(Medical University of
+\newline 
+Eindhoven, Netherlands
+\newline 
+
+\newline 
+
+\newline 
+South Carolina)
+\newline 
+Tokyo
+\newline 
+
+\newline 
+
+\newline 
+
+\newline 
+Research Triangle Park
+\newline 
+
+\newline 
+Employees
+\newline 
+~100 in Charleston
+\newline 
+30+
+\newline 
+33
+\newline 
+Products
+\newline 
+SolutionSourcing
+\newline 
+Blender (Graphics package)
+\newline 
+Stock trading software
+\newline 
+
+\newline 
+(Health-care IT solutions)
+\newline 
+
+\newline 
+(proprietary)
+\newline 
+Field(s)
+\newline 
+Computer Science
+\newline 
+Computer Science
+\newline 
+Computer Science
+\newline 
+
+\newline 
+Electrical Engineering
+\newline 
+3D Graphics
+\newline 
+Finance/Economics
+\layout Section
+
+Conclusions
+\layout Standard
+
+The Automated Trading Desk does very interesting work, and requires very
+ extensive knowledge and experience with C++ and with the software development
+ cycle.
+ It by far offers the most interesting and challenging work of the three
+ companies.
+ I have worked for CCIT in the past before it became part of healthcare.com,
+ and am thus very familiar with the people there and with the specifics
+ of the job, namely, the internals of the computer systems which they operate.
+\layout Standard
+
+As far as benefits go, the Automated Trading Desk appears to have the greatest
+ benefits, though this is a very rough guess.
+ I have only received one salary offer, though ATD is expected to offer
+ much more.
+ I have no information on an expected salary from Not a Number.
+\layout Standard
+
+Not a Number does graphics, which is extremely interesting.
+ In fall of 1999, I took my first graphics course, and have loved the field
+ ever since.
+ A chance to work in the graphics field would be immeasurable, and could
+ be a stepping stone for getting into the movie industry.
+\layout Standard
+
+Healthcare.com has the least commitment, which would make attending graduate
+ school much easier later in my life.
+ However, the employees who work for ATD are extraordinarily bright, and
+ are likely to teach me much more than I might learn in a graduate program.
+ The same is expected of Not a Number, as they have presented their product
+ at SIGGRAPH, the largest graphics conference in the world.
+\layout Standard
+
+I am not applying for a job with Not a Number, as I feel the company has
+ not matured enough to be a good choice (though this is purely a subjective
+ evaluation).
+ As a result, I cannot select it has my top choice.
+ ATD does more interesting work than Healthcare.com, and appears to have
+ a team of programmers with whom I can learn to work; Healthcare.com also
+ has interesting people who I already know and trust.
+ However, the greater salary and benefits that ATD is expected to provide
+ is very appealing.
+ Thus, ATD is my top choice.
+\layout Bibliography
+\bibitem {1}
+
+Interview with Mike Coffman, Richard Gadsden (Healthcare.com), Nov.
+ 22, 2000.
+\layout Bibliography
+\bibitem {2}
+
+Interview with John Imholz (Healthcare.com), Dec.
+ 2, 2000.
+\layout Bibliography
+\bibitem {3}
+
+Inverview with Steve Swanson, Jonathan H.
+ Butler (ATD), Dec.
+ 1, 2000.
+\layout Bibliography
+\bibitem {4}
+
+Healthcare.com -- Employment.
+ <http://www.healthcare.com/html/employment.html#UNIX>
+\layout Bibliography
+\bibitem {5}
+
+Blender.
+ <http://www.blender.nl/>
+\layout Bibliography
+\bibitem {6}
+
+Automated Trading Desk -- Career Opportunities.
+ <http://www.atdesk.com/career.html>
+\the_end

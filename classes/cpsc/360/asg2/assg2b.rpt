@@ -1,0 +1,19 @@
+buffer size	time
+MMAP		26.68
+256		23.80
+512		23.62
+1024		22.91
+2048		23.04
+4096		23.27
+8192		23.36
+16384		23.41
+
+System: AMD K6/200 (rev. 1), RedHat Linux 5.2, Kernel 2.2.0
+
+The optimal time here is roughly 2048 bytes, twice as large as for the 486.
+This is still not equal to the Linux page size (4096 bytes).  Cache shouldn't
+be a big factor here, since the K6 has 32k L1 cache; however, since other
+programs were running in the background (irc, lynx, ftp), this could have
+reduced the effective cache size.  MMAP is still slow, but the difference
+is much smaller, possibly due to increased efficiency of the VMM in the new
+kernel, though this is merely speculation since the hardware is different.

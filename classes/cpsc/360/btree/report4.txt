@@ -1,0 +1,26 @@
+Paul Brannan
+April 15, 1999
+CPSC 360 BTree Assignment
+Report 3
+
+Changes to DBFile class:
+	Uses FileBuffer to cache data.  There should be a way to return
+	this information to the calling program to make searching even
+	faster (search the nodes in memory first).
+
+Changes to BTreeNode class:
+	Uses blockman as a block manager
+
+Changes to BTree class:
+	Uses blockman as a block manager
+	Added check for index=0 as an error condition
+
+Added BTreeDB class
+Added SecondaryIndex class
+Added main.cpp
+
+Known defects:
+	Some problem in test.cpp relating to non-unique keys.  This problem
+	is extraordinarily rare and depends heavily on the random number
+	generator.
+

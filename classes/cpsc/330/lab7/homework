@@ -1,0 +1,16 @@
+1) SPARC pipeline - fetch instruction, fetch operands, ALU operation, memory
+                    access, register write
+   WINDLX pipeline - instruction fetch, instruction decode, instruction execute,
+                     memory access, write back
+   There are no real differences between the two pipelines.  Instruction fetch
+   loads the instruction.  Instruction decode fetches the operatnds.
+   Instruction execute executes the instruction, which is the same as an ALU
+   operation.  Memory access write the result of the instruction to memory or
+   sometimes may read from memory or do nothing.  Write back is the same as
+   register write.
+
+2) The brown arrows indicate stalls due to hazards and the green arrows indicate
+   forwarding of execution due to previous stalls.
+
+   Absolute cycle 24 - 
+

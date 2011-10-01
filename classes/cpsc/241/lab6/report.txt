@@ -1,0 +1,10 @@
+1) This is so multiple items can be output even if in >> D.NameComponent is
+   false.
+
+2) These symbols are spread across multiple files; CC has no way of knowing
+   which of these files to check for multiple/undefined symbols.
+
+3) i) there are no records with the same name
+   ii) an external comparison routine is used to determine relationships
+       between two records (just as with qsort in c)
+

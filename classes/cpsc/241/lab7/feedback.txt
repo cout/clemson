@@ -1,0 +1,2 @@
+I really enjoyed this lab, but I would rather have done more work actually
+playing with the pvm than doing this silly gnuplot stuff.  

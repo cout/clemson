@@ -1,0 +1,333 @@
+# Texture maps
+ begin_textures
+ 	texture 0 wood2.ppm
+	texture 1 paw1.ppm
+	texture 2 legends.ppm
+ end_textures
+
+@define BEGIN begin_geometry
+@define END end_geometry
+
+BEGIN
+
+# Floor
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	0.27	0.12
+#	texture		0
+#	texture_mode	decal
+	begin_vertices
+		-3.0	-3.0	-3.0
+		3.0	-3.0	-3.0
+		-3.0	-3.0	3.0
+		3.0	-3.0	3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Ceiling
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+#	texture		0
+#	texture_mode	decal
+	begin_vertices
+		3.0	3.0	-3.0
+		-3.0	3.0	-3.0
+		3.0	3.0	3.0
+		-3.0	3.0	3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Back wall 1
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	0.7	0.4	0.9
+	begin_vertices
+		-3.0	3.0	-3.0
+		0.75	3.0	-3.0
+		-3.0	-3.0	-3.0
+		0.75	-3.0	-3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Back wall 2
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	0.7	0.4	0.9
+	begin_vertices
+		1.75	3.0	-3.0
+		3.0	3.0	-3.0
+		1.75	-3.0	-3.0
+		3.0	-3.0	-3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Back wood piece
+begin_mesh
+	dimension	2	2
+	subdivision	10	2
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	texture		0
+	begin_vertices
+		-3.0	-2.5	-3.0
+		3.0	-2.5	-3.0
+		-3.0	-3.0	-2.99
+		3.0	-3.0	-2.99
+	end_vertices
+	begin_texcoords
+		0.0	0.0
+		1.0	0.0
+		0.0	1.0
+		1.0	1.0
+	end_texcoords
+end_mesh
+
+# Left wall
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	begin_vertices
+		-3.0	3.0	3.0
+		-3.0	3.0	-3.0
+		-3.0	-3.0	3.0
+		-3.0	-3.0	-3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Left wood piece
+begin_mesh
+	dimension	2	2
+	subdivision	10	2
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	texture		0
+	begin_vertices
+		-3.0	-2.5	3.0
+		-3.0	-2.5	-3.0
+		-2.99	-3.0	3.0
+		-2.99	-3.0	-3.0
+	end_vertices
+	begin_texcoords
+		0.0	0.0
+		1.0	0.0
+		0.0	1.0
+		1.0	1.0
+	end_texcoords
+end_mesh
+
+# Right wall
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	begin_vertices
+		3.0	3.0	-3.0
+		3.0	3.0	3.0
+		3.0	-3.0	-3.0
+		3.0	-3.0	3.0
+	end_vertices
+#	begin_texcoords
+#		0.0	0.0
+#		1.0	0.0
+#		0.0	1.0
+#		1.0	1.0
+#	end_texcoords
+end_mesh
+
+# Right wood piece
+begin_mesh
+	dimension	2	2
+	subdivision	10	2
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	texture		0
+	begin_vertices
+		3.0	-2.5	-3.0
+		3.0	-2.5	3.0
+		2.99	-3.0	-3.0
+		2.99	-3.0	3.0
+	end_vertices
+	begin_texcoords
+		0.0	0.0
+		1.0	0.0
+		0.0	1.0
+		1.0	1.0
+	end_texcoords
+end_mesh
+
+# Poster
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	1.0	1.0	1.0
+	texture		2
+	begin_vertices
+		2.99	1.21	-1.98
+		2.99	1.21	1.98
+		2.99	-1.21	-1.98
+		2.99	-1.21	1.98
+	end_vertices
+	begin_texcoords
+		0.0	0.0
+		1.0	0.0
+		0.0	1.0
+		1.0	1.0
+	end_texcoords
+end_mesh
+
+# Light source 1 bottom
+begin_mesh
+	dimension	2	2
+	subdivision	10	10
+	emissivity	100.0	100.0	100.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+		-1.0	3.0	1.0
+		1.0	3.0	1.0
+		-1.0	2.9	-1.0
+		1.0	2.9	-1.0
+	end_vertices
+end_mesh
+
+# Light source 1 front
+begin_mesh
+	dimension	2	2
+	subdivision	10	1
+	emissivity	10.0	10.0	10.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+		-1.0	3.0	1.0
+		1.0	3.0	1.0
+		-1.0	2.9	1.0
+		1.0	2.9	1.0
+	end_vertices
+end_mesh
+
+# Light source 1 back
+begin_mesh
+	dimension	2	2
+	subdivision	10	1
+	emissivity	10.0	10.0	10.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+		1.0	3.0	-1.0
+		-1.0	3.0	-1.0
+		1.0	2.9	-1.0
+		-1.0	2.9	-1.0
+	end_vertices
+end_mesh
+
+# Light source 1 left
+begin_mesh
+	dimension	2	2
+	subdivision	10	1
+	emissivity	10.0	10.0	10.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+		-1.0	3.0	-1.0
+		-1.0	3.0	1.0
+		-1.0	2.9	-1.0
+		-1.0	2.9	1.0
+	end_vertices
+end_mesh
+
+# Light source 1 right
+begin_mesh
+	dimension	2	2
+	subdivision	10	1
+	emissivity	10.0	10.0	10.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+		1.0	3.0	1.0
+		1.0	3.0	-1.0
+		1.0	2.9	1.0
+		1.0	2.9	-1.0
+	end_vertices
+end_mesh
+
+# Lamp
+begin_mesh
+	dimension	10	10
+	subdivision	10	10
+	emissivity	0.0	0.0	0.0
+	reflectivity	0.3	0.0	1.0
+	gl_specular	0.0	1.0	0.0
+	begin_vertices
+@include "lamp1.mesh"
+	end_vertices
+end_mesh
+
+# Light 2
+begin_mesh
+	dimension	10	10
+	subdivision	5	5
+	emissivity	10.0	10.0	4.0
+	reflectivity	0.0	0.0	0.0
+	begin_vertices
+@include "lamp2.mesh"
+	end_vertices
+end_mesh
+
+# Lampshade
+begin_mesh
+	dimension	10	10
+	subdivision	0	0
+	emissivity	0.1	0.1	0.1
+	reflectivity	1.0	1.0	1.0
+	texture		1
+	begin_vertices
+@include "lamp3.mesh"
+	end_vertices
+	begin_texcoords
+#               0.0     0.0
+#               1.0     0.0
+#               0.0     1.0
+#               1.0     1.0
+@include "lampshade.tc"
+	end_texcoords
+end_mesh
+
+END

@@ -1,0 +1,137 @@
+# Scene definition filer
+# Any line that begins with '#' is a comment
+#
+# Format:
+#   Name <tank name>
+#   One of:
+#     Model <model file> |
+#     Terrain <length> <width> <crater radius> <crater height> |
+#     Box <length> <width> <height>
+#   Skin <skin file>
+#   Rotate[1|2|3] theta x y z
+#   Translate x y z
+#   Color r g b
+#
+# Begin each item definition with "NewItem"
+#
+# Note: Using a skin with an improperly-prepared md2 will result
+# in a core dump.
+
+Name Bird1
+Model bird.md2
+Translate 0.0 -14.5 -19.0
+Rotate -225.0 0.0 1.0 0.0
+Scale 1.4 1.4 1.4
+
+NewItem
+Name Bird2
+Model bird.md2
+Translate 11.0 33.0 0.5
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 90.0 1.0 0.0 0.0
+Scale 1.4 1.4 1.4 
+
+NewItem
+Name Bird3
+Model bird.md2
+Translate 0.0 -20.0 20.0
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 -90.0 1.0 0.0 0.0
+
+NewItem
+Name Column1
+Model column.md2
+Translate -27.0 -10.0 -20.0
+
+NewItem Column2
+Model column.md2
+Translate 27.0 -10.0 -20.0
+
+NewItem Column3
+Model column.md2
+Translate -27.0 -10.0 43.0
+
+NewItem Column4
+Model column.md2
+Translate -17.0 35.0 5.0
+Rotate 90.0 1.0 0.0 0.0
+
+NewItem Column5
+Model column.md2
+Translate 37.0 35.0 5.0
+Rotate 90.0 1.0 0.0 0.0
+
+NewItem
+Name Arch1
+Model arch.md2
+Translate -27.0 -10.0 -20.0
+Rotate 90.0 0.0 1.0 0.0
+
+NewItem
+Name Arch2
+Model arch.md2
+Translate -27.0 -10.0 -20.0
+Scale 1.17 1.0 1.0
+
+NewItem
+Name Arch3
+Model arch.md2
+Translate 37.0 34.0 5.0 
+Rotate1 90.0 1.0 0.0 0.0
+Rotate2 -90.0 0.0 1.0 0.0
+
+NewItem
+NameArch4
+Model arch.md2
+Translate 37.0 35.0 3.5
+Rotate 90.0 1.0 0.0 0.0 
+ 
+NewItem 
+Name FrontBox1
+box 55.0 8.0 3.0
+Translate 3.0 -26.5 -20.0
+
+NewItem
+Name FrontBox2
+box 3.0 8.0 60.0 
+Translate 32.0 2.0 -20.0
+
+NewItem FrontBox3
+box 59.0 8.0 3.0
+Translate 3.5 30 -20.0
+
+NewItem LeftBox1
+box 8.0 63.0 3.0
+Translate -27.0 -26.5 15.0
+
+NewItem LeftBox2
+box 8.0 6.0 60.0
+Translate -27.0 2.0 49.0 
+
+NewItem LeftBox3
+box 8.0 68.0 3.0
+Translate -27.0 30.0 15.0
+
+NewItem TopBox1
+box 68.0 7.5 8.0
+Translate 7.0 35.0 -14.0
+
+NewItem TopBox2
+box 3.0 68.0 8.0
+Translate -22.0 35.0 15.0
+
+NewItem TopBox3
+box 60.0 6.0 8.0
+Translate 7.0 35.0 48.0
+
+NewItem RightBox1
+box 8.0 7.5 60.0
+Translate 37.5 2.0 -14.0
+
+New Item RightBox2
+box 8.0 63.0 8.0
+Translate 0.0 0.0 0.0
+
+New Item RightBox3
+box 8.0 6.0 60.0
+Translate 37.5 2.0 49.0 

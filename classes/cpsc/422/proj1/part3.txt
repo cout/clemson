@@ -1,0 +1,77 @@
+key:
+  Ad - philosopher d arrives restaurant
+  Ld - philosopher d gets chopstick on left
+  Rd - philosopher d gets chopstick on right and can now eat
+  Td - philosopher d puts chopsticks down and thinks
+  Xd - philosopher d has solved the world's problems and goes home
+A0
+L0
+R0
+    A1
+    L1
+    R1
+        A2
+        L2
+        R2
+            A3
+            L3
+            R3
+                A4
+                L4
+                R4
+T0
+    T1
+        T2
+L0
+R0
+            T3
+                T4
+    L1
+    R1
+T0
+        L2
+        R2
+L0
+R0
+    T1
+            L3
+            R3
+T0
+                L4
+                R4
+        T2
+    L1
+    R1
+L0
+R0
+T0
+            T3
+    T1
+        L2
+        R2
+X0
+                T4
+    L1
+    R1
+            L3
+            R3
+        T2
+    T1
+                L4
+                R4
+        L2
+        R2
+    X1
+            T3
+        T2
+                T4
+            L3
+            R3
+        X2
+            T3
+                L4
+                R4
+            X3
+                T4
+                X4
+

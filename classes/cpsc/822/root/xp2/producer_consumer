@@ -1,0 +1,36 @@
+% simple producer consumer net for time trials
+p p1 1 0
+p p2 0
+p c1 1 0
+p c2 0
+p empty 5 0 1 2 3 4 
+p full 0
+p mutex 1 0 
+%
+t produce 1 3 none 0.0 0 0 
+t consume 1 3 none 0.0 0 0
+t fill 1 3 none 0.0 0 0 
+t digest 1 3 none 0.0 0 0
+%
+a p1 produce n
+a produce p2 n
+a p2 fill n
+a fill p1 n
+a c1 consume n
+a consume c2 n
+a c2 digest n
+a digest c1 n
+a empty fill n
+a consume empty n
+a mutex fill n
+a fill mutex n
+a mutex consume n
+a consume mutex n
+a fill full n
+a full consume n
+o p1
+o p2
+o c1
+o c2
+d
+

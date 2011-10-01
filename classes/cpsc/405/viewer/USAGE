@@ -1,0 +1,167 @@
+GTK+ AW Model Viewer, version 0.1
+Author: Paul Brannan
+
+Program Features:
+  - File browser and GUI provided via GTK+
+  - Object loading options
+  - Wireframe and solid object view
+  - Axis of rotation provided for orientation
+  - Hown-brewed hidden surface removal
+  - OpenGL hidden surface removal (face culling)
+  - Face normal view and sizing
+  - Vertex normal view and sizing
+  - Image scaling
+  - Eye rotation, zoom (translation), and roll
+  - Object rotation and translation
+  - Scene rotation
+  - Rotation via trackball/quaternion code
+  - Status display and percentage display
+  - Multiple object scenes
+  - Object selection and highlighting
+  - Tear-off menu, toolbar, view, and controls
+  - Pseudo-multiple window support
+  - Orientation view for determining "up"
+  - Scene lighting
+  - Smooth and flat shading
+  - Texture mapping
+  - Optimized display via load-time calculations and display lists
+  - Save object feature
+  - Creation of spline curves
+  - Rotation of spline curves to create curved models
+  - Particle system with motion trail and collision detection
+
+Program requirements:
+  - Unix machine with OpenGL support
+  - Mouse
+
+User guide:
+
+When the viewer starts you will see a window similar to the one below:
+
++-----------------------------------------------------------------------+
+| File  Edit  Object  Options  Particle System                          |
++----+------+------+-------+------+-------------------------------------+
+| O  |  []  |  []  |  ][   ||    G    |  -   |   ?   ||  X   |
+|New | Load | Save | Clear || Animate | Stop | Reset || Quit |          |
++----+------+------+-------+------+-----------------\------\------\-----+
+|                                                   | Object\ Scene\ <> |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   +-------------------+
+|                                                   | Image Scale       |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   +-------------------+
+|                                                   | Orientation View  |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
+|                                                   |                   |
++-----------------------------------------------------------------------+
+|                                                                       |
++-----------------------------------------------------------------------+
+
+The menu bar is at the top, the toolbar below that, and the controls and
+orientation display are at the right.  The black box in the middle is the
+view window, and the yellow bars you see are your axes.  The bar at the
+bottom is the status bar, which will display important information
+throughout your use of the program.
+
+To start off, load an object.  This can be done by selecting either File...Load
+or by clicking on the Load icon.  Highlight the file you wish to load, and
+select okay.
+
+You have many options for manipulating the camera, object, and scene.  This is
+all done using the notepad at the upper right of the window.  You can select
+which mouse buttons perform which functions.  Only the left buttons and middle
+buttons are remappable, however, since the right mouse button is reserved for
+future use.  Use the arrows in the corner of the notebook to "flip through" the
+pages to get different options for manipulations.  Your options include:
+  - Rotate eye: this will rotate the camera about its current position
+  - Zoom eye: this will translate the camera forward and backward.
+  - Roll eye: this will "roll" the camera to the left and to the right
+  - Rotate object: this will rotate an object about its center
+  - Move XZ object: this will move an object along the scene's XZ axis
+  - Move XY object: this will move an object along the scene's XY axis
+  - Rotate scen: this will rotate the entire scene and it's axes about the
+    origin.
+
+Use the above objects by selecting an option and clicking and dragging the
+mouse in the view window.  Note that as the axes of the scene move, so do
+the axes of the orientation view.  This allows you to determine which way
+your scene is tilted, even when the axes are out of view.
+
+If you load multiple objects, you can manipulate different objects by
+selecting different objects.  This is done with either +/- or ] and [.
+Currently there is no point-and-click object selection implemented.  You
+can tell which object is currently selected, because it's vertices will be
+drawn in green.  If there is no object selected, all objects will be drawn
+in white.
+
+There are also many options for viewing the scene.  All these are selected
+from the options menu.  Available options include:
+  - Wireframe on/off: switches between wireframe and solid view
+  - Axes on/off: turns the yellow axes on and off
+  - Hidden surface removal: the home-brewed way
+  - Hidden surface removal: the OpenGL way
+  - Face normals on/off: turns face normals on and off
+  - Vertex normals on/off: turns vertex normals on and off
+  - Lighting on/off: turns lighting on and off
+
+Additionally, there are a few options for manipulating objects.  These are
+available from the object menu.  Included among these are:
+  - Invert normals (not yet automatic)
+  - Object color
+  - Bind texture (doesn't work with gif files, only handles some jpgs)
+  - Select object - gives you a hand pointer to select an object onscreen
+  - Create curved model - brings up a dialog from which splines and curved
+    models can be created.
+  - Save object - save the object to disk.
+
+Once you have loaded an object and have turned normals on, you can manipulate
+the size of the normals using the scales at the right center.  Image scale
+changes the scale of the entire scene.  Face normal scale and vertex normal
+scale change the scale of the face and vertex normals, respectively.  The
+default scale is 1.0.
+
+To create a curved model, select Object..Create curved model.  Control points
+can be created simply by clicking on the grid; already existing points can
+be moved by clicking and dragging them around with the mouse.  To see what
+spline curve the control points represent, click on the "show spline curve"
+button.  To create a 3D model by rotation, click on the "sweep" button.
+Note that this will erase the currently selected object and replace it with
+the new 3D model; to avoid this, deselect the currently selected object with
+the object selection feature (select a black space on the screen), or use the
++/- keys.
+
+Also note that to save an object, you must use the Object..save object menu
+item, as the File...Save menu is for scenes, and scene files have not yet
+been implemented.
+
+To create a particle system, do the following:
+	1) Go to the particle system menu, and select "Settings".
+	2) Turn on or off all the settings you want
+	3) Load one or more objects as described above.
+	4) Click on the Animate button on the toolbar to start the system.
+	5) The stop button will pause the system
+	6) The reset button will mark all particles as dead so that they
+	   will reappear at the position specified in the settings dialog.
+
+Note that the system is not a perfect system, but uses approximations in
+order to gain a little bit of speed.  There are no bounding boxes or bounding
+spheres, as these sacrifice far too much accuracy for a small amount of
+speed.  If this project were to be fully completed, the octtree code in
+misc/blocklist.c would be implemented.
+
+That should just about do it; anything else should be roughly self
+explanatory.  Have fun!

@@ -1,0 +1,29 @@
+/* XPM */
+static char *tb_comment[] = {
+/* width height num_colors chars_per_pixel */
+"    17    17      4            1",
+/* colors */
+"  c None",
+"X c #000000",
+". c #ffffff",
+"o c #ff0000",
+/* pixels */
+"         XXXX    ",
+"       XX....XX  ",
+"      XX......XX ",
+"      XX..o.o.XX ",
+"     XX..oo.o..XX",
+"     XX........XX",
+"     XX........XX",
+"     X..oo.oo..XX",
+"     X.oo..o...XX",
+"     X........XX ",
+"     X.......XX  ",
+"    X.......XX   ",
+"   X.....XXX     ",
+"  X...XXX        ",
+" X..XX           ",
+"XXXXX            ",
+"XX               ",
+"                 "
+};

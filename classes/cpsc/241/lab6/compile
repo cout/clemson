@@ -1,0 +1,1 @@
+CC -I/u3/cs241/lib2 main.c datarec.c /u3/cs241/lib2/stringClass.c

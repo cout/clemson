@@ -1,0 +1,37 @@
+Assignments 4 and 5
+Paul Brannan
+CPSC 360, Spring 1999
+Notes
+
+A seek is always performed after every read_rec operation.  This is probably
+unnecessary, but it ensures that the file offset pointers is at the end of the
+record after the read operation.  Correct procedure would probably be to buffer
+the data that has already been read.
+
+The database does not shrink if the last record is deleted.  Perhaps it should,
+or perhaps this would be part of a "compact" operation.  Allocating space on
+disk early helps to ensure that the file is contiguous.
+
+The results:
+
+[cout@ducttape tmp]$ ./insdel
+Using a best fit placement policy.
+Total number of bytes in records: 1780327
+Total number of bytes in free space: 44867
+Total file size: 1825194
+Percent utilization: 97%
+
+Writing record list to data.out
+
+[cout@ducttape tmp]$ ./insdel -w
+Using a worst fit placement policy.
+Total number of bytes in records: 1782192
+Total number of bytes in free space: 204446
+Total file size: 1986638
+Percent utilization: 89%
+
+Writing record list to data.out
+
+Best fit appears to be slightly better.  This may be misleading, though.  I
+suspect that most of the free space under worst fit is at the end of the file.
+

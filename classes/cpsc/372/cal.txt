@@ -1,0 +1,39 @@
+Products to look at:
+	Netscape Calendar
+	Calendrome
+	Calendar Quick
+	OpenTime
+	EnterpriseWeb Calendar
+	Ical (Linux)
+	plan (Linux)
+	Synchronize (Linux)
+
+Calendrome:
+	encrypted transmissions
+	automatic email reminders
+	searching capability
+	hosted offsize -- allows automatic software update
+	user and group access control
+	html templates
+	restricted access via passwords/encryption
+
+Netscape Calendar:
+	LDAP support
+	Goals in mind:
+		performance
+		scalability
+		cross-platform support for both client and server
+		native, open-standards support for messaging, web, directory,
+			and calendaring applications
+		support for remote, disconnected, and mobile users
+		sophisticated access control for viewing and modification
+	web-based administrative interface
+
+Calendar Eval Guide (http://tyr.gge.unb.ca/Servers/CalendarEvalGuide.html):
+	layout should be based on personal preferences
+	no wide-spread acceptance of calendars because of lack of open standards
+	offline/mobile user support important
+	viewing and modification access for assistants
+	versatile printing support
+	tools for managing team calendaring and scheduling
+

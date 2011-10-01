@@ -1,0 +1,268 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 
+0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }{PSTYLE "Title" 0 18 1 {CSTYLE "" -1 -1 "" 1 18 
+0 0 0 0 0 1 1 0 0 0 0 0 0 }3 0 0 -1 12 12 0 0 0 0 0 0 19 0 }{PSTYLE "A
+uthor" 0 19 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 
+0 -1 8 8 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 18 "" 0 "" {TEXT -1 25 "MTHSC 206 Maple Project 2
+" }}{PARA 19 "" 0 "" {TEXT -1 16 "Foul Shooting II" }}{PARA 19 "" 0 "
+" {TEXT -1 12 "Paul Brannan" }}{PARA 0 "" 0 "" {TEXT -1 252 "Many, if \+
+not most, basketball players apply back-spin to the ball when shooting
+.  The purpose of this project is to determine whether this is really \+
+an effective method of increasing the chances of getting the ball into
+ the basket with an all-net shot." }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{PARA 0 "" 0 "" {TEXT -1 31 "Some initial value information:" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 42 "The initial height of the ball is \+
+7'4\", or" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "z0 := 7+4/12;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#z0G#\"#A\"\"$" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 59 "The third, fourth, and sixth integers in my studen
+t ID are:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "alpha := 0; beta := 6;
+ epsilon := 5;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG\"\"!" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%betaG\"\"'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%(epsilonG\"\"&" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+52 "Theta, in radians, is the intial angle for the ball:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 65 "pi := 3.14159; theta := (50 + alpha + beta/10
+)*2*pi/360; g := 32;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#piG$\"'fTJ!
+\"&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&thetaG$\"+c&e8$))!#5" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"gG\"#K" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 84 "S is the magnitude of the spin acceleration on the ball; \+
+c is an empirical constant:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "S :=
+ 4+epsilon/10; c := 0.05;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"SG#\"
+\"*\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"cG$\"\"&!\"#" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "miny := 13.398; maxy := 14.1
+02;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%minyG$\"&)R8!\"$" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%%maxyG$\"&-T\"!\"$" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 43 "We first consider the case of no back-spin:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 72 "with(linalg):\nvel := vector(3, [0,
+ v0*cos(theta), v0*sin(theta) - g*t]);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$velG-%'VECTORG6#7%\"\"!,$%#v0G$\"+'*3JZj!#5,&F+$\"++5LFxF.%\"
+tG!#K" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 77 "Displacement is the inte
+gral of velocity with an initial value of [0, 0, z0]." }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 60 "disp := vector(3, [0, int(vel[2], t), z0 + int(v
+el[3], t)]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dispG-%'VECTORG6#7%
+\"\"!,$*&%\"tG\"\"\"%#v0GF-$\"+'*3JZj!#5,(#\"#A\"\"$F-F+$\"++5LFxF1*$F
+,\"\"#$!#;F)" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 95 "To find the range
+ of velocities, we first solve for the time at which the ball reaches \+
+10 feet." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "time10 := solve(disp[3]
+ = 10, t);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'time10G6$,&%#v0G#\"(J
+ts(\"*+++?$*$,&*$F'\"\"#\"0\\?X*z/u`!3+++++++O:\"\"\"#F1F.#F1\"*+++g*,
+&F'F(F+#!\"\"F4" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 252 "And then subs
+titute the larger value into the displacement equation in the j direct
+ion (going toward the basket).  We use the larger of the two values, s
+ince the smaller one is the time at which the ball is going up, and ha
+s not yet reached the basket." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "eq
+nj := subs(t = time10[1], disp[2]);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6
+#>%%eqnjG,$*&,&%#v0G#\"(Jts(\"*+++?$*$,&*$F(\"\"#\"0\\?X*z/u`!3+++++++
+O:\"\"\"#F2F/#F2\"*+++g*F2F(F2$\"+'*3JZj!#5" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 21 "plot(eqnj, v0=0..50);" }}{PARA 13 "" 1 "" 
+{INLPLOT "6%-%'CURVESG6$7E7$\"\"!F(7$%%FAILGF*7$$\"+<t,m<!\")$\"+1;Eih
+!\"*7$$\"1+++Ho`@=!#9$\"19C(=;Z)yp!#:7$$\"1+++Tj0x=F5$\"1ok')\\g\"ou(F
+87$$\"1+++#pW`(>F5$\"1Y&))HjUS2*F87$$\"1+++\"f#=$3#F5$\"1WFASEz`5F57$$
+\"1+++t(pe=#F5$\"1I,'Gyrl>\"F57$$\"1+++uI,$H#F5$\"1zL\">%3N]8F57$$\"1+
+++rSS\"R#F5$\"1kFm&H#\\'\\\"F57$$\"1+++`?`(\\#F5$\"1gB#fD.)f;F57$$\"1+
++++#pxg#F5$\"1t`L,\\&f$=F57$$\"1+++g4t.FF5$\"12F6Y#e[*>F57$$\"1+++!Hst
+!GF5$\"1d;j!*ySs@F57$$\"1+++ERW9HF5$\"1G)*>!H!RiBF57$$\"1+++KE>>IF5$\"
+1himVkwaDF57$$\"1+++#RU07$F5$\"1H\"QzB#3ZFF57$$\"1+++?S2LKF5$\"1Y4laIy
+nHF57$$\"1+++$p)=MLF5$\"1d#HC!ebsJF57$$\"1+++*=]@W$F5$\"16o!)pO(zR$F57
+$$\"1+++]$z*RNF5$\"1Wa%>5+$3OF57$$\"1+++kC$pk$F5$\"1ufJBh&[%QF57$$\"1+
+++3qcZPF5$\"1Dd#QhdP2%F57$$\"1+++/\"fF&QF5$\"14S%)Rwe>VF57$$\"1+++0Ogb
+RF5$\"1%*yUf\\UmXF57$$\"1+++nAFjSF5$\"1I%fW9G<$[F57$$\"1+++&)*pp;%F5$
+\"1:<Z7P\"R4&F57$$\"1+++ye,tUF5$\"1)zT&))z!)o`F57$$\"1+++fO=yVF5$\"1[D
+N]P>[cF57$$\"1+++E>#[Z%F5$\"1B:&z)e'3\"fF57$$\"1+++(G!e&e%F5$\"1&)*\\
+\\)[#*=iF57$$\"1+++&)Qk%o%F5$\"1zaNw+!3]'F57$$\"1+++UjE!z%F5$\"1wPp!oQ
+z!oF57$$\"1+++60O\"*[F5$\"1iYe=CH3rF57$$\"#]F($\"1&eV1GD!QuF5-%'COLOUR
+G6&%$RGBG$\"#5!\"\"F(F(-%+AXESLABELSG6$%#v0G%!G-%%VIEWG6$;F(Fju%(DEFAU
+LTG" 2 319 319 319 2 0 1 0 2 9 0 4 2 1.000000 45.000000 45.000000 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 106 "The minimum velocity where the ball can \+
+reach the basket is when the center of the ball is at 13.398 feet." }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "v0_min := fsolve(eqnj = miny, v0=0.
+.50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'v0_minG$\"+d1y&G#!\")" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 39 "The maximum velocity is at 14.102 \+
+feet." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "v0_max := fsolve(eqnj = ma
+xy, v0=0..50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'v0_maxG$\"+?!3PL#
+!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "v0_range := v0_max \+
+- v0_min;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)v0_rangeG$\")jt#z%!\")
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 20 "Now, with back-spin:" }}
+{PARA 0 "" 0 "" {TEXT -1 120 "The acceleration on the ball when back-s
+pin is applied is c(S x v).  Doing a little math shows that the accele
+ration is:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 77 "accbs := vector(3, [0
+, -c*S*(v0*sin(theta) - g*t), (c*S*v0*cos(theta) - g)]);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%&accbsG-%'VECTORG6#7%\"\"!,&%#v0G$!+v%\\'Q<!#5
+%\"tG$\"+++++s!\"*,&F+$\"+_\\9G9F.!#K\"\"\"" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 179 "The velocity is the integral of acceleration, with ini
+tial vector value v0.  Breaking v0 into components yields [0, v0*cos(t
+heta), v0*sin(theta)].  Thus, the velocity is given by:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 92 "velbs := vector(3, [0, int(accbs[2], t) + v0*c
+os(theta), int(accbs[3], t) + v0*sin(theta)]);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%&velbsG-%'VECTORG6#7%\"\"!,(*&%\"tG\"\"\"%#v0GF-$!+v%
+\\'Q<!#5*$F,\"\"#$\"+++++O!\"*F.$\"+'*3JZjF1,&*&,&F.$\"+_\\9G9F1$!#KF)
+F-F-F,F-F-F.$\"++5LFxF1" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 83 "The di
+splacement is the integral of acceleration, with initial value at [0, \+
+0, z0]." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "dispbs := vector(3, [0, \+
+int(velbs[2], t), z0 + int(velbs[3], t)]);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%'dispbsG-%'VECTORG6#7%\"\"!,(*&%#v0G\"\"\"%\"tG\"\"#$
+!+vtC$p)!#6*$F.\"\"$$\"+++++7!\"**&F.F-F,F-$\"+'*3JZj!#5,(#\"#AF4F-*&,
+&F,$\"+_\\9G9F;$!#KF)F-F-F.F/$\"+++++]F;F8$\"++5LFxF;" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 63 "Again, we solve for the time at which the
+ ball reaches 10 feet." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "time10bs \+
+:= solve(dispbs[3] = 10, t);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%)tim
+e10bsG6$,$*&,&%#v0G\"*dVbN&!-+++++7\"\"\"!\"\",&F)!)$*>=B*$,(*$F)\"\"#
+\"0\\?X*z/u`F)\"0++'pd4bo!3+++++++O:F,#F,F3F,F,\"$D\",$*&F(F-,&F)F/F0F
+-F,F8" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 79 "We substitute the larger
+ of the two time values into the displacement equation:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 43 "eqnjbs := subs(t = time10bs[2], dispbs[2]);" }
+}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'eqnjbsG,(*(%#v0G\"\"\",&F'\"*dVbN&
+!-+++++7F(!\"#,&F'!)$*>=B*$,(*$F'\"\"#\"0\\?X*z/u`F'\"0++'pd4bo!3+++++
+++O:F(#F(F2!\"\"F2$!+-*>$e8!\"'*&F)!\"$F-\"\"$$\"+++vVBF<*(F)F7F-F(F'F
+($\"+?'QT$z!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "plot(eqn
+jbs, v0=0..50);" }}{PARA 13 "" 1 "" {INLPLOT "6%-%'CURVESG6$7D7$$\"+b/
+cq;!\")$\"+Zj.Ya!\"*7$$\"1+++')))G=<!#9$\"1?p^7N+Ai!#:7$$\"1+++<t,m<F1
+$\"1$*H,a'Q1#pF47$$\"1+++Tj0x=F1$\"1s1#HLY5Z)F47$$\"1+++#pW`(>F1$\"1ax
+%f(G)Q%)*F47$$\"1+++\"f#=$3#F1$\"1`1LX\\AR6F17$$\"1+++t(pe=#F1$\"1q\"H
+el5CH\"F17$$\"1+++uI,$H#F1$\"1w6Y>V<f9F17$$\"1+++rSS\"R#F1$\"1JP&\\-x!
+>;F17$$\"1+++`?`(\\#F1$\"1'>lU**=#*z\"F17$$\"1++++#pxg#F1$\"1C=PD86&*>
+F17$$\"1+++g4t.FF1$\"1o:62,;t@F17$$\"1+++!Hst!GF1$\"1CR#yI[NP#F17$$\"1
++++ERW9HF1$\"1v2nuuh*e#F17$$\"1+++KE>>IF1$\"1sZ)H7;,\"GF17$$\"1+++#RU0
+7$F1$\"11o\"4YVA.$F17$$\"1+++?S2LKF1$\"1]D1#GM#*G$F17$$\"1+++$p)=MLF1$
+\"1i`$*)=f'HNF17$$\"1+++*=]@W$F1$\"1\\\\=k&Hlz$F17$$\"1+++]$z*RNF1$\"1
+0o1%*QiZSF17$$\"1+++kC$pk$F1$\"1wNg2_XKVF17$$\"1+++3qcZPF1$\"11X&QKG0h
+%F17$$\"1+++/\"fF&QF1$\"1<fDu=)=\"\\F17$$\"1+++0OgbRF1$\"1j!3v@Ft@&F17
+$$\"1+++nAFjSF1$\"10QR**4&)[bF17$$\"1+++&)*pp;%F1$\"1r6.!y0)zeF17$$\"1
++++ye,tUF1$\"1[$4C/./B'F17$$\"1+++fO=yVF1$\"1%z%4G3c!f'F17$$\"1+++E>#[
+Z%F1$\"1d<s\\1vKpF17$$\"1+++(G!e&e%F1$\"1;+)oBe&QtF17$$\"1+++&)Qk%o%F1
+$\"15yXXU>9xF17$$\"1+++UjE!z%F1$\"1BC5&R%GG\")F17$$\"1+++60O\"*[F1$\"1
+Po*[%f9Q&)F17$$\"#]\"\"!$\"1h+j2<\"Q**)F1-%'COLOURG6&%$RGBG$\"#5!\"\"F
+]vF]v-%+AXESLABELSG6$%#v0G%!G-%%VIEWG6$;F]vF[v%(DEFAULTG" 2 319 319 
+319 2 0 1 0 2 9 0 4 2 1.000000 45.000000 45.000000 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 1 0 0 0 4 41 0 0 0 0 0 0 }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 69 "The minimum and maximum possible velocities are given jus
+t as before:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "v0_minbs := fsolve(
+eqnjbs = miny, v0=0..50);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)v0_min
+bsG$\"+VO!o@#!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "v0_max
+bs := fsolve(eqnjbs = maxy, v0=0..50);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%)v0_maxbsG$\"+K1/iA!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 34 "v0_rangebs := v0_maxbs - v0_minbs;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%+v0_rangebsG$\")*)pBX!\")" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 41 "timewo := subs(v0 = v0_minbs, time10[1]);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%'timewoG$\"+w&fc\"))!#5" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 88 "A feeble last-minute attempt at a 3d plot of ve
+rtical displacement vs. time and velocity" }{TEXT -1 0 "" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 47 "plot3d(disp[2], t = 0..timewo, v0 = 0..v0_min
+);" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{PARA 13 "" 1 "" {INLPLOT "6$-%%
+GRIDG6%;\"\"!$\"+w&fc\"))!#5;F'$\"+d1y&G#!\")7;7;F'F'F'F'F'F'F'F'F'F'F
+'F'F'F'F'F'F'F'F'F'F'F'F'F'F'7;F'$\"1<iWN+`?A!#<$\"1LC*32g5W%F4$\"1]'Q
+j5!fhmF4$\"1m[yT,7#)))F4$\"13Js<]E56!#;$\"1IxE@!=BL\"F=$\"1^B\"[-rVb\"
+F=$\"1tpNGSUw<F=$\"1&f,>.x%)*>F=$\"1;iWN+`?AF=$\"1P3**QIeUCF=$\"1fa`Ug
+jkEF=$\"1\"3!3Y!*o')GF=$\"1.Zi\\?u3JF=$\"1C$pJ0&zILF=$\"1YRrc![Gb$F=$
+\"1n&e-1,\\x$F=$\"1*=.Q1ap*RF=$\"16yMnq+>UF=$F6F=$\"1bqVuI6jYF=$\"1x;)
+z2m^)[F=$\"1*HE:3>s5&F=$\"1@42&3s#H`F=7;F'F5F9F>FB$F3F=$\"1ga`UgjkEF=F
+NFRFV$\"1KC*32g5W%F=$\"1v;)z2m^)[F=$\"1>42&3s#H`F=$\"1i,;#4yLx&F=$\"10
+%\\#*4%[<iF=$\"1Z'Qj5!fhmF=$\"1#*yU8hp0rF=$\"1Mr^?@!)\\vF=$\"1yjgF\"3R
+*zF=$\"1AcpMT,Q%)F=$F:F=$\"14T()[hAE$*F=$\"1aL'f:K.x*F=$\"1g_I;QW@5!#:
+$\"1%=9qTae1\"F\\q7;F'F7F>FDF_o$\"1D$pJ0&zILF=$\"1!>.Q1ap*RF=Fen$\"1?4
+2&3s#H`F=$\"1%y/d4Ja*fF=$F8F=$\"18D(p6\\xK(F=Fap$\"1V-CQr1g')F=$\"12T(
+)[hAE$*F=$\"1sz]f^Q#***F=F]q$\"1qv2=.ZK6F\\q$\"1d49>i3*>\"F\\q$\"1VV??
+@ql7F\\q$F?F\\q$\"1<6LAR$*)R\"F\\q$\"1.XRB)\\bY\"F\\q$\"1!*yXCd;K:F\\q
+$\"1w7_D;y)f\"F\\q7;F'F9FBF_oFRFZFdqFioF]pFap$\"1k[yT,7#)))F=$\"1\\L'f
+:K.x*F=F]q$\"1K?V=cna6F\\q$\"1\"))\\)>o\\V7F\\q$\"1HxE@!=BL\"F\\q$\"1y
+boA#R6U\"F\\q$\"1FM5C/'*4:F\\qF^s$\"1C\"Rp#Gg(o\"F\\q$FCF\\q$\"1A[xH_C
+l=F\\q$\"1rE>Jk1a>F\\q$\"1>0hKw)G/#F\\q$\"1o$GS$)3<8#F\\q7;F'F;F^oF`qF
+Z$\"1Tbh)3D8b&F=Fhq$\"1c<1C^&=x(F=FasF_r$F<F\\q$\"1>a\\>:H@7F\\qFis$\"
+1S+/BXMV9F\\q$FAF\\q$\"1iYeEvRl;F\\qFat$\"1$GH,`]u)=F\\q$\"1%f,>.x%)*>
+F\\q$\"10RnLN]4@F\\q$FGF\\q$\"1F&=s`c:L#F\\q$\"1R3**QIeUCF\\q$\"1\\JwS
+&4Ob#F\\q$F`oF\\q7;F'F>F_oFVFdqFhqFapF]rF]qFcrFis$\"1-XRB)\\bY\"F\\q$
+\"1v7_D;y)f\"F\\q$\"1[![wU8?t\"F\\q$\"1@[xH_Cl=F\\qFiu$\"1n$GS$)3<8#F
+\\q$\"1S^:O1%\\E#F\\q$\"18>GQC<)R#F\\q$\"1(o3/C/9`#F\\qFdv$\"1LAmWy'yz
+#F\\q$\"11!*yY'*4JHF\\q$\"1zd\"*[9LkIF\\q$\"1`D/^Kc(>$F\\q7;F'$\"1_B\"
+[-rVb\"F=FNFen$\"11%\\#*4%[<iF=$\"1e<1C^&=x(F=Ffp$\"1Y'otrf!)3\"F\\qFg
+s$\"1;6LAR$*)R\"F\\qFdu$\"1'e$HF\"3)4<F\\qF\\w$\"1dgDKBo??F\\q$\"1#HPZ
+V>h<#F\\qF^v$\"1i(*pRO*p[#F\\q$\"1(*4=U2VUEF\\q$\"1KAmWy'yz#F\\q$\"1nM
+9Z\\I`HF\\q$FOF\\q$\"1Qf5_\"zTE$F\\q$\"1ureaih>MF\\q$\"14%oqN`]d$F\\q$
+\"1X'\\&f/\\IPF\\q7;F'FBFRFdq$\"1$*yU8hp0rF=FepF]qFgsF[tF^sFat$\"1qE>J
+k1a>F\\qF^w$\"1lS'oB^$4BF\\qF_y$FKF\\q$\"1d6PX%yA%GF\\q$\"1ao?[3#*>IF
+\\q$\"1^D/^Kc(>$F\\q$\"1\\#yQl0_P$F\\q$FSF\\q$\"1W'\\&f/\\IPF\\q$\"1U`
+QiG83RF\\q$\"1R5Al_x&3%F\\q$\"1Pn0owTjUF\\q7;F'FDFVFfqFap$\"1vz]f^Q#**
+*F=FcrFgxF^s$\"1N9rG$H')z\"F\\qFiu$\"1a<4NZK)>#F\\qFbw$\"1t?ZT,-)f#F\\
+qFcy$\"1#R_ya:x*HF\\qF\\[l$\"15FBa4T(R$F\\q$\"1qGUd'esf$F\\q$\"1IIhgj5
+(z$F\\q$FcqF\\q$\"1]L*pw,o>%F\\q$\"14N=q%\\mR%F\\q$\"1pOPtr\\'f%F\\q$
+\"1HQcw[M'z%F\\q7;F'F^oFZFhqFepF_uFgrFduFatFiuF]v$\"1Q3**QIeUCF\\qFgz$
+FMF\\q$\"1-Zi\\?u3JF\\q$FQF\\q$\"1XRrc![Gb$F\\q$\"1m&e-1,\\x$F\\q$FWF
+\\q$\"15yMnq+>UF\\q$F6F\\q$FfnF\\q$FhnF\\q$\"1)HE:3>s5&F\\q$F\\oF\\q7;
+F'$Fe]lF=$\"1w;)z2m^)[F=Fiq$\"1_L'f:K.x*F=F`uFjrFixFczF^\\lFd]l$\"1A**
+)GMToo#F\\q$\"10!*yY'*4JHF\\q$\"1*3)o]zNvJF\\q$\"1sreaih>MF\\q$\"1ci[e
+X(Qm$F\\q$\"1S`QiG83RF\\q$\"1BWGm6R_TF\\q$\"12N=q%\\mR%F\\q$\"1#f#3ux!
+4k%F\\q$Fj^lF\\q$\"1f2)=QC%H^F\\q$\"1W)zdo#ot`F\\q$\"1G*y'*)4%zh&F\\q$
+\"18!yNH*>ieF\\q7;F'F_oFdqFapF]qFgrF^sF\\wF^wFbwFgzF__lF\\[l$\"1'4'Hbo
+-kMF\\q$\"1U'\\&f/\\IPF\\qF^^l$\"1Mn0owTjUF\\q$\"1\"G5BF\"))HXF\\q$\"1
+EQcw[M'z%F\\q$\"1tt\"3[3G1&F\\q$FeqF\\q$\"1mWK*oNdf&F\\q$\"16!yNH*>ieF
+\\q$\"1f:$y*GmGhF\\q$\"10^3-l7&R'F\\q7;F'FLFgoF[rFes$\"1T+/BXMV9F\\q$
+\"1\\![wU8?t\"F\\qF[yFezF`\\lFf]lFa_lFi`l$\"10T!*fdp_PF\\q$\"18@^kYOTS
+F\\q$\"1@,7pN.IVF\\q$\"1H\"GPZ-(=YF\\q$\"1PhLy8P2\\F\\q$\"1XT%HGSg>&F
+\\q$\"1`@b(=4Z[&F\\q$FhoF\\q$\"1s\"on*p/igF\\q$\"1zhP,fr]jF\\q$\"1)=%)
+f![QRmF\\q$\"1'>#f5P0GpF\\q7;F'FNFaxFfpFgs$F`xF\\qFbtF]yF_yFcyFg]l$\"1
+treaih>MF\\q$\"1V'\\&f/\\IPF\\q$\"19@^kYOTSF\\q$\"1%eu%p)QAN%F\\q$\"1a
+qVuI6jYF\\q$\"1C&*Rzs)R(\\F\\q$\"1$*>O%[h[G&F\\q$\"1lWK*oNdf&F\\q$\"1N
+pG%*)4m!fF\\q$\"12%\\#*4%[<iF\\q$\"1x=@/$e$GlF\\q$\"1[V<4DBRoF\\q$\"1=
+o89n5]rF\\q$\"1*G*4>4)4Y(F\\q7;F'F`q$\"1^'Qj5!fhmF=Fj[lFgr$\"1jYeEvRl;
+F\\q$FEF\\qF^vFdvFb\\lFi]l$\"1di[eX(Qm$F\\qF^^l$\"1A,7pN.IVF\\qFddl$\"
+1')RvzD>'*\\F\\q$\"1=42&3s#H`F\\q$\"1^yQ!f^Bm&F\\q$FgqF\\q$\"1;<-,1^Gj
+F\\q$F8F\\q$\"1$eb;hpY*pF\\q$\"1;D(p6\\xK(F\\q$\"1]%*GA'G3m(F\\q$\"1#Q
+1w73R*zF\\q7;F'$\"1ZRrc![Gb$F=$\"1%*yU8hp0rF=F]q$\"1zboA#R6U\"F\\qFatF
+ht$\"1j(*pRO*p[#F\\qFhz$\"1_D/^Kc(>$F\\qF`[l$\"1T`QiG83RF\\q$\"1On0owT
+jUF\\q$\"1I\"GPZ-(=YF\\qFfdlFeal$\"19Bu!*ob%o&F\\q$\"13PT'pT)RgF\\q$\"
+1/^3-l7&R'F\\q$\"1*\\cxI6/v'F\\q$FhglF\\qFfel$\"1&oqZsli\"yF\\q$\"1z?W
+I0br\")F\\q$\"1vM6O`$o_)F\\q7;F'$\"1p&e-1,\\x$F=$\"1Pr^?@!)\\vF=$\"1rv
+2=.ZK6F\\qF]t$\"1%GH,`]u)=F\\q$\"1T^:O1%\\E#F\\q$\"1)*4=U2VUEF\\qFjz$
+\"17FBa4T(R$F\\q$\"1o&e-1,\\x$F\\q$\"1DWGm6R_TF\\qF_al$\"1RhLy8P2\\F\\
+q$\"1%*>O%[h[G&F\\q$\"1_yQ!f^Bm&F\\q$\"14PT'pT)RgF\\q$\"1l&RC!=L<kF\\q
+$\"1CaY3>#[z'F\\q$\"1\"G\"\\9?JsrF\\q$FhilF\\q$\"1&*HaEAHFzF\\q$\"1a)o
+DL#y/$)F\\q$\"15ZfQCF#o)F\\q$\"1o0iWDwf!*F\\q7;F'$\"1\">.Q1ap*RF=$Fcgl
+F=FcrF^sF]fl$\"1:>GQC<)R#F\\q$\"1MAmWy'yz#F\\qF\\x$\"1rGUd'esf$F\\qFj
+\\lF]]l$\"1GQcw[M'z%F\\q$\"1YT%HGSg>&F\\qFfalFhflFihl$\"1BaY3>#[z'F\\q
+$\"1Vd%[J<X>(F\\q$\"1jgA@F@%f(F\\qFbgl$\"1,n)R`.OR)F\\q$\"1AqOS*)H$z)F
+\\q$\"1TtuYV*H>*F\\q$\"1iw7`(*o#f*F\\q7;F'$\"18yMnq+>UF=$\"1DcpMT,Q%)F
+=$\"1WV??@ql7F\\q$\"1D\"Rp#Gg(o\"F\\q$\"12RnLN]4@F\\qFdw$\"1pM9Z\\I`HF
+\\q$\"1]#yQl0_P$F\\q$\"1JIhgj5(z$F\\q$\"17yMnq+>UF\\q$\"1$f#3ux!4k%F\\
+q$\"1ut\"3[3G1&F\\q$\"1c@b(=4Z[&F\\q$\"1PpG%*)4m!fF\\q$\"1=<-,1^GjF\\q
+F[il$\"1z7\\9?JsrF\\qF`]m$\"1W3'zU8h,)F\\q$\"1EcpMT,Q%)F\\q$\"13/VT[\"
+*f))F\\q$\"1!>l\"[b\"=G*F\\q$\"1r***[D;Pq*F\\q$\"1vM;'phD,\"!#97;F'$\"
+1NC*32g5W%F=$\"1p[yT,7#)))F=Fgr$\"1upNGSUw<F\\q$\"1=iWN+`?AF\\q$\"1ha`
+UgjkEF\\q$\"1/Zi\\?u3JF\\q$FfglF\\qFj\\lFa^l$\"1y;)z2m^)[F\\qFf^l$\"1j
+,;#4yLx&F\\q$\"13%\\#*4%[<iF\\qF[glF]il$\"1Or^?@!)\\vF\\q$\"1\"Q1w73R*
+zF\\q$\"1CcpMT,Q%)F\\q$\"1r[yT,7#)))F\\q$\"1:T()[hAE$*F\\q$\"1eL'f:K.x
+*F\\q$F[qFe`m$F^qFe`m7;F'$\"1dqVuI6jYF=$\"19T()[hAE$*F=Fhr$\"1B[xH_Cl=
+F\\q$\"1G&=s`c:L#F\\qFd\\m$\"1Rf5_\"zTE$F\\qF^zF[]l$\"1cqVuI6jYF\\q$\"
+1i2)=QC%H^F\\q$\"1nWK*oNdf&F\\qFbcl$\"1y=@/$e$GlF\\qF\\gl$\"1)G*4>4)4Y
+(F\\q$\"1%*HaEAHFzF\\qFb]m$\"11/VT[\"*f))F\\q$\"18T()[hAE$*F\\q$\"1?yJ
+cu`#z*F\\q$\"1`hPw[)e-\"Fe`m$\"1B072g^s5Fe`m$\"1%*['y8Z\">6Fe`m7;F'$\"
+1z;)z2m^)[F=$\"1dL'f:K.x*F=FjrFdtF`v$\"12!*yY'*4JHF\\qFjyFc[l$\"15N=q%
+\\mR%F\\qFdam$\"1X)zdo#ot`F\\qFf`l$\"1!=w8!fr]jF\\qFbelF^gl$\"1$oqZsli
+\"yF\\q$\"1_)oDL#y/$)F\\q$\"1?qOS*)H$z)F\\q$\"1)=l\"[b\"=G*F\\qFdbmFed
+m$\"1qf:Pltu5Fe`m$\"1'yNz>)eB6Fe`m$\"1.cre)RC<\"Fe`m7;F'$\"1,j_\"3>s5&
+F=FjpF\\s$\"1?0hKw)G/#F\\q$\"1]JwS&4Ob#F\\q$\"1!y:*[9LkIF\\q$\"15%oqN`
+]d$F\\q$\"1S5Al_x&3%F\\qF_]l$FjnF\\q$\"1I*y'*)4%zh&F\\q$\"1g:$y*GmGhF
+\\q$\"1*=%)f![QRmF\\q$\"1>o89n5]rF\\qF`glF`il$\"13ZfQCF#o)F\\q$\"1RtuY
+V*H>*F\\q$\"1q***[D;Pq*F\\qFfbmFgdmFbfm$\"1\\5v)QgY<\"Fe`m$\"17jczDtD7
+Fe`m7;F'$\"1B42&3s#H`F=$\"1&=9qTae1\"F\\q$\"1x7_D;y)f\"F\\q$\"1p$GS$)3
+<8#F\\qF_amF\\x$\"1Y'\\&f/\\IPF\\qFg[lFa]lFf^l$\"19!yNH*>ieF\\q$\"11^3
+-l7&R'F\\q$\"1(>#f5P0GpF\\qFfelFbgl$\"1tM6O`$o_)F\\q$\"1n0iWDwf!*F\\q$
+\"1ew7`(*o#f*F\\qFc`mFgbmFidmFdfmFdhm$\"1AqT+`-z7Fe`m-%+AXESLABELSG6%%
+\"tG%#v0G%!G" 3 304 304 304 4 0 1 0 2 1 3 4 2 1.000000 56.000000 
+9.000000 14030 14091 14086 14104 14112 15010 15090 20030 17040 17060 
+0 0 0 0 0 0 0 1 1 308 3165 0 0 0 0 0 0 0 0 2 }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 189 "SUMMARY: For the given angle of .88 radians, the great
+est range of velocities for the all-net shot was from the cas without \+
+backspin.  The range of velocities without and with backspin are:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "v0_range; v0_rangebs;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\")jt#z%!\")" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\")*)pBX!\")" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 13 "r
+espectively." }}}}{MARK "24 3 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

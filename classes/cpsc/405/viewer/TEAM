@@ -1,0 +1,12 @@
+CPSC 405 -- Section 1
+Paul Brannan
+Amber Jones
+SS# not disclosed
+Assignment 4
+
+This assignment was to modify the previous project files to implement
+a particle system.  This includes:
+	1) Correct particle movement
+	2) Correct collision detection
+	3) Correct bounce after a collision
+	4) Motion trail

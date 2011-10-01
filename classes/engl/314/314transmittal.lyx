@@ -1,0 +1,63 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 2.16
+\textclass article
+\language default
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+\align center 
+MEMORANDUM
+\newline 
+
+\layout Standard
+
+To: Dr.
+ Jaye Bausser
+\layout Standard
+
+From: Paul Brannan
+\layout Standard
+
+Date: December 3, 2000
+\layout Standard
+
+Subject: Completion of Companies Report
+\newline 
+
+\layout Standard
+
+Attached is the completed report of companies.
+ The companies which were compared were Healthcare.com, Not a Number, and
+ the Automated Trading Desk.
+ The companies were evaluated on criteria of monetary benefits, non-monetary
+ benefits, costs (disadvantages) of employment, and other pertinent information
+ (particularly how interesting their products/work are).
+ Because of its highly interesting work and large benefits, the Automated
+ Trading Desk was selected as the best company to work for out of the three
+ evaluated.
+\newline 
+
+\layout Standard
+
+Please take the time to carefully consider all the information presented
+ herein.
+ Thank you for your time.
+\the_end

@@ -1,0 +1,430 @@
+# Scene definition filer
+# Any line that begins with '#' is a comment
+#
+# Format:
+#   Name <tank name>
+#   One of:
+#     Model <model file> |
+#     Terrain <start angle> <finish angle> |
+#     Box <length> <width> <height>
+#   Skin <skin file>
+#   Rotate[1|2|3] theta x y z
+#   Translate x y z
+#   Color r g b
+#
+# Begin each item definition with "NewItem"
+#
+# Note: Using a skin with an improperly-prepared md2 will result
+# in a core dump.
+
+global_translate -5.0 -1.5 -13.0
+
+Name Bird1
+Model bird.md2
+Translate 0.0 -14.5 -19.0
+Rotate -225.0 0.0 1.0 0.0
+Scale 1.4 1.4 1.4
+
+NewItem
+Name Bird2
+Model bird.md2
+Translate 11.0 33.0 0.5
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 90.0 1.0 0.0 0.0
+Scale 1.4 1.4 1.4 
+
+NewItem
+Name Bird3
+Model bird.md2
+Translate 11.0 -30.0 34.0
+Rotate2 -225.0 0.0 1.0 0.0
+Rotate1 -90.0 1.0 0.0 0.0
+Scale 1.4 1.4 1.4
+
+NewItem
+Name Column1
+Model column.md2
+Translate -27.0 -10.0 -20.0
+Tex_Type Map2
+tex_s 0.05 0 0.05
+tex_t 0 0.05 0 
+
+NewItem 
+Name Column2
+Model column.md2
+Translate 27.0 -10.0 -20.0
+Tex_Type Map2
+tex_s 0.05 0 0.05
+tex_t 0 0.05 0 
+
+NewItem 
+Name Column3
+Model column.md2
+Translate -26.0 -10.0 43.0
+Tex_Type Map2
+tex_s 0.05 0 0.05
+tex_t 0 0.05 0 
+
+NewItem 
+Name Column4
+Model column.md2
+Translate -17.0 35.0 5.0
+Rotate 90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem 
+Name Column5
+Model column.md2
+Translate 37.0 35.0 5.0
+Rotate 90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem 
+Name Column6
+Model column.md2
+Translate 37.0 8.0 5.0
+Rotate 90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem 
+Name Column7
+Model column.md2
+Translate 37.0 -6.0 30.0
+Rotate -90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem
+Name Column8
+Model column.md2
+Translate 37.0 -32.0 30.0
+Rotate -90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem
+Name Column9
+Model column.md2
+Translate -17.0 -32.0 30.0
+Rotate -90.0 1.0 0.0 0.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem
+Name Arch1
+Model arch.md2
+Translate -27.0 -10.0 -20.0
+Rotate -90.0 0.0 1.0 0.0
+Scale -1.0 1.0 1.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name Arch2
+Model arch.md2
+Translate -27.0 -10.0 -20.0
+Scale 1.17 1.0 1.0
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0
+
+NewItem
+Name Arch3
+Model arch.md2
+Translate 37.0 35.0 5.0 
+Rotate1 90.0 1.0 0.0 0.0
+Rotate2 -90.0 0.0 1.0 0.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name Arch4
+Model arch.md2
+Translate 37.0 33.0 5.5
+Rotate1 180.0 0.0 1.0 0.0
+Rotate2 -90.0 1.0 0.0 0.0 
+Scale -0.44 1.2 1.0
+Tex_Type Map2
+tex_s 0 0.05 0
+tex_t 0.05 0 0.05
+
+NewItem
+Name Arch5 
+Model arch.md2
+Translate 37.0 -31.0 30.0
+Rotate1 180.0 0.0 1.0 0.0
+Rotate2 90.0 1.0 0.0 0.0
+Scale -0.44 1.2 1.0 
+Tex_Type Map2
+tex_s 0 0.05 0
+tex_t 0.05 0 0.05
+
+NewItem 
+Name Arch6
+Model arch.md2
+Translate 37.0 -33.0 32.0
+Rotate1 -90.0 0.0 1.0 0.0
+Rotate2 90.0 0.0 0.0 1.0
+Scale 1.0 1.0 1.1 
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name Horn1
+Model horn.md2
+Translate -26.0 0.0 11.0
+Scale 0.3 0.3 0.3
+Tex_Type Map2
+tex_s 0.1 0 0.1
+tex_t 0 0.1 0 
+
+NewItem
+Name Horn2
+Model horn.md2
+Translate 36.0 -20.0 20.0
+Rotate -90.0 1.0 0.0 0.0
+Scale 0.3 0.3 0.3
+Tex_Type Map2
+tex_s 0.1 0 0.1
+tex_t 0 0.1 0 
+
+NewItem
+Name Horn3
+Model horn.md2
+Translate 36.0 22.0 14.0
+Rotate 90.0 1.0 0.0 0.0
+Scale 0.3 0.3 0.3
+Tex_Type Map2
+tex_s 0.1 0 0.1
+tex_t 0 0.1 0 
+
+NewItem
+Name TerrainFront1
+Terrain 0 0.785
+Translate 25.0 -33.0 -20.0 
+Rotate 180.0 0.0 1.0 0.0
+Scale -1.0 1.0 1.0
+
+NewItem
+Name TerrainFront2
+Terrain 0 0
+Translate -25.0 -33.0 45.0 
+Rotate -90.0 0.0 1.0 0.0
+
+NewItem
+Name TerrainFront2
+Terrain 0 0
+Translate -25.0 -33.0 45.0
+ 
+NewItem
+Name TerrainTop1
+Terrain 0 0.785
+Translate -20.0 35.0 -20.0
+Rotate1 180.0 0.0 1.0 0.0
+Rotate2 -90.0 1.0 0.0 0.0
+
+NewItem
+NameTerrainTop2
+Terrain 0 1.57
+Translate 40.0 0.0 -20.0
+Rotate1 90.0 0.0 1.0 0.0
+Rotate2 90.0 0.0 0.0 1.0
+Scale -1.0 1.0 1.0
+
+NewItem
+Name TerrainBottom1
+Terrain 0 0.785
+Translate -20.0 -35.0 50.0
+Rotate1 -90.0 1.0 0.0 0.0
+Rotate2 180.0 0.0 1.0 0.0
+
+NewItem
+Name TerrainBottom2
+Terrain 0 1.57
+Translate 40.0 0.0 50.0
+Rotate1 90.0 0.0 1.0 0.0
+Rotate2 -90.0 0.0 0.0 1.0
+Scale -1.0 1.0 1.0
+
+NewItem 
+Name FrontBox1
+box 55.0 8.0 3.0
+Translate 3.0 -26.5 -20.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name FrontBox2
+box 3.0 8.0 60.0 
+Translate 32.0 2.0 -20.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem 
+Name FrontBox3
+box 59.0 8.0 3.0
+Translate 3.5 30 -20.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name LeftBox1
+box 8.0 63.0 3.0
+Translate -27.0 -26.5 15.0
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0
+
+NewItem 
+Name LeftBox2
+box 8.0 6.0 60.0
+Translate -27.0 2.0 48.0 
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0
+
+NewItem 
+Name LeftBox3
+box 8.0 68.0 3.0
+Translate -27.0 30.0 15.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem 
+Name TopBox1
+box 68.0 7.5 8.0
+Translate 7.0 35.0 -14.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem 
+Name TopBox2
+box 3.0 68.0 8.0
+Translate -22.0 35.0 15.0
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0
+ 
+NewItem 
+Name TopBox3
+box 60.0 6.0 8.0
+Translate 7.0 35.0 48.0
+Tex_Type Map2
+
+NewItem 
+Name RightBox1 
+box 8.0 7.5 60.0
+Translate 37.0 2.0 -14.0
+Tex_Type Map2
+tex_s 0.05 0 0.05
+tex_t 0 0.05 0
+
+NewItem 
+Name RightBox2
+box 8.0 62.0 8.0
+Translate 37.0 1.0 15.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem 
+Name RightBox3
+box 8.0 6.0 60.0
+Translate 37.0 2.0 48.0
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0
+
+NewItem 
+Name BottomBox1
+box 60.0 6.0 8.0
+Translate 7.0 -32.0 48.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name BottomBox2
+box 3.0 68.0 8.0
+Translate -22.0 -32.0 15.0
+Tex_Type Map2
+tex_s 0 0 0.05
+tex_t 0.05 0.05 0 
+
+NewItem
+Name BottomBox3
+box 60.0 7.5 8.0
+Translate 3.0 -32.0 -14.0
+Tex_Type Map2
+tex_s 0.05 0 0
+tex_t 0 0.05 0.05
+
+NewItem
+Name Rope1
+box 0.25 0.25 28.0
+Translate -26.0 12.0 17.0 
+
+NewItem
+Name Rope2
+box 0.25 0.25 28.0
+Translate -26.0 12.0 7.0 
+
+NewItem
+Name Rope3
+box 0.25 28.0 0.25
+Translate 36.0 16.0 27.0
+
+NewItem
+Name Rope4
+box 0.25 28.0 0.25
+Translate 36.0 26.0 27.0
+
+NewItem
+Name Rope5
+box 0.25 28.0 0.25
+Translate 36.0 -14.0 7.0
+
+NewItem
+Name Rope5
+box 0.25 28.0 0.25
+Translate 36.0 -24.0 7.0
+
+NewItem 
+Name Post1
+Model post.md2
+Translate 37.0 30.25 5.5
+Rotate1 180.0 0.0 1.0 0.0
+Rotate2 -90.0 1.0 0.0 0.0 
+Scale -0.44 1.2 1.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+
+NewItem 
+Name Post2
+Model post.md2
+Translate 37.0 -28.25 30.0
+Rotate1 180.0 0.0 1.0 0.0
+Rotate2 90.0 1.0 0.0 0.0
+Scale -0.44 1.2 1.0
+Tex_Type Map2
+tex_s 0.05 0.05 0
+tex_t 0 0 0.05 
+

@@ -1,0 +1,9 @@
+Compilation requirements:
+	ANSI-compliant gcc or cc
+	X11 makedepend
+	imlib
+	gtk/gdk
+	libglade
+
+To compile:
+	make dep; make clean; make

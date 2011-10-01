@@ -1,0 +1,21 @@
+OUTPUT: runtime: 1000002
+Turbo Enabled!
+place: c2 holding_time: 3.000000 utilization: 0.499997
+place: c1 holding_time: 3.000036 utilization: 0.500003
+place: p2 holding_time: 3.000000 utilization: 0.500000
+place: p1 holding_time: 2.999982 utilization: 0.500000
+OUTPUT: runtime: 1000002
+place: c2 holding_time: 3.000000 utilization: 0.499997
+place: c1 holding_time: 3.000036 utilization: 0.500003
+place: p2 holding_time: 3.000000 utilization: 0.500000
+place: p1 holding_time: 2.999982 utilization: 0.500000
+OUTPUT: runtime: 1000002
+place: c2 holding_time: 3.000000 utilization: 0.499997
+place: c1 holding_time: 3.000036 utilization: 0.500003
+place: p2 holding_time: 3.000000 utilization: 0.500000
+place: p1 holding_time: 2.999982 utilization: 0.500000
+OUTPUT: runtime: 1000002
+place: c2 holding_time: 3.000000 utilization: 0.499997
+place: c1 holding_time: 3.000036 utilization: 0.500003
+place: p2 holding_time: 3.000000 utilization: 0.500000
+place: p1 holding_time: 2.999982 utilization: 0.500000

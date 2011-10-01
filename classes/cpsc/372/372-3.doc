@@ -1,0 +1,59 @@
+{\rtf1\ansi \deflang1033\deff0{\fonttbl
+{\f0\fnil \fcharset0 \fprq2 Times New Roman;}}{\colortbl
+\red0\green0\blue0;}
+{\stylesheet{\fs20 \snext0 Normal;}
+}\margl1440\margr1440\ftnbj\ftnrestart\aftnnar \sectd \sbknone\endnhere 
+{\*\pnseclvl1\pndec\pnstart1{\pntxta .}}
+{\*\pnseclvl2\pnlcltr\pnstart1{\pntxta .}}
+{\*\pnseclvl3\pnlcrm\pnstart1{\pntxta .}}
+{\*\pnseclvl4\pndec\pnstart1{\pntxtb (}{\pntxta )}}
+{\*\pnseclvl5\pnlcltr\pnstart1{\pntxtb (}{\pntxta )}}
+{\*\pnseclvl6\pnlcrm\pnstart1{\pntxtb (}{\pntxta )}}
+{\*\pnseclvl7\pndec\pnstart1{\pntxta .}}
+{\*\pnseclvl8\pnlcltr\pnstart1{\pntxta .}}
+{\*\pnseclvl9\pnlcrm\pnstart1}
+
+\pard \sl0 
+{\plain Question 1 (7 marks)\par
+}{\plain \par
+}{\plain For each of the components described below, indicate which type of cohesion (coincidental, logical, 
+temporal, procedural, communicational, sequential or functional) is being exhibited: \par
+}{\plain \par
+}{\plain    a.A component that requests a user password, reads the password, checks the password and 
+initiates the user's session. (Sequential; the output of one component is important to the success of the 
+next component)\par
+}{\plain   b.A component that logs users into the system, checks their mail and shows them the calendar. 
+(Temporal; the events occur at roughly the same time)\par
+}{\plain    c.A component that prints a document and writes it to a file.  (Logical; the functions both produce 
+output, but share little else functionally)\par
+}{\plain   d.A component that validates a user password and does nothing else. (Functional; only a single 
+function is being performed)\par
+}{\plain    e.A component that reads a user database query, checks the availability of the database and then 
+searches for the requested information. (Procedural; the functions are grouped to ensure that they are 
+accessed in order)\par
+}{\plain    f.A component that prints the current time or gives a directory listing, depending on the user input.  
+(Coincidental; the functions have nothing to do with each other)\par
+}{\plain    g.A component that collects disk access housekeeping data while accessing user requested data. 
+(Communicational; the functions both operate on the same device but are unrelated functionally)\par
+}{\plain \par
+}{\plain Question 2 (5 marks)\par
+}{\plain \par
+}{\plain For each of the component interactions describe below, indicate which type of coupling (content, 
+common, control, stamp or data) is\par
+}{\plain being exhibited: \par
+}{\plain \par
+}{\plain    a.Component 1 performs a validity check on a complicated data structure, then passes that structure 
+to Component 2, which performs a calculation based on the data in that structure. (Stamp coupling; an 
+entire structure is passed from one component to the other)\par
+}{\plain   b.Component 1 reads in a stream of characters and updates a variable, which is internal to 
+Component 2, that keeps track of the number of lines that have been read. Component 2 uses this 
+variable to calculate when a new page needs to be started. (Content coupling; one component modifies 
+an internal data item in another component)\par
+}{\plain    c.Components 1 and 2 are as in b), but the line counter variable is in a shared data space. (Common 
+coupling; the data is available in a common data store, but both components can modify the data)\par
+}{\plain   d.Component 1 performs a validity check on a complicated data structure, then passes individual 
+elements of the data structure that are needed by Component 2 to complete its calculation. (Data 
+coupling; only data is passed, not an entire structure)\par
+}{\plain    e.Component 1 reads in a stream of characters, keeping track of the number of lines read, and 
+invokes Component 2 whenever enough lines have been read to start a new page. (Control coupling; 
+one component is invoked by another)}}

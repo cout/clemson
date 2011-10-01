@@ -1,0 +1,100 @@
+Lab 10: Factoring Large Numbers, Part Two
+
+Objective:
+To extend last week's factoring program to factor larger numbers,
+using the Quadratic Sieve method and the GNU-MP multiple precision
+integer library, by way of class "biggy". 
+
+Background:
+I. The Quadratic Sieve
+The Quadratic Sieve is a method for factoring numbers.  We are
+attempting to factor the number n.  In this method, we look for a
+pair of numbers x and y such that x^2-y^2=kn for some integer k.
+This implies (x+y)(x-y)=kn.  When we have done this, we have two
+possiblities:first, (x+y) and (x-y) may be k and n, in which case
+we have not learned anything.  In the second and more interesting
+case, (x+y) and (x-y) each share a non-trivial factor of n, which we
+can find quickly using Euclid's gcd (greatest common divisor) algorithm.
+(This algorithm is built into GNU-MP).  
+So, the meat of the algorithm lies in finding possible values for
+x and y.  To do this, we look at the numbers "near" the square root
+of our number n.  (Choose a range around the square root to examine.)
+Next, for each of these numbers t, find t^2 - n.  This should be
+small enough to factor using your small-number-factoring program
+from last week.  Do this, and you will get the relation t^2=(factors)
+mod n.  Your program should collect several of these relations.
+Next, combine sets of those relations (pairs and triplets should
+be sufficient), by multiplication.  For each combination, test whether
+the degrees of every factor is even.
+Whenever this happens, you have a possible solution.  Due to the
+properties of modulo arithmatic, it is the case that
+t1^2*t2^2*t3^3=2^2a*3^2b*5^2c... mod n.  By the definition of mod,
+this is equivalent to saying x^2-y^2=kn, where x is the product of the
+numbers t used and y is the square root of the product of the factors
+on the other side of the relations.  So, x-y and x+y may contain
+useful factors of n.  We can then use gcd() [From the biggy class]to find
+the greatest common divisor or (x-y) and n.  If the result is equal to
+either 1 or n, then we must try again.  Otherwise, the result is one
+factor of n and the other can be found by simple division.
+
+II. GNU-MP
+The numbers we wish to factor, while not as long as RSA-169 and it's
+like, are still far larger than any that can be held in c++ integer
+or long integer variables.  So, we need to use a specialized data
+structure to hold longer numbers.  For this lab, we will use the
+GNU-MP (Multiple Precision) library.  
+
+For your convenience, you are provided with a class "biggy" which has done
+all of the necessary operator overloading for you to use
+multiple-precision numbers as though they were ordinary integers.  You
+will need to include "biggy.h" in your #includes.  Objects of class
+"biggy" can be added, multiplied, subtracted, divided, and so forth.
+There are also conversion functions provided from integer and string data
+to the biggy format.
+
+Programming Assingment:
+Due in two weeks.  Expand your program to use the Quadratic Sieve to
+factor large numbers.
+
+Step-By-Step approach:
+
+0. Copy your factor.c and factor.h into your 241/lab9 directory.
+Use the script 'compile' to compile factor.c  (This script informs
+the compiler as to the location of the GNU-MP header and library files.)
+You will need to add the lines 
+#include "gmp.h"
+#include "biggy.h"
+to your program to use the gmp library and the biggy class.
+
+
+I.  Modify your factor class as follows:
+A. Factorize should take a "biggy" argument. Value should return an
+"biggy".  All other variables and arrays should remain of type int.
+
+II. Extend the factor class as follows:
+A. Add a function that creates a new factor C given factors A and B, where
+C=A*B.  This can be done by adding the degrees.  Be sure to catch and not
+add in the -1 that codes the end of the list of degrees, and to multiply
+the new (-1) degree.
+B. Add a function issquare() that test whether the factor is a perfect
+square.  (I.E. all degrees, including that of -1, are even.)
+
+III. Implement the Quadratic Sieve as described above.
+
+Some test numbers to try and factorize:
+
+672591379 (=11447 * 58757)
+8591799511 (=82241 * 104471)
+19326223710861634601 (=5915587277 * 3267000013)
+3923103662633396228997290999377066117961
+ (=54673257461630679457*71755440315342536873)
+
+Note that the as the size of the numbers gets larger, more and more of the
+tested relations will not factor using your set of primes.  The two ways
+to overcome this are to test more relations and to expand your set of
+primes.
+
+For Extra Credit:
+Modify your algorithm to use the PVM apparatus and compute in parallel.
+See how large a number you can factor in a reasonable amount of time using
+up to four stormys.  

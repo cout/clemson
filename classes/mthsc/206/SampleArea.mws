@@ -1,0 +1,88 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 120 "f1 := piecewise(\n \+
+       x >= 0 and x < 10, 3*x,\n        x >= 10 and x < 20, -3*x + 60,
+\n        x >= 20 and x <= 30, 0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%#f1G-%*PIECEWISEG6%7$,$%\"xG\"\"$31,$F*!\"\"\"\"!2,&F*\"\"\"!#5F3F07
+$,&F*!\"$\"#gF331,&\"#5F3F*F/F02,&F*F3!#?F3F07$F031,&\"#?F3F*F/F01,&F*
+F3!#IF3F0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 118 "f2 := piecewi
+se(\n        x >=0 and x < 15, -2*x,\n        x >=15 and x < 20, -30,
+\n        x >=20 and x <=30, 3*x - 90);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%#f2G-%*PIECEWISEG6%7$,$%\"xG!\"#31,$F*!\"\"\"\"!2,&F*\"\"\"!#:
+F3F07$!#I31,&\"#:F3F*F/F02,&F*F3!#?F3F07$,&F*\"\"$!#!*F331,&\"#?F3F*F/
+F01,&F*F3F6F3F0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "plot(\{f
+1, f2\}, x=0..30);" }}{PARA 13 "" 1 "" {INLPLOT "6&-%'CURVESG6$7W7$\"
+\"!F(7$$\"1+++]i9Rl!#;$\"1+++vQuh>!#:7$$\"1++vVA)GA\"F/$\"1++DJnkoOF/7
+$$\"1++]Peui=F/$\"1****\\7vB)e&F/7$$\"1++]i3&o]#F/$\"1,+](e_0_(F/7$$\"
+1++voX*y9$F/$\"1***\\iq$oV%*F/7$$\"1++vVTAUPF/$\"1+]7VsmA6!#97$$\"1++v
+$*zhdVF/$\"1+]7)R&G28FI7$$\"1++v$>fS*\\F/$\"1+]7ex@)\\\"FI7$$\"1++v=$f
+%GcF/$\"1+]i&zP&)o\"FI7$$\"1+++Dy,\"G'F/$\"1++]Z`I%)=FI7$$\"1++]7<zboF
+/$\"1++v8vtc?FI7$$\"1+++v4&G](F/$\"1++]#Hb3D#FI7$$\"1*****\\7nD:)F/$\"
+1++]P,xXCFI7$$\"1+++D!*oy()F/$\"1++]2ngLEFI7$$\"1++v$pnsM*F/$\"1+]73.=
+/GFI7$$\"1+]P4_J&o*F/$\"1+D\"Gc%f0HFI7$$\"1++]siL-5FI$\"1++]#=\"*H*HFI
+7$$\"1++DJL(4.\"FI$\"1++D1+32HFI7$$\"1+++!R5'f5FI$\"1+++I)o6#GFI7$$\"1
++]P/QBE6FI$\"1+](oe)H@EFI7$$\"1+++:o?&=\"FI$\"1+++b&zVW#FI7$$\"1+]Pa&4
+*\\7FI$\"1+](oLr-D#FI7$$\"1+]7j=_68FI$\"1+]i5WVl?FI7$$\"1++vVy!eP\"FI$
+\"1++vokds=FI7$$\"1+](=WU[V\"FI$\"1**\\PuEZ&p\"FI7$$\"1++DJ#>&)\\\"FI$
+\"1++D1BW/:FI7$$\"1+]P>:mk:FI$\"1+](=W:gI\"FI7$$\"1+]iv&QAi\"FI$\"1+]7
+tUGL6FI7$$\"1++vtLU%o\"FI$\"1****\\(y)Hn%*F/7$$\"1+++bjm[<FI$\"10++]$4
++a(F/7$$\"1++vyb^6=FI$\"1(***\\PE`acF/7$$\"1+]PMaKs=FI$\"1++vopBIQF/7$
+$\"1++D6W%)R>FI$\"14+]iwm/=F/7$$\"1+]78)y,(>FI$\"1e+]igNY*)F,7$$\"1+++
+:K^+?FIF(7$$\"1++vj;!H.#FIF(7$$\"1++]7,Hl?FIF(7$$\"1+]P4w)R7#FIF(7$$\"
+1++]x%f\")=#FIF(7$$\"1+]P/-a[AFIF(7$$\"1+](=Yb;J#FIF(7$$\"1++]i@OtBFIF
+(7$$\"1+]PfL'zV#FIF(7$$\"1+++!*>=+DFIF(7$$\"1++DE&4Qc#FIF(7$$\"1+]P%>5
+pi#FIF(7$$\"1+++bJ*[o#FIF(7$$\"1++Dr\"[8v#FIF(7$$\"1+++Ijy5GFIF(7$$\"1
++]P/)fT(GFIF(7$$\"1+]i0j\"[$HFIF(7$$\"#IF(F(-%'COLOURG6&%$RGBG$\"#5!\"
+\"F(F(-F$6$7WF'7$F*$!1+++]#HyI\"F/7$F1$!1++]([kdW#F/7$F6$!1+++v;\\DPF/
+7$F;$!1,++D<q8]F/7$F@$!1++]P\"*y&H'F/7$FE$!1****\\(G[W[(F/7$FK$!1++]()
+fB:()F/7$FP$!1++](Q=\"))**F/7$FU$!1++vj=pD6FI7$FZ$!1+++lN?c7FI7$Fin$!1
+++]U$e6P\"FI7$F^o$!1+++&>q0]\"FI7$Fco$!1+++DM^I;FI7$Fho$!1+++0ytb<FI7$
+F]p$!1++vQNXp=FI7$Fgp$!1+++XDn/?FI7$Faq$!1+++!y?#>@FI7$Ffq$!1++v3wY_AF
+I7$F[r$!1+++IOTqBFI7$F`r$!1++v3\">)*\\#FI7$Fer$!1++DEP/BEFI7$Fjr$!1++]
+(o:;v#FI7$F_s$!1++v$)[opGFI7$$\"1+DcO3om9FI$!1+]7t;OLHFI7$Fds$!1++]i%Q
+q*HFI7$$\"1+DJv.fJ:FI$!#IF(7$FisF`_l7$F^tF`_l7$FctF`_l7$FhtF`_l7$F]uF`
+_l7$FbuF`_l7$FguF`_l7$F\\vF`_l7$Fav$!1+++b.Y)*HFI7$Fdv$!1,+v3]H,HFI7$F
+gv$!1++]i'HT!GFI7$Fjv$!1+](=<P!GEFI7$F]w$!1)***\\n:_NCFI7$F`w$!1+](oQz
+VD#FI7$Fcw$!1+]P9O.l?FI7$Ffw$!1,+]7N\"*z=FI7$Fiw$!1+](=#*4ho\"FI7$F\\x
+$!1+++ISX*\\\"FI7$F_x$!1***\\7Ur&38FI7$Fbx$!1**\\(oTp#>6FI7$Fex$!1!***
+**\\`?`%*F/7$Fhx$!1****\\i[bfuF/7$F[y$!1)******45kn&F/7$F^y$!1$**\\(oe
+?vPF/7$Fay$!1&**\\7$3^b>F/Fcy-Fgy6&FiyF(FjyF(-%+AXESLABELSG6$%\"xG%!G-
+%%VIEWG6$;F(Fdy%(DEFAULTG" 2 313 313 313 2 0 1 0 2 9 0 4 2 1.000000 
+45.000000 45.000000 10030 10061 10056 10074 0 0 0 20030 0 12020 0 0 0 
+0 0 0 0 1 1 0 0 0 14172 16346 0 0 0 0 0 0 }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "mass := int(int(1,y=f2..f1),x=0..30);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%%massG\"$D)" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 36 "m_x := int(int(x,y=f2..f1),x=0..30);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$m_xG\"&v8\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "xbar := evalf(m_x / mass);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%xbarG$\"+zyyy8!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 36 "m_y := int(int(y,y=f2..f1),x=0..30);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$m_yG!%+I" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 26 "ybar := evalf(m_y / mass);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%%ybarG$!+OOOOO!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "mag
+_v1 := sqrt(1 + diff(subs(x=t, f1),t)^2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%'mag_v1G*$,&\"\"\"F'*$-%*PIECEWISEG6)7$\"\"!2%\"tGF-7
+$%*undefinedG/F/F-7$\"\"$2F/\"#57$F1/F/F67$!\"$2F/\"#?7$F1/F/F<7$F-2F<
+F/\"\"#F'#F'FA" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "mag_v2 :=
+ sqrt(1 + diff(subs(x=t, f2),t)^2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#>%'mag_v2G*$,&\"\"\"F'*$-%*PIECEWISEG6+7$\"\"!2%\"tGF-7$%*undefinedG/
+F/F-7$!\"#2F/\"#:7$F1/F/F67$F-2F/\"#?7$F1/F/F;7$\"\"$2F/\"#I7$F1/F/FA7
+$F-2FAF/\"\"#F'#F'FF" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "n1 \+
+:= -1/diff(subs(x=t, f1),t);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#n1G
+,$*$-%*PIECEWISEG6)7$\"\"!2%\"tGF+7$%*undefinedG/F-F+7$\"\"$2F-\"#57$F
+//F-F47$!\"$2F-\"#?7$F//F-F:7$F+2F:F-!\"\"F?" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 32 "n2 := -1/diff(subs(x=t, f2), t);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%#n2G,$*$-%*PIECEWISEG6+7$\"\"!2%\"tGF+7$%*undefi
+nedG/F-F+7$!\"#2F-\"#:7$F//F-F47$F+2F-\"#?7$F//F-F97$\"\"$2F-\"#I7$F//
+F-F?7$F+2F?F-!\"\"FD" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 60 "mas
+s2 := evalf(int(mag_v1, t=0..30) + int(mag_v2, t=0..30));" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#>%&mass2G$\"+&\\$4M9!\"(" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "13 0 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 }

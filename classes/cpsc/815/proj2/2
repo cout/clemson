@@ -1,0 +1,313 @@
+// Imtrans
+// Paul Brannan <pbranna@clemson.edu
+// Please use a tab size of 8 when reading this file
+
+#include <gtk/gtk.h>
+#include <glade/glade.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <string.h>
+
+// Some useful macros
+#ifndef MIN
+#define MIN(a,b) (((a)<(b))?(a):(b))
+#endif
+#ifndef MAX
+#define MAX(a,b) (((a)>(b))?(a):(b))
+#endif
+#ifndef M2A
+#define M2A(x,y,w,h) (((x)%(w)) + ((y)%(h))*(w))
+#endif
+
+// Global widgets
+GtkWidget *loadfile_dlg;
+GtkWidget *about_dlg;
+GtkWidget *drawingarea;
+
+GtkWidget *translate_dlg;
+GtkWidget *translate_x;
+GtkWidget *translate_y;
+
+GtkWidget *scale_dlg;
+GtkWidget *scale_x;
+GtkWidget *scale_y;
+
+GtkWidget *rotate_dlg;
+GtkWidget *rotate_value;
+
+// Global variables
+GdkPixbuf *pixbuf, *orig_pixbuf;
+bool image_loaded = false;
+
+// This is how we'll keep track of what we are doing
+enum {
+	IMTRANS_OP_NONE,
+	IMTRANS_OP_TRANSLATE,
+	IMTRANS_OP_SCALE,
+	IMTRANS_OP_ROTATE
+};
+int imtrans_op = IMTRANS_OP_NONE;
+
+extern "C" {
+
+// ------------------------------------------------------------
+// Initialization
+// ------------------------------------------------------------
+
+void init_widgets(GladeXML *xml) {
+	loadfile_dlg = glade_xml_get_widget(xml, "loadfile_dlg");
+	about_dlg = glade_xml_get_widget(xml, "about_dlg");
+	drawingarea = glade_xml_get_widget(xml, "drawingarea");
+
+	translate_dlg = glade_xml_get_widget(xml, "translate_dlg");
+	translate_x = glade_xml_get_widget(xml, "translate_x");
+	translate_y = glade_xml_get_widget(xml, "translate_y");
+
+	scale_dlg = glade_xml_get_widget(xml, "scale_dlg");
+	scale_x = glade_xml_get_widget(xml, "scale_x");
+	scale_y = glade_xml_get_widget(xml, "scale_y");
+
+	rotate_dlg = glade_xml_get_widget(xml, "rotate_dlg");
+	rotate_value = glade_xml_get_widget(xml, "rotate_value");
+}
+
+// ------------------------------------------------------------
+// Drawing routines
+// ------------------------------------------------------------
+
+gboolean on_drawingarea_expose_event(GtkWidget *w, GdkEventExpose *event,
+	gpointer data) {
+
+	gdk_window_clear_area(w->window, event->area.x, event->area.y,
+		event->area.width, event->area.height);
+	gdk_gc_set_clip_rectangle(w->style->fg_gc[w->state], &event->area);
+
+	// Render the pixbuf to our drawing area
+	if(image_loaded) {
+		gdk_pixbuf_render_to_drawable(pixbuf, w->window,
+			w->style->fg_gc[w->state], 0, 0, 0, 0,
+			gdk_pixbuf_get_width(pixbuf),
+			gdk_pixbuf_get_height(pixbuf),
+			GDK_RGB_DITHER_NONE, 0, 0);
+	}
+
+	return true;
+}
+
+void redraw_pixbuf() {
+	GdkRectangle area = {0, 0,
+		gdk_pixbuf_get_width(pixbuf),
+		gdk_pixbuf_get_height(pixbuf)
+	};
+	gtk_widget_draw(drawingarea, &area);
+}
+
+// ------------------------------------------------------------
+// File loading functions
+// ------------------------------------------------------------
+
+void on_load_activate(GtkWidget *w, gpointer data) {
+	gtk_widget_show(loadfile_dlg);
+}
+
+void on_load_ok_clicked(GtkWidget *w, gpointer data) {
+	gchar *filename = gtk_file_selection_get_filename(
+		GTK_FILE_SELECTION(loadfile_dlg));
+	gtk_widget_hide(loadfile_dlg);
+
+	if(image_loaded) gdk_pixbuf_unref(pixbuf);
+	if(imtrans_op != IMTRANS_OP_NONE) gdk_pixbuf_unref(orig_pixbuf);
+
+	// Tell gdk-pixbuf to load the image
+	pixbuf = gdk_pixbuf_new_from_file(filename);
+	if(!pixbuf) {
+		g_print("Unable to load image!\n");
+		image_loaded = false;
+	} else {
+		// Add an alpha channel if the image does not already have one
+		// We want full opacity (alpha = 1.0 for all pixels)
+		gdk_pixbuf_add_alpha(pixbuf, 0, 0, 0, 0);
+
+		// We now have an image loaded (hopefully)
+		image_loaded = true;
+	}
+
+	imtrans_op = IMTRANS_OP_NONE;
+	gtk_widget_hide(translate_dlg);
+	gtk_widget_hide(rotate_dlg);
+	gtk_widget_hide(scale_dlg);
+
+	redraw_pixbuf();
+}
+
+void on_load_cancel_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(loadfile_dlg);
+}
+
+// ------------------------------------------------------------
+// File saving functions
+// ------------------------------------------------------------
+
+void on_save_activate(GtkWidget *w, gpointer data) {
+}
+
+// ------------------------------------------------------------
+// Miscellaneous pixbuf operations
+// ------------------------------------------------------------
+
+gint gdk_pixbuf_get_size(const GdkPixbuf *p) {
+	int height = gdk_pixbuf_get_height(p);
+	int rowstride = gdk_pixbuf_get_rowstride(p);
+	return rowstride*height;
+}
+
+void gdk_pixbuf_clear(const GdkPixbuf *p) {
+	guchar *pixels = gdk_pixbuf_get_pixels(p);
+	memset(pixels, 0, gdk_pixbuf_get_size(p));
+}
+
+// ------------------------------------------------------------
+// Translation
+// ------------------------------------------------------------
+
+void on_translate_activate(GtkMenuItem *w, gpointer data) {
+	if(imtrans_op == IMTRANS_OP_TRANSLATE) return;
+	if(!image_loaded) return;
+
+	if(imtrans_op != IMTRANS_OP_NONE) gdk_pixbuf_unref(orig_pixbuf);
+	orig_pixbuf = gdk_pixbuf_copy(pixbuf);
+
+	gtk_widget_show(translate_dlg);
+	gtk_widget_hide(rotate_dlg);
+	gtk_widget_hide(scale_dlg);
+	imtrans_op = IMTRANS_OP_TRANSLATE;
+
+	int width = gdk_pixbuf_get_width(pixbuf);
+	int height = gdk_pixbuf_get_height(pixbuf);
+	GTK_RANGE(translate_x)->adjustment->lower = -width;
+	GTK_RANGE(translate_x)->adjustment->upper = width;
+	GTK_RANGE(translate_y)->adjustment->lower = -height;
+	GTK_RANGE(translate_y)->adjustment->upper = height;
+}
+
+void on_translate_ok_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(translate_dlg);
+	imtrans_op = IMTRANS_OP_NONE;
+	gdk_pixbuf_unref(orig_pixbuf);
+}
+
+void on_translate_cancel_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(translate_dlg);
+	imtrans_op = IMTRANS_OP_NONE;
+	gdk_pixbuf_unref(pixbuf);
+	pixbuf = orig_pixbuf;
+	redraw_pixbuf();
+}
+
+// We will need to re-rewrite this function
+void on_translate_apply_clicked(GtkWidget *w, gpointer data) {
+	gdk_pixbuf_clear(pixbuf);
+
+	int tr_x = (int)(GTK_RANGE(translate_x)->adjustment->value);
+	int tr_y = (int)(GTK_RANGE(translate_y)->adjustment->value);
+	int src_x = (tr_x>0) ? 0 : -tr_x;
+	int src_y = (tr_y>0) ? 0 : -tr_y;
+	int dest_x = (tr_x>0) ? tr_x : 0;
+	int dest_y = (tr_y>0) ? tr_y : 0;
+
+	int im_width = gdk_pixbuf_get_width(orig_pixbuf);
+	int im_height = gdk_pixbuf_get_height(orig_pixbuf);
+	int width = im_width - src_x;
+	int height = im_height - src_y;
+
+	/*
+	gdk_pixbuf_copy_area(orig_pixbuf, src_x, src_y, width, height,
+		pixbuf, dest_x, dest_y);
+	*/
+	redraw_pixbuf();
+}
+
+// ------------------------------------------------------------
+// Scaling
+// ------------------------------------------------------------
+
+void on_scale_activate(GtkMenuItem *w, gpointer data) {
+}
+
+void on_scale_ok_clicked(GtkWidget *w, gpointer data) {
+}
+
+void on_scale_cancel_clicked(GtkWidget *w, gpointer data) {
+}
+
+void on_scale_apply_clicked(GtkWidget *w, gpointer data) {
+}
+
+// ------------------------------------------------------------
+// Rotation
+// ------------------------------------------------------------
+
+void on_rotate_activate(GtkMenuItem *w, gpointer data) {
+}
+
+void on_rotate_ok_clicked(GtkWidget *w, gpointer data) {
+}
+
+void on_rotate_cancel_clicked(GtkWidget *w, gpointer data) {
+}
+
+void on_rotate_apply_clicked(GtkWidget *w, gpointer data) {
+}
+
+// ------------------------------------------------------------
+// Help functions
+// ------------------------------------------------------------
+void on_about_activate(GtkMenuItem *w, gpointer data) {
+	gtk_widget_show(about_dlg);
+}
+
+void on_about_ok_clicked(GtkWidget *w, gpointer data) {
+	gtk_widget_hide(about_dlg);
+}
+
+// ------------------------------------------------------------
+// Exit routines
+// ------------------------------------------------------------
+gint on_main_window_delete_event(GtkWidget *w, gpointer data) {
+	gtk_main_quit();
+	return FALSE;
+}
+
+gint on_main_window_destroy_event(GtkWidget *w, gpointer data) {
+	// glarea widgets don't get destroyed properly, but we don't have
+	// any of those.
+	gtk_main_quit();
+	return FALSE;
+}
+
+void on_quit_activate(GtkWidget *w, gpointer data) {
+	gtk_main_quit();
+}
+
+} // extern "C"
+
+int main(int argc, char *argv[]) {
+	GladeXML *xml;
+
+	gtk_init(&argc, &argv);
+	glade_init();
+	gdk_rgb_init();
+
+	xml = glade_xml_new("imtrans.glade", (char*)NULL);
+	if(!xml) {
+		g_warning("Error creating the interface");
+		exit(1);
+	}
+
+	init_widgets(xml);
+	glade_xml_signal_autoconnect(xml);
+	gtk_main();
+
+	// We will never reach this point
+	return 0;
+}
+

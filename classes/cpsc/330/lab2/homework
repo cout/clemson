@@ -1,0 +1,29 @@
+1) foo is essentially the same as strcpy (though it doesn't copy the null
+   terminator).
+
+2)
+#include <stdio.h>
+main() {
+	char s[81]; int j;
+	for(j = !0;;j = !j) {
+		gets(s, sizeof(s));
+		if(j) puts(s);
+	}
+}
+
+3)
+CC=gcc
+CFLAGS=
+CLIBS=
+
+all: test
+
+test: test.c
+	$(CC) $(CFLAGS) $(CLIBS) test.c -o test
+
+4) okay.
+
+5) 4 bytes always -- reduces complexity of instruction decoding.
+
+6) ld/st
+

@@ -1,0 +1,25 @@
+Buffer size	time
+MMAP		2:30.30
+MMAP		1:50.37
+MMAP		2:05.97
+256		1:16.83
+512		1:12.52
+1024		1:10.85
+2048		1:09.43
+4096		1:11.10
+8192		1:11.25
+16384		1:10.65
+32768		1:11.12
+65536		1:10.53
+131072		1:10.46
+
+System: Intel 486DX2/66, RedHat Linux 5.2, Kernel 2.0.35
+
+It appears that the buffer size doesn't make too much of a difference unless
+it gets really small.  The times shown are the lowest times of multiple
+trials.  On each trial, the number 2048 seemed to be the key, possibly because
+of the small L1 cache on the 486 (this buffer size would allow itself, the
+program loop, and some networking code to stay in the cache without much
+swapping).  Anything larger seems to give the same result.  MMAP is just slow
+for this operation, period.
+

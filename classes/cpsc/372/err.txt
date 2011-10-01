@@ -1,0 +1,13 @@
+3.2.7
+	Calendar system, not appointment system
+3.2.7.1
+	Preconditions: A valid user account must exist and the account must not be disabled.
+3.2.8.1
+	End condition should be when the user quits
+	Inputs: User selects a menu option
+3.2.8.2.1
+	Step 3, 4: The user should be able to use the keyboard (remove step 4)
+3.2.8.22.1
+	Return other user information -- not just the address
+	20 characters awfully arbitrary
+

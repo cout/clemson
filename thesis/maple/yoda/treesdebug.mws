@@ -1,0 +1,873 @@
+{VERSION 3 0 "SUN SPARC SOLARIS" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 1 10 255 0 0 1 0 1 0 
+0 1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 2 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 3 }1 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Heading 1" 0 3 1 {CSTYLE "" -1 -1 "" 
+1 18 0 0 0 0 0 1 0 0 0 0 0 0 0 }1 0 0 0 8 4 0 0 0 0 0 0 -1 0 }{PSTYLE 
+"Heading 2" 3 4 1 {CSTYLE "" -1 -1 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 -1 8 2 0 0 0 0 0 0 -1 0 }{PSTYLE "" 2 6 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 0 0 0 0 0 0 0 0 2 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE 
+"Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
+0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 
+-1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "" 0 256 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 257 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }
+{PSTYLE "" 0 258 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 259 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }
+{PSTYLE "" 0 260 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 0 -1 -1 3 10 3 5 0 0 -1 3 }{PSTYLE "" 0 261 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }
+{PSTYLE "" 0 262 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 263 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }
+{PSTYLE "" 0 264 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 265 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }
+{PSTYLE "" 0 266 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }{PSTYLE "" 0 267 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }
+{PSTYLE "" 0 268 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 2 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "interface(quiet=true
+,warnlevel=0):" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 7 "Globals" }}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 182 "Note on globals -- global variabl
+es are used in the spantree, nextree, childe, and gbuild functions for
+ the purpose of emulating \"pass by reference.\"  The following global
+s are used:" }}{PARA 256 "" 0 "" {TEXT -1 131 "f lists the indices i o
+f the edges e[i] used in the spanning tree.  The program is designed s
+o that f is always an increasing list." }}{PARA 260 "" 0 "" {TEXT -1 
+214 "g is an nxn array with g(j,v) telling the component number of ver
+tex v at the jth stage of building the subtree.  At stage j=0, these n
+umbers are all different.  At stage j=n-1 all these numbers should be \+
+the same." }}{PARA 257 "" 0 "" {TEXT -1 96 "f and g are used to determ
+ine the starting point in the next call of nextree.\nc is a child arra
+y" }}{PARA 258 "" 0 "" {TEXT -1 27 "h is a heap order as a list" }}
+{PARA 259 "" 0 "" {TEXT -1 18 "p is a parent list" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 149 "Finally, MinnameTable is a table of minnames that
+ is used to store previously calculated global minnames, to speed up c
+alculation of global minnames." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "M
+innameTable := table(sparse):" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 53 "
+And TableUsed is tells us if we used the table or not" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 15 "TableUsed := 0:" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 79 "MintreeTable is a table of hexnames that lists all the mi
+ntrees by their order." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 1128 "hc := p
+roc(a)\n  RETURN(convert(a, decimal, hex)):\nend:\nMintreeTable := tab
+le([\n  6=[hc(`3f`), hc(`5f`), hc(`6f`), hc(`af`), hc(`b7`), hc(`157`)
+],\n  7=[hc(`7f`), hc(`bf`), hc(`df`), hc(`15f`), hc(`16f`), hc(`177`)
+,\n      hc(`19f`), hc(`1af`), hc(`2af`), hc(`2b7`), hc(`557`)],\n  8=
+[hc(`ff`), hc(`17f`), hc(`1bf`), hc(`1df`), hc(`2bf`), hc(`2df`),\n   \+
+  hc(`2ef`), hc(`2f7`), hc(`33f`), hc(`35f`), hc(`36f`), hc(`55f`),\n \+
+    hc(`56f`), hc(`577`), hc(`59f`), hc(`5af`), hc(`5b7`), hc(`66f`),
+\n     hc(`6af`), hc(`aaf`), hc(`ab7`), hc(`ad7`), hc(`1557`)],\n  9=[
+hc(`1ff`), hc(`2ff`), hc(`37f`), hc(`3bf`), hc(`57f`), hc(`5bf`),\n   \+
+  hc(`5df`), hc(`5ef`), hc(`5f7`), hc(`67f`), hc(`6bf`), hc(`6df`),\n \+
+    hc(`6ef`), hc(`73f`), hc(`75f`), hc(`abf`), hc(`adf`), hc(`aef`),
+\n     hc(`af7`), hc(`b3f`), hc(`b5f`), hc(`b6f`), hc(`b77`), hc(`b9f`
+),\n     hc(`baf`), hc(`cdf`), hc(`cef`), hc(`d5f`), hc(`d6f`), hc(`15
+5f`),\n     hc(`156f`), hc(`1577`), hc(`159f`), hc(`15af`), hc(`15b7`)
+, hc(`15d7`),\n     hc(`165f`), hc(`166f`), hc(`16af`), hc(`16b7`), hc
+(`199f`), hc(`19af`),\n     hc(`1aaf`), hc(`2aaf`), hc(`2ab7`), hc(`2a
+d7`), hc(`5567`)]\n]);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%-MintreeTa
+bleG-%&TABLEG6#7&/\"\"'7(\"#j\"#&*\"$6\"\"$v\"\"$$=\"$V$/\"\"(7-\"$F\"
+\"$\">\"$B#\"$^$\"$n$\"$v$\"$:%\"$J%\"$(o\"$&p\"%n8/\"\")79\"$b#\"$$Q
+\"$Z%\"$z%\"$.(\"$N(\"$^(\"$f(\"$J)\"$j)\"$z)\"%v8\"%\"R\"\"%*R\"\"%R9
+\"%b9\"%j9\"%Z;\"%6<\"%NF\"%VF\"%vF\"%ja/\"\"*7Q\"$6&\"$n(\"$&*)\"$f*
+\"%29\"%r9\"%.:\"%>:\"%F:\"%j;\"%F<\"%f<\"%v<\"%b=\"%()=\"%^F\"%$y#\"%
+*z#\"%2G\"%zG\"%6H\"%FH\"%NH\"%vH\"%\"*H\"%&H$\"%6L\"%BM\"%RM\"%ra\"%(
+[&\"%&\\&\"%Nb\"%^b\"%fb\"%\"f&\"%Fd\"%Vd\"%2e\"%:e\"%fl\"%vl\"%Jo\"&F
+4\"\"&N4\"\"&n4\"\"&j=#" }}}}{SECT 1 {PARA 3 "" 0 "" {TEXT -1 29 "Isom
+orphism testing functions" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 192 "LLT
+ determines if p is lexicographically less than q.\nINPUT: Two lists p
+ and q of tree binames, represented by 0's and 1's.\nOUTPUT: true if p
+ is lexicographically less than q, false otherwise." }}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 476 "LLT := proc(p,q::list) option remember;\n \+
+ local i, m:\n\n  # m is the length of the shorter of p and q\n  m := \+
+nops(p):\n  if nops(q) < m then m := nops(q) fi:\n\n  # check to see i
+f p is less than q, up to position m\n  for i from 1 to m do\n    if p
+[i] < q[i] then\n      RETURN(true):\n    fi:\n    if p[i] > q[i] then
+\n      RETURN(false):\n    fi:\n  od:\n  # if we are still here, then
+ compare lengths\n  if nops(p) <= nops(q) then\n    RETURN(true):\n  e
+lse\n    RETURN(false):\n  fi:\nend:" }}}}{SECT 0 {PARA 4 "" 0 "" 
+{TEXT -1 256 "smerg merges a list of binames into a single list r in l
+exicographic order, and places a 0 to the left and a 1 to the right of
+ the merged list.  This is useful for traversing a tree.\nINPUT: s is \+
+a list of binames to be merged.\nOUTPUT: r is the merged list." }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 598 "smerg := proc(s::list) opti
+on remember;\n  local d,j,k,q,r:\n\n  # d is the number of lists in s \+
+to be merged.\n  d := nops(s):\n  # q is the list s in sorted order.\n
+  # We use [9] because it is greater than both [0] and [1].\n  q := [[
+9]]:\n\n  # sort the list  \n  for k from 1 to d do\n    j := 1:\n    \+
+# find the correct position of s[k]\n    while not LLT(s[k], q[j]) do
+\n      j := j+1:\n    od:\n    q := [op(1..j-1,q),s[k],op(j..nops(q),
+q)]:\n  od:\n\n  # construct r from q\n  r := [0]:\n  for k from 1 to \+
+d do\n    r := [op(r), op(q[k])]:\n  od:\n  r := [op(r),1]:\n\n  # Ret
+urn r to the caller.\n  RETURN(r):\nend:" }}}}{SECT 0 {PARA 4 "" 0 "" 
+{TEXT -1 445 "LocalMinnameArr generates the lexicographically least bi
+name (minname) for each possible node in a tree by creating an array o
+f local minnames.\nINPUT: A child array c representing the tree, a hea
+p ordering h of its vertices, and an integer n representing the number
+ of nodes.\nOUTPUT: r is an array of binames, where r[x] gives the loc
+al minname of the branch of the tree rooted at node x.\nNOTE: The root
+ must receive the highest label, namely n." }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 593 "LocalMinnameArr := proc(c::array, h::list, n::inte
+ger)\n  local i, r, s, x, y:\n  r := array(1..n):\n  # Traverse the en
+tire tree using the heap ordering\n  # Note that r is created bottom-u
+p, so that minnames of lower nodes\n  # can be used to generate minnam
+es of the higher nodes.\n  for i from 1 to n do\n    x := h[i]:\n    s
+ := []:\n    # Combine binames of the children of the current node\n  \+
+  for y in c[x] do\n      s := [op(s),r[y]]:\n    od:\n    # Find the \+
+minimal biname (local minname) at this point and create\n    # the bin
+ame for this subtree\n    r[x] := smerg(s):\n  od:\n  RETURN(r):\nend:
+\n" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 711 "GlobalMinname generates \+
+the lexicographically least biname for an input unrooted tree.  The pr
+ocedure starts with a local best labelling rooted at n.  Then the proc
+edure moves from parent w to child v throughout the tree, modifying th
+e existing local labellings to produce best local labellings t for eac
+h node as root.  Along\nthe way a local branch labelling tt is require
+d at the parent w of v by regarding v as the root and w as the root of
+ one branch at v.\nINPUT: a child array c, representing a rooted tree,
+ a heap ordering h as a list, the parent list p, and an integer n repr
+esenting the number of nodes and the label of the root.\nOUTPUT: best \+
+is the lexicographically least biname for the unrooted tree." }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1165 "GlobalMinname := proc(c::a
+rray, h::list, p::list, n::integer)\n  local best, i, r, s, t, tt, v, \+
+w, y:\n  global MinnameTable, TableUsed:\n\n  # Generate an array of l
+ocal minname\n  # We start with the root we are given.\n  r := LocalMi
+nnameArr(c,h,n):\n\n  t := array(1..n):\n  tt := array(1..n):\n  tt[n]
+ := []:\n  t[n] := r[n]:\n  best := r[n]:\n\n  if(MinnameTable[best] <
+> 0) then\n    TableUsed := 1;\n    RETURN(MinnameTable[best]):\n  fi:
+\n\n  # Try different roots until we find the one with the\n  # lexico
+graphically least associated minname.\n  for i from n-1 to 1 by -1 do
+\n    v := h[i]:\n    w := p[v]:\n    s := [tt[w]]:\n\n    for y in c[
+w] do\n      if y=v then next fi:\n      s := [op(s),r[y]]:\n    od:\n
+    tt[v] := smerg(s):\n    s :=  [tt[v]]:\n\n    for y in c[v] do\n  \+
+    s := [op(s),r[y]]:\n    od:\n    t[v] := smerg(s):\n\n    # If the
+ current root is lexicographically less than the best root\n    # foun
+d so far, then set best accordingly.\n    if LLT(t[v],best) then best \+
+:= t[v] fi:\n  od:\n\n  # Insert each minname t[i] into the lookup tab
+le\n  for i from 1 to n do\n    MinnameTable[t[i]] := best:\n  od:\n\n
+  # Return the lexicographically least minname.\n  RETURN(best):\nend:
+" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 28 "Subtree generation functio
+ns" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 92 "nextree produces the next s
+panning tree in a graph with given input ordered edge set.\nINPUT:" }}
+{PARA 264 "" 0 "" {TEXT -1 96 "e is the list of edges of the graph who
+se order determines the ordering of the spanning subtrees" }}{PARA 
+261 "" 0 "" {TEXT -1 114 "ctr is an array of list sets where ctr[i] is
+ a list of the sets of edges which must be used before edge i is used.
+" }}{PARA 262 "" 0 "" {TEXT -1 29 "m is the number of edges in e" }}
+{PARA 263 "" 0 "" {TEXT -1 37 "e is the number of nodes in the graph" 
+}}{PARA 4 "" 0 "" {TEXT -1 135 "OUTPUT: the number of edges in the nex
+t tree.  If j=0, then there is no next tree and the search through all
+ spanning subtrees is over." }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+2029 "nextree := proc(e::list, ctr::array, m,n::integer)\n  local back
+track, i, j, k, s, v, x, y:\n  global f,g:\n\n  printf(`\\nEntering ne
+xtree\\n`):\n  k := nops(f):\n  if k = (n-1) then\n    j := k:\n    i \+
+:= f[k]+1:\n    f := [op(1..k-1,f)]:\n  elif k > 0 then\n    j := k+1:
+\n    i := f[k]+1:\n  else\n    j := 1:\n    i := 1:\n  fi:\n\n  # We \+
+are not backtracking initially\n  backtrack := false:\n\n  while j < n
+ do\n    printf(`Top of loop; ctr = %a, j = %d, i = %d, n = %d, f = %a
+, `, ctr, j, i, n, f):\n    printf(`ctr[i]: %a\\n`, ctr[i]):\n    for \+
+s in ctr[i] do\n      # If there are no common vertices between s and \+
+f, then set backtrack\n      if nops(s intersect \{op(f)\}) = 0 then\n
+        printf(`setting backtrack from common vertices loop\\n`):\n   \+
+     backtrack := true:\n        break:\n      fi:\n    od:\n    # If \+
+(the number of edges in the spanning tree) - (the index of the\n    # \+
+edge) + 1 is less than (the number of nodes in the graph) - (the\n    \+
+# stage of building the subtree) then set backtrack?\n    printf(`m-i+
+1=%d, n-j=%d\\n`, m-i+1, n-j):\n    if (m-i+1) < (n-j) then backtrack \+
+:= true fi:\n\n    if backtrack then    \n      printf(`Backtracking; \+
+f = %a, i = %d, j = %d`, f, i, j):\n      j := j-1:\n      if j = 0 th
+en RETURN(j) fi:\n      i := f[j]+1:\n      f := [op(1..j-1,f)]:\n    \+
+  backtrack := false:\n      printf(`, new f = %a, new i = %d, new j =
+ %d\\n`, f, i, j):\n    else\n      x := g[j-1,op(1,e[i])]:\n      y :
+= g[j-1,op(2,e[i])]:\n      printf(`Not backtracking; x = %d, y = %d\\
+n`, x, y):\n      printf(`j-1 = %d, e[i] = %a\\n`, j-1, e[i]):\n      \+
+if x = y then\n        i := i+1:\n        printf(`x==y, so i becomes %
+d\\n`, i):\n      else\n        printf(`f = %a, `, f):\n        f := [
+op(f),i]:\n        printf(`new f = %a\\n`, f):\n        printf(`g[%d,1
+..%d] = `, j-1, n):\n        for v to n do\n          printf(`%a `, g[
+j-1,v]):\n          if g[j-1,v] = y then\n            g[j,v] := x:\n  \+
+        else \n            g[j,v] := g[j-1,v]:\n          fi:\n       \+
+ od:\n        j := j+1:\n        i := i+1:\n      fi:\n    fi:\n  od:
+\n  RETURN(j):\nend:\n" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 187 "chil
+de produces a child array c, a heap order h, and a parent list p\nfrom
+ an input list e of edges for a spanning subtree.\nINPUT: a list of ed
+ges e and the number of nodes n\nOUTPUT: none." }}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 920 "childe := proc(e::list, n::integer)\n  local do
+itnow, doitlater, undun, i,k,pa,x,y:\n  global c,h,p:\n\n  printf(`\\n
+Entering childe\\n`):\n  undun := \{\}:\n  for i to n-1 do\n    c[i] :
+= \{\}:\n    undun := undun union \{i\}:\n  od:\n  c[n] := \{\}:\n  do
+itnow := \{n\}:\n  doitlater := \{\}:\n  h := [n]:\n  pa := array(1..n
+-1):\n  k := 1:\n  colordiff := 1:\n  while nops(undun) > 0 do\n    pr
+intf(`Top of loop 1; c = %a, pa = %a, h = %a\\n`, c, pa, h):\n    k :=
+ -k:\n    for x in doitnow do\n      for i in undun do\n        if mem
+ber(x,e[i]) then\n          y := e[i][1]:\n          if x = y then y :
+= e[i][2] fi:\n          c[x] := c[x] union \{y\}:\n          pa[y] :=
+ x:\n          h := [y,op(h)]:\n          undun := undun minus \{i\}:
+\n          doitlater := doitlater union \{y\}:\n        fi:\n      od
+:             \n    od:\n    doitnow := doitlater:\n    doitlater := \+
+\{\}:\n  od:\n  p := []:\n  for x to n-1 do\n    p := [op(p),pa[x]]:\n
+  od:\n  printf(`\\n`):\nend:\n" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 
+186 "gbuild produces the nxn component status array g for a given edge
+ list\ne and globally passed(partial) edge-index selector f.\nINPUT: a
+n edge list e and the number of nodes n\nOUTPUT: none." }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 493 "gbuild := proc(e::list, n::integer
+)\n  local g,v,j,x,y:\n  global f:\n\n  printf(`\\nEntering gbuild\\n`
+):\n\n  g := array(0..n-1,1..n):\n  for v to n do\n    g[0,v] := v:\n \+
+ od:\n  for j to nops(f) do\n    printf(`Top of loop; g = %a\\n`, g):
+\n    x := g[j-1,op(1,e[f[j]])]:\n    y := g[j-1,op(2,e[f[j]])]:\n    \+
+printf(`x = %a, y = %a\\n`, x, a):\n    for v to n do\n      if g[j-1,
+v] = y then\n        g[j,v] := x:\n      else \n        g[j,v] := g[j-
+1,v]:\n      fi:\n    od:\n  od:\n  RETURN(g):\n  printf(`\\n`):\nend:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}{SECT 1 {PARA 3 "" 0 "" 
+{TEXT -1 27 "Output formatting functions" }}{SECT 0 {PARA 4 "" 0 "" 
+{TEXT -1 8 "deciname" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 138 "dec
+iname := proc(s::list)\n  local t, n, N:\n  t := 0:\n  N := nops(s):\n
+  for n from 1 to N do\n    t := t * 2 + s[n]:\n  od:\n  RETURN(t):\ne
+nd:" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 6 "dumpum" }}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 1393 "dumpum := proc(e::list)\n  # We use subtr
+eez here to differentiate from global subtrees\n  local k, subtreez, s
+n, treq, notreq: \n  global  edges, tcount, subtrees, nr, reqedge,t, n
+rmd,ds:\n\n  printf(`The %a edges are %a\\n`, m, e):\n  printf(`Number
+ of trees found: %d\\n`, tcount):\n  printf(`Number of NON-ISOMORPHIC \+
+trees found: %d\\n`, nops(subtrees)):\n  # for k to 20 do\n  #   if nr
+md[k] > 0 then \n  #     print( nrmd[k],` NON-ISOMORPHIC trees with ma
+xdeg`, k):\n  #   fi:\n  # od:\n#  subtrees := cleanup(subtrees):\n#  \+
+for sn in subtreez do\n#    print(sn):\n#    print(nr[t[sn]],ds[t[sn]]
+):\n#    print(edges[t[sn]]):\n#  od:\n  for sn in subtrees do\n    su
+btreez := [op(subtreez), [deciname(sn), convert(deciname(sn), hex)]]:
+\n    printf(`%a   `, [deciname(sn), convert(deciname(sn), hex)]):\n  \+
+  printf(`%d   %a   `, nr[sn], ds[sn]):\n    printf(`%a\\n`, edges[sn]
+):\n  od:\n  notreq := []:\n  for k to nops(e) do\n    treq := []:\n  \+
+  for sn in subtrees do\n      if member(k, reqedge[sn]) then\n       \+
+ treq := [op(treq), [deciname(sn), convert(deciname(sn), hex)]]:\n    \+
+  fi:\n    od:\n    if nops(treq) > 0 then\n      printf(`Edge %a is r
+equired by trees %a\\n`, e[k], treq):\n    else\n      notreq := [op(n
+otreq), e[k]]:\n    fi:\n  od:\n  printf(`Edges not required: %a\\n`, \+
+notreq):\n\n  if(TableUsed = 0) then\n    printf(`Table used: false`):
+\n  else\n    printf(`Table used: true`):\n  fi:\n\n  RETURN(subtreez)
+;\nend:" }}}}}{SECT 1 {PARA 3 "" 0 "" {TEXT -1 12 "Main program" }}
+{SECT 1 {PARA 4 "" 0 "" {TEXT -1 6 "degseq" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 453 "degseq := proc(e::list, n::integer)\n  local m,deg
+, sq, s,k,v:\n  global maxdeg:\n\n  maxdeg := 0:\n  m := nops(e):\n  d
+eg := array(sparse,1..n):\n  sq := array(sparse,0..n):\n\n  for k to m
+ do\n\011   deg[e[k][1]] := deg[e[k][1]] +1:\n\011    deg[e[k][2]] := \+
+deg[e[k][2]] +1:\n  od:\n\n  for v to n do\n    sq[deg[v]] := sq[deg[v
+]] + 1:\n    if deg[v] > maxdeg then maxdeg := deg[v] fi:\n  od:\n\n  \+
+s := []:\n  for k to maxdeg do\n    s := [op(s), sq[k]]:\n  od:\n  RET
+URN(s):\nend:" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 73 "spantree deter
+mines all spanning trees of a graph with edge list e\nINPUT:" }}{PARA 
+265 "" 0 "" {TEXT -1 38 "e is a list of edges of the supergraph" }}
+{PARA 266 "" 0 "" {TEXT -1 450 "ctr is an array of list sets where ctr
+[i[ is a list of the sets of edges which must be used before edge i is
+ used.  For example, if the edges incident with a vertex v are 1, 3 an
+d 7, then the list ctr[8] would contain the set \{1,3,7\} because at l
+east one of these edges must be used if the result is to connect with \+
+vertex v.  Since edges are added in order, one of 1, 3, or 7 must be u
+sed before 8 or there is no hope of getting a connected subtree." }}
+{PARA 267 "" 0 "" {TEXT -1 29 "m is the number of edges in e" }}{PARA 
+268 "" 0 "" {TEXT -1 37 "e is the number of nodes in the graph" }}
+{PARA 4 "" 0 "" {TEXT -1 13 "OUTPUT: none." }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 2268 "spantree := proc(e::list, ctr::array, n::integer,
+ freq::integer)\n  # We use subtreez here to differentiate from global
+ subtrees\n  local  edgs, i, j, k, m, time1, time2, TIME1, TIME2, aver
+time, minname,\n         jcount, tc, subtreez, nn, sn, treq:\n  global
+ f,g,c,h,p,sh,t,edges, tcount, subtrees, nr, reqedge, maxdeg,\n       \+
+  nrmd,ds:\n\n  # TIME1 is the start time.  time1 is the start time fo
+r a piece of\n  # the puzzle.\n  TIME1 := time():\n\n  # Initialize va
+lues\n  # nrmd := array(sparse, 1..20):\n  m := nops(e):              \+
+       # number of edges\n  c := array(1..n):                 # a chil
+d array\n  f := []:                          # list of indices of edge
+s\n  g := gbuild(e,n):                 # component number array\n  h :
+= []:                          # heap ordering as a list\n  p := []:  \+
+                        # a parent list\n  subtrees := []:            \+
+       # a list of minnames for each subtree found\n  time1 := time():
+\n  tcount := 0:                      # total number of spanning subtr
+ees\n  jcount := nextree(e,ctr,m,n):     # number of edges in the curr
+ent subtree\n\n  while(jcount > 0) do\n\n    printf(`Top of loop; jcou
+nt = %d\\n`, jcount):\n\n    # Get the edges in the spanning tree\n   \+
+ edgs := []:\n    for k from 1 to n-1 do\n      edgs := [op(edgs), e[f
+[k]]]:\n    od:\n\n    printf(`edgs: %a\\n`, edgs):\n\n    # Get the c
+hild array and lexcode for the subtree\n    childe(edgs,n):\n    minna
+me := GlobalMinname(c,h,p,n):\n\n    printf(`Global minname: `, minnam
+e):\n\n    # Determine if this subtree has been found already.\n    # \+
+This is done by comparing the minname with the list of\n    # minnames
+ already found.\n    if member(minname, subtrees) then\n      nr[minna
+me] := nr[minname] + 1:\n      reqedge[minname] := \{op(f)\} intersect
+ reqedge[minname]:\n    else\n      subtrees := [op(subtrees), minname
+]:\n      ds[minname] := degseq(edgs,n):\n      # nrmd[maxdeg] := nrmd
+[maxdeg] + 1:\n      nr[minname] := 1:\n      edges[minname] := edgs:
+\n      reqedge[minname] := \{op(f)\}:\n    fi:\n\n    tcount := tcoun
+t+1:\n    \n    printf(`f = %a; g = %a\\n`, f, g):\n\n    # Find the n
+ext spanning tree.  nextree returns 0 if there are\n    # no spanning \+
+trees left, which will end the loop.\n    jcount := nextree(e,ctr,m,n)
+:\n  od:\n  printf(`\\n`):\n\n  RETURN(subtreez):\nend:\n" }}}}{SECT 
+1 {PARA 4 "" 0 "" {TEXT -1 130 "setctr initializes m and the control a
+rray ctr\nINPUT: a list of edges e and the number of vertices n\nOUTPU
+T: the control array ctr" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+1244 "setctr := proc(e::list, n)\n  local ctr,deg, i, v, vert, bond, m
+axi, m:\n  deg := []:\n\n  # m is the number of edges\n  m := nops(e):
+\n  # ctr is the control array to return\n  ctr := array(1..m+1):\n\n \+
+ # initialize the control array and the vertex array\n  for i to m+1 d
+o\n    ctr[i] := []:\n    vert[i] := []:\n  od:\n  \n  for v from 1 to
+ n do\n    bond := \{\}:\n    maxi := 0:\n\n    # Find every vertex co
+nnected to vertex v and add it to bond\n    for i from 1 to m do\n    \+
+  if member(v,e[i]) then\n        bond := bond union \{i\}:\n        m
+axi := i+1:\n      fi:\n    od:\n\n    # Add the bond list to the cont
+rol array at position maxi.\n    # The bond list is only added to one \+
+position, since we only\n    # want to traverse edges once.\n    ctr[m
+axi] := [op(ctr[maxi]),bond]:\n\n    # Keep track of which vertex this
+ bond list is associated with.\n    vert[maxi] := [op(vert[maxi]), v]:
+\n\n    # The number of elements in bond is the degree of vertex v.\n \+
+   deg := [op(deg), [v, nops(bond)]]:\n\n  od:\n\n  print(`There are `
+, m, `edges.  The vertex degrees are`):\n  print(deg):\n  # for i from
+ 1 to m+1 do\n  #   if nops(ctr[i]) > 0 then\n  #     print(i, ctr[i])
+:\n  #     print(i, vert[i]):\n  #   fi:\n  # od:\n\n  print(`The cont
+rol array is: `, ctr):\n\n  RETURN(ctr);\nend:" }}}}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 49 "e := [[1,2],[2,3],[3,4],[4,5],[5,6],[6,1],[2,
+5]];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"eG7)7$\"\"\"\"\"#7$F(\"\"$
+7$F*\"\"%7$F,\"\"&7$F.\"\"'7$F0F'7$F(F." }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "ctr := setctr(e,6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6%%+There~are~G\"\"(%?edges.~~The~vertex~degrees~areG" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#7(7$\"\"\"\"\"#7$F&\"\"$7$F(F&7$\"\"%F&7$\"\"&F(7$
+\"\"'F&" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$%7The~control~array~is:~G-%
+'vectorG6#7*7\"F(F(7#<$\"\"#\"\"$7#<$F,\"\"%F(7$<$\"\"\"\"\"'<$\"\"&F3
+7$<%F2F+\"\"(<%F/F5F8" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$ctrGF$" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "A := spantree(e, ctr, 6, 1)
+;" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Ente
+ring gbuild" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT 
+-1 16 "Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 63 "Top of loop; c
+tr = ctr, j = 1, i = 1, n = 6, f = [], ctr[i]: []" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=7, n-j=5" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtr
+acking; x = 1, y = 2" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 0, e[i] = [
+1, 2]" }}{PARA 6 "" 1 "" {TEXT -1 19 "f = [], new f = [1]" }}{PARA 6 "
+" 1 "" {TEXT -1 88 "g[0,1..6] = 1 2 3 4 5 6 Top of loop; ctr = ctr, j \+
+= 2, i = 2, n = 6, f = [1], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 
+"m-i+1=6, n-j=4" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = \+
+1, y = 3" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 1, e[i] = [2, 3]" }}
+{PARA 6 "" 1 "" {TEXT -1 23 "f = [1], new f = [1, 2]" }}{PARA 6 "" 1 "
+" {TEXT -1 91 "g[1,1..6] = 1 1 3 4 5 6 Top of loop; ctr = ctr, j = 3, \+
+i = 3, n = 6, f = [1, 2], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m
+-i+1=5, n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 1,
+ y = 4" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 2, e[i] = [3, 4]" }}
+{PARA 6 "" 1 "" {TEXT -1 29 "f = [1, 2], new f = [1, 2, 3]" }}{PARA 6 
+"" 1 "" {TEXT -1 100 "g[2,1..6] = 1 1 1 4 5 6 Top of loop; ctr = ctr, \+
+j = 4, i = 4, n = 6, f = [1, 2, 3], ctr[i]: [\{2, 3\}]" }}{PARA 6 "" 
+1 "" {TEXT -1 14 "m-i+1=4, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not b
+acktracking; x = 1, y = 5" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i
+] = [4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [1, 2, 3], new f = [1, \+
+2, 3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 103 "g[3,1..6] = 1 1 1 1 5 6 Top \+
+of loop; ctr = ctr, j = 5, i = 5, n = 6, f = [1, 2, 3, 4], ctr[i]: [\{
+3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=1" }}{PARA 6 "" 
+1 "" {TEXT -1 30 "Not backtracking; x = 1, y = 6" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 4, e[i] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f \+
+= [1, 2, 3, 4], new f = [1, 2, 3, 4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 
+47 "g[4,1..6] = 1 1 1 1 1 6 Top of loop; jcount = 6" }}{PARA 6 "" 1 "
+" {TEXT -1 46 "edgs: [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering \+
+childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, \+
+h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c, pa = pa,
+ h = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa =
+ pa, h = [4, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c = \+
+c, pa = pa, h = [3, 4, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of lo
+op 1; c = c, pa = pa, h = [2, 3, 4, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 
+0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 2, 3, 4, 5
+]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 
+16 "Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 73 "Top of loop; ctr \+
+= ctr, j = 5, i = 6, n = 6, f = [1, 2, 3, 4], ctr[i]: []" }}{PARA 6 "
+" 1 "" {TEXT -1 14 "m-i+1=2, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not
+ backtracking; x = 6, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e
+[i] = [6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f = [1, 2, 3, 4], new f =
+ [1, 2, 3, 4, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 1 1 1 1 1
+ 6 Top of loop; jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[1, \+
+2], [2, 3], [3, 4], [4, 5], [6, 1]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }
+}{PARA 6 "" 1 "" {TEXT -1 15 "Entering childe" }}{PARA 6 "" 1 "" 
+{TEXT -1 38 "Top of loop 1; c = c, pa = pa, h = [6]" }}{PARA 6 "" 1 "
+" {TEXT -1 41 "Top of loop 1; c = c, pa = pa, h = [1, 6]" }}{PARA 6 "
+" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa = pa, h = [2, 1, 6]" }}
+{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c = c, pa = pa, h = [3, 2,
+ 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = c, pa = pa, \+
+h = [4, 3, 2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 42 "Global minname: f = [1, 2, 3, 4, 6]; g = g" }}{PARA 6 "
+" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" 
+}}{PARA 6 "" 1 "" {TEXT -1 87 "Top of loop; ctr = ctr, j = 5, i = 7, n
+ = 6, f = [1, 2, 3, 4], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "
+" {TEXT -1 43 "setting backtrack from common vertices loop" }}{PARA 6 
+"" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Ba
+cktracking; f = [1, 2, 3, 4], i = 7, j = 5, new f = [1, 2, 3], new i =
+ 5, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 76 "Top of loop; ctr = ctr, \+
+j = 4, i = 5, n = 6, f = [1, 2, 3], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 
+1 "" {TEXT -1 14 "m-i+1=3, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not b
+acktracking; x = 5, y = 6" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i
+] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [1, 2, 3], new f = [1, \+
+2, 3, 5]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g[3,1..6] = 1 1 1 1 5 6 Top o
+f loop; ctr = ctr, j = 5, i = 6, n = 6, f = [1, 2, 3, 5], ctr[i]: []" 
+}}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=1" }}{PARA 6 "" 1 "" 
+{TEXT -1 30 "Not backtracking; x = 5, y = 1" }}{PARA 6 "" 1 "" {TEXT 
+-1 22 "j-1 = 4, e[i] = [6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f = [1, \+
+2, 3, 5], new f = [1, 2, 3, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,
+1..6] = 1 1 1 1 5 5 Top of loop; jcount = 6" }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "edgs: [[1, 2], [2, 3], [3, 4], [5, 6], [6, 1]]" }}{PARA 6 "" 1 
+"" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering childe" }}
+{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, h = [6]" }
+}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa = pa, h = [1, 5
+, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c = c, pa = pa, h \+
+= [2, 1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = c, p
+a = pa, h = [3, 2, 1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 
+6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 2, 3, 5, 6]; g = g" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering \+
+nextree" }}{PARA 6 "" 1 "" {TEXT -1 87 "Top of loop; ctr = ctr, j = 5,
+ i = 7, n = 6, f = [1, 2, 3, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT 
+-1 30 "Not backtracking; x = 1, y = 5" }}{PARA 6 "" 1 "" {TEXT -1 22 "
+j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f = [1, 2, 3, 5
+], new f = [1, 2, 3, 5, 7]" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] =
+ 1 1 1 1 5 5 Top of loop; jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "e
+dgs: [[1, 2], [2, 3], [3, 4], [5, 6], [2, 5]]" }}{PARA 6 "" 1 "" 
+{TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering childe" }}{PARA 
+6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, h = [6]" }}
+{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c, pa = pa, h = [5, 6]
+" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa = pa, h = [2
+, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = c, pa = pa,
+ h = [3, 1, 2, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 42 "Global minname: f = [1, 2, 3, 5, 7]; g = g" }}{PARA 6 "
+" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" 
+}}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i = 8, n
+ = 6, f = [1, 2, 3, 5], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}{PARA 6 
+"" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Ba
+cktracking; f = [1, 2, 3, 5], i = 8, j = 5, new f = [1, 2, 3], new i =
+ 6, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, \+
+j = 4, i = 6, n = 6, f = [1, 2, 3], ctr[i]: []" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=2, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtr
+acking; x = 6, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [
+6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [1, 2, 3], new f = [1, 2, 3,
+ 6]" }}{PARA 6 "" 1 "" {TEXT -1 111 "g[3,1..6] = 1 1 1 1 5 6 Top of lo
+op; ctr = ctr, j = 5, i = 7, n = 6, f = [1, 2, 3, 6], ctr[i]: [\{1, 6
+\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 
+6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 6, y = 5" }}{PARA 6 "" 1 
+"" {TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 
+"f = [1, 2, 3, 6], new f = [1, 2, 3, 6, 7]" }}{PARA 6 "" 1 "" {TEXT 
+-1 47 "g[4,1..6] = 6 6 6 6 5 6 Top of loop; jcount = 6" }}{PARA 6 "" 
+1 "" {TEXT -1 46 "edgs: [[1, 2], [2, 3], [3, 4], [6, 1], [2, 5]]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering \+
+childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, \+
+h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c, pa = pa,
+ h = [1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa =
+ pa, h = [2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = \+
+c, pa = pa, h = [5, 3, 2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 2, 3, 6, 7]; g = \+
+g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Ente
+ring nextree" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j
+ = 5, i = 8, n = 6, f = [1, 2, 3, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7
+\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack from common vert
+ices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "
+" 1 "" {TEXT -1 85 "Backtracking; f = [1, 2, 3, 6], i = 8, j = 5, new \+
+f = [1, 2, 3], new i = 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "To
+p of loop; ctr = ctr, j = 4, i = 7, n = 6, f = [1, 2, 3], ctr[i]: [\{1
+, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack fro
+m common vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2
+" }}{PARA 6 "" 1 "" {TEXT -1 79 "Backtracking; f = [1, 2, 3], i = 7, j
+ = 4, new f = [1, 2], new i = 4, new j = 3" }}{PARA 6 "" 1 "" {TEXT 
+-1 73 "Top of loop; ctr = ctr, j = 3, i = 4, n = 6, f = [1, 2], ctr[i]
+: [\{2, 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=3" }}{PARA 
+6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 4, y = 5" }}{PARA 6 "" 1 
+"" {TEXT -1 22 "j-1 = 2, e[i] = [4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 29 
+"f = [1, 2], new f = [1, 2, 4]" }}{PARA 6 "" 1 "" {TEXT -1 100 "g[2,1.
+.6] = 1 1 1 4 5 6 Top of loop; ctr = ctr, j = 4, i = 5, n = 6, f = [1,
+ 2, 4], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-
+j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 4, y = 6" }}
+{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [5, 6]" }}{PARA 6 "" 1 "
+" {TEXT -1 35 "f = [1, 2, 4], new f = [1, 2, 4, 5]" }}{PARA 6 "" 1 "" 
+{TEXT -1 97 "g[3,1..6] = 1 1 1 4 4 6 Top of loop; ctr = ctr, j = 5, i \+
+= 6, n = 6, f = [1, 2, 4, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 
+14 "m-i+1=2, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x
+ = 4, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [6, 1]" }}
+{PARA 6 "" 1 "" {TEXT -1 41 "f = [1, 2, 4, 5], new f = [1, 2, 4, 5, 6]
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 1 1 1 4 4 4 Top of loop; \+
+jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[1, 2], [2, 3], [4, \+
+5], [5, 6], [6, 1]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 15 "Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of \+
+loop 1; c = c, pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of
+ loop 1; c = c, pa = pa, h = [1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 
+"Top of loop 1; c = c, pa = pa, h = [4, 2, 1, 5, 6]" }}{PARA 6 "" 1 "
+" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1,
+ 2, 4, 5, 6]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 16 "Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 87 "Top of
+ loop; ctr = ctr, j = 5, i = 7, n = 6, f = [1, 2, 4, 5], ctr[i]: [\{1,
+ 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}
+{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 1, y = 4" }}{PARA 
+6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" 
+{TEXT -1 41 "f = [1, 2, 4, 5], new f = [1, 2, 4, 5, 7]" }}{PARA 6 "" 
+1 "" {TEXT -1 47 "g[4,1..6] = 1 1 1 4 4 4 Top of loop; jcount = 6" }}
+{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[1, 2], [2, 3], [4, 5], [5, 6], [2
+, 5]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "
+Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, \+
+pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c,
+ pa = pa, h = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c \+
+= c, pa = pa, h = [2, 4, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 2, 4, 5, 7]; g = \+
+g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Ente
+ring nextree" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j
+ = 5, i = 8, n = 6, f = [1, 2, 4, 5], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7
+\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" 
+{TEXT -1 85 "Backtracking; f = [1, 2, 4, 5], i = 8, j = 5, new f = [1,
+ 2, 4], new i = 6, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 70 "Top of lo
+op; ctr = ctr, j = 4, i = 6, n = 6, f = [1, 2, 4], ctr[i]: []" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=2" }}{PARA 6 "" 1 "" {TEXT 
+-1 30 "Not backtracking; x = 6, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "
+j-1 = 3, e[i] = [6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [1, 2, 4], \+
+new f = [1, 2, 4, 6]" }}{PARA 6 "" 1 "" {TEXT -1 111 "g[3,1..6] = 1 1 \+
+1 4 4 6 Top of loop; ctr = ctr, j = 5, i = 7, n = 6, f = [1, 2, 4, 6],
+ ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1,
+ n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 6, y = 4
+" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 
+1 "" {TEXT -1 41 "f = [1, 2, 4, 6], new f = [1, 2, 4, 6, 7]" }}{PARA 
+6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 6 6 6 4 4 6 Top of loop; jcount = 6
+" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[1, 2], [2, 3], [4, 5], [6, 1]
+, [2, 5]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 
+15 "Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c =
+ c, pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c \+
+= c, pa = pa, h = [1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1
+; c = c, pa = pa, h = [2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of
+ loop 1; c = c, pa = pa, h = [5, 3, 2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT 
+-1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 2, 4, 6
+, 7]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT 
+-1 16 "Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; c
+tr = ctr, j = 5, i = 8, n = 6, f = [1, 2, 4, 6], ctr[i]: [\{1, 2, 7\},
+ \{4, 5, 7\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 
+6 "" 1 "" {TEXT -1 85 "Backtracking; f = [1, 2, 4, 6], i = 8, j = 5, n
+ew f = [1, 2, 4], new i = 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 
+"Top of loop; ctr = ctr, j = 4, i = 7, n = 6, f = [1, 2, 4], ctr[i]: [
+\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack \+
+from common vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j
+=2" }}{PARA 6 "" 1 "" {TEXT -1 79 "Backtracking; f = [1, 2, 4], i = 7,
+ j = 4, new f = [1, 2], new i = 5, new j = 3" }}{PARA 6 "" 1 "" {TEXT 
+-1 73 "Top of loop; ctr = ctr, j = 3, i = 5, n = 6, f = [1, 2], ctr[i]
+: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack from co
+mmon vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=3" }}
+{PARA 6 "" 1 "" {TEXT -1 73 "Backtracking; f = [1, 2], i = 5, j = 3, n
+ew f = [1], new i = 3, new j = 2" }}{PARA 6 "" 1 "" {TEXT -1 64 "Top o
+f loop; ctr = ctr, j = 2, i = 3, n = 6, f = [1], ctr[i]: []" }}{PARA 
+6 "" 1 "" {TEXT -1 14 "m-i+1=5, n-j=4" }}{PARA 6 "" 1 "" {TEXT -1 30 "
+Not backtracking; x = 3, y = 4" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 1
+, e[i] = [3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 23 "f = [1], new f = [1, 3
+]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g[1,1..6] = 1 1 3 4 5 6 Top of loop;
+ ctr = ctr, j = 3, i = 4, n = 6, f = [1, 3], ctr[i]: [\{2, 3\}]" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=3" }}{PARA 6 "" 1 "" {TEXT 
+-1 30 "Not backtracking; x = 3, y = 5" }}{PARA 6 "" 1 "" {TEXT -1 22 "
+j-1 = 2, e[i] = [4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 29 "f = [1, 3], new
+ f = [1, 3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 100 "g[2,1..6] = 1 1 3 3 5 \+
+6 Top of loop; ctr = ctr, j = 4, i = 5, n = 6, f = [1, 3, 4], ctr[i]: \+
+[\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=2" }}{PARA 6 "
+" 1 "" {TEXT -1 30 "Not backtracking; x = 3, y = 6" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 3, e[i] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f \+
+= [1, 3, 4], new f = [1, 3, 4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g[3,
+1..6] = 1 1 3 3 3 6 Top of loop; ctr = ctr, j = 5, i = 6, n = 6, f = [
+1, 3, 4, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=1
+" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 3, y = 1" }}
+{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [6, 1]" }}{PARA 6 "" 1 "
+" {TEXT -1 41 "f = [1, 3, 4, 5], new f = [1, 3, 4, 5, 6]" }}{PARA 6 "
+" 1 "" {TEXT -1 47 "g[4,1..6] = 1 1 3 3 3 3 Top of loop; jcount = 6" }
+}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[1, 2], [3, 4], [4, 5], [5, 6], [
+6, 1]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 
+"Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c,
+ pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c
+, pa = pa, h = [1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1
+; c = c, pa = pa, h = [4, 2, 1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "
+" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 3, 4, 5, 6]; \+
+g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "
+Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 87 "Top of loop; ctr = ct
+r, j = 5, i = 7, n = 6, f = [1, 3, 4, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]
+" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" 
+{TEXT -1 30 "Not backtracking; x = 1, y = 3" }}{PARA 6 "" 1 "" {TEXT 
+-1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f = [1, \+
+3, 4, 5], new f = [1, 3, 4, 5, 7]" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,
+1..6] = 1 1 3 3 3 3 Top of loop; jcount = 6" }}{PARA 6 "" 1 "" {TEXT 
+-1 46 "edgs: [[1, 2], [3, 4], [4, 5], [5, 6], [2, 5]]" }}{PARA 6 "" 1 
+"" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering childe" }}
+{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, h = [6]" }
+}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c, pa = pa, h = [5, 6
+]" }}{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c = c, pa = pa, h = [
+2, 4, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT 
+-1 42 "Global minname: f = [1, 3, 4, 5, 7]; g = g" }}{PARA 6 "" 1 "" 
+{TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" }}
+{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i = 8, n =
+ 6, f = [1, 3, 4, 5], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}{PARA 6 "
+" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Bac
+ktracking; f = [1, 3, 4, 5], i = 8, j = 5, new f = [1, 3, 4], new i = \+
+6, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, j
+ = 4, i = 6, n = 6, f = [1, 3, 4], ctr[i]: []" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=2, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtr
+acking; x = 6, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [
+6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [1, 3, 4], new f = [1, 3, 4,
+ 6]" }}{PARA 6 "" 1 "" {TEXT -1 111 "g[3,1..6] = 1 1 3 3 3 6 Top of lo
+op; ctr = ctr, j = 5, i = 7, n = 6, f = [1, 3, 4, 6], ctr[i]: [\{1, 6
+\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 
+6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 6, y = 3" }}{PARA 6 "" 1 
+"" {TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 
+"f = [1, 3, 4, 6], new f = [1, 3, 4, 6, 7]" }}{PARA 6 "" 1 "" {TEXT 
+-1 47 "g[4,1..6] = 6 6 3 3 3 6 Top of loop; jcount = 6" }}{PARA 6 "" 
+1 "" {TEXT -1 46 "edgs: [[1, 2], [3, 4], [4, 5], [6, 1], [2, 5]]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering \+
+childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, \+
+h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 41 "Top of loop 1; c = c, pa = pa,
+ h = [1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa =
+ pa, h = [2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 "Top of loop 1; c = \+
+c, pa = pa, h = [5, 2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of lo
+op 1; c = c, pa = pa, h = [4, 5, 2, 1, 6]" }}{PARA 6 "" 1 "" {TEXT -1 
+0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global minname: f = [1, 3, 4, 6, 7
+]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 
+16 "Entering nextree" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr \+
+= ctr, j = 5, i = 8, n = 6, f = [1, 3, 4, 6], ctr[i]: [\{1, 2, 7\}, \{
+4, 5, 7\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "
+" 1 "" {TEXT -1 85 "Backtracking; f = [1, 3, 4, 6], i = 8, j = 5, new \+
+f = [1, 3, 4], new i = 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "To
+p of loop; ctr = ctr, j = 4, i = 7, n = 6, f = [1, 3, 4], ctr[i]: [\{1
+, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack fro
+m common vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2
+" }}{PARA 6 "" 1 "" {TEXT -1 79 "Backtracking; f = [1, 3, 4], i = 7, j
+ = 4, new f = [1, 3], new i = 5, new j = 3" }}{PARA 6 "" 1 "" {TEXT 
+-1 73 "Top of loop; ctr = ctr, j = 3, i = 5, n = 6, f = [1, 3], ctr[i]
+: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=3" }}{PARA 
+6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 5, y = 6" }}{PARA 6 "" 1 
+"" {TEXT -1 22 "j-1 = 2, e[i] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 29 
+"f = [1, 3], new f = [1, 3, 5]" }}{PARA 6 "" 1 "" {TEXT -1 94 "g[2,1..
+6] = 1 1 3 3 5 6 Top of loop; ctr = ctr, j = 4, i = 6, n = 6, f = [1, \+
+3, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=2" }}
+{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 5, y = 1" }}{PARA 
+6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [6, 1]" }}{PARA 6 "" 1 "" 
+{TEXT -1 35 "f = [1, 3, 5], new f = [1, 3, 5, 6]" }}{PARA 6 "" 1 "" 
+{TEXT -1 111 "g[3,1..6] = 1 1 3 3 5 5 Top of loop; ctr = ctr, j = 5, i
+ = 7, n = 6, f = [1, 3, 5, 6], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 
+6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "
+Not backtracking; x = 5, y = 5" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4
+, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 20 "x==y, so i becomes 8" 
+}}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i = 8, n
+ = 6, f = [1, 3, 5, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}{PARA 6 
+"" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Ba
+cktracking; f = [1, 3, 5, 6], i = 8, j = 5, new f = [1, 3, 5], new i =
+ 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "Top of loop; ctr = ctr, \+
+j = 4, i = 7, n = 6, f = [1, 3, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2" }}{PARA 6 "" 1 "" {TEXT 
+-1 79 "Backtracking; f = [1, 3, 5], i = 7, j = 4, new f = [1, 3], new \+
+i = 6, new j = 3" }}{PARA 6 "" 1 "" {TEXT -1 67 "Top of loop; ctr = ct
+r, j = 3, i = 6, n = 6, f = [1, 3], ctr[i]: []" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=2, n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 73 "Backtracki
+ng; f = [1, 3], i = 6, j = 3, new f = [1], new i = 4, new j = 2" }}
+{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, j = 2, i = 4, n =
+ 6, f = [1], ctr[i]: [\{2, 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "settin
+g backtrack from common vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "
+m-i+1=4, n-j=4" }}{PARA 6 "" 1 "" {TEXT -1 69 "Backtracking; f = [1], \+
+i = 4, j = 2, new f = [], new i = 2, new j = 1" }}{PARA 6 "" 1 "" 
+{TEXT -1 63 "Top of loop; ctr = ctr, j = 1, i = 2, n = 6, f = [], ctr[
+i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=6, n-j=5" }}{PARA 6 "" 1 
+"" {TEXT -1 30 "Not backtracking; x = 2, y = 3" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 0, e[i] = [2, 3]" }}{PARA 6 "" 1 "" {TEXT -1 19 "f \+
+= [], new f = [2]" }}{PARA 6 "" 1 "" {TEXT -1 88 "g[0,1..6] = 1 2 3 4 \+
+5 6 Top of loop; ctr = ctr, j = 2, i = 3, n = 6, f = [2], ctr[i]: []" 
+}}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=5, n-j=4" }}{PARA 6 "" 1 "" 
+{TEXT -1 30 "Not backtracking; x = 2, y = 4" }}{PARA 6 "" 1 "" {TEXT 
+-1 22 "j-1 = 1, e[i] = [3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 23 "f = [2],
+ new f = [2, 3]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g[1,1..6] = 1 2 2 4 5 \+
+6 Top of loop; ctr = ctr, j = 3, i = 4, n = 6, f = [2, 3], ctr[i]: [\{
+2, 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=3" }}{PARA 6 "" 
+1 "" {TEXT -1 30 "Not backtracking; x = 2, y = 5" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 2, e[i] = [4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 29 "f \+
+= [2, 3], new f = [2, 3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 100 "g[2,1..6]
+ = 1 2 2 2 5 6 Top of loop; ctr = ctr, j = 4, i = 5, n = 6, f = [2, 3,
+ 4], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=2
+" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 2, y = 6" }}
+{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [5, 6]" }}{PARA 6 "" 1 "
+" {TEXT -1 35 "f = [2, 3, 4], new f = [2, 3, 4, 5]" }}{PARA 6 "" 1 "" 
+{TEXT -1 97 "g[3,1..6] = 1 2 2 2 2 6 Top of loop; ctr = ctr, j = 5, i \+
+= 6, n = 6, f = [2, 3, 4, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 
+14 "m-i+1=2, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x
+ = 2, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [6, 1]" }}
+{PARA 6 "" 1 "" {TEXT -1 41 "f = [2, 3, 4, 5], new f = [2, 3, 4, 5, 6]
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 1 2 2 2 2 2 Top of loop; \+
+jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[2, 3], [3, 4], [4, \+
+5], [5, 6], [6, 1]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 15 "Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of \+
+loop 1; c = c, pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of
+ loop 1; c = c, pa = pa, h = [1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 
+"Top of loop 1; c = c, pa = pa, h = [4, 1, 5, 6]" }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "Top of loop 1; c = c, pa = pa, h = [3, 4, 1, 5, 6]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global mi
+nname: f = [2, 3, 4, 5, 6]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" }}{PARA 6 "" 1 "" 
+{TEXT -1 87 "Top of loop; ctr = ctr, j = 5, i = 7, n = 6, f = [2, 3, 4
+, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "set
+ting backtrack from common vertices loop" }}{PARA 6 "" 1 "" {TEXT -1 
+14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Backtracking; f = [
+2, 3, 4, 5], i = 7, j = 5, new f = [2, 3, 4], new i = 6, new j = 4" }}
+{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, j = 4, i = 6, n =
+ 6, f = [2, 3, 4], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2,
+ n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 6, y = 1
+" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [6, 1]" }}{PARA 6 "" 
+1 "" {TEXT -1 35 "f = [2, 3, 4], new f = [2, 3, 4, 6]" }}{PARA 6 "" 1 
+"" {TEXT -1 111 "g[3,1..6] = 1 2 2 2 2 6 Top of loop; ctr = ctr, j = 5
+, i = 7, n = 6, f = [2, 3, 4, 6], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT 
+-1 30 "Not backtracking; x = 2, y = 2" }}{PARA 6 "" 1 "" {TEXT -1 22 "
+j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 20 "x==y, so i beco
+mes 8" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i
+ = 8, n = 6, f = [2, 3, 4, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT 
+-1 85 "Backtracking; f = [2, 3, 4, 6], i = 8, j = 5, new f = [2, 3, 4]
+, new i = 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "Top of loop; ct
+r = ctr, j = 4, i = 7, n = 6, f = [2, 3, 4], ctr[i]: [\{1, 6\}, \{5, 6
+\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack from common vert
+ices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2" }}{PARA 6 "
+" 1 "" {TEXT -1 79 "Backtracking; f = [2, 3, 4], i = 7, j = 4, new f =
+ [2, 3], new i = 5, new j = 3" }}{PARA 6 "" 1 "" {TEXT -1 73 "Top of l
+oop; ctr = ctr, j = 3, i = 5, n = 6, f = [2, 3], ctr[i]: [\{3, 4\}]" }
+}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=3" }}{PARA 6 "" 1 "" {TEXT 
+-1 30 "Not backtracking; x = 5, y = 6" }}{PARA 6 "" 1 "" {TEXT -1 22 "
+j-1 = 2, e[i] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 29 "f = [2, 3], new
+ f = [2, 3, 5]" }}{PARA 6 "" 1 "" {TEXT -1 94 "g[2,1..6] = 1 2 2 2 5 6
+ Top of loop; ctr = ctr, j = 4, i = 6, n = 6, f = [2, 3, 5], ctr[i]: [
+]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=2" }}{PARA 6 "" 1 "" 
+{TEXT -1 30 "Not backtracking; x = 5, y = 1" }}{PARA 6 "" 1 "" {TEXT 
+-1 22 "j-1 = 3, e[i] = [6, 1]" }}{PARA 6 "" 1 "" {TEXT -1 35 "f = [2, \+
+3, 5], new f = [2, 3, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 111 "g[3,1..6]
+ = 1 2 2 2 5 5 Top of loop; ctr = ctr, j = 5, i = 7, n = 6, f = [2, 3,
+ 5, 6], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m
+-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 2,
+ y = 5" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}
+{PARA 6 "" 1 "" {TEXT -1 41 "f = [2, 3, 5, 6], new f = [2, 3, 5, 6, 7]
+" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 5 2 2 2 5 5 Top of loop; \+
+jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[2, 3], [3, 4], [5, \+
+6], [6, 1], [2, 5]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "
+" {TEXT -1 15 "Entering childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of \+
+loop 1; c = c, pa = pa, h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of
+ loop 1; c = c, pa = pa, h = [1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 47 
+"Top of loop 1; c = c, pa = pa, h = [2, 1, 5, 6]" }}{PARA 6 "" 1 "" 
+{TEXT -1 50 "Top of loop 1; c = c, pa = pa, h = [3, 2, 1, 5, 6]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Global mi
+nname: f = [2, 3, 5, 6, 7]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}
+{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" }}{PARA 6 "" 1 "" 
+{TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i = 8, n = 6, f = [2, 3, 5
+, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}{PARA 6 "" 1 "" {TEXT -1 
+14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Backtracking; f = [
+2, 3, 5, 6], i = 8, j = 5, new f = [2, 3, 5], new i = 7, new j = 4" }}
+{PARA 6 "" 1 "" {TEXT -1 84 "Top of loop; ctr = ctr, j = 4, i = 7, n =
+ 6, f = [2, 3, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "" 1 "" 
+{TEXT -1 43 "setting backtrack from common vertices loop" }}{PARA 6 "
+" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 79 "Bac
+ktracking; f = [2, 3, 5], i = 7, j = 4, new f = [2, 3], new i = 6, new
+ j = 3" }}{PARA 6 "" 1 "" {TEXT -1 67 "Top of loop; ctr = ctr, j = 3, \+
+i = 6, n = 6, f = [2, 3], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m
+-i+1=2, n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 73 "Backtracking; f = [2, 3]
+, i = 6, j = 3, new f = [2], new i = 4, new j = 2" }}{PARA 6 "" 1 "" 
+{TEXT -1 70 "Top of loop; ctr = ctr, j = 2, i = 4, n = 6, f = [2], ctr
+[i]: [\{2, 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=4" }}
+{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 4, y = 5" }}{PARA 
+6 "" 1 "" {TEXT -1 22 "j-1 = 1, e[i] = [4, 5]" }}{PARA 6 "" 1 "" 
+{TEXT -1 23 "f = [2], new f = [2, 4]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g
+[1,1..6] = 1 2 2 4 5 6 Top of loop; ctr = ctr, j = 3, i = 5, n = 6, f \+
+= [2, 4], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, \+
+n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 4, y = 6" 
+}}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 2, e[i] = [5, 6]" }}{PARA 6 "" 1 
+"" {TEXT -1 29 "f = [2, 4], new f = [2, 4, 5]" }}{PARA 6 "" 1 "" 
+{TEXT -1 94 "g[2,1..6] = 1 2 2 4 4 6 Top of loop; ctr = ctr, j = 4, i \+
+= 6, n = 6, f = [2, 4, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "
+m-i+1=2, n-j=2" }}{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 4
+, y = 1" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [6, 1]" }}
+{PARA 6 "" 1 "" {TEXT -1 35 "f = [2, 4, 5], new f = [2, 4, 5, 6]" }}
+{PARA 6 "" 1 "" {TEXT -1 111 "g[3,1..6] = 1 2 2 4 4 4 Top of loop; ctr
+ = ctr, j = 5, i = 7, n = 6, f = [2, 4, 5, 6], ctr[i]: [\{1, 6\}, \{5,
+ 6\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "
+" {TEXT -1 30 "Not backtracking; x = 2, y = 4" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 4, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f \+
+= [2, 4, 5, 6], new f = [2, 4, 5, 6, 7]" }}{PARA 6 "" 1 "" {TEXT -1 
+47 "g[4,1..6] = 4 2 2 4 4 4 Top of loop; jcount = 6" }}{PARA 6 "" 1 "
+" {TEXT -1 46 "edgs: [[2, 3], [4, 5], [5, 6], [6, 1], [2, 5]]" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering \+
+childe" }}{PARA 6 "" 1 "" {TEXT -1 38 "Top of loop 1; c = c, pa = pa, \+
+h = [6]" }}{PARA 6 "" 1 "" {TEXT -1 44 "Top of loop 1; c = c, pa = pa,
+ h = [1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = c, p
+a = pa, h = [2, 4, 1, 5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 
+6 "" 1 "" {TEXT -1 42 "Global minname: f = [2, 4, 5, 6, 7]; g = g" }}
+{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering \+
+nextree" }}{PARA 6 "" 1 "" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5,
+ i = 8, n = 6, f = [2, 4, 5, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }
+}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT 
+-1 85 "Backtracking; f = [2, 4, 5, 6], i = 8, j = 5, new f = [2, 4, 5]
+, new i = 7, new j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "Top of loop; ct
+r = ctr, j = 4, i = 7, n = 6, f = [2, 4, 5], ctr[i]: [\{1, 6\}, \{5, 6
+\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack from common vert
+ices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2" }}{PARA 6 "
+" 1 "" {TEXT -1 79 "Backtracking; f = [2, 4, 5], i = 7, j = 4, new f =
+ [2, 4], new i = 6, new j = 3" }}{PARA 6 "" 1 "" {TEXT -1 67 "Top of l
+oop; ctr = ctr, j = 3, i = 6, n = 6, f = [2, 4], ctr[i]: []" }}{PARA 
+6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 73 "
+Backtracking; f = [2, 4], i = 6, j = 3, new f = [2], new i = 5, new j \+
+= 2" }}{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, j = 2, i =
+ 5, n = 6, f = [2], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 
+"setting backtrack from common vertices loop" }}{PARA 6 "" 1 "" {TEXT 
+-1 14 "m-i+1=3, n-j=4" }}{PARA 6 "" 1 "" {TEXT -1 69 "Backtracking; f \+
+= [2], i = 5, j = 2, new f = [], new i = 3, new j = 1" }}{PARA 6 "" 1 
+"" {TEXT -1 63 "Top of loop; ctr = ctr, j = 1, i = 3, n = 6, f = [], c
+tr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=5, n-j=5" }}{PARA 6 "
+" 1 "" {TEXT -1 30 "Not backtracking; x = 3, y = 4" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 0, e[i] = [3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 19 "f \+
+= [], new f = [3]" }}{PARA 6 "" 1 "" {TEXT -1 94 "g[0,1..6] = 1 2 3 4 \+
+5 6 Top of loop; ctr = ctr, j = 2, i = 4, n = 6, f = [3], ctr[i]: [\{2
+, 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=4" }}{PARA 6 "" 1 
+"" {TEXT -1 30 "Not backtracking; x = 3, y = 5" }}{PARA 6 "" 1 "" 
+{TEXT -1 22 "j-1 = 1, e[i] = [4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 23 "f \+
+= [3], new f = [3, 4]" }}{PARA 6 "" 1 "" {TEXT -1 97 "g[1,1..6] = 1 2 \+
+3 3 5 6 Top of loop; ctr = ctr, j = 3, i = 5, n = 6, f = [3, 4], ctr[i
+]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=3, n-j=3" }}{PARA 
+6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 3, y = 6" }}{PARA 6 "" 1 
+"" {TEXT -1 22 "j-1 = 2, e[i] = [5, 6]" }}{PARA 6 "" 1 "" {TEXT -1 29 
+"f = [3, 4], new f = [3, 4, 5]" }}{PARA 6 "" 1 "" {TEXT -1 94 "g[2,1..
+6] = 1 2 3 3 3 6 Top of loop; ctr = ctr, j = 4, i = 6, n = 6, f = [3, \+
+4, 5], ctr[i]: []" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=2, n-j=2" }}
+{PARA 6 "" 1 "" {TEXT -1 30 "Not backtracking; x = 3, y = 1" }}{PARA 
+6 "" 1 "" {TEXT -1 22 "j-1 = 3, e[i] = [6, 1]" }}{PARA 6 "" 1 "" 
+{TEXT -1 35 "f = [3, 4, 5], new f = [3, 4, 5, 6]" }}{PARA 6 "" 1 "" 
+{TEXT -1 111 "g[3,1..6] = 1 2 3 3 3 3 Top of loop; ctr = ctr, j = 5, i
+ = 7, n = 6, f = [3, 4, 5, 6], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 
+6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 30 "
+Not backtracking; x = 2, y = 3" }}{PARA 6 "" 1 "" {TEXT -1 22 "j-1 = 4
+, e[i] = [2, 5]" }}{PARA 6 "" 1 "" {TEXT -1 41 "f = [3, 4, 5, 6], new \+
+f = [3, 4, 5, 6, 7]" }}{PARA 6 "" 1 "" {TEXT -1 47 "g[4,1..6] = 3 2 3 \+
+3 3 3 Top of loop; jcount = 6" }}{PARA 6 "" 1 "" {TEXT -1 46 "edgs: [[
+3, 4], [4, 5], [5, 6], [6, 1], [2, 5]]" }}{PARA 6 "" 1 "" {TEXT -1 0 "
+" }}{PARA 6 "" 1 "" {TEXT -1 15 "Entering childe" }}{PARA 6 "" 1 "" 
+{TEXT -1 38 "Top of loop 1; c = c, pa = pa, h = [6]" }}{PARA 6 "" 1 "
+" {TEXT -1 44 "Top of loop 1; c = c, pa = pa, h = [1, 5, 6]" }}{PARA 
+6 "" 1 "" {TEXT -1 50 "Top of loop 1; c = c, pa = pa, h = [2, 4, 1, 5,
+ 6]" }}{PARA 6 "" 1 "" {TEXT -1 0 "" }}{PARA 6 "" 1 "" {TEXT -1 42 "Gl
+obal minname: f = [3, 4, 5, 6, 7]; g = g" }}{PARA 6 "" 1 "" {TEXT -1 
+0 "" }}{PARA 6 "" 1 "" {TEXT -1 16 "Entering nextree" }}{PARA 6 "" 1 "
+" {TEXT -1 93 "Top of loop; ctr = ctr, j = 5, i = 8, n = 6, f = [3, 4,
+ 5, 6], ctr[i]: [\{1, 2, 7\}, \{4, 5, 7\}]" }}{PARA 6 "" 1 "" {TEXT 
+-1 43 "setting backtrack from common vertices loop" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=0, n-j=1" }}{PARA 6 "" 1 "" {TEXT -1 85 "Backtracki
+ng; f = [3, 4, 5, 6], i = 8, j = 5, new f = [3, 4, 5], new i = 7, new \+
+j = 4" }}{PARA 6 "" 1 "" {TEXT -1 84 "Top of loop; ctr = ctr, j = 4, i
+ = 7, n = 6, f = [3, 4, 5], ctr[i]: [\{1, 6\}, \{5, 6\}]" }}{PARA 6 "
+" 1 "" {TEXT -1 43 "setting backtrack from common vertices loop" }}
+{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=1, n-j=2" }}{PARA 6 "" 1 "" {TEXT 
+-1 79 "Backtracking; f = [3, 4, 5], i = 7, j = 4, new f = [3, 4], new \+
+i = 6, new j = 3" }}{PARA 6 "" 1 "" {TEXT -1 67 "Top of loop; ctr = ct
+r, j = 3, i = 6, n = 6, f = [3, 4], ctr[i]: []" }}{PARA 6 "" 1 "" 
+{TEXT -1 14 "m-i+1=2, n-j=3" }}{PARA 6 "" 1 "" {TEXT -1 73 "Backtracki
+ng; f = [3, 4], i = 6, j = 3, new f = [3], new i = 5, new j = 2" }}
+{PARA 6 "" 1 "" {TEXT -1 70 "Top of loop; ctr = ctr, j = 2, i = 5, n =
+ 6, f = [3], ctr[i]: [\{3, 4\}]" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=
+3, n-j=4" }}{PARA 6 "" 1 "" {TEXT -1 69 "Backtracking; f = [3], i = 5,
+ j = 2, new f = [], new i = 4, new j = 1" }}{PARA 6 "" 1 "" {TEXT -1 
+69 "Top of loop; ctr = ctr, j = 1, i = 4, n = 6, f = [], ctr[i]: [\{2,
+ 3\}]" }}{PARA 6 "" 1 "" {TEXT -1 43 "setting backtrack from common ve
+rtices loop" }}{PARA 6 "" 1 "" {TEXT -1 14 "m-i+1=4, n-j=5" }}{PARA 6 
+"" 1 "" {TEXT -1 34 "Backtracking; f = [], i = 4, j = 1" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"AG%)subtreezG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{MARK "8 517" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

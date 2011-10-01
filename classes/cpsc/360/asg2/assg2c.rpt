@@ -1,0 +1,17 @@
+buffer size		time
+MMAP			0.03
+256			0.03
+512			0.03
+1024			0.03
+2048			0.03
+4096			0.03
+8192			0.03
+16384			0.03
+
+System: Intel 486DX2/66, RedHat Linux 5.2, Kernel 2.0.35
+
+This file is so small that the computer's timer resolution is too large
+to time the program.  Presumably MMAP is actually slower, but it is difficult
+to tell.  I didn't bother to test this program on the K6, since that would
+be an even more difficult measurement.
+

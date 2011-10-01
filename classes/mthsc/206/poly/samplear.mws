@@ -1,0 +1,160 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Plot" 
+0 13 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 0 0 -1 -1 
+-1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 120 "f1 := piecewise(\n \+
+       x >= 0 and x < 10, 3*x,\n        x >= 10 and x < 20, -3*x + 60,
+\n        x >= 20 and x <= 30, 0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%#f1G-%*PIECEWISEG6%7$,$%\"xG\"\"$31,$F*!\"\"\"\"!2,&F*\"\"\"!#5F3F07
+$,&F*!\"$\"#gF331,&\"#5F3F*F/F02,&F*F3!#?F3F07$F031,&\"#?F3F*F/F01,&F*
+F3!#IF3F0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 118 "f2 := piecewi
+se(\n        x >=0 and x < 15, -2*x,\n        x >=15 and x < 20, -30,
+\n        x >=20 and x <=30, 3*x - 90);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%#f2G-%*PIECEWISEG6%7$,$%\"xG!\"#31,$F*!\"\"\"\"!2,&F*\"\"\"!#:
+F3F07$!#I31,&\"#:F3F*F/F02,&F*F3!#?F3F07$,&F*\"\"$!#!*F331,&\"#?F3F*F/
+F01,&F*F3F6F3F0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "plot(\{f
+1, f2\}, x=0..30);" }}{PARA 13 "" 1 "" {GLPLOT2D 313 313 313 
+{PLOTDATA 2 "6&-%'CURVESG6$7W7$\"\"!F(7$$\"1+++]i9Rl!#;$\"1+++vQuh>!#:
+7$$\"1++vVA)GA\"F/$\"1++DJnkoOF/7$$\"1++]Peui=F/$\"1****\\7vB)e&F/7$$
+\"1++]i3&o]#F/$\"1,+](e_0_(F/7$$\"1++voX*y9$F/$\"1***\\iq$oV%*F/7$$\"1
+++vVTAUPF/$\"1+]7VsmA6!#97$$\"1++v$*zhdVF/$\"1+]7)R&G28FI7$$\"1++v$>fS
+*\\F/$\"1+]7ex@)\\\"FI7$$\"1++v=$f%GcF/$\"1+]i&zP&)o\"FI7$$\"1+++Dy,\"
+G'F/$\"1++]Z`I%)=FI7$$\"1++]7<zboF/$\"1++v8vtc?FI7$$\"1+++v4&G](F/$\"1
+++]#Hb3D#FI7$$\"1*****\\7nD:)F/$\"1++]P,xXCFI7$$\"1+++D!*oy()F/$\"1++]
+2ngLEFI7$$\"1++v$pnsM*F/$\"1+]73.=/GFI7$$\"1+]P4_J&o*F/$\"1+D\"Gc%f0HF
+I7$$\"1++]siL-5FI$\"1++]#=\"*H*HFI7$$\"1++DJL(4.\"FI$\"1++D1+32HFI7$$
+\"1+++!R5'f5FI$\"1+++I)o6#GFI7$$\"1+]P/QBE6FI$\"1+](oe)H@EFI7$$\"1+++:
+o?&=\"FI$\"1+++b&zVW#FI7$$\"1+]Pa&4*\\7FI$\"1+](oLr-D#FI7$$\"1+]7j=_68
+FI$\"1+]i5WVl?FI7$$\"1++vVy!eP\"FI$\"1++vokds=FI7$$\"1+](=WU[V\"FI$\"1
+**\\PuEZ&p\"FI7$$\"1++DJ#>&)\\\"FI$\"1++D1BW/:FI7$$\"1+]P>:mk:FI$\"1+]
+(=W:gI\"FI7$$\"1+]iv&QAi\"FI$\"1+]7tUGL6FI7$$\"1++vtLU%o\"FI$\"1****\\
+(y)Hn%*F/7$$\"1+++bjm[<FI$\"10++]$4+a(F/7$$\"1++vyb^6=FI$\"1(***\\PE`a
+cF/7$$\"1+]PMaKs=FI$\"1++vopBIQF/7$$\"1++D6W%)R>FI$\"14+]iwm/=F/7$$\"1
++]78)y,(>FI$\"1e+]igNY*)F,7$$\"1+++:K^+?FIF(7$$\"1++vj;!H.#FIF(7$$\"1+
++]7,Hl?FIF(7$$\"1+]P4w)R7#FIF(7$$\"1++]x%f\")=#FIF(7$$\"1+]P/-a[AFIF(7
+$$\"1+](=Yb;J#FIF(7$$\"1++]i@OtBFIF(7$$\"1+]PfL'zV#FIF(7$$\"1+++!*>=+D
+FIF(7$$\"1++DE&4Qc#FIF(7$$\"1+]P%>5pi#FIF(7$$\"1+++bJ*[o#FIF(7$$\"1++D
+r\"[8v#FIF(7$$\"1+++Ijy5GFIF(7$$\"1+]P/)fT(GFIF(7$$\"1+]i0j\"[$HFIF(7$
+$\"#IF(F(-%'COLOURG6&%$RGBG$\"#5!\"\"F(F(-F$6$7WF'7$F*$!1+++]#HyI\"F/7
+$F1$!1++]([kdW#F/7$F6$!1+++v;\\DPF/7$F;$!1,++D<q8]F/7$F@$!1++]P\"*y&H'
+F/7$FE$!1****\\(G[W[(F/7$FK$!1++]()fB:()F/7$FP$!1++](Q=\"))**F/7$FU$!1
+++vj=pD6FI7$FZ$!1+++lN?c7FI7$Fin$!1++]U$e6P\"FI7$F^o$!1+++&>q0]\"FI7$F
+co$!1+++DM^I;FI7$Fho$!1+++0ytb<FI7$F]p$!1++vQNXp=FI7$Fgp$!1+++XDn/?FI7
+$Faq$!1+++!y?#>@FI7$Ffq$!1++v3wY_AFI7$F[r$!1+++IOTqBFI7$F`r$!1++v3\">)
+*\\#FI7$Fer$!1++DEP/BEFI7$Fjr$!1++](o:;v#FI7$F_s$!1++v$)[opGFI7$$\"1+D
+cO3om9FI$!1+]7t;OLHFI7$Fds$!1++]i%Qq*HFI7$$\"1+DJv.fJ:FI$!#IF(7$FisF`_
+l7$F^tF`_l7$FctF`_l7$FhtF`_l7$F]uF`_l7$FbuF`_l7$FguF`_l7$F\\vF`_l7$Fav
+$!1+++b.Y)*HFI7$Fdv$!1,+v3]H,HFI7$Fgv$!1++]i'HT!GFI7$Fjv$!1+](=<P!GEFI
+7$F]w$!1)***\\n:_NCFI7$F`w$!1+](oQzVD#FI7$Fcw$!1+]P9O.l?FI7$Ffw$!1,+]7
+N\"*z=FI7$Fiw$!1+](=#*4ho\"FI7$F\\x$!1+++ISX*\\\"FI7$F_x$!1***\\7Ur&38
+FI7$Fbx$!1**\\(oTp#>6FI7$Fex$!1!*****\\`?`%*F/7$Fhx$!1****\\i[bfuF/7$F
+[y$!1)******45kn&F/7$F^y$!1$**\\(oe?vPF/7$Fay$!1&**\\7$3^b>F/Fcy-Fgy6&
+FiyF(FjyF(-%+AXESLABELSG6$Q\"x6\"%!G-%%VIEWG6$;F(Fdy%(DEFAULTG" 1 2 0 
+1 0 2 9 1 1 2 1.000000 45.000000 45.000000 0 }}}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 37 "mass := int(int(1,y=f2..f1),x=0..30);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%%massG\"$D)" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 36 "m_x := int(int(x,y=f2..f1),x=0..30);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$m_xG\"&v8\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "xbar := evalf(m_x / mass);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%xbarG$\"+zyyy8!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 36 "m_y := int(int(y,y=f2..f1),x=0..30);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$m_yG!%+I" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 26 "ybar := evalf(m_y / mass);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%%ybarG$!+OOOOO!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 412 "ma
+ss_bdry := proc(x, y, n)\nlocal i, m, b, bdry, tot:\ntot := 0:\nfor i \+
+from 1 to n do\n  if(x[i] <> x[i + 1]) then\n    m := (y[i] - y[i+1]) \+
+/ (x[i] - x[i + 1]):\n    b := y[i] - m*x[i]:\n    bdry := evalf(int(-
+0.5*b, xn = x[i]..x[i + 1])):\n  else\n    m := (x[i] - x[i+1]) / (y[i
+] - y[i + 1]):\n    b := x[i] - m*y[i]:\n    bdry := evalf(int(0.5*b, \+
+yn = y[i]..y[i + 1])):\n  fi:\n  tot := tot + bdry:\nod:\nRETURN(tot):
+\nend;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%*mass_bdryGR6%%\"xG%\"yG%
+\"nG6'%\"iG%\"mG%\"bG%%bdryG%$totG6\"F0C%>8(\"\"!?(8$\"\"\"F79&%%trueG
+C$@%0&9$6#F6&F>6#,&F6F7F7F7C%>8%*&,&&9%F?F7&FIFA!\"\"\"\"\",&F=F7F@FK!
+\"\">8&,&FHF7*&FEF7F=F7FK>8'-%&evalfG6#-%$intG6$,$FP$!\"&FK/%#xnG;F=F@
+C%>FE*&FMFLFGFN>FP,&F=F7*&FEFLFHF7FK>FT-FV6#-FY6$,$FP$\"\"&FK/%#ynG;FH
+FJ>F3,&F3F7FTF7-%'RETURNG6#F3F0F0F0" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 424 "mx_bdry := proc(x, y, n)\nlocal i, m, b, bdry, tot:
+\ntot := 0:\nfor i from 1 to n do\n  if(y[i] = y[i + 1]) then\n    m :
+= (y[i] - y[i+1]) / (x[i] - x[i + 1]):\n    b := y[i] - m*x[i]:\n    b
+dry := evalf(int(-0.5*(m*xn+b)^2, xn = x[i]..x[i + 1])):\n  else\n    \+
+m := (x[i] - x[i+1]) / (y[i] - y[i + 1]):\n    b := x[i] - m*y[i]:\n  \+
+  bdry := evalf(int(-0.5*m*yn^2, yn = y[i]..y[i + 1])):\n  fi:\n  tot \+
+:= tot + bdry:\nod:\nRETURN(tot):\nend;" }}{PARA 12 "" 1 "" {XPPMATH 
+20 "6#>%(mx_bdryGR6%%\"xG%\"yG%\"nG6'%\"iG%\"mG%\"bG%%bdryG%$totG6\"F0
+C%>8(\"\"!?(8$\"\"\"F79&%%trueGC$@%/&9%6#F6&F>6#,&F6F7F7F7C%>8%*&,&F=F
+7F@!\"\"\"\"\",&&9$F?F7&FLFAFH!\"\">8&,&F=F7*&FEF7FKF7FH>8'-%&evalfG6#
+-%$intG6$,$*$),&*&FEFI%#xnGF7F7FPF7\"\"#FI$!\"&FH/Fjn;FKFMC%>FE*&FJFIF
+GFN>FP,&FKF7*&FEFIF=F7FH>FT-FV6#-FY6$,$*&FEFI)%#ynGF[oFIF\\o/F^p;F=F@>
+F3,&F3F7FTF7-%'RETURNG6#F3F0F0F0" }}}{EXCHG {PARA 11 "" 1 "" {TEXT -1 
+0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 423 "my_bdry := proc(x, \+
+y, n)\nlocal i, m, b, bdry, tot:\ntot := 0:\nfor i from 1 to n do\n  i
+f(x[i] <> x[i + 1]) then\n    m := (y[i] - y[i+1]) / (x[i] - x[i + 1])
+:\n    b := y[i] - m*x[i]:\n    bdry := evalf(int(0.5*m*xn^2, xn = x[i
+]..x[i + 1])):\n  else\n    m := (x[i] - x[i+1]) / (y[i] - y[i + 1]):
+\n    b := x[i] - m*y[i]:\n    bdry := evalf(int(0.5*(m*yn+b)^2, yn = \+
+y[i]..y[i + 1])):\n  fi:\n  tot := tot + bdry:\nod:\nRETURN(tot):\nend
+;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%(my_bdryGR6%%\"xG%\"yG%\"nG6'%
+\"iG%\"mG%\"bG%%bdryG%$totG6\"F0C%>8(\"\"!?(8$\"\"\"F79&%%trueGC$@%0&9
+$6#F6&F>6#,&F6F7F7F7C%>8%*&,&&9%F?F7&FIFA!\"\"\"\"\",&F=F7F@FK!\"\">8&
+,&FHF7*&FEF7F=F7FK>8'-%&evalfG6#-%$intG6$,$*&FEFL)%#xnG\"\"#FL$\"\"&FK
+/Fhn;F=F@C%>FE*&FMFLFGFN>FP,&F=F7*&FEFLFHF7FK>FT-FV6#-FY6$,$*$),&*&FEF
+L%#ynGF7F7FPF7FinFLFjn/F^p;FHFJ>F3,&F3F7FTF7-%'RETURNG6#F3F0F0F0" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 105 "pacx := [-40.5, -52, -52, -
+56, -56, -59, -59.5, -54.5, -50, -47, -41.5, -38.5, -46.5, -43, -38.5,
+ -40.5];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%pacxG72$!$0%!\"\"!#_F)!
+#cF*!#f$!$&fF($!$X&F(!#]!#Z$!$:%F($!$&QF($!$l%F(!#VF4F&" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 81 "pacy := [60, 62, 58.5, 61, 55.5, 46
+, 40, 23, 21, 17, 16.5, 41, 43, 52.5, 51, 60];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%pacyG72\"#g\"#i$\"$&e!\"\"\"#h$\"$b&F*\"#Y\"#S\"#B\"
+#@\"#<$\"$l\"F*\"#T\"#V$\"$D&F*\"#^F&" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "mass_bdry(pacx, pacy, 15);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+++v$p'!\"(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 52 "my_bdry(pacx, pacy, 15) / mass_bdry(pacx, pacy, 15);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#$!++'Ht([!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 52 "mx_bdry(pacx, pacy, 15) / mass_bdry(pacx, pacy, 15);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+V6T$*R!\")" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 124 "mtnx := [-40.5, -38.5, -43, -46.5, -38.5, \+
+-41.5, -33, -27, -27, -23, -20, -20.5, -15, -16, -12.5, -15.5, -19.5, \+
+-19, -40.5];" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%%mtnxG75$!$0%!\"\"$!
+$&QF(!#V$!$l%F(F)$!$:%F(!#L!#FF1!#B!#?$!$0#F(!#:!#;$!$D\"F($!$b\"F($!$
+&>F(!#>F&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 99 "mtny := [60, 5
+1, 52.5, 43, 41, 16.5, 12.5, 12.5, 14, 14, 11, 14.5, 15, 28, 28.5, 55,
+ 55.5, 59, 60];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%mtnyG75\"#g\"#^$
+\"$D&!\"\"\"#V\"#T$\"$l\"F*$\"$D\"F*F/\"#9F1\"#6$\"$X\"F*\"#:\"#G$\"$&
+GF*\"#b$\"$b&F*\"#fF&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "ma
+ss_bdry(mtnx, mtny, 17);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+,++vc!
+\"(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "my_bdry(mtnx, mtny, \+
+18) / mass_bdry(mtnx, mtny, 18);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$!
++$4R^!G!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "mx_bdry(mtnx
+, mtny, 18) / mass_bdry(mtnx, mtny, 18);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#$\"+CS\\^O!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 212 "po
+lypts := proc(x, y, n, style)\nlocal i, l, allpts, point:\nallpts := [
+]:\nfor i from 1 to n+1 do\n  point := [x[i], y[i]]:\n  allpts := [op(
+allpts), point]:\nod:\nwith(plottools): \nRETURN(polygon(allpts, style
+)):\nend;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%(polyptsGR6&%\"xG%\"yG%
+\"nG%&styleG6&%\"iG%\"lG%'allptsG%&pointG6\"F0C&>8&7\"?(8$\"\"\"F7,&9&
+F7F7F7%%trueGC$>8'7$&9$6#F6&9%FA>F37$-%#opG6#F3F=-%%withG6#%*plottools
+G-%'RETURNG6#-%(polygonG6$F39'F0F0F0" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 51 "plots[display](polypts(mtnx, mtny, 18, color=red));" 
+}}{PARA 13 "" 1 "" {GLPLOT2D 400 300 300 {PLOTDATA 2 "6#-%)POLYGONSG6$
+757$$!$0%!\"\"$\"#g\"\"!7$$!$&QF*$\"#^F-7$$!#VF-$\"$D&F*7$$!$l%F*$\"#V
+F-7$F/$\"#TF-7$$!$:%F*$\"$l\"F*7$$!#LF-$\"$D\"F*7$$!#FF-FH7$FK$\"#9F-7
+$$!#BF-FN7$$!#?F-$\"#6F-7$$!$0#F*$\"$X\"F*7$$!#:F-$\"#:F-7$$!#;F-$\"#G
+F-7$$!$D\"F*$\"$&GF*7$$!$b\"F*$\"#bF-7$$!$&>F*$\"$b&F*7$$!#>F-$\"#fF-F
+'-%'COLOURG6&%$RGBG$\"*++++\"!\")F-F-" 1 2 0 1 0 2 9 1 4 1 1.000000 
+44.000000 46.000000 0 }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "pl
+ots[display](polypts(pacx, pacy, 15, color=blue));" }}{PARA 13 "" 1 "
+" {GLPLOT2D 400 300 300 {PLOTDATA 2 "6#-%)POLYGONSG6$727$$!$0%!\"\"$\"
+#g\"\"!7$$!#_F-$\"#iF-7$F/$\"$&eF*7$$!#cF-$\"#hF-7$F7$\"$b&F*7$$!#fF-$
+\"#YF-7$$!$&fF*$\"#SF-7$$!$X&F*$\"#BF-7$$!#]F-$\"#@F-7$$!#ZF-$\"#<F-7$
+$!$:%F*$\"$l\"F*7$$!$&QF*$\"#TF-7$$!$l%F*$\"#VF-7$$!#VF-$\"$D&F*7$Fgn$
+\"#^F-F'-%'COLOURG6&%$RGBGF-F-$\"*++++\"!\")" 1 2 0 1 0 2 9 1 4 1 
+1.000000 45.000000 45.000000 0 }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}}}{MARK "24 1" 1 }{VIEWOPTS 1 1 0 1 1 1803 }

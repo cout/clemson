@@ -1,0 +1,30 @@
+Seed = 1; Operations = 300000
+	Stackc++	Stackc		IStackc++
+vector	0.27				0.24
+array			0.16
+list	0.57		0.41		0.52
+
+Seed = 1; Items = 5000
+	Rlist		NRlist
+Gateway	7		0
+Sparc	73		5
+
+The stack program seems to run slower in C++ than in C.  0.57 seconds is
+certainly much slower than 0.41 seconds, and IMHO, the speed increase is worth
+having less readable code.  The array implementation of the stack is much
+than the list implementation, though the array cannot grow like the list can
+(though per element, the array implementation is more memory efficient if
+the stack is close to full).  The vector implementation of the stack is
+in the middle between list and array, and is a good compromise.  Using inline
+functions does not significantly increase performance, since the overhead of
+function calls is not really very large, but for small functions the
+ratio of overhead to real code can be very significant.
+
+The recursive implementation of the the insert is much slower than the
+non-recursive implementation.  This probably isn't the primary concern;
+the recursive implementation is also more memory-hungry.  For small amounts
+of items, the difference between the two might be negligible, but having
+to push items onto the stack can take a lot of time, and it can also result
+in a stack overflow if the amount of items is great.
+
+

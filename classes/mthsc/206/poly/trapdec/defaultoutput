@@ -1,0 +1,794 @@
+trapezoid number: 39
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 1.000000 82.000000 33.000000 79.000000 
+ right edge number: 2
+ top line: 82.000000 , bottom line: 79.000000
+ the four vertices are :
+ (1.000000, 82.000000),(1.000000, 82.000000),
+ (33.000000, 79.000000),(-2.348548, 79.000000)
+  upl NULL  upm 32  upr NULL
+  downl 40  downm NULL  downr 40
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 32
+ left edge -67.250000 83.000000 -67.250000 1.000000 
+ left edge number: 36
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 83.000000 , bottom line: 82.000000
+ the four vertices are :
+ (96.500000, 83.000000),(-67.250000, 83.000000),
+ (96.500000, 82.000000),(-67.250000, 82.000000)
+  upl NULL  upm NULL  upr NULL
+  downl 33  downm 39  downr 62
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 33
+ left edge -67.250000 83.000000 -67.250000 1.000000 
+ left edge number: 36
+ right edge 1.000000 82.000000 -66.250000 21.750000 
+ right edge number: 3
+ top line: 82.000000 , bottom line: 21.750000
+ the four vertices are :
+ (1.000000, 82.000000),(-67.250000, 82.000000),
+ (-66.250000, 21.750000),(-67.250000, 21.750000)
+  upl 32  upm NULL  upr 32
+  downl 34  downm NULL  downr 34
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 34
+ left edge -67.250000 83.000000 -67.250000 1.000000 
+ left edge number: 36
+ right edge 44.000000 46.000000 63.000000 12.000000 
+ right edge number: 13
+ top line: 21.750000 , bottom line: 12.000000
+ the four vertices are :
+ (57.551472, 21.750000),(-67.250000, 21.750000),
+ (63.000000, 12.000000),(-67.250000, 12.000000)
+  upl 33  upm 45  upr 47
+  downl 35  downm NULL  downr 35
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 35
+ left edge -67.250000 83.000000 -67.250000 1.000000 
+ left edge number: 36
+ right edge 63.000000 12.000000 69.000000 2.000000 
+ right edge number: 137
+ top line: 12.000000 , bottom line: 2.000000
+ the four vertices are :
+ (63.000000, 12.000000),(-67.250000, 12.000000),
+ (69.000000, 2.000000),(-67.250000, 2.000000)
+  upl 34  upm NULL  upr 34
+  downl 37  downm NULL  downr 37
+  upprev NULL  upnext 66
+  downprev NULL  downnext 67
+trapezoid number: 37
+ left edge -67.250000 83.000000 -67.250000 1.000000 
+ left edge number: 36
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 2.000000 , bottom line: 1.000000
+ the four vertices are :
+ (96.500000, 2.000000),(-67.250000, 2.000000),
+ (96.500000, 1.000000),(-67.250000, 1.000000)
+  upl 35  upm 67  upr 70
+  downl NULL  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 39
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 1.000000 82.000000 33.000000 79.000000 
+ right edge number: 2
+ top line: 82.000000 , bottom line: 79.000000
+ the four vertices are :
+ (1.000000, 82.000000),(1.000000, 82.000000),
+ (33.000000, 79.000000),(-2.348548, 79.000000)
+  upl NULL  upm 32  upr NULL
+  downl 40  downm NULL  downr 40
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 40
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 33.000000 79.000000 91.000000 52.000000 
+ right edge number: 151
+ top line: 79.000000 , bottom line: 70.500000
+ the four vertices are :
+ (33.000000, 79.000000),(-2.348548, 79.000000),
+ (51.259262, 70.500000),(-11.836100, 70.500000)
+  upl 39  upm NULL  upr 39
+  downl 41  downm 49  downr 73
+  upprev NULL  upnext 71
+  downprev NULL  downnext 71
+trapezoid number: 41
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 5.500000 70.500000 34.000000 55.000000 
+ right edge number: 9
+ top line: 70.500000 , bottom line: 55.000000
+ the four vertices are :
+ (5.500000, 70.500000),(-11.836100, 70.500000),
+ (34.000000, 55.000000),(-29.136929, 55.000000)
+  upl 40  upm NULL  upr 40
+  downl 42  downm NULL  downr 42
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 42
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 34.000000 55.000000 35.500000 41.500000 
+ right edge number: 8
+ top line: 55.000000 , bottom line: 41.500000
+ the four vertices are :
+ (34.000000, 55.000000),(-29.136929, 55.000000),
+ (35.500000, 41.500000),(-44.205395, 41.500000)
+  upl 41  upm NULL  upr 41
+  downl 43  downm NULL  downr 43
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 43
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 35.500000 41.500000 43.000000 36.000000 
+ right edge number: 7
+ top line: 41.500000 , bottom line: 36.000000
+ the four vertices are :
+ (35.500000, 41.500000),(-44.205395, 41.500000),
+ (43.000000, 36.000000),(-50.344398, 36.000000)
+  upl 42  upm NULL  upr 42
+  downl 44  downm NULL  downr 44
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 44
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 43.000000 36.000000 12.000000 25.000000 
+ right edge number: 6
+ top line: 36.000000 , bottom line: 33.500000
+ the four vertices are :
+ (43.000000, 36.000000),(-50.344398, 36.000000),
+ (35.954544, 33.500000),(-53.134853, 33.500000)
+  upl 43  upm NULL  upr 43
+  downl 45  downm 46  downr 48
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 45
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge -41.500000 33.500000 -66.250000 21.750000 
+ right edge number: 4
+ top line: 33.500000 , bottom line: 21.750000
+ the four vertices are :
+ (-41.500000, 33.500000),(-53.134853, 33.500000),
+ (-66.250000, 21.750000),(-66.250000, 21.750000)
+  upl 44  upm NULL  upr 44
+  downl NULL  downm 34  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 46
+ left edge -41.500000 33.500000 -66.250000 21.750000 
+ left edge number: 4
+ right edge -41.500000 33.500000 12.000000 25.000000 
+ right edge number: 5
+ top line: 33.500000 , bottom line: 25.000000
+ the four vertices are :
+ (-41.500000, 33.500000),(-41.500000, 33.500000),
+ (12.000000, 25.000000),(-59.404255, 25.000000)
+  upl NULL  upm 44  upr NULL
+  downl 47  downm NULL  downr 47
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 47
+ left edge -41.500000 33.500000 -66.250000 21.750000 
+ left edge number: 4
+ right edge 44.000000 46.000000 63.000000 12.000000 
+ right edge number: 13
+ top line: 25.000000 , bottom line: 21.750000
+ the four vertices are :
+ (55.735294, 25.000000),(-59.404255, 25.000000),
+ (57.551472, 21.750000),(-66.250000, 21.750000)
+  upl 46  upm 48  upr 54
+  downl 34  downm NULL  downr 34
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 48
+ left edge -41.500000 33.500000 12.000000 25.000000 
+ left edge number: 5
+ right edge 43.000000 36.000000 12.000000 25.000000 
+ right edge number: 6
+ top line: 33.500000 , bottom line: 25.000000
+ the four vertices are :
+ (35.954544, 33.500000),(-41.500000, 33.500000),
+ (12.000000, 25.000000),(12.000000, 25.000000)
+  upl 44  upm NULL  upr 44
+  downl NULL  downm 47  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 49
+ left edge 5.500000 70.500000 34.000000 55.000000 
+ left edge number: 9
+ right edge 5.500000 70.500000 85.000000 30.000000 
+ right edge number: 131
+ top line: 70.500000 , bottom line: 55.000000
+ the four vertices are :
+ (5.500000, 70.500000),(5.500000, 70.500000),
+ (35.925926, 55.000000),(34.000000, 55.000000)
+  upl NULL  upm 40  upr NULL
+  downl 50  downm NULL  downr 50
+  upprev NULL  upnext 73
+  downprev NULL  downnext 73
+trapezoid number: 50
+ left edge 34.000000 55.000000 35.500000 41.500000 
+ left edge number: 8
+ right edge 5.500000 70.500000 85.000000 30.000000 
+ right edge number: 132
+ top line: 55.000000 , bottom line: 46.000000
+ the four vertices are :
+ (35.925926, 55.000000),(34.000000, 55.000000),
+ (53.592594, 46.000000),(35.000000, 46.000000)
+  upl 49  upm NULL  upr 49
+  downl 52  downm 55  downr 58
+  upprev NULL  upnext 75
+  downprev NULL  downnext 76
+trapezoid number: 52
+ left edge 34.000000 55.000000 35.500000 41.500000 
+ left edge number: 8
+ right edge 44.000000 46.000000 63.000000 12.000000 
+ right edge number: 13
+ top line: 46.000000 , bottom line: 41.500000
+ the four vertices are :
+ (44.000000, 46.000000),(35.000000, 46.000000),
+ (46.514706, 41.500000),(35.500000, 41.500000)
+  upl 50  upm NULL  upr 50
+  downl 53  downm NULL  downr 53
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 53
+ left edge 35.500000 41.500000 43.000000 36.000000 
+ left edge number: 7
+ right edge 44.000000 46.000000 63.000000 12.000000 
+ right edge number: 13
+ top line: 41.500000 , bottom line: 36.000000
+ the four vertices are :
+ (46.514706, 41.500000),(35.500000, 41.500000),
+ (49.588234, 36.000000),(43.000000, 36.000000)
+  upl 52  upm NULL  upr 52
+  downl 54  downm NULL  downr 54
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 54
+ left edge 43.000000 36.000000 12.000000 25.000000 
+ left edge number: 6
+ right edge 44.000000 46.000000 63.000000 12.000000 
+ right edge number: 13
+ top line: 36.000000 , bottom line: 25.000000
+ the four vertices are :
+ (49.588234, 36.000000),(43.000000, 36.000000),
+ (55.735294, 25.000000),(12.000000, 25.000000)
+  upl 53  upm NULL  upr 53
+  downl 47  downm NULL  downr 47
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 55
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 44.000000 46.000000 55.000000 40.000000 
+ right edge number: 12
+ top line: 46.000000 , bottom line: 40.000000
+ the four vertices are :
+ (44.000000, 46.000000),(44.000000, 46.000000),
+ (55.000000, 40.000000),(47.352940, 40.000000)
+  upl NULL  upm 50  upr NULL
+  downl 56  downm NULL  downr 56
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 56
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 55.000000 40.000000 85.000000 30.000000 
+ right edge number: 11
+ top line: 40.000000 , bottom line: 30.000000
+ the four vertices are :
+ (55.000000, 40.000000),(47.352940, 40.000000),
+ (85.000000, 30.000000),(52.941177, 30.000000)
+  upl 55  upm NULL  upr 55
+  downl 57  downm NULL  downr 57
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 57
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 147
+ top line: 30.000000 , bottom line: 26.500000
+ the four vertices are :
+ (94.818184, 30.000000),(52.941177, 30.000000),
+ (93.863640, 26.500000),(54.897057, 26.500000)
+  upl 56  upm 59  upr 85
+  downl 78  downm 79  downr 80
+  upprev NULL  upnext 77
+  downprev NULL  downnext NULL
+trapezoid number: 78
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 72.500000 26.500000 76.750000 13.250000 
+ right edge number: 141
+ top line: 26.500000 , bottom line: 13.250000
+ the four vertices are :
+ (72.500000, 26.500000),(54.897057, 26.500000),
+ (76.750000, 13.250000),(62.301468, 13.250000)
+  upl 57  upm NULL  upr 57
+  downl 81  downm NULL  downr 81
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 81
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 76.750000 13.250000 75.000000 8.000000 
+ right edge number: 140
+ top line: 13.250000 , bottom line: 12.000000
+ the four vertices are :
+ (76.750000, 13.250000),(62.301468, 13.250000),
+ (76.333336, 12.000000),(63.000000, 12.000000)
+  upl 78  upm NULL  upr 78
+  downl 66  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext 82
+trapezoid number: 66
+ left edge 63.000000 12.000000 69.000000 2.000000 
+ left edge number: 137
+ right edge 76.750000 13.250000 75.000000 8.000000 
+ right edge number: 139
+ top line: 12.000000 , bottom line: 8.000000
+ the four vertices are :
+ (76.333336, 12.000000),(63.000000, 12.000000),
+ (75.000000, 8.000000),(65.400002, 8.000000)
+  upl 81  upm NULL  upr 81
+  downl 67  downm NULL  downr 67
+  upprev 35upnext 65
+  downprev 35  downnext 82
+trapezoid number: 67
+ left edge 63.000000 12.000000 69.000000 2.000000 
+ left edge number: 138
+ right edge 75.000000 8.000000 69.000000 2.000000 
+ right edge number: 15
+ top line: 8.000000 , bottom line: 2.000000
+ the four vertices are :
+ (75.000000, 8.000000),(65.400002, 8.000000),
+ (69.000000, 2.000000),(69.000000, 2.000000)
+  upl 66  upm NULL  upr 66
+  downl NULL  downm 37  downr NULL
+  upprev 36upnext NULL
+  downprev 35  downnext NULL
+trapezoid number: 79
+ left edge 72.500000 26.500000 76.750000 13.250000 
+ left edge number: 141
+ right edge 72.500000 26.500000 88.000000 5.000000 
+ right edge number: 142
+ top line: 26.500000 , bottom line: 13.250000
+ the four vertices are :
+ (72.500000, 26.500000),(72.500000, 26.500000),
+ (82.052322, 13.250000),(76.750000, 13.250000)
+  upl NULL  upm 57  upr NULL
+  downl 82  downm NULL  downr 82
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 82
+ left edge 76.750000 13.250000 75.000000 8.000000 
+ left edge number: 140
+ right edge 72.500000 26.500000 88.000000 5.000000 
+ right edge number: 142
+ top line: 13.250000 , bottom line: 8.000000
+ the four vertices are :
+ (82.052322, 13.250000),(76.750000, 13.250000),
+ (85.837212, 8.000000),(75.000000, 8.000000)
+  upl 79  upm NULL  upr 79
+  downl 38  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev 66  downnext 64
+trapezoid number: 38
+ left edge 75.000000 8.000000 69.000000 2.000000 
+ left edge number: 15
+ right edge 72.500000 26.500000 88.000000 5.000000 
+ right edge number: 144
+ top line: 8.000000 , bottom line: 5.000000
+ the four vertices are :
+ (85.837212, 8.000000),(75.000000, 8.000000),
+ (88.000000, 5.000000),(72.000000, 5.000000)
+  upl 82  upm NULL  upr 82
+  downl 70  downm NULL  downr 70
+  upprev NULL  upnext 69
+  downprev NULL  downnext NULL
+trapezoid number: 70
+ left edge 75.000000 8.000000 69.000000 2.000000 
+ left edge number: 15
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 5.000000 , bottom line: 2.000000
+ the four vertices are :
+ (96.500000, 5.000000),(72.000000, 5.000000),
+ (96.500000, 2.000000),(69.000000, 2.000000)
+  upl 38  upm 80  upr 86
+  downl 37  downm NULL  downr 37
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 80
+ left edge 72.500000 26.500000 88.000000 5.000000 
+ left edge number: 142
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 147
+ top line: 26.500000 , bottom line: 5.000000
+ the four vertices are :
+ (93.863640, 26.500000),(72.500000, 26.500000),
+ (88.000000, 5.000000),(88.000000, 5.000000)
+  upl 57  upm NULL  upr 57
+  downl NULL  downm 70  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 58
+ left edge 44.000000 46.000000 55.000000 40.000000 
+ left edge number: 12
+ right edge 5.500000 70.500000 85.000000 30.000000 
+ right edge number: 134
+ top line: 46.000000 , bottom line: 40.000000
+ the four vertices are :
+ (53.592594, 46.000000),(44.000000, 46.000000),
+ (65.370369, 40.000000),(55.000000, 40.000000)
+  upl 50  upm NULL  upr 50
+  downl 59  downm NULL  downr 59
+  upprev NULL  upnext 83
+  downprev NULL  downnext 76
+trapezoid number: 59
+ left edge 55.000000 40.000000 85.000000 30.000000 
+ left edge number: 11
+ right edge 5.500000 70.500000 85.000000 30.000000 
+ right edge number: 135
+ top line: 40.000000 , bottom line: 30.000000
+ the four vertices are :
+ (65.370369, 40.000000),(55.000000, 40.000000),
+ (85.000000, 30.000000),(85.000000, 30.000000)
+  upl 58  upm NULL  upr 58
+  downl NULL  downm 57  downr NULL
+  upprev NULL  upnext 84
+  downprev NULL  downnext 85
+trapezoid number: 73
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 131
+ right edge 33.000000 79.000000 91.000000 52.000000 
+ right edge number: 150
+ top line: 70.500000 , bottom line: 52.000000
+ the four vertices are :
+ (51.259262, 70.500000),(5.500000, 70.500000),
+ (91.000000, 52.000000),(41.814816, 52.000000)
+  upl 40  upm NULL  upr 40
+  downl 76  downm NULL  downr 76
+  upprev 49upnext 72
+  downprev 50  downnext 71
+trapezoid number: 76
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 133
+ right edge 91.000000 52.000000 95.500000 32.500000 
+ right edge number: 20
+ top line: 52.000000 , bottom line: 32.500000
+ the four vertices are :
+ (91.000000, 52.000000),(41.814816, 52.000000),
+ (95.500000, 32.500000),(80.092590, 32.500000)
+  upl 73  upm NULL  upr 73
+  downl 85  downm NULL  downr 85
+  upprev 51upnext NULL
+  downprev 59  downnext NULL
+trapezoid number: 85
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 136
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 148
+ top line: 32.500000 , bottom line: 30.000000
+ the four vertices are :
+ (95.500000, 32.500000),(80.092590, 32.500000),
+ (94.818184, 30.000000),(85.000000, 30.000000)
+  upl 76  upm NULL  upr 76
+  downl 57  downm NULL  downr 57
+  upprev 60upnext 86
+  downprev 59  downnext 86
+trapezoid number: 62
+ left edge 1.000000 82.000000 33.000000 79.000000 
+ left edge number: 2
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 82.000000 , bottom line: 79.000000
+ the four vertices are :
+ (96.500000, 82.000000),(1.000000, 82.000000),
+ (96.500000, 79.000000),(33.000000, 79.000000)
+  upl 32  upm NULL  upr 32
+  downl 71  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 71
+ left edge 33.000000 79.000000 91.000000 52.000000 
+ left edge number: 151
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 79.000000 , bottom line: 52.000000
+ the four vertices are :
+ (96.500000, 79.000000),(33.000000, 79.000000),
+ (96.500000, 52.000000),(91.000000, 52.000000)
+  upl 62  upm NULL  upr 62
+  downl 61  downm NULL  downr NULL
+  upprev 40upnext NULL
+  downprev 73  downnext NULL
+trapezoid number: 61
+ left edge 91.000000 52.000000 95.500000 32.500000 
+ left edge number: 20
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 52.000000 , bottom line: 32.500000
+ the four vertices are :
+ (96.500000, 52.000000),(91.000000, 52.000000),
+ (96.500000, 32.500000),(95.500000, 32.500000)
+  upl 71  upm NULL  upr 71
+  downl 86  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 86
+ left edge 95.500000 32.500000 88.000000 5.000000 
+ left edge number: 148
+ right edge 96.500000 83.000000 96.500000 1.000000 
+ right edge number: 37
+ top line: 32.500000 , bottom line: 5.000000
+ the four vertices are :
+ (96.500000, 32.500000),(95.500000, 32.500000),
+ (96.500000, 5.000000),(88.000000, 5.000000)
+  upl 61  upm NULL  upr 61
+  downl 70  downm NULL  downr 70
+  upprev 85upnext NULL
+  downprev NULL  downnext NULL
+decomposition:
+trapezoid number: 39
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 1.000000 82.000000 33.000000 79.000000 
+ right edge number: 2
+ top line: 82.000000 , bottom line: 79.000000
+ the four vertices are :
+ (1.000000, 82.000000),(1.000000, 82.000000),
+ (33.000000, 79.000000),(-2.348548, 79.000000)
+  upl NULL  upm 32  upr NULL
+  downl 40  downm NULL  downr 40
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 40
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 33.000000 79.000000 91.000000 52.000000 
+ right edge number: 151
+ top line: 79.000000 , bottom line: 70.500000
+ the four vertices are :
+ (33.000000, 79.000000),(-2.348548, 79.000000),
+ (51.259262, 70.500000),(-11.836100, 70.500000)
+  upl 39  upm NULL  upr 39
+  downl 41  downm 49  downr 73
+  upprev NULL  upnext 71
+  downprev NULL  downnext 71
+trapezoid number: 41
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 5.500000 70.500000 34.000000 55.000000 
+ right edge number: 9
+ top line: 70.500000 , bottom line: 55.000000
+ the four vertices are :
+ (5.500000, 70.500000),(-11.836100, 70.500000),
+ (34.000000, 55.000000),(-29.136929, 55.000000)
+  upl 40  upm NULL  upr 40
+  downl 42  downm NULL  downr 42
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 42
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 34.000000 55.000000 35.500000 41.500000 
+ right edge number: 8
+ top line: 55.000000 , bottom line: 41.500000
+ the four vertices are :
+ (34.000000, 55.000000),(-29.136929, 55.000000),
+ (35.500000, 41.500000),(-44.205395, 41.500000)
+  upl 41  upm NULL  upr 41
+  downl 43  downm NULL  downr 43
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 43
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 35.500000 41.500000 43.000000 36.000000 
+ right edge number: 7
+ top line: 41.500000 , bottom line: 36.000000
+ the four vertices are :
+ (35.500000, 41.500000),(-44.205395, 41.500000),
+ (43.000000, 36.000000),(-50.344398, 36.000000)
+  upl 42  upm NULL  upr 42
+  downl 44  downm NULL  downr 44
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 44
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge 43.000000 36.000000 12.000000 25.000000 
+ right edge number: 6
+ top line: 36.000000 , bottom line: 33.500000
+ the four vertices are :
+ (43.000000, 36.000000),(-50.344398, 36.000000),
+ (35.954544, 33.500000),(-53.134853, 33.500000)
+  upl 43  upm NULL  upr 43
+  downl 45  downm 46  downr 48
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 45
+ left edge 1.000000 82.000000 -66.250000 21.750000 
+ left edge number: 3
+ right edge -41.500000 33.500000 -66.250000 21.750000 
+ right edge number: 4
+ top line: 33.500000 , bottom line: 21.750000
+ the four vertices are :
+ (-41.500000, 33.500000),(-53.134853, 33.500000),
+ (-66.250000, 21.750000),(-66.250000, 21.750000)
+  upl 44  upm NULL  upr 44
+  downl NULL  downm 34  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 48
+ left edge -41.500000 33.500000 12.000000 25.000000 
+ left edge number: 5
+ right edge 43.000000 36.000000 12.000000 25.000000 
+ right edge number: 6
+ top line: 33.500000 , bottom line: 25.000000
+ the four vertices are :
+ (35.954544, 33.500000),(-41.500000, 33.500000),
+ (12.000000, 25.000000),(12.000000, 25.000000)
+  upl 44  upm NULL  upr 44
+  downl NULL  downm 47  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 73
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 131
+ right edge 33.000000 79.000000 91.000000 52.000000 
+ right edge number: 150
+ top line: 70.500000 , bottom line: 52.000000
+ the four vertices are :
+ (51.259262, 70.500000),(5.500000, 70.500000),
+ (91.000000, 52.000000),(41.814816, 52.000000)
+  upl 40  upm NULL  upr 40
+  downl 76  downm NULL  downr 76
+  upprev 49upnext 72
+  downprev 50  downnext 71
+trapezoid number: 76
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 133
+ right edge 91.000000 52.000000 95.500000 32.500000 
+ right edge number: 20
+ top line: 52.000000 , bottom line: 32.500000
+ the four vertices are :
+ (91.000000, 52.000000),(41.814816, 52.000000),
+ (95.500000, 32.500000),(80.092590, 32.500000)
+  upl 73  upm NULL  upr 73
+  downl 85  downm NULL  downr 85
+  upprev 51upnext NULL
+  downprev 59  downnext NULL
+trapezoid number: 85
+ left edge 5.500000 70.500000 85.000000 30.000000 
+ left edge number: 136
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 148
+ top line: 32.500000 , bottom line: 30.000000
+ the four vertices are :
+ (95.500000, 32.500000),(80.092590, 32.500000),
+ (94.818184, 30.000000),(85.000000, 30.000000)
+  upl 76  upm NULL  upr 76
+  downl 57  downm NULL  downr 57
+  upprev 60upnext 86
+  downprev 59  downnext 86
+trapezoid number: 57
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 147
+ top line: 30.000000 , bottom line: 26.500000
+ the four vertices are :
+ (94.818184, 30.000000),(52.941177, 30.000000),
+ (93.863640, 26.500000),(54.897057, 26.500000)
+  upl 56  upm 59  upr 85
+  downl 78  downm 79  downr 80
+  upprev NULL  upnext 77
+  downprev NULL  downnext NULL
+trapezoid number: 78
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 72.500000 26.500000 76.750000 13.250000 
+ right edge number: 141
+ top line: 26.500000 , bottom line: 13.250000
+ the four vertices are :
+ (72.500000, 26.500000),(54.897057, 26.500000),
+ (76.750000, 13.250000),(62.301468, 13.250000)
+  upl 57  upm NULL  upr 57
+  downl 81  downm NULL  downr 81
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 81
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 76.750000 13.250000 75.000000 8.000000 
+ right edge number: 140
+ top line: 13.250000 , bottom line: 12.000000
+ the four vertices are :
+ (76.750000, 13.250000),(62.301468, 13.250000),
+ (76.333336, 12.000000),(63.000000, 12.000000)
+  upl 78  upm NULL  upr 78
+  downl 66  downm NULL  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext 82
+trapezoid number: 66
+ left edge 63.000000 12.000000 69.000000 2.000000 
+ left edge number: 137
+ right edge 76.750000 13.250000 75.000000 8.000000 
+ right edge number: 139
+ top line: 12.000000 , bottom line: 8.000000
+ the four vertices are :
+ (76.333336, 12.000000),(63.000000, 12.000000),
+ (75.000000, 8.000000),(65.400002, 8.000000)
+  upl 81  upm NULL  upr 81
+  downl 67  downm NULL  downr 67
+  upprev 35upnext 65
+  downprev 35  downnext 82
+trapezoid number: 67
+ left edge 63.000000 12.000000 69.000000 2.000000 
+ left edge number: 138
+ right edge 75.000000 8.000000 69.000000 2.000000 
+ right edge number: 15
+ top line: 8.000000 , bottom line: 2.000000
+ the four vertices are :
+ (75.000000, 8.000000),(65.400002, 8.000000),
+ (69.000000, 2.000000),(69.000000, 2.000000)
+  upl 66  upm NULL  upr 66
+  downl NULL  downm 37  downr NULL
+  upprev 36upnext NULL
+  downprev 35  downnext NULL
+trapezoid number: 80
+ left edge 72.500000 26.500000 88.000000 5.000000 
+ left edge number: 142
+ right edge 95.500000 32.500000 88.000000 5.000000 
+ right edge number: 147
+ top line: 26.500000 , bottom line: 5.000000
+ the four vertices are :
+ (93.863640, 26.500000),(72.500000, 26.500000),
+ (88.000000, 5.000000),(88.000000, 5.000000)
+  upl 57  upm NULL  upr 57
+  downl NULL  downm 70  downr NULL
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 56
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 55.000000 40.000000 85.000000 30.000000 
+ right edge number: 11
+ top line: 40.000000 , bottom line: 30.000000
+ the four vertices are :
+ (55.000000, 40.000000),(47.352940, 40.000000),
+ (85.000000, 30.000000),(52.941177, 30.000000)
+  upl 55  upm NULL  upr 55
+  downl 57  downm NULL  downr 57
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
+trapezoid number: 55
+ left edge 44.000000 46.000000 63.000000 12.000000 
+ left edge number: 13
+ right edge 44.000000 46.000000 55.000000 40.000000 
+ right edge number: 12
+ top line: 46.000000 , bottom line: 40.000000
+ the four vertices are :
+ (44.000000, 46.000000),(44.000000, 46.000000),
+ (55.000000, 40.000000),(47.352940, 40.000000)
+  upl NULL  upm 50  upr NULL
+  downl 56  downm NULL  downr 56
+  upprev NULL  upnext NULL
+  downprev NULL  downnext NULL
